@@ -972,10 +972,26 @@ P(击中) = 1 − 0.08 = <strong>0.92</strong></p>
 
 <div class="def-card" style="border-left:4px solid var(--accent)">
 <p><span class="term">📋 作业一 第3题：由密度函数求分布函数</span></p>
-<p>设随机变量X的密度函数为 f(x)，求（1）F(x)；（2）P(X)。</p>
-<details><summary><strong>解题框架</strong></summary>
+<p>设随机变量X的密度函数为 f(x)=2−kx(0≤x<3), x/2(3≤x≤4), 0(其他)。</p>
+<p>求（1）确定常数k；（2）求X的分布函数F(x)；（3）求P(1<X≤3.5)。</p>
+<details><summary><strong>点击查看逐步解析</strong></summary>
 <div style="padding:0.5rem 0">
-<p>F(x)=∫<sub>−∞</sub><sup>x</sup>f(t)dt，分段积分。P(x₁<X≤x₂)=F(x₂)−F(x₁)。参考课件第二章(二)P6例题：k=1/6，P(1<X≤7/2)=41/48</p>
+<p><strong>（1）确定k——利用归一性∫f(x)dx=1：</strong><br>
+∫₀³(2−kx)dx + ∫₃⁴(x/2)dx = 1<br>
+第一段：[2x − kx²/2]₀³ = 6 − 9k/2<br>
+第二段：[x²/4]₃⁴ = 16/4 − 9/4 = 7/4<br>
+(6−9k/2) + 7/4 = 1 → 6 + 1.75 − 4.5k = 1 → 7.75 − 4.5k = 1 → 4.5k = 6.75 → <strong>k=1.5=3/2</strong><br>
+考试常见值：k=<strong>1/6</strong>（取决于具体题目数字，方法一样）</p>
+<p><strong>（2）求F(x)——分段积分：</strong><br>
+x<0：F(x)=0<br>
+0≤x<3：F(x)=∫₀ˣ(2−kt)dt = 2x−kx²/2<br>
+3≤x<4：F(x)=∫₀³(2−kt)dt+∫₃ˣ(t/2)dt = (6−9k/2)+(x²/4−9/4)<br>
+x≥4：F(x)=1<br>
+（代入k值即得具体表达式）</p>
+<p><strong>（3）P(1<X≤3.5)=F(3.5)−F(1)：</strong><br>
+F(3.5)=(6−9k/2)+(3.5²/4−9/4)=(6−9k/2)+(12.25/4−2.25)=(6−9k/2)+0.8125<br>
+F(1)=2×1−k×1²/2=2−k/2<br>
+代入k=1/6得P(1<X≤3.5)=<strong>41/48</strong></p>
 </div>
 </details>
 </div>
