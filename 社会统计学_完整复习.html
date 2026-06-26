@@ -646,6 +646,20 @@ P(击中) = 1 − 0.08 = <strong>0.92</strong></p>
 
 <h2>📝 课件知识点补全（不漏一个）</h2>
 
+<h3>📖 课本补充内容</h3>
+<div class="def-card" style="border-left:4px solid #2d6a4f">
+<p><span class="term">概率的连续性（课本§1.2补充）：</span>若事件序列A₁⊂A₂⊂…单调递增，则P(∪Aₙ)=lim P(Aₙ)。单调递减类似。</p>
+<p><span class="term">全概率公式的另一种理解：</span>加权平均。P(B)=ΣP(Aᵢ)P(B|Aᵢ)，其中P(Aᵢ)是权重，P(B|Aᵢ)是条件值。</p>
+</div>
+<div class="def-card" style="border-left:4px solid #2d6a4f">
+<p><span class="term">📝 课本典型习题：</span>设A,B为两事件，P(A)=0.6, P(B)=0.7。证明：0.3≤P(AB)≤0.6。</p>
+<details><summary><strong>证明</strong></summary>①P(AB)≤P(A)=0.6（AB⊂A）；②P(A∪B)=P(A)+P(B)−P(AB)≤1→0.6+0.7−P(AB)≤1→P(AB)≥0.3。所以0.3≤P(AB)≤0.6。</details>
+</div>
+<div class="def-card" style="border-left:4px solid #2d6a4f">
+<p><span class="term">📝 课本典型习题：</span>飞机有三个不同部位被击中一弹、两弹、三弹的概率分别为0.4, 0.3, 0.3。被击中一弹坠毁概率0.2，两弹0.6，三弹1.0。求飞机坠毁概率。</p>
+<details><summary><strong>答案：0.5</strong></summary>P=0.4×0.2+0.3×0.6+0.3×1.0=0.08+0.18+0.30=0.5</details>
+</div>
+
 <h3>1.1 样本空间练习（课件原题）</h3>
 <div class="def-card" style="border-left:4px solid #e6c970">
 <p>写出下列随机试验的样本空间：</p>
@@ -1199,6 +1213,20 @@ X密度f(x)=2x(0<x<1)，求Y=X²+1的密度函数。</p>
 
 <h2>📝 课件知识点补全（不漏一个）</h2>
 
+<h3>📖 课本补充内容</h3>
+<div class="def-card" style="border-left:4px solid #2d6a4f">
+<p><span class="term">Γ分布（课本§2.3补充）：</span>Γ(α,β)的密度f(x)=x^(α−1)e^(−x/β)/(β^α Γ(α))。指数分布是α=1的特例。χ²(n)=Γ(n/2, 2)。</p>
+<p><span class="term">随机变量函数的分布——公式法：</span>若y=g(x)严格单调且可导，则f_Y(y)=f_X(h(y))·|h'(y)|，其中h=g⁻¹。</p>
+</div>
+<div class="def-card" style="border-left:4px solid #2d6a4f">
+<p><span class="term">📝 课本典型习题：</span>设X~N(0,1)，求Y=|X|的概率密度。</p>
+<details><summary><strong>答案</strong></summary>f_Y(y)=2φ(y)=√(2/π)·e^(−y²/2)，y>0。（这是因为|X|取值正半轴，密度是标准正态的两倍）</details>
+</div>
+<div class="def-card" style="border-left:4px solid #2d6a4f">
+<p><span class="term">📝 课本典型习题：</span>设二维随机变量(X,Y)的联合密度f(x,y)=1(0<x<1,|y|<x)，求边缘密度f_X(x)和f_Y(y)。</p>
+<details><summary><strong>答案</strong></summary>f_X(x)=∫_(−x)^x 1·dy=2x(0<x<1)；f_Y(y)=∫_|y|^1 1·dx=1−|y|(|y|<1)</details>
+</div>
+
 <h3>2.1 补充例题</h3>
 <div class="def-card" style="border-left:4px solid #e6c970">
 <p><strong>分布函数求常数：</strong>F(x)=c−e^(−x²/2) (x≥0)，F(−∞)=0。求c和P(|X|>2)。</p>
@@ -1563,6 +1591,21 @@ E(Y) = 5 × 9 = <strong>45</strong><br><br>
 </div>
 
 <h2>📝 课件知识点补全（不漏一个）</h2>
+
+<h3>📖 课本补充内容</h3>
+<div class="def-card" style="border-left:4px solid #2d6a4f">
+<p><span class="term">矩（课本§4.4补充）：</span>k阶原点矩 μₖ=E(Xᵏ)；k阶中心矩 νₖ=E[(X−μ)ᵏ]。期望是一阶原点矩，方差是二阶中心矩。偏度=ν₃/σ³，峰度=ν₄/σ⁴。</p>
+<p><span class="term">协方差矩阵：</span>n维随机向量的协方差矩阵Σ，其(i,j)元素为Cov(Xᵢ,Xⱼ)。对称且半正定。</p>
+<p><span class="term">独立与不相关的再辨析：</span>二维正态分布中，独立⟺不相关。但一般情况下不成立——这正是作业二第4题的意义。</p>
+</div>
+<div class="def-card" style="border-left:4px solid #2d6a4f">
+<p><span class="term">📝 课本典型习题：</span>设X~B(n,p)，求E(X)和D(X)。（用期望定义+组合恒等式推导）</p>
+<details><summary><strong>推导</strong></summary>E(X)=Σk·Cₙᵏpᵏqⁿ⁻ᵏ=npΣCₙ₋₁ᵏ⁻¹pᵏ⁻¹q^(n−1)−(k−1)=np(p+q)ⁿ⁻¹=<strong>np</strong>。类似可得E(X²)=npq+n²p²，D(X)=E(X²)−[E(X)]²=<strong>npq</strong>。</details>
+</div>
+<div class="def-card" style="border-left:4px solid #2d6a4f">
+<p><span class="term">📝 课本典型习题：</span>设(X,Y)服从二维正态N(μ₁,μ₂,σ₁²,σ₂²,ρ)，求条件期望E(X|Y=y)。</p>
+<details><summary><strong>答案</strong></summary>E(X|Y=y)=μ₁+ρ(σ₁/σ₂)(y−μ₂)。这是线性回归的理论基础！</details>
+</div>
 
 <h3>4.1 补充例题</h3>
 <div class="def-card" style="border-left:4px solid #e6c970">
@@ -1983,6 +2026,23 @@ H₁: σ² ≠ 5000（备择假设：方差有显著变化）<br>
 </table>
 
 <h2>📝 课件知识点补全（不漏一个）</h2>
+
+<h3>📖 课本补充：大数定律与中心极限定理 ⭐（课件略，课本第5章）</h3>
+<div class="def-card" style="border-left:4px solid #c1292e">
+<p><span class="term">切比雪夫不等式：</span>对任意ε>0，P(|X−μ|≥ε) ≤ σ²/ε²。它给出了随机变量偏离均值的概率上界——不需要知道具体分布！</p>
+<p><span class="term">大数定律（辛钦）：</span>X₁,…,Xₙ iid，E(Xᵢ)=μ。则对任意ε>0，lim P(|X̄ₙ−μ|<ε)=1。即样本均值依概率收敛到总体均值。</p>
+<p><span class="term">中心极限定理（林德伯格-莱维）：</span>X₁,…,Xₙ iid，E(Xᵢ)=μ, D(Xᵢ)=σ²。则当n→∞时，(X̄−μ)/(σ/√n) → N(0,1)。</p>
+<p><strong>核心意义：</strong>不管总体是什么分布，只要样本量足够大，样本均值的分布就近似正态——这就是为什么正态分布如此重要！</p>
+<p><strong>二项分布的正态近似：</strong>X~B(n,p)，当n大时，X ≈ N(np, np(1−p))。通常要求np≥5且n(1−p)≥5。</p>
+</div>
+<div class="def-card" style="border-left:4px solid #e6c970">
+<p><strong>课本例题：</strong>掷一枚均匀硬币100次，求正面次数在45到55之间的概率。</p>
+<details><summary><strong>解析</strong></summary>X~B(100,0.5)，np=50, np(1−p)=25。用正态近似：X≈N(50,25)。P(45≤X≤55)=P((45−50)/5≤Z≤(55−50)/5)=P(−1≤Z≤1)=Φ(1)−Φ(−1)=0.8413−0.1587=<strong>0.6826</strong></details>
+</div>
+<div class="def-card" style="border-left:4px solid #e6c970">
+<p><strong>课本例题：</strong>某保险公司有10000人参保，每人索赔概率0.0005，求索赔人数超过8人的概率。</p>
+<details><summary><strong>解析</strong></summary>X~B(10000,0.0005)，np=5。用泊松近似：P(X>8)=1−P(X≤8)≈1−Σ(k=0~8)5ᵏe⁻⁵/k!</details>
+</div>
 
 <h3>5.1 补充概念</h3>
 <div class="def-card" style="border-left:4px solid #c1292e">
