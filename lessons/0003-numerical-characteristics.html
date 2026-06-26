@@ -274,6 +274,57 @@ E(Y) = 5 × 9 = <strong>45</strong><br><br>
   <div class="feedback" id="quiz-indep-fb"></div>
 </div>
 
+<h2>📝 课件知识点补全（不漏一个）</h2>
+
+<h3>📖 课本补充内容</h3>
+<div class="def-card" style="border-left:4px solid #2d6a4f">
+<p><span class="term">矩（课本§4.4补充）：</span>k阶原点矩 μₖ=E(Xᵏ)；k阶中心矩 νₖ=E[(X−μ)ᵏ]。期望是一阶原点矩，方差是二阶中心矩。偏度=ν₃/σ³，峰度=ν₄/σ⁴。</p>
+<p><span class="term">协方差矩阵：</span>n维随机向量的协方差矩阵Σ，其(i,j)元素为Cov(Xᵢ,Xⱼ)。对称且半正定。</p>
+<p><span class="term">独立与不相关的再辨析：</span>二维正态分布中，独立⟺不相关。但一般情况下不成立——这正是作业二第4题的意义。</p>
+</div>
+<div class="def-card" style="border-left:4px solid #2d6a4f">
+<p><span class="term">📝 课本典型习题：</span>设X~B(n,p)，求E(X)和D(X)。（用期望定义+组合恒等式推导）</p>
+<details><summary><strong>推导</strong></summary>E(X)=Σk·Cₙᵏpᵏqⁿ⁻ᵏ=npΣCₙ₋₁ᵏ⁻¹pᵏ⁻¹q^(n−1)−(k−1)=np(p+q)ⁿ⁻¹=<strong>np</strong>。类似可得E(X²)=npq+n²p²，D(X)=E(X²)−[E(X)]²=<strong>npq</strong>。</details>
+</div>
+<div class="def-card" style="border-left:4px solid #2d6a4f">
+<p><span class="term">📝 课本典型习题：</span>设(X,Y)服从二维正态N(μ₁,μ₂,σ₁²,σ₂²,ρ)，求条件期望E(X|Y=y)。</p>
+<details><summary><strong>答案</strong></summary>E(X|Y=y)=μ₁+ρ(σ₁/σ₂)(y−μ₂)。这是线性回归的理论基础！</details>
+</div>
+
+<h3>4.1 补充例题</h3>
+<div class="def-card" style="border-left:4px solid #e6c970">
+<p><strong>新生儿评分期望：</strong>X分布列如课件，E(X)=Σxᵢpᵢ=<strong>3.75</strong></p>
+<p><strong>E(3X²)计算：</strong>用A的射击数据：E(3X²)=3×(64×0.2+81×0.1+100×0.7)=3×(12.8+8.1+70)=<strong>272.7</strong></p>
+</div>
+
+<h3>4.1 二维期望</h3>
+<div class="def-card" style="border-left:4px solid #c1292e">
+<p><strong>二维离散型：</strong>E[g(X,Y)]=ΣᵢΣⱼ g(xᵢ,yⱼ)pᵢⱼ</p>
+<p><strong>二维连续型：</strong>E[g(X,Y)]=∬ g(x,y)f(x,y)dxdy</p>
+</div>
+
+<h3>4.2 方差辨析（课件重点！）</h3>
+<div class="def-card" style="border-left:4px solid #c1292e">
+<p><strong>关键辨析：</strong>E(XY)=E(X)E(Y)时，D(X+Y)=D(X)+D(Y)。</p>
+<p>E(XY)=E(X)E(Y) ⇍ X与Y独立（反过来对）。</p>
+<p>X与Y独立 ⇒ E(XY)=E(X)E(Y) ⇒ D(X+Y)=D(X)+D(Y)。</p>
+<p><strong>串联关系：</strong>独立 → E(XY)=E(X)E(Y) → D(X+Y)=D(X)+D(Y)，但每一步反过来都不成立。</p>
+</div>
+<div class="def-card" style="border-left:4px solid #e6c970">
+<p><strong>正态组合例：</strong>X~N(1,2), Y~N(0,1)独立。E(2X−Y+3)=2×1−0+3=<strong>5</strong>；D(2X−Y+3)=4×2+1=<strong>9</strong>；2X−Y+3~<strong>N(5,9)</strong></p>
+</div>
+
+<h3>4.3 课件习题全解</h3>
+<div class="def-card" style="border-left:4px solid #e6c970">
+<p><strong>习题1：</strong>D(X)=4, D(Y)=2独立，D(2X−3Y)=4×4+9×2=<strong>34</strong></p>
+<p><strong>习题2：</strong>f(x)=1+x(−1≤x<0), 1−x(0≤x<1)。E(X)=∫₋₁⁰x(1+x)dx+∫₀¹x(1−x)dx=<strong>0</strong>（奇函数）。E(X²)=∫₋₁⁰x²(1+x)dx+∫₀¹x²(1−x)dx=<strong>1/6</strong>，D(X)=1/6</p>
+<p><strong>习题3：</strong>f(x,y)=(x+y)/8(0≤x≤2,0≤y≤2)。E(X)=E(Y)=∬x(x+y)/8 dxdy=<strong>7/6</strong>。E(XY)=∬xy(x+y)/8dxdy=4/3。Cov=4/3−(7/6)²=−1/36。ρ=−1/36/√(11/36·11/36)=<strong>−1/11</strong>。D(X+Y)=D(X)+D(Y)+2Cov=<strong>5/9</strong></p>
+<p><strong>习题4：</strong>圆盘直径D~U(a,b)，面积Y=πD²/4。E(Y)=∫_a^b (πx²/4)·(1/(b−a))dx=π(b³−a³)/(12(b−a))=<strong>π(a²+ab+b²)/12</strong></p>
+<p><strong>习题5：</strong>D(X)=25,D(Y)=36,ρ=0.4。D(X+Y)=25+36+2×0.4×5×6=<strong>85</strong></p>
+<p><strong>习题6：</strong>Cov(X,Z)=2, Cov(Y,Z)=1。Cov(X+Y,3Z)=3Cov(X,Z)+3Cov(Y,Z)=6+3=<strong>9</strong></p>
+<p><strong>习题7：</strong>已知联合分布列，求Cov(X,Y)。算E(X),E(Y),E(XY)后Cov=E(XY)−E(X)E(Y)=<strong>1/3</strong></p>
+</div>
+
 <h2>📐 第4章 公式汇总</h2>
 
 <table>

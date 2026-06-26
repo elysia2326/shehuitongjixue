@@ -317,6 +317,68 @@ H₁: σ² ≠ 5000（备择假设：方差有显著变化）<br>
   <tr><td>第6章</td><td>矩估计 / MLE / 置信区间 / 假设检验</td><td>作业三：1, 2, 3</td></tr>
 </table>
 
+<h2>📝 课件知识点补全（不漏一个）</h2>
+
+<h3>📖 课本补充：大数定律与中心极限定理 ⭐（课件略，课本第5章）</h3>
+<div class="def-card" style="border-left:4px solid #c1292e">
+<p><span class="term">切比雪夫不等式：</span>对任意ε>0，P(|X−μ|≥ε) ≤ σ²/ε²。它给出了随机变量偏离均值的概率上界——不需要知道具体分布！</p>
+<p><span class="term">大数定律（辛钦）：</span>X₁,…,Xₙ iid，E(Xᵢ)=μ。则对任意ε>0，lim P(|X̄ₙ−μ|<ε)=1。即样本均值依概率收敛到总体均值。</p>
+<p><span class="term">中心极限定理（林德伯格-莱维）：</span>X₁,…,Xₙ iid，E(Xᵢ)=μ, D(Xᵢ)=σ²。则当n→∞时，(X̄−μ)/(σ/√n) → N(0,1)。</p>
+<p><strong>核心意义：</strong>不管总体是什么分布，只要样本量足够大，样本均值的分布就近似正态——这就是为什么正态分布如此重要！</p>
+<p><strong>二项分布的正态近似：</strong>X~B(n,p)，当n大时，X ≈ N(np, np(1−p))。通常要求np≥5且n(1−p)≥5。</p>
+</div>
+<div class="def-card" style="border-left:4px solid #e6c970">
+<p><strong>课本例题：</strong>掷一枚均匀硬币100次，求正面次数在45到55之间的概率。</p>
+<details><summary><strong>解析</strong></summary>X~B(100,0.5)，np=50, np(1−p)=25。用正态近似：X≈N(50,25)。P(45≤X≤55)=P((45−50)/5≤Z≤(55−50)/5)=P(−1≤Z≤1)=Φ(1)−Φ(−1)=0.8413−0.1587=<strong>0.6826</strong></details>
+</div>
+<div class="def-card" style="border-left:4px solid #e6c970">
+<p><strong>课本例题：</strong>某保险公司有10000人参保，每人索赔概率0.0005，求索赔人数超过8人的概率。</p>
+<details><summary><strong>解析</strong></summary>X~B(10000,0.0005)，np=5。用泊松近似：P(X>8)=1−P(X≤8)≈1−Σ(k=0~8)5ᵏe⁻⁵/k!</details>
+</div>
+
+<h3>5.1 补充概念</h3>
+<div class="def-card" style="border-left:4px solid #c1292e">
+<p><span class="term">简单随机样本两条件：</span>①代表性（每个Xᵢ与总体X同分布）；②独立性（X₁,…,Xₙ相互独立）。合称<strong>独立同分布(iid)</strong>。</p>
+<p><span class="term">统计量：</span>样本的连续函数T(X₁,…,Xₙ)，不含任何未知参数。如X̄, S²是统计量；(X̄−μ)/σ不是（含未知μ,σ）。</p>
+</div>
+
+<h3>5.2-5.3 补充例题</h3>
+<div class="def-card" style="border-left:4px solid #e6c970">
+<p><strong>例2：</strong>X₁,X₂,X₃,X₄~N(0,2²)，X=a(X₁−2X₂)²+b(3X₃−4X₄)²。求a,b使X~χ²(2)。</p>
+<details><summary><strong>答案</strong></summary>X₁−2X₂~N(0,4+16)=N(0,20)；(X₁−2X₂)/√20~N(0,1)。(X₁−2X₂)²/20~χ²(1)→a=1/20。同理3X₃−4X₄~N(0,36+64)=N(0,100)，(3X₃−4X₄)²/100~χ²(1)→b=<strong>1/100</strong></details>
+</div>
+<div class="def-card" style="border-left:4px solid #e6c970">
+<p><strong>例4：</strong>E(X)=−1, E(X²)=4，X̄的分布。D(X)=4−1=3。X̄~N(−1, 3/n)。选<strong>A: N(−1, 3/n)</strong></p>
+<p><strong>例5：</strong>N(20,3)两独立样本(n₁=10,n₂=15)，求|X̄₁−X̄₂|>0.3的概率。X̄₁−X̄₂~N(0, 3/10+3/15)=N(0,0.5)。P(|Z|>0.3/√0.5)=2(1−Φ(0.424))≈<strong>0.6744</strong></p>
+</div>
+
+<h3>5.3 分位点完整讲解 ⭐（课件缺失重点！）</h3>
+<div class="def-card" style="border-left:4px solid #c1292e">
+<p><span class="term">定义：</span>连续型Y，α∈(0,1)。若P(Y>b)=α，则b=Y_α称为<strong>上α分位点</strong>。F(Y_α)=1−α。</p>
+<p><strong>三条性质：</strong>①P(Y>Y_α)=α, P(Y≤Y_α)=1−α</p>
+<p>②P(Y>Y_{1−α})=1−α, P(Y≤Y_{1−α})=α</p>
+<p>③P(Y≤Y_{1−α/2} 或 Y>Y_{α/2})=α, P(Y_{1−α/2}≤Y<Y_{α/2})=1−α</p>
+</div>
+<div class="def-card" style="border-left:4px solid #c1292e">
+<p><strong>四种分布的分位点表示：</strong></p>
+<p>N(0,1)：记z_α，满足z_{1−α}=−z_α。常用值：z₀.₀₅=1.645, z₀.₀₂₅=1.96</p>
+<p>χ²(n)：记χ²_α(n)，P(χ²>χ²_α(n))=α。如χ²₀.₀₂₅(10)=20.483, χ²₀.₉₇₅(10)=3.247</p>
+<p>t(n)：记t_α(n)，满足t_{1−α}=−t_α。如t₀.₀₂₅(20)=2.086, t₀.₀₂₅(8)=2.3060</p>
+<p>F(n₁,n₂)：记F_α(n₁,n₂)，满足F_{1−α}(n₁,n₂)=1/F_α(n₂,n₁)</p>
+</div>
+
+<h3>6.1 补充例题</h3>
+<div class="def-card" style="border-left:4px solid #e6c970">
+<p><strong>MLE例2（扩展分布列）：</strong>P(X=0)=θ², P(X=1)=2θ(1−θ), P(X=2)=θ², P(X=3)=1−2θ。样本3,1,3,0,3,1,2,3。矩估计=1/4，MLE由lnL求导解方程得出。（完整解答见作业三第1题）</p>
+</div>
+
+<h3>6.2 区间估计完整定义</h3>
+<div class="def-card" style="border-left:4px solid #c1292e">
+<p><span class="term">置信区间定义：</span>P(T₁≤θ≤T₂)=1−α，[T₁,T₂]是θ的置信度1−α的双侧置信区间。T₁,T₂分别是置信下限和上限。</p>
+<p><span class="term">精度：</span>区间长度的一半（越小越好）。<span class="term">置信度：</span>1−α（越大越好）。两者矛盾——保证置信度前提下提高精度。</p>
+<p><strong>引例：</strong>3000人高数成绩~N(μ,σ²)，抽100人X̄=70,S=8。用这些信息估计μ的分布→引出区间估计需求。</p>
+</div>
+
 <h2>📐 第5-6章 公式汇总</h2>
 
 <h3>第5章：样本及抽样分布</h3>
