@@ -23,46 +23,46 @@
 </div>
 
 <!-- ====== PART 1 ====== -->
-<h2>第一步：三大抽样分布——χ²、t、F（15分钟）</h2>
+<h2>第一步：三大抽样分布——χ<sup>2</sup>、t、F（15分钟）</h2>
 
 <div class="formula">
-  <span class="label">χ²分布（卡方分布）</span>
-  X₁,…,Xₙ iid~N(0,1) ⇒ ΣX<sub>i</sub>² ~ χ²(n)<br>
-  E[χ²(n)] = n<br>
-  D[χ²(n)] = 2n<br>
-  可加性：χ²(n)+χ²(m) ~ χ²(n+m)（独立时）
+  <span class="label">χ<sup>2</sup>分布（卡方分布）</span>
+  X<sub>1</sub>,…,X<sub>n</sub> iid~N(0,1) ⇒ ΣX<sub>i</sub><sup>2</sup> ~ χ<sup>2</sup>(n)<br>
+  E[χ<sup>2</sup>(n)] = n<br>
+  D[χ<sup>2</sup>(n)] = 2n<br>
+  可加性：χ<sup>2</sup>(n)+χ<sup>2</sup>(m) ~ χ<sup>2</sup>(n+m)（独立时）
 </div>
 
 <details class="proof-block">
-<summary><strong>📐 证明：E(X̄)=μ, D(X̄)=σ²/n + χ²可加性 + t²=F(1,n)</strong>（点击展开）</summary>
+<summary><strong>📐 证明：E(X̄)=μ, D(X̄)=σ<sup>2</sup>/n + χ<sup>2</sup>可加性 + t<sup>2</sup>=F(1,n)</strong>（点击展开）</summary>
 <div style="padding:0.75rem 0">
-<p><strong>E(X̄)=μ：</strong>E(X̄)=E(ΣXᵢ/n)=(1/n)ΣE(Xᵢ)=(1/n)·nμ=μ</p>
-<p><strong>D(X̄)=σ²/n：</strong>独立⇒D(X̄)=D(ΣXᵢ/n)=(1/n²)ΣD(Xᵢ)=(1/n²)·nσ²=σ²/n</p>
-<p><strong>χ²可加性：</strong>X=ΣZᵢ²~χ²(n)，Y=ΣWⱼ²~χ²(m)，独立⇒X+Y=ΣZᵢ²+ΣWⱼ²，这是n+m个独立N(0,1)平方和~χ²(n+m)</p>
-<p><strong>t²~F(1,n)：</strong>T=Z/√(Y/n)，T²=Z²/(Y/n)=(Z²/1)/(Y/n)，Z²~χ²(1)，由F定义即F(1,n) ∎</p>
+<p><strong>E(X̄)=μ：</strong>E(X̄)=E(ΣX<sub>i</sub>/n)=(1/n)ΣE(X<sub>i</sub>)=(1/n)·nμ=μ</p>
+<p><strong>D(X̄)=σ<sup>2</sup>/n：</strong>独立⇒D(X̄)=D(ΣX<sub>i</sub>/n)=(1/n<sup>2</sup>)ΣD(X<sub>i</sub>)=(1/n<sup>2</sup>)·nσ<sup>2</sup>=σ<sup>2</sup>/n</p>
+<p><strong>χ<sup>2</sup>可加性：</strong>X=ΣZ<sub>i</sub><sup>2</sup>~χ<sup>2</sup>(n)，Y=ΣW<sub>j</sub><sup>2</sup>~χ<sup>2</sup>(m)，独立⇒X+Y=ΣZ<sub>i</sub><sup>2</sup>+ΣW<sub>j</sub><sup>2</sup>，这是n+m个独立N(0,1)平方和~χ<sup>2</sup>(n+m)</p>
+<p><strong>t<sup>2</sup>~F(1,n)：</strong>T=Z/√(Y/n)，T<sup>2</sup>=Z<sup>2</sup>/(Y/n)=(Z<sup>2</sup>/1)/(Y/n)，Z<sup>2</sup>~χ<sup>2</sup>(1)，由F定义即F(1,n) ∎</p>
 </div>
 </details>
 
 <div class="formula">
   <span class="label">t分布</span>
-  X~N(0,1), Y~χ²(n) 独立 ⇒ X/√(Y/n) ~ t(n)<br>
+  X~N(0,1), Y~χ<sup>2</sup>(n) 独立 ⇒ X/√(Y/n) ~ t(n)<br>
   当 n→∞ 时，t(n) → N(0,1)
 </div>
 
 <div class="formula">
   <span class="label">F分布</span>
-  X~χ²(n), Y~χ²(m) 独立 ⇒ (X/n)/(Y/m) ~ F(n,m)<br>
+  X~χ<sup>2</sup>(n), Y~χ<sup>2</sup>(m) 独立 ⇒ (X/n)/(Y/m) ~ F(n,m)<br>
   若 F~F(n,m)，则 1/F ~ F(m,n)<br>
-  若 t~t(n)，则 t² ~ F(1,n)
+  若 t~t(n)，则 t<sup>2</sup> ~ F(1,n)
 </div>
 
 <h3>⭐ 单正态总体抽样分布定理（必背！）</h3>
 <div class="formula">
-  <span class="label">设总体 X~N(μ,σ²)，样本容量为n</span>
+  <span class="label">设总体 X~N(μ,σ<sup>2</sup>)，样本容量为n</span>
   ① <u><span style="text-decoration:overline">X</span> − μ</u> ~ N(0,1)<br>
   <span style="margin-left:1.5em">σ/√n</span><br>
-  ② <u>(n−1)S²</u> ~ χ²(n−1)，且 <span style="text-decoration:overline">X</span>与S² 独立<br>
-  <span style="margin-left:1em">σ²</span><br>
+  ② <u>(n−1)S<sup>2</sup></u> ~ χ<sup>2</sup>(n−1)，且 <span style="text-decoration:overline">X</span>与S<sup>2</sup> 独立<br>
+  <span style="margin-left:1em">σ<sup>2</sup></span><br>
   ③ <u><span style="text-decoration:overline">X</span> − μ</u> ~ t(n−1)<br>
   <span style="margin-left:1.5em">S/√n</span>
 </div>
@@ -70,24 +70,24 @@
 <details class="proof-block">
 <summary><strong>📐 推导：抽样分布定理三条结论的来源</strong>（点击展开）</summary>
 <div style="padding:0.75rem 0">
-<p><strong>① (X̄−μ)/(σ/√n)~N(0,1)：</strong>X̄~N(μ,σ²/n)（正态线性变换性质），标准化即得。</p>
-<p><strong>② (n−1)S²/σ²~χ²(n−1)：</strong>涉及正交变换和Cochran定理（课件标注"证明略"，考试不要求完整证明，记住结论即可）。</p>
+<p><strong>① (X̄−μ)/(σ/√n)~N(0,1)：</strong>X̄~N(μ,σ<sup>2</sup>/n)（正态线性变换性质），标准化即得。</p>
+<p><strong>② (n−1)S<sup>2</sup>/σ<sup>2</sup>~χ<sup>2</sup>(n−1)：</strong>涉及正交变换和Cochran定理（课件标注"证明略"，考试不要求完整证明，记住结论即可）。</p>
 <p><strong>③ (X̄−μ)/(S/√n)~t(n−1)：</strong></p>
 <ol class="steps">
   <li>由①：(X̄−μ)/(σ/√n)~N(0,1)</li>
-  <li>由②：(n−1)S²/σ²~χ²(n−1)，且与X̄独立</li>
-  <li>两式相除：[(X̄−μ)/(σ/√n)]/√[S²/σ²]=(X̄−μ)/(S/√n)</li>
-  <li>由t分布定义=N(0,1)/√(χ²/df)=t(n−1) ∎</li>
+  <li>由②：(n−1)S<sup>2</sup>/σ<sup>2</sup>~χ<sup>2</sup>(n−1)，且与X̄独立</li>
+  <li>两式相除：[(X̄−μ)/(σ/√n)]/√[S<sup>2</sup>/σ<sup>2</sup>]=(X̄−μ)/(S/√n)</li>
+  <li>由t分布定义=N(0,1)/√(χ<sup>2</sup>/df)=t(n−1) ∎</li>
 </ol>
 </div>
 </details>
 
 <div class="quiz" id="quiz-samp">
-  <p class="question"><strong>✏️ 自测：</strong>设总体 X~N(2, 3²)，X₁,…,Xₙ为样本，则 Σ(X<sub>i</sub>−2)²/9 服从什么分布？</p>
+  <p class="question"><strong>✏️ 自测：</strong>设总体 X~N(2, 3<sup>2</sup>)，X<sub>1</sub>,…,X<sub>n</sub>为样本，则 Σ(X<sub>i</sub>−2)<sup>2</sup>/9 服从什么分布？</p>
   <div class="options">
     <div class="option" onclick="checkQuiz('quiz-samp', this, false)">A. N(0,1)</div>
     <div class="option" onclick="checkQuiz('quiz-samp', this, false)">B. t(n)</div>
-    <div class="option" onclick="checkQuiz('quiz-samp', this, true)">C. χ²(n)</div>
+    <div class="option" onclick="checkQuiz('quiz-samp', this, true)">C. χ<sup>2</sup>(n)</div>
     <div class="option" onclick="checkQuiz('quiz-samp', this, false)">D. F(n,n)</div>
   </div>
   <div class="feedback" id="quiz-samp-fb"></div>
@@ -99,7 +99,7 @@
 <h3>矩估计法（三步法）</h3>
 <ol class="steps">
   <li>确定待估参数个数k</li>
-  <li>计算总体矩E(X), E(X²), …</li>
+  <li>计算总体矩E(X), E(X<sup>2</sup>), …</li>
   <li>用样本矩替换总体矩，解出参数</li>
 </ol>
 <div class="tip">
@@ -117,14 +117,14 @@
 <details class="proof-block">
 <summary><strong>📐 原理：矩估计原理 + MLE为什么取对数</strong>（点击展开）</summary>
 <div style="padding:0.75rem 0">
-<p><strong>矩估计原理：</strong>大数定律保证样本矩依概率收敛到总体矩。令 A₁=X̄=E(X)，A₂=(1/n)ΣXᵢ²=E(X²)，…，解方程组得估计量。</p>
-<p><strong>MLE为什么取对数：</strong>L(θ)=Πf(xᵢ;θ)是连乘积，直接求导很繁琐。ln是单调函数，L和lnL在同一点取最大值——不影响极值位置。取对数后 lnL=Σlnf(xᵢ;θ)，连乘积变求和，求导简单得多。∎</p>
+<p><strong>矩估计原理：</strong>大数定律保证样本矩依概率收敛到总体矩。令 A<sub>1</sub>=X̄=E(X)，A<sub>2</sub>=(1/n)ΣX<sub>i</sub><sup>2</sup>=E(X<sup>2</sup>)，…，解方程组得估计量。</p>
+<p><strong>MLE为什么取对数：</strong>L(θ)=Πf(x<sub>i</sub>;θ)是连乘积，直接求导很繁琐。ln是单调函数，L和lnL在同一点取最大值——不影响极值位置。取对数后 lnL=Σlnf(x<sub>i</sub>;θ)，连乘积变求和，求导简单得多。∎</p>
 </div>
 </details>
 
 <div class="def-card" style="border-left:4px solid var(--accent)">
 <p><span class="term">📋 作业三 第1题：矩估计 + 极大似然估计 ⭐</span></p>
-<p>总体X分布列：P(X=0)=θ², P(X=1)=2θ(1−θ), P(X=2)=θ², P(X=3)=1−2θ。样本值：3,1,3,0,3,1,2,3。求θ的矩估计值和极大似然估计值。</p>
+<p>总体X分布列：P(X=0)=θ<sup>2</sup>, P(X=1)=2θ(1−θ), P(X=2)=θ<sup>2</sup>, P(X=3)=1−2θ。样本值：3,1,3,0,3,1,2,3。求θ的矩估计值和极大似然估计值。</p>
 <details><summary><strong>点击查看逐步解析</strong></summary>
 <div style="padding:0.5rem 0">
 <p><strong>（一）矩估计——三步法</strong><br><br>
@@ -133,10 +133,10 @@
 <span style="text-decoration:overline">x</span> = (3+1+3+0+3+1+2+3) / 8 = 16/8 = <strong>2</strong><br><br>
 <strong>第2步：计算总体期望E(X)（用θ表示）</strong><br>
 E(X) = 0×P(X=0) + 1×P(X=1) + 2×P(X=2) + 3×P(X=3)<br>
-= 0×θ² + 1×2θ(1−θ) + 2×θ² + 3×(1−2θ)<br>
-= 2θ − 2θ² + 2θ² + 3 − 6θ<br>
-= 2θ − 2θ² + 2θ² + 3 − 6θ<br>
-= <strong>3 − 4θ</strong>（θ²项抵消了！）<br><br>
+= 0×θ<sup>2</sup> + 1×2θ(1−θ) + 2×θ<sup>2</sup> + 3×(1−2θ)<br>
+= 2θ − 2θ<sup>2</sup> + 2θ<sup>2</sup> + 3 − 6θ<br>
+= 2θ − 2θ<sup>2</sup> + 2θ<sup>2</sup> + 3 − 6θ<br>
+= <strong>3 − 4θ</strong>（θ<sup>2</sup>项抵消了！）<br><br>
 <strong>第3步：令样本均值 = 总体期望，解θ</strong><br>
 <span style="text-decoration:overline">x</span> = E(X)<br>
 2 = 3 − 4θ<br>
@@ -148,10 +148,10 @@ E(X) = 0×P(X=0) + 1×P(X=1) + 2×P(X=2) + 3×P(X=3)<br>
 （检验：1+2+1+4=8，等于样本总数 ✓）<br><br>
 <strong>第2步：写出似然函数L(θ)</strong><br>
 L(θ) = 每个样本值对应概率的乘积<br>
-= P(X=0)¹ × P(X=1)² × P(X=2)¹ × P(X=3)⁴<br>
-= [θ²]¹ × [2θ(1−θ)]² × [θ²]¹ × [1−2θ]⁴<br>
-= θ² × 4θ²(1−θ)² × θ² × (1−2θ)⁴<br>
-= <strong>4θ⁶(1−θ)²(1−2θ)⁴</strong><br><br>
+= P(X=0)¹ × P(X=1)<sup>2</sup> × P(X=2)¹ × P(X=3)<sup>4</sup><br>
+= [θ<sup>2</sup>]¹ × [2θ(1−θ)]<sup>2</sup> × [θ<sup>2</sup>]¹ × [1−2θ]<sup>4</sup><br>
+= θ<sup>2</sup> × 4θ<sup>2</sup>(1−θ)<sup>2</sup> × θ<sup>2</sup> × (1−2θ)<sup>4</sup><br>
+= <strong>4θ<sup>6</sup>(1−θ)<sup>2</sup>(1−2θ)<sup>4</sup></strong><br><br>
 <strong>第3步：取自然对数</strong><br>
 ln L = ln 4 + 6ln θ + 2ln(1−θ) + 4ln(1−2θ)<br><br>
 <strong>第4步：对θ求导，令导数为0</strong><br>
@@ -178,41 +178,41 @@ d(ln L)/dθ = 6/θ − 2/(1−θ) − 8/(1−2θ) = 0<br>
 <table>
   <tr><th>条件</th><th>估计μ</th><th>枢轴量</th><th>置信区间公式</th></tr>
   <tr>
-    <td>σ²已知</td>
+    <td>σ<sup>2</sup>已知</td>
     <td>μ</td>
     <td>Z = (<span style="text-decoration:overline">X</span>−μ)/(σ/√n) ~ N(0,1)</td>
     <td><span style="text-decoration:overline">X</span> ± z<sub>α/2</sub>·σ/√n</td>
   </tr>
   <tr>
-    <td>σ²未知</td>
+    <td>σ<sup>2</sup>未知</td>
     <td>μ</td>
     <td>T = (<span style="text-decoration:overline">X</span>−μ)/(S/√n) ~ t(n−1)</td>
     <td><span style="text-decoration:overline">X</span> ± t<sub>α/2</sub>(n−1)·S/√n</td>
   </tr>
   <tr>
     <td>μ未知</td>
-    <td>σ²</td>
-    <td>(n−1)S²/σ² ~ χ²(n−1)</td>
-    <td>[<u>(n−1)S²</u>, <u>(n−1)S²</u>]<br><span style="margin-left:0.5em">χ²<sub>α/2</sub></span><span style="margin-left:1.5em">χ²<sub>1−α/2</sub></span></td>
+    <td>σ<sup>2</sup></td>
+    <td>(n−1)S<sup>2</sup>/σ<sup>2</sup> ~ χ<sup>2</sup>(n−1)</td>
+    <td>[<u>(n−1)S<sup>2</sup></u>, <u>(n−1)S<sup>2</sup></u>]<br><span style="margin-left:0.5em">χ<sup>2</sup><sub>α/2</sub></span><span style="margin-left:1.5em">χ<sup>2</sup><sub>1−α/2</sub></span></td>
   </tr>
 </table>
 
 <div class="tip">
-  <strong>记忆口诀：</strong>σ已知用z，σ未知用t，估计σ²用χ²。置信区间 = 点估计 ± 分位点 × 标准误。
+  <strong>记忆口诀：</strong>σ已知用z，σ未知用t，估计σ<sup>2</sup>用χ<sup>2</sup>。置信区间 = 点估计 ± 分位点 × 标准误。
 </div>
 
 <details class="proof-block">
 <summary><strong>📐 推导：三种置信区间公式（枢轴变量法）</strong>（点击展开）</summary>
 <div style="padding:0.75rem 0">
-<p><strong>① σ²已知→μ：</strong>枢轴量 Z=(X̄−μ)/(σ/√n)~N(0,1)，P(−z<sub>α/2</sub><Z<z<sub>α/2</sub>)=1−α，代入解出μ：X̄±z<sub>α/2</sub>·σ/√n</p>
-<p><strong>② σ²未知→μ：</strong>同理用 t=(X̄−μ)/(S/√n)~t(n−1)：X̄±t<sub>α/2</sub>(n−1)·S/√n</p>
-<p><strong>③ μ未知→σ²：</strong>枢轴量 (n−1)S²/σ²~χ²(n−1)，P(χ²<sub>1−α/2</sub><(n−1)S²/σ²<χ²<sub>α/2</sub>)=1−α，解出σ²：[(n−1)S²/χ²<sub>α/2</sub>, (n−1)S²/χ²<sub>1−α/2</sub>] ∎</p>
+<p><strong>① σ<sup>2</sup>已知→μ：</strong>枢轴量 Z=(X̄−μ)/(σ/√n)~N(0,1)，P(−z<sub>α/2</sub><Z<z<sub>α/2</sub>)=1−α，代入解出μ：X̄±z<sub>α/2</sub>·σ/√n</p>
+<p><strong>② σ<sup>2</sup>未知→μ：</strong>同理用 t=(X̄−μ)/(S/√n)~t(n−1)：X̄±t<sub>α/2</sub>(n−1)·S/√n</p>
+<p><strong>③ μ未知→σ<sup>2</sup>：</strong>枢轴量 (n−1)S<sup>2</sup>/σ<sup>2</sup>~χ<sup>2</sup>(n−1)，P(χ<sup>2</sup><sub>1−α/2</sub><(n−1)S<sup>2</sup>/σ<sup>2</sup><χ<sup>2</sup><sub>α/2</sub>)=1−α，解出σ<sup>2</sup>：[(n−1)S<sup>2</sup>/χ<sup>2</sup><sub>α/2</sub>, (n−1)S<sup>2</sup>/χ<sup>2</sup><sub>1−α/2</sub>] ∎</p>
 </div>
 </details>
 
 <div class="def-card" style="border-left:4px solid var(--accent)">
 <p><span class="term">📋 作业三 第3题：置信区间（已知方差 vs 未知方差）⭐</span></p>
-<p>清漆干燥时间~N(μ,σ²)，9个样品：6,5.7,5.8,6.5,7.0,6.3,5.6,6.1,5。求μ的95%置信区间：（1）σ=0.6已知；（2）σ未知。（t<sub>0.025</sub>(8)=2.3060）</p>
+<p>清漆干燥时间~N(μ,σ<sup>2</sup>)，9个样品：6,5.7,5.8,6.5,7.0,6.3,5.6,6.1,5。求μ的95%置信区间：（1）σ=0.6已知；（2）σ未知。（t<sub>0.025</sub>(8)=2.3060）</p>
 <details><summary><strong>逐步解析</strong></summary>
 <div style="padding:0.5rem 0">
 <p><strong>第1步——计算样本均值：</strong><br>
@@ -252,44 +252,44 @@ t<sub>0.025</sub>(8) = 2.3060（题目已给）<br>
 
 <p><strong>假设检验标准步骤：</strong></p>
 <ol class="steps">
-  <li>建立假设：H₀（原假设）vs H₁（备择假设）</li>
-  <li>选择检验统计量（根据检验对象选择z/t/χ²/F）</li>
+  <li>建立假设：H<sub>0</sub>（原假设）vs H<sub>1</sub>（备择假设）</li>
+  <li>选择检验统计量（根据检验对象选择z/t/χ<sup>2</sup>/F）</li>
   <li>确定拒绝域（根据α查表找临界值）</li>
-  <li>计算检验统计量的值，做出决策（落入拒绝域则拒绝H₀）</li>
+  <li>计算检验统计量的值，做出决策（落入拒绝域则拒绝H<sub>0</sub>）</li>
 </ol>
 
 <div class="formula">
   <span class="label">常见检验对照</span>
   检验均值μ（σ已知）→ Z检验<br>
   检验均值μ（σ未知）→ t检验<br>
-  检验方差σ² → χ²检验<br>
+  检验方差σ<sup>2</sup> → χ<sup>2</sup>检验<br>
   检验两个方差是否相等 → F检验
 </div>
 
 <div class="def-card" style="border-left:4px solid var(--accent)">
-<p><span class="term">📋 作业三 第2题：假设检验（方差检验—χ²检验）</span></p>
-<p>电池寿命~N(μ,σ²)，σ²=5000。取26只，S²=9200。能否推断波动性有显著变化？</p>
+<p><span class="term">📋 作业三 第2题：假设检验（方差检验—χ<sup>2</sup>检验）</span></p>
+<p>电池寿命~N(μ,σ<sup>2</sup>)，σ<sup>2</sup>=5000。取26只，S<sup>2</sup>=9200。能否推断波动性有显著变化？</p>
 <details><summary><strong>标准四步法</strong></summary>
 <div style="padding:0.5rem 0">
 <p><strong>假设检验标准四步法（考试简答题直接套此框架）：</strong><br><br>
 <strong>第1步——建立假设：</strong><br>
-H₀: σ² = 5000（原假设：方差没有变化）<br>
-H₁: σ² ≠ 5000（备择假设：方差有显著变化）<br>
+H<sub>0</sub>: σ<sup>2</sup> = 5000（原假设：方差没有变化）<br>
+H<sub>1</sub>: σ<sup>2</sup> ≠ 5000（备择假设：方差有显著变化）<br>
 这是双侧检验（因为问的是"有变化"，不指定变大还是变小）<br><br>
 <strong>第2步——选择并计算检验统计量：</strong><br>
-检验方差用χ²统计量：<br>
-χ² = (n−1)S² / σ₀²<br>
-其中 n=26（样本量），S²=9200（样本方差），σ₀²=5000（原假设下的方差）<br>
-χ² = 25 × 9200 / 5000 = 230000 / 5000 = <strong>46</strong><br>
+检验方差用χ<sup>2</sup>统计量：<br>
+χ<sup>2</sup> = (n−1)S<sup>2</sup> / σ<sub>0</sub><sup>2</sup><br>
+其中 n=26（样本量），S<sup>2</sup>=9200（样本方差），σ<sub>0</sub><sup>2</sup>=5000（原假设下的方差）<br>
+χ<sup>2</sup> = 25 × 9200 / 5000 = 230000 / 5000 = <strong>46</strong><br>
 自由度 df = n−1 = 25<br><br>
 <strong>第3步——确定拒绝域：</strong><br>
-给定显著性水平α，查χ²分布表：<br>
-上侧临界值：χ²<sub>α/2</sub>(25)<br>
-下侧临界值：χ²<sub>1−α/2</sub>(25)<br>
-拒绝域：χ² > χ²<sub>α/2</sub>(25) 或 χ² < χ²<sub>1−α/2</sub>(25)<br><br>
+给定显著性水平α，查χ<sup>2</sup>分布表：<br>
+上侧临界值：χ<sup>2</sup><sub>α/2</sub>(25)<br>
+下侧临界值：χ<sup>2</sup><sub>1−α/2</sub>(25)<br>
+拒绝域：χ<sup>2</sup> > χ<sup>2</sup><sub>α/2</sub>(25) 或 χ<sup>2</sup> < χ<sup>2</sup><sub>1−α/2</sub>(25)<br><br>
 <strong>第4步——做出决策：</strong><br>
-比较χ²=46与临界值。若落入拒绝域，拒绝H₀，认为方差有显著变化。<br>
-（以α=0.05为例：χ²₀.₀₂₅(25)=40.646, χ²₀.₉₇₅(25)=13.120。χ²=46>40.646，落入拒绝域，拒绝H₀，认为方差有显著变化。）</p>
+比较χ<sup>2</sup>=46与临界值。若落入拒绝域，拒绝H<sub>0</sub>，认为方差有显著变化。<br>
+（以α=0.05为例：χ<sup>2</sup><sub>0</sub>.<sub>0</sub><sub>2</sub><sub>5</sub>(25)=40.646, χ<sup>2</sup><sub>0</sub>.<sub>9</sub><sub>7</sub><sub>5</sub>(25)=13.120。χ<sup>2</sup>=46>40.646，落入拒绝域，拒绝H<sub>0</sub>，认为方差有显著变化。）</p>
 </div>
 </details>
 </div>
@@ -299,7 +299,7 @@ H₁: σ² ≠ 5000（备择假设：方差有显著变化）<br>
   <div class="options">
     <div class="option" onclick="checkQuiz('quiz-test', this, false)">A. 正态分布</div>
     <div class="option" onclick="checkQuiz('quiz-test', this, false)">B. t分布</div>
-    <div class="option" onclick="checkQuiz('quiz-test', this, true)">C. χ²分布</div>
+    <div class="option" onclick="checkQuiz('quiz-test', this, true)">C. χ<sup>2</sup>分布</div>
     <div class="option" onclick="checkQuiz('quiz-test', this, false)">D. F分布</div>
   </div>
   <div class="feedback" id="quiz-test-fb"></div>
@@ -321,9 +321,9 @@ H₁: σ² ≠ 5000（备择假设：方差有显著变化）<br>
 
 <h3>📖 课本补充：大数定律与中心极限定理 ⭐（课件略，课本第5章）</h3>
 <div class="def-card" style="border-left:4px solid #c1292e">
-<p><span class="term">切比雪夫不等式：</span>对任意ε>0，P(|X−μ|≥ε) ≤ σ²/ε²。它给出了随机变量偏离均值的概率上界——不需要知道具体分布！</p>
-<p><span class="term">大数定律（辛钦）：</span>X₁,…,Xₙ iid，E(Xᵢ)=μ。则对任意ε>0，lim P(|X̄ₙ−μ|<ε)=1。即样本均值依概率收敛到总体均值。</p>
-<p><span class="term">中心极限定理（林德伯格-莱维）：</span>X₁,…,Xₙ iid，E(Xᵢ)=μ, D(Xᵢ)=σ²。则当n→∞时，(X̄−μ)/(σ/√n) → N(0,1)。</p>
+<p><span class="term">切比雪夫不等式：</span>对任意ε>0，P(|X−μ|≥ε) ≤ σ<sup>2</sup>/ε<sup>2</sup>。它给出了随机变量偏离均值的概率上界——不需要知道具体分布！</p>
+<p><span class="term">大数定律（辛钦）：</span>X<sub>1</sub>,…,X<sub>n</sub> iid，E(X<sub>i</sub>)=μ。则对任意ε>0，lim P(|X̄<sub>n</sub>−μ|<ε)=1。即样本均值依概率收敛到总体均值。</p>
+<p><span class="term">中心极限定理（林德伯格-莱维）：</span>X<sub>1</sub>,…,X<sub>n</sub> iid，E(X<sub>i</sub>)=μ, D(X<sub>i</sub>)=σ<sup>2</sup>。则当n→∞时，(X̄−μ)/(σ/√n) → N(0,1)。</p>
 <p><strong>核心意义：</strong>不管总体是什么分布，只要样本量足够大，样本均值的分布就近似正态——这就是为什么正态分布如此重要！</p>
 <p><strong>二项分布的正态近似：</strong>X~B(n,p)，当n大时，X ≈ N(np, np(1−p))。通常要求np≥5且n(1−p)≥5。</p>
 </div>
@@ -333,23 +333,23 @@ H₁: σ² ≠ 5000（备择假设：方差有显著变化）<br>
 </div>
 <div class="def-card" style="border-left:4px solid #e6c970">
 <p><strong>课本例题：</strong>某保险公司有10000人参保，每人索赔概率0.0005，求索赔人数超过8人的概率。</p>
-<details><summary><strong>解析</strong></summary>X~B(10000,0.0005)，np=5。用泊松近似λ=5：P(X>8)=1−Σ(k=0 to 8)5ᵏe⁻⁵/k!。查泊松分布表或计算：Σ≈0.9319，P(X>8)≈<strong>0.0681</strong></details>
+<details><summary><strong>解析</strong></summary>X~B(10000,0.0005)，np=5。用泊松近似λ=5：P(X>8)=1−Σ(k=0 to 8)5<sup>k</sup>e<sup>−</sup><sup>5</sup>/k!。查泊松分布表或计算：Σ≈0.9319，P(X>8)≈<strong>0.0681</strong></details>
 </div>
 
 <h3>5.1 补充概念</h3>
 <div class="def-card" style="border-left:4px solid #c1292e">
-<p><span class="term">简单随机样本两条件：</span>①代表性（每个Xᵢ与总体X同分布）；②独立性（X₁,…,Xₙ相互独立）。合称<strong>独立同分布(iid)</strong>。</p>
-<p><span class="term">统计量：</span>样本的连续函数T(X₁,…,Xₙ)，不含任何未知参数。如X̄, S²是统计量；(X̄−μ)/σ不是（含未知μ,σ）。</p>
+<p><span class="term">简单随机样本两条件：</span>①代表性（每个X<sub>i</sub>与总体X同分布）；②独立性（X<sub>1</sub>,…,X<sub>n</sub>相互独立）。合称<strong>独立同分布(iid)</strong>。</p>
+<p><span class="term">统计量：</span>样本的连续函数T(X<sub>1</sub>,…,X<sub>n</sub>)，不含任何未知参数。如X̄, S<sup>2</sup>是统计量；(X̄−μ)/σ不是（含未知μ,σ）。</p>
 </div>
 
 <h3>5.2-5.3 补充例题</h3>
 <div class="def-card" style="border-left:4px solid #e6c970">
-<p><strong>例2：</strong>X₁,X₂,X₃,X₄~N(0,2²)，X=a(X₁−2X₂)²+b(3X₃−4X₄)²。求a,b使X~χ²(2)。</p>
-<details><summary><strong>答案</strong></summary>X₁−2X₂~N(0,4+16)=N(0,20)；(X₁−2X₂)/√20~N(0,1)。(X₁−2X₂)²/20~χ²(1)→a=1/20。同理3X₃−4X₄~N(0,36+64)=N(0,100)，(3X₃−4X₄)²/100~χ²(1)→b=<strong>1/100</strong></details>
+<p><strong>例2：</strong>X<sub>1</sub>,X<sub>2</sub>,X<sub>3</sub>,X<sub>4</sub>~N(0,2<sup>2</sup>)，X=a(X<sub>1</sub>−2X<sub>2</sub>)<sup>2</sup>+b(3X<sub>3</sub>−4X<sub>4</sub>)<sup>2</sup>。求a,b使X~χ<sup>2</sup>(2)。</p>
+<details><summary><strong>答案</strong></summary>X<sub>1</sub>−2X<sub>2</sub>~N(0,4+16)=N(0,20)；(X<sub>1</sub>−2X<sub>2</sub>)/√20~N(0,1)。(X<sub>1</sub>−2X<sub>2</sub>)<sup>2</sup>/20~χ<sup>2</sup>(1)→a=1/20。同理3X<sub>3</sub>−4X<sub>4</sub>~N(0,36+64)=N(0,100)，(3X<sub>3</sub>−4X<sub>4</sub>)<sup>2</sup>/100~χ<sup>2</sup>(1)→b=<strong>1/100</strong></details>
 </div>
 <div class="def-card" style="border-left:4px solid #e6c970">
-<p><strong>例4：</strong>E(X)=−1, E(X²)=4，X̄的分布。D(X)=4−1=3。X̄~N(−1, 3/n)。选<strong>A: N(−1, 3/n)</strong></p>
-<p><strong>例5：</strong>N(20,3)两独立样本(n₁=10,n₂=15)，求|X̄₁−X̄₂|>0.3的概率。X̄₁−X̄₂~N(0, 3/10+3/15)=N(0,0.5)。P(|Z|>0.3/√0.5)=2(1−Φ(0.424))≈<strong>0.6744</strong></p>
+<p><strong>例4：</strong>E(X)=−1, E(X<sup>2</sup>)=4，X̄的分布。D(X)=4−1=3。X̄~N(−1, 3/n)。选<strong>A: N(−1, 3/n)</strong></p>
+<p><strong>例5：</strong>N(20,3)两独立样本(n<sub>1</sub>=10,n<sub>2</sub>=15)，求|X̄<sub>1</sub>−X̄<sub>2</sub>|>0.3的概率。X̄<sub>1</sub>−X̄<sub>2</sub>~N(0, 3/10+3/15)=N(0,0.5)。P(|Z|>0.3/√0.5)=2(1−Φ(0.424))≈<strong>0.6744</strong></p>
 </div>
 
 <h3>5.3 分位点完整讲解 ⭐（课件缺失重点！）</h3>
@@ -361,22 +361,22 @@ H₁: σ² ≠ 5000（备择假设：方差有显著变化）<br>
 </div>
 <div class="def-card" style="border-left:4px solid #c1292e">
 <p><strong>四种分布的分位点表示：</strong></p>
-<p>N(0,1)：记z_α，满足z_{1−α}=−z_α。常用值：z₀.₀₅=1.645, z₀.₀₂₅=1.96</p>
-<p>χ²(n)：记χ²_α(n)，P(χ²>χ²_α(n))=α。如χ²₀.₀₂₅(10)=20.483, χ²₀.₉₇₅(10)=3.247</p>
-<p>t(n)：记t_α(n)，满足t_{1−α}=−t_α。如t₀.₀₂₅(20)=2.086, t₀.₀₂₅(8)=2.3060</p>
-<p>F(n₁,n₂)：记F_α(n₁,n₂)，满足F_{1−α}(n₁,n₂)=1/F_α(n₂,n₁)</p>
+<p>N(0,1)：记z_α，满足z_{1−α}=−z_α。常用值：z<sub>0</sub>.<sub>0</sub><sub>5</sub>=1.645, z<sub>0</sub>.<sub>0</sub><sub>2</sub><sub>5</sub>=1.96</p>
+<p>χ<sup>2</sup>(n)：记χ<sup>2</sup>_α(n)，P(χ<sup>2</sup>>χ<sup>2</sup>_α(n))=α。如χ<sup>2</sup><sub>0</sub>.<sub>0</sub><sub>2</sub><sub>5</sub>(10)=20.483, χ<sup>2</sup><sub>0</sub>.<sub>9</sub><sub>7</sub><sub>5</sub>(10)=3.247</p>
+<p>t(n)：记t_α(n)，满足t_{1−α}=−t_α。如t<sub>0</sub>.<sub>0</sub><sub>2</sub><sub>5</sub>(20)=2.086, t<sub>0</sub>.<sub>0</sub><sub>2</sub><sub>5</sub>(8)=2.3060</p>
+<p>F(n<sub>1</sub>,n<sub>2</sub>)：记F_α(n<sub>1</sub>,n<sub>2</sub>)，满足F_{1−α}(n<sub>1</sub>,n<sub>2</sub>)=1/F_α(n<sub>2</sub>,n<sub>1</sub>)</p>
 </div>
 
 <h3>6.1 补充例题</h3>
 <div class="def-card" style="border-left:4px solid #e6c970">
-<p><strong>MLE例2（扩展分布列）：</strong>P(X=0)=θ², P(X=1)=2θ(1−θ), P(X=2)=θ², P(X=3)=1−2θ。样本3,1,3,0,3,1,2,3。矩估计=1/4，MLE由lnL求导解方程得出。（完整解答见作业三第1题）</p>
+<p><strong>MLE例2（扩展分布列）：</strong>P(X=0)=θ<sup>2</sup>, P(X=1)=2θ(1−θ), P(X=2)=θ<sup>2</sup>, P(X=3)=1−2θ。样本3,1,3,0,3,1,2,3。矩估计=1/4，MLE由lnL求导解方程得出。（完整解答见作业三第1题）</p>
 </div>
 
 <h3>6.2 区间估计完整定义</h3>
 <div class="def-card" style="border-left:4px solid #c1292e">
-<p><span class="term">置信区间定义：</span>P(T₁≤θ≤T₂)=1−α，[T₁,T₂]是θ的置信度1−α的双侧置信区间。T₁,T₂分别是置信下限和上限。</p>
+<p><span class="term">置信区间定义：</span>P(T<sub>1</sub>≤θ≤T<sub>2</sub>)=1−α，[T<sub>1</sub>,T<sub>2</sub>]是θ的置信度1−α的双侧置信区间。T<sub>1</sub>,T<sub>2</sub>分别是置信下限和上限。</p>
 <p><span class="term">精度：</span>区间长度的一半（越小越好）。<span class="term">置信度：</span>1−α（越大越好）。两者矛盾——保证置信度前提下提高精度。</p>
-<p><strong>引例：</strong>3000人高数成绩~N(μ,σ²)，抽100人X̄=70,S=8。用这些信息估计μ的分布→引出区间估计需求。</p>
+<p><strong>引例：</strong>3000人高数成绩~N(μ,σ<sup>2</sup>)，抽100人X̄=70,S=8。用这些信息估计μ的分布→引出区间估计需求。</p>
 </div>
 
 <h2>📐 第5-6章 公式汇总</h2>
@@ -384,61 +384,61 @@ H₁: σ² ≠ 5000（备择假设：方差有显著变化）<br>
 <h3>第5章：样本及抽样分布</h3>
 <table>
 <tr><th>类别</th><th>公式</th><th>说明</th></tr>
-<tr><td>样本均值</td><td>X̄=(1/n)ΣXᵢ</td><td>E(X̄)=μ, D(X̄)=σ²/n</td></tr>
-<tr><td>样本方差</td><td>S²=Σ(Xᵢ−X̄)²/(n−1)</td><td>E(S²)=σ²（无偏）</td></tr>
-<tr><td>χ²定义</td><td>ΣZᵢ²~χ²(n), Zᵢ~N(0,1)</td><td>E=n, D=2n</td></tr>
-<tr><td>χ²可加性</td><td>χ²(n)+χ²(m)=χ²(n+m)</td><td>独立时</td></tr>
+<tr><td>样本均值</td><td>X̄=(1/n)ΣX<sub>i</sub></td><td>E(X̄)=μ, D(X̄)=σ<sup>2</sup>/n</td></tr>
+<tr><td>样本方差</td><td>S<sup>2</sup>=Σ(X<sub>i</sub>−X̄)<sup>2</sup>/(n−1)</td><td>E(S<sup>2</sup>)=σ<sup>2</sup>（无偏）</td></tr>
+<tr><td>χ<sup>2</sup>定义</td><td>ΣZ<sub>i</sub><sup>2</sup>~χ<sup>2</sup>(n), Z<sub>i</sub>~N(0,1)</td><td>E=n, D=2n</td></tr>
+<tr><td>χ<sup>2</sup>可加性</td><td>χ<sup>2</sup>(n)+χ<sup>2</sup>(m)=χ<sup>2</sup>(n+m)</td><td>独立时</td></tr>
 <tr><td>t分布</td><td>Z/√(Y/n)~t(n)</td><td>n→∞→N(0,1)</td></tr>
-<tr><td>F分布</td><td>(X/n)/(Y/m)~F(n,m)</td><td>1/F~F(m,n); t²~F(1,n)</td></tr>
+<tr><td>F分布</td><td>(X/n)/(Y/m)~F(n,m)</td><td>1/F~F(m,n); t<sup>2</sup>~F(1,n)</td></tr>
 <tr><td>抽样定理①</td><td>(X̄−μ)/(σ/√n)~N(0,1)</td><td>—</td></tr>
-<tr><td>抽样定理②</td><td>(n−1)S²/σ²~χ²(n−1)</td><td>X̄与S²独立</td></tr>
+<tr><td>抽样定理②</td><td>(n−1)S<sup>2</sup>/σ<sup>2</sup>~χ<sup>2</sup>(n−1)</td><td>X̄与S<sup>2</sup>独立</td></tr>
 <tr><td>抽样定理③</td><td>(X̄−μ)/(S/√n)~t(n−1)</td><td>—</td></tr>
-<tr><td>分位点</td><td>P(Y>y<sub>α</sub>)=α</td><td>z₁₋α=−zα; t₁₋α=−tα</td></tr>
+<tr><td>分位点</td><td>P(Y>y<sub>α</sub>)=α</td><td>z<sub>1</sub><sub>−</sub>α=−zα; t<sub>1</sub><sub>−</sub>α=−tα</td></tr>
 </table>
 
 <h3>第6章：参数估计</h3>
 <table>
 <tr><th>类别</th><th>公式/步骤</th><th>说明</th></tr>
 <tr><td>矩估计</td><td>令X̄=E(X)，解出θ̂</td><td>样本矩替换总体矩</td></tr>
-<tr><td>MLE步骤</td><td>①L(θ)=Πf(xᵢ) ②lnL ③dlnL/dθ=0 ④解θ̂</td><td>取对数简化求导</td></tr>
+<tr><td>MLE步骤</td><td>①L(θ)=Πf(x<sub>i</sub>) ②lnL ③dlnL/dθ=0 ④解θ̂</td><td>取对数简化求导</td></tr>
 <tr><td>σ已知→μ</td><td>X̄±z<sub>α/2</sub>·σ/√n</td><td>枢轴量~N(0,1)</td></tr>
 <tr><td>σ未知→μ</td><td>X̄±t<sub>α/2</sub>(n−1)·S/√n</td><td>枢轴量~t(n−1)</td></tr>
-<tr><td>μ未知→σ²</td><td>[(n−1)S²/χ²<sub>α/2</sub>, (n−1)S²/χ²<sub>1−α/2</sub>]</td><td>枢轴量~χ²(n−1)</td></tr>
-<tr><td>检验均值（σ已知）</td><td>Z检验: Z=(X̄−μ₀)/(σ/√n)</td><td>—</td></tr>
-<tr><td>检验均值（σ未知）</td><td>t检验: t=(X̄−μ₀)/(S/√n)</td><td>df=n−1</td></tr>
-<tr><td>检验方差</td><td>χ²检验: χ²=(n−1)S²/σ₀²</td><td>df=n−1</td></tr>
+<tr><td>μ未知→σ<sup>2</sup></td><td>[(n−1)S<sup>2</sup>/χ<sup>2</sup><sub>α/2</sub>, (n−1)S<sup>2</sup>/χ<sup>2</sup><sub>1−α/2</sub>]</td><td>枢轴量~χ<sup>2</sup>(n−1)</td></tr>
+<tr><td>检验均值（σ已知）</td><td>Z检验: Z=(X̄−μ<sub>0</sub>)/(σ/√n)</td><td>—</td></tr>
+<tr><td>检验均值（σ未知）</td><td>t检验: t=(X̄−μ<sub>0</sub>)/(S/√n)</td><td>df=n−1</td></tr>
+<tr><td>检验方差</td><td>χ<sup>2</sup>检验: χ<sup>2</sup>=(n−1)S<sup>2</sup>/σ<sub>0</sub><sup>2</sup></td><td>df=n−1</td></tr>
 </table>
 
 <h2>📝 课件重点例题</h2>
 
 <div class="def-card" style="border-left:4px solid #e6c970">
-<p><span class="term">📋 课件5.2 例1：判断统计量分布</span> X~N(2,3²)，Σ(Xᵢ−2)²/9 ~ ?</p>
-<details><summary><strong>答案：χ²(n)</strong></summary>(Xᵢ−2)/3~N(0,1)，Σ[(Xᵢ−2)/3]²~χ²(n)，即Σ(Xᵢ−2)²/9~χ²(n)。</details>
+<p><span class="term">📋 课件5.2 例1：判断统计量分布</span> X~N(2,3<sup>2</sup>)，Σ(X<sub>i</sub>−2)<sup>2</sup>/9 ~ ?</p>
+<details><summary><strong>答案：χ<sup>2</sup>(n)</strong></summary>(X<sub>i</sub>−2)/3~N(0,1)，Σ[(X<sub>i</sub>−2)/3]<sup>2</sup>~χ<sup>2</sup>(n)，即Σ(X<sub>i</sub>−2)<sup>2</sup>/9~χ<sup>2</sup>(n)。</details>
 </div>
 
 <div class="def-card" style="border-left:4px solid #e6c970">
-<p><span class="term">📋 课件5.3 例：X̄落在区间概率</span> 总体N(52,6.3²)，n=36，P(50.8<X̄<53.8)=？</p>
-<details><summary><strong>解析</strong></summary>X̄~N(52, 6.3²/36)，σ<sub>X̄</sub>=1.05。Z₁=(50.8−52)/1.05≈−1.14，Z₂=1.71。P≈Φ(1.71)−Φ(−1.14)≈<strong>0.8293</strong></details>
+<p><span class="term">📋 课件5.3 例：X̄落在区间概率</span> 总体N(52,6.3<sup>2</sup>)，n=36，P(50.8<X̄<53.8)=？</p>
+<details><summary><strong>解析</strong></summary>X̄~N(52, 6.3<sup>2</sup>/36)，σ<sub>X̄</sub>=1.05。Z<sub>1</sub>=(50.8−52)/1.05≈−1.14，Z<sub>2</sub>=1.71。P≈Φ(1.71)−Φ(−1.14)≈<strong>0.8293</strong></details>
 </div>
 
 <div class="def-card" style="border-left:4px solid #e6c970">
-<p><span class="term">📋 课件6.1 矩估计例</span> X: P(X=1)=θ²,P(X=2)=2θ(1−θ),P(X=3)=(1−θ)²。样本1,2,1,3,3。求θ̂。</p>
+<p><span class="term">📋 课件6.1 矩估计例</span> X: P(X=1)=θ<sup>2</sup>,P(X=2)=2θ(1−θ),P(X=3)=(1−θ)<sup>2</sup>。样本1,2,1,3,3。求θ̂。</p>
 <details><summary><strong>解析</strong></summary>x̄=2，E(X)=3−2θ，令2=3−2θ⇒θ̂=<strong>1/2</strong></details>
 </div>
 
 <div class="def-card" style="border-left:4px solid #e6c970">
-<p><span class="term">📋 课件6.2 例：灯泡寿命μ的置信区间（σ=200已知）</span> X~N(μ,200²)，n=25，x̄=16800，α=0.05。</p>
-<details><summary><strong>解析</strong></summary>z₀.₀₂₅=1.96，标准误=200/5=40。区间=16800±1.96×40=<strong>[16721.6, 16878.4]</strong></details>
+<p><span class="term">📋 课件6.2 例：灯泡寿命μ的置信区间（σ=200已知）</span> X~N(μ,200<sup>2</sup>)，n=25，x̄=16800，α=0.05。</p>
+<details><summary><strong>解析</strong></summary>z<sub>0</sub>.<sub>0</sub><sub>2</sub><sub>5</sub>=1.96，标准误=200/5=40。区间=16800±1.96×40=<strong>[16721.6, 16878.4]</strong></details>
 </div>
 
 <div class="def-card" style="border-left:4px solid #e6c970">
-<p><span class="term">📋 课件6.2 例：灯泡寿命μ的置信区间（σ未知）</span> S=250，t₀.₀₂₅(24)=2.0639。</p>
+<p><span class="term">📋 课件6.2 例：灯泡寿命μ的置信区间（σ未知）</span> S=250，t<sub>0</sub>.<sub>0</sub><sub>2</sub><sub>5</sub>(24)=2.0639。</p>
 <details><summary><strong>解析</strong></summary>标准误=250/5=50。区间=16800±2.0639×50=<strong>[16696.8, 16903.2]</strong>（比σ已知宽）</details>
 </div>
 
 <div class="def-card" style="border-left:4px solid #e6c970">
-<p><span class="term">📋 课件6.2 例：方差σ²的置信区间</span> S²=180²，χ²₀.₀₂₅(24)=39.364, χ²₀.₉₇₅(24)=12.401。</p>
-<details><summary><strong>解析</strong></summary>(n−1)S²=777600。下限=777600/39.364≈19756，上限=777600/12.401≈62705。区间<strong>[19756,62705]</strong>（不对称）</details>
+<p><span class="term">📋 课件6.2 例：方差σ<sup>2</sup>的置信区间</span> S<sup>2</sup>=180<sup>2</sup>，χ<sup>2</sup><sub>0</sub>.<sub>0</sub><sub>2</sub><sub>5</sub>(24)=39.364, χ<sup>2</sup><sub>0</sub>.<sub>9</sub><sub>7</sub><sub>5</sub>(24)=12.401。</p>
+<details><summary><strong>解析</strong></summary>(n−1)S<sup>2</sup>=777600。下限=777600/39.364≈19756，上限=777600/12.401≈62705。区间<strong>[19756,62705]</strong>（不对称）</details>
 </div>
 
 <div class=\"lesson-footer\">
@@ -458,10 +458,10 @@ function checkQuiz(qid, el, isCorrect) {
   const fb = document.getElementById(qid+'-fb');
   fb.className = 'feedback show ' + (isCorrect ? 'correct' : 'wrong');
   const answers = {
-    'quiz-samp': '(Xᵢ−2)/3~N(0,1)，所以Σ[(Xᵢ−2)/3]²~χ²(n)',
+    'quiz-samp': '(X<sub>i</sub>−2)/3~N(0,1)，所以Σ[(X<sub>i</sub>−2)/3]<sup>2</sup>~χ<sup>2</sup>(n)',
     'quiz-mle': 'MLE的核心是"使出现当前样本的概率最大"',
-    'quiz-ci': 'σ已知用z：σ/√n=200/5=40，z₀.₀₂₅=1.96，区间=16800±1.96×40',
-    'quiz-test': '检验方差σ²用χ²分布'
+    'quiz-ci': 'σ已知用z：σ/√n=200/5=40，z<sub>0</sub>.<sub>0</sub><sub>2</sub><sub>5</sub>=1.96，区间=16800±1.96×40',
+    'quiz-test': '检验方差σ<sup>2</sup>用χ<sup>2</sup>分布'
   };
   fb.textContent = isCorrect ? '✅ 正确！' : '❌ 不对。' + (answers[qid] || '');
 }

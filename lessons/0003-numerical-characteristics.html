@@ -59,28 +59,28 @@
 
 <div class="def-card" style="border-left:4px solid var(--accent)">
 <p><span class="term">📋 作业二 第1题：线性组合的期望与方差</span></p>
-<p>X₁,X₂,X₃,X₄相互独立，E(Xᵢ)=i，D(Xᵢ)=5−i。Y=2X₁−X₂+3X₃−X₄，求E(Y), D(Y)。</p>
+<p>X<sub>1</sub>,X<sub>2</sub>,X<sub>3</sub>,X<sub>4</sub>相互独立，E(X<sub>i</sub>)=i，D(X<sub>i</sub>)=5−i。Y=2X<sub>1</sub>−X<sub>2</sub>+3X<sub>3</sub>−X<sub>4</sub>，求E(Y), D(Y)。</p>
 <details><summary><strong>逐步解析</strong></summary>
 <div style="padding:0.5rem 0">
-<p><strong>已知：</strong>X₁,X₂,X₃,X₄相互独立<br>
-E(X₁)=1, E(X₂)=2, E(X₃)=3, E(X₄)=4<br>
-D(X₁)=5−1=4, D(X₂)=5−2=3, D(X₃)=5−3=2, D(X₄)=5−4=1<br>
-Y = 2X₁ − X₂ + 3X₃ − X₄<br><br>
+<p><strong>已知：</strong>X<sub>1</sub>,X<sub>2</sub>,X<sub>3</sub>,X<sub>4</sub>相互独立<br>
+E(X<sub>1</sub>)=1, E(X<sub>2</sub>)=2, E(X<sub>3</sub>)=3, E(X<sub>4</sub>)=4<br>
+D(X<sub>1</sub>)=5−1=4, D(X<sub>2</sub>)=5−2=3, D(X<sub>3</sub>)=5−3=2, D(X<sub>4</sub>)=5−4=1<br>
+Y = 2X<sub>1</sub> − X<sub>2</sub> + 3X<sub>3</sub> − X<sub>4</sub><br><br>
 <strong>第1步——求E(Y)，用期望的线性性质：</strong><br>
-E(Y) = E(2X₁ − X₂ + 3X₃ − X₄)<br>
-= E(2X₁) − E(X₂) + E(3X₃) − E(X₄)  [和的期望=期望的和]<br>
-= 2E(X₁) − E(X₂) + 3E(X₃) − E(X₄)  [常数可以提出来]<br>
+E(Y) = E(2X<sub>1</sub> − X<sub>2</sub> + 3X<sub>3</sub> − X<sub>4</sub>)<br>
+= E(2X<sub>1</sub>) − E(X<sub>2</sub>) + E(3X<sub>3</sub>) − E(X<sub>4</sub>)  [和的期望=期望的和]<br>
+= 2E(X<sub>1</sub>) − E(X<sub>2</sub>) + 3E(X<sub>3</sub>) − E(X<sub>4</sub>)  [常数可以提出来]<br>
 = 2×1 − 2 + 3×3 − 4<br>
 = 2 − 2 + 9 − 4<br>
 = <strong>5</strong><br><br>
 <strong>第2步——求D(Y)，利用独立时方差可拆：</strong><br>
-因为X₁~X₄相互独立，方差公式：D(∑aᵢXᵢ) = ∑aᵢ²D(Xᵢ)<br>
-D(Y) = D(2X₁) + D(−X₂) + D(3X₃) + D(−X₄)<br>
-= 2²D(X₁) + (−1)²D(X₂) + 3²D(X₃) + (−1)²D(X₄)<br>
+因为X<sub>1</sub>~X<sub>4</sub>相互独立，方差公式：D(∑a<sub>i</sub>X<sub>i</sub>) = ∑a<sub>i</sub><sup>2</sup>D(X<sub>i</sub>)<br>
+D(Y) = D(2X<sub>1</sub>) + D(−X<sub>2</sub>) + D(3X<sub>3</sub>) + D(−X<sub>4</sub>)<br>
+= 2<sup>2</sup>D(X<sub>1</sub>) + (−1)<sup>2</sup>D(X<sub>2</sub>) + 3<sup>2</sup>D(X<sub>3</sub>) + (−1)<sup>2</sup>D(X<sub>4</sub>)<br>
 = 4×4 + 1×3 + 9×2 + 1×1  [注意：系数要平方！]<br>
 = 16 + 3 + 18 + 1<br>
 = <strong>38</strong><br><br>
-<strong>常见错误：</strong>忘记把系数平方！D(2X₁)=<strong>4</strong>D(X₁)而不是2D(X₁)！</p>
+<strong>常见错误：</strong>忘记把系数平方！D(2X<sub>1</sub>)=<strong>4</strong>D(X<sub>1</sub>)而不是2D(X<sub>1</sub>)！</p>
 </div>
 </details>
 </div>
@@ -97,23 +97,23 @@ D(Y) = D(2X₁) + D(−X₂) + D(3X₃) + D(−X₄)<br>
 
 <div class="def-card" style="border-left:4px solid var(--accent)">
 <p><span class="term">📋 作业二 第3题：正态分布函数的期望</span></p>
-<p>电压 X~N(0,9)，Y=5X²，求E(Y)。</p>
+<p>电压 X~N(0,9)，Y=5X<sup>2</sup>，求E(Y)。</p>
 <details><summary><strong>逐步解析</strong></summary>
 <div style="padding:0.5rem 0">
-<p><strong>已知：</strong>电压 X ~ N(0, 9)，即 μ=0，σ²=9<br>
-输出电压 Y = 5X²，求 E(Y)<br><br>
-<strong>第1步——把E(Y)转化为E(X²)：</strong><br>
-E(Y) = E(5X²) = 5 × E(X²)  [常数可以提到期望外面]<br><br>
-<strong>第2步——求E(X²)：</strong><br>
-方差的定义：D(X) = E(X²) − [E(X)]²<br>
-变形得：E(X²) = D(X) + [E(X)]²<br>
+<p><strong>已知：</strong>电压 X ~ N(0, 9)，即 μ=0，σ<sup>2</sup>=9<br>
+输出电压 Y = 5X<sup>2</sup>，求 E(Y)<br><br>
+<strong>第1步——把E(Y)转化为E(X<sup>2</sup>)：</strong><br>
+E(Y) = E(5X<sup>2</sup>) = 5 × E(X<sup>2</sup>)  [常数可以提到期望外面]<br><br>
+<strong>第2步——求E(X<sup>2</sup>)：</strong><br>
+方差的定义：D(X) = E(X<sup>2</sup>) − [E(X)]<sup>2</sup><br>
+变形得：E(X<sup>2</sup>) = D(X) + [E(X)]<sup>2</sup><br>
 这是最重要的公式之一——知道期望和方差就能求平方的期望<br><br>
-代入：D(X) = 9（来自N(0,9)，σ²=9）<br>
+代入：D(X) = 9（来自N(0,9)，σ<sup>2</sup>=9）<br>
 E(X) = 0（来自N(0,9)，μ=0）<br>
-E(X²) = 9 + 0² = <strong>9</strong><br><br>
+E(X<sup>2</sup>) = 9 + 0<sup>2</sup> = <strong>9</strong><br><br>
 <strong>第3步——代回求E(Y)：</strong><br>
 E(Y) = 5 × 9 = <strong>45</strong><br><br>
-<strong>总结：</strong>这道题的关键是记住E(X²) = D(X) + [E(X)]²，不要试图直接积分！</p>
+<strong>总结：</strong>这道题的关键是记住E(X<sup>2</sup>) = D(X) + [E(X)]<sup>2</sup>，不要试图直接积分！</p>
 </div>
 </details>
 </div>
@@ -134,17 +134,17 @@ E(Y) = 5 × 9 = <strong>45</strong><br><br>
 
 <div class="formula">
   <span class="label">方差的计算公式（常用第二个！）</span>
-  D(X) = E[(X − E(X))²] = <strong>E(X²) − [E(X)]²</strong>
+  D(X) = E[(X − E(X))<sup>2</sup>] = <strong>E(X<sup>2</sup>) − [E(X)]<sup>2</sup></strong>
 </div>
 
 <details class="proof-block">
-<summary><strong>📐 推导：D(X)=E(X²)−[E(X)]²</strong>（点击展开）</summary>
+<summary><strong>📐 推导：D(X)=E(X<sup>2</sup>)−[E(X)]<sup>2</sup></strong>（点击展开）</summary>
 <div style="padding:0.75rem 0">
 <ol class="steps">
-  <li>D(X)=E[(X−μ)²]，其中 μ=E(X)</li>
-  <li>展开：E[X²−2μX+μ²]</li>
-  <li>=E(X²)−2μE(X)+μ²（期望的线性性质）</li>
-  <li>=E(X²)−2μ²+μ²=E(X²)−μ²=E(X²)−[E(X)]² ∎</li>
+  <li>D(X)=E[(X−μ)<sup>2</sup>]，其中 μ=E(X)</li>
+  <li>展开：E[X<sup>2</sup>−2μX+μ<sup>2</sup>]</li>
+  <li>=E(X<sup>2</sup>)−2μE(X)+μ<sup>2</sup>（期望的线性性质）</li>
+  <li>=E(X<sup>2</sup>)−2μ<sup>2</sup>+μ<sup>2</sup>=E(X<sup>2</sup>)−μ<sup>2</sup>=E(X<sup>2</sup>)−[E(X)]<sup>2</sup> ∎</li>
 </ol>
 </div>
 </details>
@@ -153,29 +153,29 @@ E(Y) = 5 × 9 = <strong>45</strong><br><br>
   <span class="label">方差六大性质</span>
   ① D(C) = 0<br>
   ② D(X+C) = D(X)<br>
-  ③ D(CX) = C²·D(X) ← <strong>系数要平方！</strong><br>
-  ④ D(aX+b) = a²·D(X)<br>
+  ③ D(CX) = C<sup>2</sup>·D(X) ← <strong>系数要平方！</strong><br>
+  ④ D(aX+b) = a<sup>2</sup>·D(X)<br>
   ⑤ D(X±Y) = D(X) + D(Y) ± 2Cov(X,Y)<br>
   ⑥ 若X与Y独立，则 D(X±Y) = D(X) + D(Y)
 </div>
 
 <details class="proof-block">
-<summary><strong>📐 证明：方差性质 + E(S²)=σ²</strong>（点击展开）</summary>
+<summary><strong>📐 证明：方差性质 + E(S<sup>2</sup>)=σ<sup>2</sup></strong>（点击展开）</summary>
 <div style="padding:0.75rem 0">
-<p><strong>D(C)=0：</strong>E(C)=C，D(C)=E[(C−C)²]=E(0)=0</p>
-<p><strong>D(CX)=C²D(X)：</strong>D(CX)=E(C²X²)−[E(CX)]²=C²E(X²)−C²[E(X)]²=C²D(X)</p>
-<p><strong>D(X±Y)=D(X)+D(Y)±2Cov(X,Y)：</strong>展开 D(X±Y)=E[(X±Y−(μ<sub>X</sub>±μ<sub>Y</sub>))²]，交叉项出现 Cov</p>
-<p><strong>E(S²)=σ²（为什么分母是n−1）：</strong></p>
+<p><strong>D(C)=0：</strong>E(C)=C，D(C)=E[(C−C)<sup>2</sup>]=E(0)=0</p>
+<p><strong>D(CX)=C<sup>2</sup>D(X)：</strong>D(CX)=E(C<sup>2</sup>X<sup>2</sup>)−[E(CX)]<sup>2</sup>=C<sup>2</sup>E(X<sup>2</sup>)−C<sup>2</sup>[E(X)]<sup>2</sup>=C<sup>2</sup>D(X)</p>
+<p><strong>D(X±Y)=D(X)+D(Y)±2Cov(X,Y)：</strong>展开 D(X±Y)=E[(X±Y−(μ<sub>X</sub>±μ<sub>Y</sub>))<sup>2</sup>]，交叉项出现 Cov</p>
+<p><strong>E(S<sup>2</sup>)=σ<sup>2</sup>（为什么分母是n−1）：</strong></p>
 <ol class="steps">
-  <li>Σ(X<sub>i</sub>−X̄)² = Σ[(X<sub>i</sub>−μ)−(X̄−μ)]² = Σ(X<sub>i</sub>−μ)² − n(X̄−μ)²</li>
-  <li>取期望：E[Σ(X<sub>i</sub>−μ)²]=nσ²，E[n(X̄−μ)²]=n·σ²/n=σ²</li>
-  <li>E[Σ(X<sub>i</sub>−X̄)²]=nσ²−σ²=(n−1)σ²</li>
-  <li>E(S²)=E[Σ(X<sub>i</sub>−X̄)²/(n−1)]=σ² ∎</li>
+  <li>Σ(X<sub>i</sub>−X̄)<sup>2</sup> = Σ[(X<sub>i</sub>−μ)−(X̄−μ)]<sup>2</sup> = Σ(X<sub>i</sub>−μ)<sup>2</sup> − n(X̄−μ)<sup>2</sup></li>
+  <li>取期望：E[Σ(X<sub>i</sub>−μ)<sup>2</sup>]=nσ<sup>2</sup>，E[n(X̄−μ)<sup>2</sup>]=n·σ<sup>2</sup>/n=σ<sup>2</sup></li>
+  <li>E[Σ(X<sub>i</sub>−X̄)<sup>2</sup>]=nσ<sup>2</sup>−σ<sup>2</sup>=(n−1)σ<sup>2</sup></li>
+  <li>E(S<sup>2</sup>)=E[Σ(X<sub>i</sub>−X̄)<sup>2</sup>/(n−1)]=σ<sup>2</sup> ∎</li>
 </ol>
 </div>
 </details>
 
-<p><strong>📝 作业二第1题续：</strong>D(Y) = 4D(X₁) + D(X₂) + 9D(X₃) + D(X₄) = 4×4+3+9×2+1 = 38</p>
+<p><strong>📝 作业二第1题续：</strong>D(Y) = 4D(X<sub>1</sub>) + D(X<sub>2</sub>) + 9D(X<sub>3</sub>) + D(X<sub>4</sub>) = 4×4+3+9×2+1 = 38</p>
 
 <div class="quiz" id="quiz-var">
   <p class="question"><strong>✏️ 自测：</strong>两个独立随机变量X和Y的方差分别为4和2，则D(2X−3Y)=？</p>
@@ -200,7 +200,7 @@ E(Y) = 5 × 9 = <strong>45</strong><br><br>
   <span class="label">协方差性质</span>
   ① Cov(X,X) = D(X)<br>
   ② Cov(aX, bY) = ab·Cov(X,Y)<br>
-  ③ Cov(X₁+X₂, Y) = Cov(X₁,Y) + Cov(X₂,Y)<br>
+  ③ Cov(X<sub>1</sub>+X<sub>2</sub>, Y) = Cov(X<sub>1</sub>,Y) + Cov(X<sub>2</sub>,Y)<br>
   ④ Cov(X+a, Y+b) = Cov(X,Y)
 </div>
 
@@ -228,10 +228,10 @@ E(Y) = 5 × 9 = <strong>45</strong><br><br>
 <details><summary><strong>论证框架（考试简答题直接套）</strong></summary>
 <div style="padding:0.5rem 0">
 <ol class="steps">
-  <li>计算边缘分布：pᵢ·=Σⱼpᵢⱼ，p·ⱼ=Σᵢpᵢⱼ</li>
+  <li>计算边缘分布：p<sub>i</sub>·=Σ<sub>j</sub>p<sub>i</sub><sub>j</sub>，p·<sub>j</sub>=Σ<sub>i</sub>p<sub>i</sub><sub>j</sub></li>
   <li>计算E(X),E(Y),E(XY)</li>
   <li>Cov=E(XY)−E(X)E(Y)=0 ⇒ 不相关</li>
-  <li>找一对(i,j)使pᵢⱼ≠pᵢ··p·ⱼ ⇒ 不独立</li>
+  <li>找一对(i,j)使p<sub>i</sub><sub>j</sub>≠p<sub>i</sub>··p·<sub>j</sub> ⇒ 不独立</li>
 </ol>
 </div>
 </details>
@@ -243,12 +243,12 @@ E(Y) = 5 × 9 = <strong>45</strong><br><br>
 <p><strong>|ρ|≤1 的证明：</strong></p>
 <ol class="steps">
   <li>对任意实数 t，考虑 Z=(X−μ<sub>X</sub>)−t(Y−μ<sub>Y</sub>)，D(Z)≥0</li>
-  <li>D(Z)=D(X)−2t·Cov(X,Y)+t²·D(Y)≥0</li>
-  <li>这是关于 t 的二次函数≥0，判别式≤0：4Cov²−4D(X)D(Y)≤0</li>
-  <li>即 Cov²≤D(X)D(Y)，|ρ|=|Cov|/√(DX·DY)≤1 ∎</li>
+  <li>D(Z)=D(X)−2t·Cov(X,Y)+t<sup>2</sup>·D(Y)≥0</li>
+  <li>这是关于 t 的二次函数≥0，判别式≤0：4Cov<sup>2</sup>−4D(X)D(Y)≤0</li>
+  <li>即 Cov<sup>2</sup>≤D(X)D(Y)，|ρ|=|Cov|/√(DX·DY)≤1 ∎</li>
 </ol>
 <p><strong>独立⇒不相关：</strong>独立⇒E(XY)=E(X)E(Y)⇒Cov=0⇒ρ=0 ∎</p>
-<p><strong>反例构造（不相关但不独立）：</strong>计算边缘分布→E(X),E(Y),E(XY)→Cov=0→不相关；但存在pᵢⱼ≠pᵢ··p·ⱼ→不独立 ∎</p>
+<p><strong>反例构造（不相关但不独立）：</strong>计算边缘分布→E(X),E(Y),E(XY)→Cov=0→不相关；但存在p<sub>i</sub><sub>j</sub>≠p<sub>i</sub>··p·<sub>j</sub>→不独立 ∎</p>
 </div>
 </details>
 
@@ -278,28 +278,28 @@ E(Y) = 5 × 9 = <strong>45</strong><br><br>
 
 <h3>📖 课本补充内容</h3>
 <div class="def-card" style="border-left:4px solid #2d6a4f">
-<p><span class="term">矩（课本§4.4补充）：</span>k阶原点矩 μₖ=E(Xᵏ)；k阶中心矩 νₖ=E[(X−μ)ᵏ]。期望是一阶原点矩，方差是二阶中心矩。偏度=ν₃/σ³，峰度=ν₄/σ⁴。</p>
-<p><span class="term">协方差矩阵：</span>n维随机向量的协方差矩阵Σ，其(i,j)元素为Cov(Xᵢ,Xⱼ)。对称且半正定。</p>
+<p><span class="term">矩（课本§4.4补充）：</span>k阶原点矩 μ<sub>k</sub>=E(X<sup>k</sup>)；k阶中心矩 ν<sub>k</sub>=E[(X−μ)<sup>k</sup>]。期望是一阶原点矩，方差是二阶中心矩。偏度=ν<sub>3</sub>/σ<sup>3</sup>，峰度=ν<sub>4</sub>/σ<sup>4</sup>。</p>
+<p><span class="term">协方差矩阵：</span>n维随机向量的协方差矩阵Σ，其(i,j)元素为Cov(X<sub>i</sub>,X<sub>j</sub>)。对称且半正定。</p>
 <p><span class="term">独立与不相关的再辨析：</span>二维正态分布中，独立⟺不相关。但一般情况下不成立——这正是作业二第4题的意义。</p>
 </div>
 <div class="def-card" style="border-left:4px solid #2d6a4f">
 <p><span class="term">📝 课本典型习题：</span>设X~B(n,p)，求E(X)和D(X)。（用期望定义+组合恒等式推导）</p>
-<details><summary><strong>推导</strong></summary>E(X)=Σk·Cₙᵏpᵏqⁿ⁻ᵏ=npΣCₙ₋₁ᵏ⁻¹pᵏ⁻¹q^(n−1)−(k−1)=np(p+q)ⁿ⁻¹=<strong>np</strong>。类似可得E(X²)=npq+n²p²，D(X)=E(X²)−[E(X)]²=<strong>npq</strong>。</details>
+<details><summary><strong>推导</strong></summary>E(X)=Σk·C<sub>n</sub><sup>k</sup>p<sup>k</sup>q<sup>n</sup><sup>−</sup><sup>k</sup>=npΣC<sub>n</sub><sub>−</sub><sub>1</sub><sup>k</sup><sup>−</sup>¹p<sup>k</sup><sup>−</sup>¹q^(n−1)−(k−1)=np(p+q)<sup>n</sup><sup>−</sup>¹=<strong>np</strong>。类似可得E(X<sup>2</sup>)=npq+n<sup>2</sup>p<sup>2</sup>，D(X)=E(X<sup>2</sup>)−[E(X)]<sup>2</sup>=<strong>npq</strong>。</details>
 </div>
 <div class="def-card" style="border-left:4px solid #2d6a4f">
-<p><span class="term">📝 课本典型习题：</span>设(X,Y)服从二维正态N(μ₁,μ₂,σ₁²,σ₂²,ρ)，求条件期望E(X|Y=y)。</p>
-<details><summary><strong>答案</strong></summary>E(X|Y=y)=μ₁+ρ(σ₁/σ₂)(y−μ₂)。这是线性回归的理论基础！</details>
+<p><span class="term">📝 课本典型习题：</span>设(X,Y)服从二维正态N(μ<sub>1</sub>,μ<sub>2</sub>,σ<sub>1</sub><sup>2</sup>,σ<sub>2</sub><sup>2</sup>,ρ)，求条件期望E(X|Y=y)。</p>
+<details><summary><strong>答案</strong></summary>E(X|Y=y)=μ<sub>1</sub>+ρ(σ<sub>1</sub>/σ<sub>2</sub>)(y−μ<sub>2</sub>)。这是线性回归的理论基础！</details>
 </div>
 
 <h3>4.1 补充例题</h3>
 <div class="def-card" style="border-left:4px solid #e6c970">
-<p><strong>新生儿评分期望：</strong>X分布列如课件，E(X)=Σxᵢpᵢ=<strong>3.75</strong></p>
-<p><strong>E(3X²)计算：</strong>用A的射击数据：E(3X²)=3×(64×0.2+81×0.1+100×0.7)=3×(12.8+8.1+70)=<strong>272.7</strong></p>
+<p><strong>新生儿评分期望：</strong>X分布列如课件，E(X)=Σx<sub>i</sub>p<sub>i</sub>=<strong>3.75</strong></p>
+<p><strong>E(3X<sup>2</sup>)计算：</strong>用A的射击数据：E(3X<sup>2</sup>)=3×(64×0.2+81×0.1+100×0.7)=3×(12.8+8.1+70)=<strong>272.7</strong></p>
 </div>
 
 <h3>4.1 二维期望</h3>
 <div class="def-card" style="border-left:4px solid #c1292e">
-<p><strong>二维离散型：</strong>E[g(X,Y)]=ΣᵢΣⱼ g(xᵢ,yⱼ)pᵢⱼ</p>
+<p><strong>二维离散型：</strong>E[g(X,Y)]=Σ<sub>i</sub>Σ<sub>j</sub> g(x<sub>i</sub>,y<sub>j</sub>)p<sub>i</sub><sub>j</sub></p>
 <p><strong>二维连续型：</strong>E[g(X,Y)]=∬ g(x,y)f(x,y)dxdy</p>
 </div>
 
@@ -317,9 +317,9 @@ E(Y) = 5 × 9 = <strong>45</strong><br><br>
 <h3>4.3 课件习题全解</h3>
 <div class="def-card" style="border-left:4px solid #e6c970">
 <p><strong>习题1：</strong>D(X)=4, D(Y)=2独立，D(2X−3Y)=4×4+9×2=<strong>34</strong></p>
-<p><strong>习题2：</strong>f(x)=1+x(−1≤x<0), 1−x(0≤x<1)。E(X)=∫₋₁⁰x(1+x)dx+∫₀¹x(1−x)dx=<strong>0</strong>（奇函数）。E(X²)=∫₋₁⁰x²(1+x)dx+∫₀¹x²(1−x)dx=<strong>1/6</strong>，D(X)=1/6</p>
-<p><strong>习题3：</strong>f(x,y)=(x+y)/8(0≤x≤2,0≤y≤2)。E(X)=E(Y)=∬x(x+y)/8 dxdy=<strong>7/6</strong>。E(XY)=∬xy(x+y)/8dxdy=4/3。Cov=4/3−(7/6)²=−1/36。ρ=−1/36/√(11/36·11/36)=<strong>−1/11</strong>。D(X+Y)=D(X)+D(Y)+2Cov=<strong>5/9</strong></p>
-<p><strong>习题4：</strong>圆盘直径D~U(a,b)，面积Y=πD²/4。E(Y)=∫_a^b (πx²/4)·(1/(b−a))dx=π(b³−a³)/(12(b−a))=<strong>π(a²+ab+b²)/12</strong></p>
+<p><strong>习题2：</strong>f(x)=1+x(−1≤x<0), 1−x(0≤x<1)。E(X)=∫<sub>−</sub><sub>1</sub><sup>0</sup>x(1+x)dx+∫<sub>0</sub>¹x(1−x)dx=<strong>0</strong>（奇函数）。E(X<sup>2</sup>)=∫<sub>−</sub><sub>1</sub><sup>0</sup>x<sup>2</sup>(1+x)dx+∫<sub>0</sub>¹x<sup>2</sup>(1−x)dx=<strong>1/6</strong>，D(X)=1/6</p>
+<p><strong>习题3：</strong>f(x,y)=(x+y)/8(0≤x≤2,0≤y≤2)。E(X)=E(Y)=∬x(x+y)/8 dxdy=<strong>7/6</strong>。E(XY)=∬xy(x+y)/8dxdy=4/3。Cov=4/3−(7/6)<sup>2</sup>=−1/36。ρ=−1/36/√(11/36·11/36)=<strong>−1/11</strong>。D(X+Y)=D(X)+D(Y)+2Cov=<strong>5/9</strong></p>
+<p><strong>习题4：</strong>圆盘直径D~U(a,b)，面积Y=πD<sup>2</sup>/4。E(Y)=∫_a^b (πx<sup>2</sup>/4)·(1/(b−a))dx=π(b<sup>3</sup>−a<sup>3</sup>)/(12(b−a))=<strong>π(a<sup>2</sup>+ab+b<sup>2</sup>)/12</strong></p>
 <p><strong>习题5：</strong>D(X)=25,D(Y)=36,ρ=0.4。D(X+Y)=25+36+2×0.4×5×6=<strong>85</strong></p>
 <p><strong>习题6：</strong>Cov(X,Z)=2, Cov(Y,Z)=1。Cov(X+Y,3Z)=3Cov(X,Z)+3Cov(Y,Z)=6+3=<strong>9</strong></p>
 <p><strong>习题7：</strong>已知联合分布列，求Cov(X,Y)。算E(X),E(Y),E(XY)后Cov=E(XY)−E(X)E(Y)=<strong>1/3</strong></p>
@@ -329,14 +329,14 @@ E(Y) = 5 × 9 = <strong>45</strong><br><br>
 
 <table>
 <tr><th>类别</th><th>公式</th><th>说明</th></tr>
-<tr><td>离散型期望</td><td>E(X)=Σxᵢpᵢ</td><td>可能值×概率求和</td></tr>
+<tr><td>离散型期望</td><td>E(X)=Σx<sub>i</sub>p<sub>i</sub></td><td>可能值×概率求和</td></tr>
 <tr><td>连续型期望</td><td>E(X)=∫xf(x)dx</td><td>—</td></tr>
-<tr><td>函数期望（离散）</td><td>E[g(X)]=Σg(xᵢ)pᵢ</td><td>—</td></tr>
+<tr><td>函数期望（离散）</td><td>E[g(X)]=Σg(x<sub>i</sub>)p<sub>i</sub></td><td>—</td></tr>
 <tr><td>函数期望（连续）</td><td>E[g(X)]=∫g(x)f(x)dx</td><td>—</td></tr>
 <tr><td>期望性质</td><td>E(C)=C; E(CX)=CE(X); E(X±Y)=E(X)±E(Y)</td><td>性质③总成立</td></tr>
 <tr><td>独立时期望</td><td>E(XY)=E(X)E(Y)</td><td>反之不成立！</td></tr>
-<tr><td>方差定义</td><td>D(X)=E[(X−μ)²]=E(X²)−[E(X)]²</td><td>常用第二个</td></tr>
-<tr><td>方差性质</td><td>D(C)=0; D(CX)=C²D(X); D(aX+b)=a²D(X)</td><td>系数要平方!</td></tr>
+<tr><td>方差定义</td><td>D(X)=E[(X−μ)<sup>2</sup>]=E(X<sup>2</sup>)−[E(X)]<sup>2</sup></td><td>常用第二个</td></tr>
+<tr><td>方差性质</td><td>D(C)=0; D(CX)=C<sup>2</sup>D(X); D(aX+b)=a<sup>2</sup>D(X)</td><td>系数要平方!</td></tr>
 <tr><td>独立时方差</td><td>D(X±Y)=D(X)+D(Y)</td><td>Cov=0时成立</td></tr>
 <tr><td>协方差</td><td>Cov(X,Y)=E(XY)−E(X)E(Y)</td><td>计算式</td></tr>
 <tr><td>协方差性质</td><td>Cov(aX,bY)=abCov; Cov(X+Y,Z)=Cov(X,Z)+Cov(Y,Z)</td><td>—</td></tr>
@@ -349,9 +349,9 @@ E(Y) = 5 × 9 = <strong>45</strong><br><br>
 <tr><th>分布</th><th>E(X)</th><th>D(X)</th></tr>
 <tr><td>B(n,p)</td><td>np</td><td>np(1−p)</td></tr>
 <tr><td>P(λ)</td><td>λ</td><td>λ</td></tr>
-<tr><td>U(a,b)</td><td>(a+b)/2</td><td>(b−a)²/12</td></tr>
-<tr><td>e(θ)</td><td>θ</td><td>θ²</td></tr>
-<tr><td>N(μ,σ²)</td><td>μ</td><td>σ²</td></tr>
+<tr><td>U(a,b)</td><td>(a+b)/2</td><td>(b−a)<sup>2</sup>/12</td></tr>
+<tr><td>e(θ)</td><td>θ</td><td>θ<sup>2</sup></td></tr>
+<tr><td>N(μ,σ<sup>2</sup>)</td><td>μ</td><td>σ<sup>2</sup></td></tr>
 </table>
 
 <h2>📝 课件重点例题</h2>
@@ -373,8 +373,8 @@ A的期望更高，平均成绩更好。</p>
 <details><summary><strong>详细解析</strong></summary>
 <div style="padding:0.5rem 0">
 <p>f(x)=1/2 (1<x<3)<br>
-E(X) = ∫₁³ x·(1/2)dx = (1/2)[x²/2]₁³ = (1/2)(9/2−1/2) = (1/2)×4 = <strong>2</strong><br>
-E(1/X) = ∫₁³ (1/x)·(1/2)dx = (1/2)[ln|x|]₁³ = (1/2)(ln3−ln1) = <strong>(ln3)/2</strong></p>
+E(X) = ∫<sub>1</sub><sup>3</sup> x·(1/2)dx = (1/2)[x<sup>2</sup>/2]<sub>1</sub><sup>3</sup> = (1/2)(9/2−1/2) = (1/2)×4 = <strong>2</strong><br>
+E(1/X) = ∫<sub>1</sub><sup>3</sup> (1/x)·(1/2)dx = (1/2)[ln|x|]<sub>1</sub><sup>3</sup> = (1/2)(ln3−ln1) = <strong>(ln3)/2</strong></p>
 </div>
 </details>
 </div>
@@ -415,7 +415,7 @@ function checkQuiz(qid, el, isCorrect) {
   const fb = document.getElementById(qid+'-fb');
   fb.className = 'feedback show ' + (isCorrect ? 'correct' : 'wrong');
   const answers = {
-    'quiz-ex': 'E(1/X)=∫₁³(1/x)·(1/2)dx=(1/2)ln|x||₁³=(ln3)/2',
+    'quiz-ex': 'E(1/X)=∫<sub>1</sub><sup>3</sup>(1/x)·(1/2)dx=(1/2)ln|x||<sub>1</sub><sup>3</sup>=(ln3)/2',
     'quiz-var': 'D(2X−3Y)=4D(X)+9D(Y)=4×4+9×2=16+18=34',
     'quiz-cov': 'Cov(X,Y)=ρ√D(X)√D(Y)=0.4×5×6=12，D(X+Y)=25+36+2×12=85',
     'quiz-indep': '独立一定不相关（C）。A、B、D都是不相关不能推出独立'

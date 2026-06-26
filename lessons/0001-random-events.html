@@ -157,8 +157,8 @@
 <p><strong>全概率公式——"分情况讨论再求和"：</strong></p>
 <div class="formula">
   <span class="label">全概率公式</span>
-  若 A₁, A₂, …, Aₙ 构成完备事件组（互不相容且和为Ω）：<br>
-  P(B) = P(A₁)P(B|A₁) + P(A₂)P(B|A₂) + … + P(Aₙ)P(B|Aₙ)
+  若 A<sub>1</sub>, A<sub>2</sub>, …, A<sub>n</sub> 构成完备事件组（互不相容且和为Ω）：<br>
+  P(B) = P(A<sub>1</sub>)P(B|A<sub>1</sub>) + P(A<sub>2</sub>)P(B|A<sub>2</sub>) + … + P(A<sub>n</sub>)P(B|A<sub>n</sub>)
 </div>
 
 <p><strong>贝叶斯公式——"已知结果，反推原因"：</strong></p>
@@ -228,30 +228,30 @@ P(A|B) = P(AB)/P(B) → P(B) = P(AB)/P(A|B)<br>
 <p><strong>（1）求取得正品的概率——用全概率公式</strong><br><br>
 <strong>第1步：确定完备事件组（划分）</strong><br>
 取到哪家工厂的箱子就是划分：<br>
-A₁ = {甲厂}，A₂ = {乙厂}，A₃ = {丙厂}<br>
+A<sub>1</sub> = {甲厂}，A<sub>2</sub> = {乙厂}，A<sub>3</sub> = {丙厂}<br>
 这三个事件互斥（取一箱只能来自一家），且合起来就是全部可能（Ω）<br><br>
-<strong>第2步：求先验概率 P(Aᵢ)</strong><br>
+<strong>第2步：求先验概率 P(A<sub>i</sub>)</strong><br>
 从10箱中任取一箱，每箱被取到概率相同：<br>
-P(A₁) = 5/10 = <strong>0.5</strong>（甲厂5箱）<br>
-P(A₂) = 3/10 = <strong>0.3</strong>（乙厂3箱）<br>
-P(A₃) = 2/10 = <strong>0.2</strong>（丙厂2箱）<br>
+P(A<sub>1</sub>) = 5/10 = <strong>0.5</strong>（甲厂5箱）<br>
+P(A<sub>2</sub>) = 3/10 = <strong>0.3</strong>（乙厂3箱）<br>
+P(A<sub>3</sub>) = 2/10 = <strong>0.2</strong>（丙厂2箱）<br>
 检验：0.5+0.3+0.2=1 ✓<br><br>
-<strong>第3步：求条件概率 P(B|Aᵢ)</strong><br>
+<strong>第3步：求条件概率 P(B|A<sub>i</sub>)</strong><br>
 设B = {取得正品}<br>
 已知各厂次品率，正品率 = 1 − 次品率：<br>
-P(B|A₁) = 1 − 0.1 = <strong>0.9</strong>（甲厂正品率）<br>
-P(B|A₂) = 1 − 0.2 = <strong>0.8</strong>（乙厂正品率）<br>
-P(B|A₃) = 1 − 0.3 = <strong>0.7</strong>（丙厂正品率）<br><br>
+P(B|A<sub>1</sub>) = 1 − 0.1 = <strong>0.9</strong>（甲厂正品率）<br>
+P(B|A<sub>2</sub>) = 1 − 0.2 = <strong>0.8</strong>（乙厂正品率）<br>
+P(B|A<sub>3</sub>) = 1 − 0.3 = <strong>0.7</strong>（丙厂正品率）<br><br>
 <strong>第4步：套全概率公式</strong><br>
-P(B) = P(A₁)P(B|A₁) + P(A₂)P(B|A₂) + P(A₃)P(B|A₃)<br>
+P(B) = P(A<sub>1</sub>)P(B|A<sub>1</sub>) + P(A<sub>2</sub>)P(B|A<sub>2</sub>) + P(A<sub>3</sub>)P(B|A<sub>3</sub>)<br>
 = 0.5 × 0.9 + 0.3 × 0.8 + 0.2 × 0.7<br>
 = 0.45 + 0.24 + 0.14<br>
 = <strong>0.83</strong><br><br>
 <strong>（2）求取得的正品来自甲厂的概率——用贝叶斯公式</strong><br><br>
 <strong>第1步：明确要算什么</strong><br>
-已知结果是B（正品），问原因A₁（甲厂）的概率：P(A₁|B)<br><br>
+已知结果是B（正品），问原因A<sub>1</sub>（甲厂）的概率：P(A<sub>1</sub>|B)<br><br>
 <strong>第2步：套贝叶斯公式</strong><br>
-P(A₁|B) = P(A₁)P(B|A₁) / P(B)<br>
+P(A<sub>1</sub>|B) = P(A<sub>1</sub>)P(B|A<sub>1</sub>) / P(B)<br>
 分子：甲厂的权重 = 0.5 × 0.9 = 0.45<br>
 分母：全概率 = 0.83（第(1)问算出来的）<br>
 = 0.45 / 0.83 ≈ <strong>0.542</strong><br><br>
@@ -264,18 +264,18 @@ P(A₁|B) = P(A₁)P(B|A₁) / P(B)<br>
 <summary><strong>📐 证明推导：条件概率→乘法→全概率→贝叶斯 完整链</strong>（点击展开）</summary>
 <div style="padding:0.75rem 0">
 <p><strong>起点：</strong>条件概率定义 P(B|A)=P(AB)/P(A)（P(A)>0）</p>
-<p><strong>① 乘法公式：</strong>变形得 P(AB)=P(A)·P(B|A)=P(B)·P(A|B)；推广到n个：P(A₁…Aₙ)=P(A₁)P(A₂|A₁)…P(Aₙ|A₁…Aₙ₋₁)</p>
+<p><strong>① 乘法公式：</strong>变形得 P(AB)=P(A)·P(B|A)=P(B)·P(A|B)；推广到n个：P(A<sub>1</sub>…A<sub>n</sub>)=P(A<sub>1</sub>)P(A<sub>2</sub>|A<sub>1</sub>)…P(A<sub>n</sub>|A<sub>1</sub>…A<sub>n</sub><sub>−</sub><sub>1</sub>)</p>
 <p><strong>② 全概率公式：</strong></p>
 <ol class="steps">
-  <li>完备事件组 A₁…Aₙ：互不相容，∪Aᵢ=Ω，P(Aᵢ)>0</li>
-  <li>B = BΩ = B(∪Aᵢ) = ∪(BAᵢ)，各项互不相容</li>
-  <li>P(B) = ΣP(BAᵢ) = ΣP(Aᵢ)·P(B|Aᵢ)（每项用乘法公式）∎</li>
+  <li>完备事件组 A<sub>1</sub>…A<sub>n</sub>：互不相容，∪A<sub>i</sub>=Ω，P(A<sub>i</sub>)>0</li>
+  <li>B = BΩ = B(∪A<sub>i</sub>) = ∪(BA<sub>i</sub>)，各项互不相容</li>
+  <li>P(B) = ΣP(BA<sub>i</sub>) = ΣP(A<sub>i</sub>)·P(B|A<sub>i</sub>)（每项用乘法公式）∎</li>
 </ol>
 <p><strong>③ 贝叶斯公式：</strong></p>
 <ol class="steps">
-  <li>P(Aᵢ|B) = P(AᵢB)/P(B)（条件概率定义）</li>
-  <li>分子 = P(Aᵢ)·P(B|Aᵢ)（乘法公式）</li>
-  <li>分母 = ΣP(Aⱼ)·P(B|Aⱼ)（全概率公式）</li>
+  <li>P(A<sub>i</sub>|B) = P(A<sub>i</sub>B)/P(B)（条件概率定义）</li>
+  <li>分子 = P(A<sub>i</sub>)·P(B|A<sub>i</sub>)（乘法公式）</li>
+  <li>分母 = ΣP(A<sub>j</sub>)·P(B|A<sub>j</sub>)（全概率公式）</li>
   <li>代入即得贝叶斯公式 ∎</li>
 </ol>
 </div>
@@ -314,13 +314,13 @@ P(A₁|B) = P(A₁)P(B|A₁) / P(B)<br>
 </div>
 
 <details class="proof-block">
-<summary><strong>📐 推导：伯努利公式为什么是 Cₙᵏpᵏ(1−p)ⁿ⁻ᵏ？</strong>（点击展开）</summary>
+<summary><strong>📐 推导：伯努利公式为什么是 C<sub>n</sub><sup>k</sup>p<sup>k</sup>(1−p)<sup>n</sup><sup>−</sup><sup>k</sup>？</strong>（点击展开）</summary>
 <div style="padding:0.75rem 0">
 <ol class="steps">
-  <li>先考虑一种特定序列：前k次A发生，后n−k次A不发生。概率 = pᵏ(1−p)ⁿ⁻ᵏ（独立性）</li>
-  <li>"恰好k次" = 在n个位置中选k个给A发生，有 Cₙᵏ 种选法</li>
-  <li>每种选法对应概率相同（pᵏ(1−p)ⁿ⁻ᵏ），且不同选法对应事件互不相容</li>
-  <li>总概率 = Cₙᵏ · pᵏ · (1−p)ⁿ⁻ᵏ ∎</li>
+  <li>先考虑一种特定序列：前k次A发生，后n−k次A不发生。概率 = p<sup>k</sup>(1−p)<sup>n</sup><sup>−</sup><sup>k</sup>（独立性）</li>
+  <li>"恰好k次" = 在n个位置中选k个给A发生，有 C<sub>n</sub><sup>k</sup> 种选法</li>
+  <li>每种选法对应概率相同（p<sup>k</sup>(1−p)<sup>n</sup><sup>−</sup><sup>k</sup>），且不同选法对应事件互不相容</li>
+  <li>总概率 = C<sub>n</sub><sup>k</sup> · p<sup>k</sup> · (1−p)<sup>n</sup><sup>−</sup><sup>k</sup> ∎</li>
 </ol>
 </div>
 </details>
@@ -377,15 +377,15 @@ P(都不发生) = 1 − 1/2 = <strong>1/2</strong></p>
 <details><summary><strong>点击查看详细解析</strong></summary>
 <div style="padding:0.5rem 0">
 <p><strong>（1）全概率公式：</strong><br>
-设B={次品}，A₁={甲},A₂={乙},A₃={丙}<br>
-P(B) = P(A₁)P(B|A₁) + P(A₂)P(B|A₂) + P(A₃)P(B|A₃)<br>
+设B={次品}，A<sub>1</sub>={甲},A<sub>2</sub>={乙},A<sub>3</sub>={丙}<br>
+P(B) = P(A<sub>1</sub>)P(B|A<sub>1</sub>) + P(A<sub>2</sub>)P(B|A<sub>2</sub>) + P(A<sub>3</sub>)P(B|A<sub>3</sub>)<br>
 = 0.15×0.02 + 0.80×0.01 + 0.05×0.03<br>
 = 0.003 + 0.008 + 0.0015<br>
 = <strong>0.0125</strong></p>
 <p><strong>（2）贝叶斯公式——分别算三家：</strong><br>
-P(A₁|B) = 0.15×0.02 / 0.0125 = 0.003 / 0.0125 = <strong>0.24</strong><br>
-P(A₂|B) = 0.80×0.01 / 0.0125 = 0.008 / 0.0125 = <strong>0.64</strong><br>
-P(A₃|B) = 0.05×0.03 / 0.0125 = 0.0015 / 0.0125 = <strong>0.12</strong><br>
+P(A<sub>1</sub>|B) = 0.15×0.02 / 0.0125 = 0.003 / 0.0125 = <strong>0.24</strong><br>
+P(A<sub>2</sub>|B) = 0.80×0.01 / 0.0125 = 0.008 / 0.0125 = <strong>0.64</strong><br>
+P(A<sub>3</sub>|B) = 0.05×0.03 / 0.0125 = 0.0015 / 0.0125 = <strong>0.12</strong><br>
 验证：0.24+0.64+0.12=1 ✓<br>
 结论：<strong>乙厂最大（64%）</strong>——虽然乙的次品率最低，但份额最大，所以已知次品时最可能来自乙。</p>
 </div>
@@ -449,8 +449,8 @@ P(击中) = 1 − 0.08 = <strong>0.92</strong></p>
 
 <h3>📖 课本补充内容</h3>
 <div class="def-card" style="border-left:4px solid #2d6a4f">
-<p><span class="term">概率的连续性（课本§1.2补充）：</span>若事件序列A₁⊂A₂⊂…单调递增，则P(∪Aₙ)=lim P(Aₙ)。单调递减类似。</p>
-<p><span class="term">全概率公式的另一种理解：</span>加权平均。P(B)=ΣP(Aᵢ)P(B|Aᵢ)，其中P(Aᵢ)是权重，P(B|Aᵢ)是条件值。</p>
+<p><span class="term">概率的连续性（课本§1.2补充）：</span>若事件序列A<sub>1</sub>⊂A<sub>2</sub>⊂…单调递增，则P(∪A<sub>n</sub>)=lim P(A<sub>n</sub>)。单调递减类似。</p>
+<p><span class="term">全概率公式的另一种理解：</span>加权平均。P(B)=ΣP(A<sub>i</sub>)P(B|A<sub>i</sub>)，其中P(A<sub>i</sub>)是权重，P(B|A<sub>i</sub>)是条件值。</p>
 </div>
 <div class="def-card" style="border-left:4px solid #2d6a4f">
 <p><span class="term">📝 课本典型习题：</span>设A,B为两事件，P(A)=0.6, P(B)=0.7。证明：0.3≤P(AB)≤0.6。</p>
@@ -498,7 +498,7 @@ P(击中) = 1 − 0.08 = <strong>0.92</strong></p>
 
 <h3>1.2 频率与概率的统计定义</h3>
 <div class="def-card">
-<p><span class="term">频率：</span>n次试验中A发生n_A次，频率 fₙ(A)=n_A/n ∈[0,1]</p>
+<p><span class="term">频率：</span>n次试验中A发生n_A次，频率 f<sub>n</sub>(A)=n_A/n ∈[0,1]</p>
 <p><span class="term">统计定义：</span>n充分大时，频率稳定在常数p附近→p就是概率P(A)</p>
 <p><span class="term">公理化定义：</span>①P(A)≥0 ②P(Ω)=1 ③互不相容事件和的概率=概率的和</p>
 <p><span class="term">P(∅)=0，但概率为0的事件可能发生！（如连续型取单点）</span></p>
@@ -528,28 +528,28 @@ P(击中) = 1 − 0.08 = <strong>0.92</strong></p>
 
 <h3>1.3 古典概型补充例题</h3>
 <div class="def-card" style="border-left:4px solid #e6c970">
-<p><strong>6白4红取5球：</strong>（1）有放回恰3白：C₅³(6/10)³(4/10)²=10×0.216×0.16=<strong>0.3456</strong>；（2）不放回恰3白：C₆³C₄²/C₁₀⁵=20×6/252=<strong>10/21</strong>；（3）不放回第3球为白：<strong>6/10=0.6</strong>（抽签原理）</p>
+<p><strong>6白4红取5球：</strong>（1）有放回恰3白：C<sub>5</sub><sup>3</sup>(6/10)<sup>3</sup>(4/10)<sup>2</sup>=10×0.216×0.16=<strong>0.3456</strong>；（2）不放回恰3白：C<sub>6</sub><sup>3</sup>C<sub>4</sub><sup>2</sup>/C<sub>1</sub><sub>0</sub><sup>5</sup>=20×6/252=<strong>10/21</strong>；（3）不放回第3球为白：<strong>6/10=0.6</strong>（抽签原理）</p>
 </div>
 <div class="def-card" style="border-left:4px solid #e6c970">
 <p><strong>15人抽7张票，第5人抽到概率 = 7/15。</strong>抽签原则：概率=好签数/总数，与次序无关！</p>
 </div>
 <div class="def-card" style="border-left:4px solid #e6c970">
-<p><strong>n人随机分到N个房间（n≤N）：</strong>①指定房间恰m人：Cₙᵐ(N−1)ⁿ⁻ᵐ/Nⁿ；②每两人不同房间：A_Nⁿ/Nⁿ</p>
+<p><strong>n人随机分到N个房间（n≤N）：</strong>①指定房间恰m人：C<sub>n</sub><sup>m</sup>(N−1)<sup>n</sup><sup>−</sup><sup>m</sup>/N<sup>n</sup>；②每两人不同房间：A_N<sup>n</sup>/N<sup>n</sup></p>
 </div>
 <div class="def-card" style="border-left:4px solid #e6c970">
-<p><strong>生日问题（m≤365）：</strong>至少两人生日相同概率 = 1−A₃₆₅ᵐ/365ᵐ。m=23时≈0.507；m=50时≈0.97。</p>
+<p><strong>生日问题（m≤365）：</strong>至少两人生日相同概率 = 1−A<sub>3</sub><sub>6</sub><sub>5</sub><sup>m</sup>/365<sup>m</sup>。m=23时≈0.507；m=50时≈0.97。</p>
 </div>
 <div class="def-card" style="border-left:4px solid #e6c970">
-<p><strong>练习1：</strong>5正5次，不放回取3件，恰1次品概率 = C₅¹C₅²/C₁₀³=<strong>5/12</strong></p>
-<p><strong>练习2：</strong>100件8次品，取10件恰3次品：（1）不放回=C₈³C₉₂⁷/C₁₀₀¹⁰；（2）有放回=C₁₀³·0.08³·0.92⁷</p>
-<p><strong>练习3：</strong>10件2次品，不放回取2次：两只正品=C₈²/C₁₀²=28/45；一正一次=C₈¹C₂¹/C₁₀²=16/45；两只次品=C₂²/C₁₀²=1/45；第二次次品=<strong>1/5</strong></p>
+<p><strong>练习1：</strong>5正5次，不放回取3件，恰1次品概率 = C<sub>5</sub>¹C<sub>5</sub><sup>2</sup>/C<sub>1</sub><sub>0</sub><sup>3</sup>=<strong>5/12</strong></p>
+<p><strong>练习2：</strong>100件8次品，取10件恰3次品：（1）不放回=C<sub>8</sub><sup>3</sup>C<sub>9</sub><sub>2</sub><sup>7</sup>/C<sub>1</sub><sub>0</sub><sub>0</sub>¹<sup>0</sup>；（2）有放回=C<sub>1</sub><sub>0</sub><sup>3</sup>·0.08<sup>3</sup>·0.92<sup>7</sup></p>
+<p><strong>练习3：</strong>10件2次品，不放回取2次：两只正品=C<sub>8</sub><sup>2</sup>/C<sub>1</sub><sub>0</sub><sup>2</sup>=28/45；一正一次=C<sub>8</sub>¹C<sub>2</sub>¹/C<sub>1</sub><sub>0</sub><sup>2</sup>=16/45；两只次品=C<sub>2</sub><sup>2</sup>/C<sub>1</sub><sub>0</sub><sup>2</sup>=1/45；第二次次品=<strong>1/5</strong></p>
 </div>
 
 <h3>1.3 几何概型 ⭐（课件整节，之前遗漏！）</h3>
 <div class="def-card" style="border-left:4px solid #c1292e">
 <p><span class="term">定义：</span>样本点总数无限、等可能的概型。P(A) = m(A)/m(Ω)，其中m为几何度量（长度/面积/体积）。与A的位置和形状无关。</p>
 <p><strong>例1：</strong>校车每30分钟一趟，等车不超过20分钟概率 = 20/30 = <strong>2/3</strong></p>
-<p><strong>例2：</strong>单位圆内随机投点M，到原点距离<1/3概率 = π(1/3)²/π·1² = <strong>1/9</strong></p>
+<p><strong>例2：</strong>单位圆内随机投点M，到原点距离<1/3概率 = π(1/3)<sup>2</sup>/π·1<sup>2</sup> = <strong>1/9</strong></p>
 </div>
 
 <h3>1.4 条件概率补充例题</h3>
@@ -573,18 +573,18 @@ P(击中) = 1 − 0.08 = <strong>0.92</strong></p>
 </div>
 <div class="def-card" style="border-left:4px solid #c1292e">
 <p><span class="term">⚠️ n个事件相互独立 ≠ 两两独立！</span></p>
-<p>相互独立：任意k个(2≤k≤n)事件都满足P(Aᵢ₁…Aᵢₖ)=P(Aᵢ₁)…P(Aᵢₖ)</p>
+<p>相互独立：任意k个(2≤k≤n)事件都满足P(A<sub>i</sub><sub>1</sub>…A<sub>i</sub><sub>k</sub>)=P(A<sub>i</sub><sub>1</sub>)…P(A<sub>i</sub><sub>k</sub>)</p>
 <p>两两独立：只要求任何两个事件独立（k=2特例）</p>
 <p><strong>相互独立 ⇒ 两两独立，反之不成立！</strong></p>
-<p><strong>例题：</strong>掷硬币两次，A₁={第一次正}, A₂={第二次反}, A₃={正反各一次}。P(A₁)=1/2, P(A₂)=1/2, P(A₃)=1/2。两两独立：P(A₁A₂)=1/4=1/2×1/2 ✓; P(A₁A₃)=1/4 ✓; P(A₂A₃)=1/4 ✓。但P(A₁A₂A₃)=0≠1/2×1/2×1/2=1/8 → <strong>不相互独立！</strong></p>
+<p><strong>例题：</strong>掷硬币两次，A<sub>1</sub>={第一次正}, A<sub>2</sub>={第二次反}, A<sub>3</sub>={正反各一次}。P(A<sub>1</sub>)=1/2, P(A<sub>2</sub>)=1/2, P(A<sub>3</sub>)=1/2。两两独立：P(A<sub>1</sub>A<sub>2</sub>)=1/4=1/2×1/2 ✓; P(A<sub>1</sub>A<sub>3</sub>)=1/4 ✓; P(A<sub>2</sub>A<sub>3</sub>)=1/4 ✓。但P(A<sub>1</sub>A<sub>2</sub>A<sub>3</sub>)=0≠1/2×1/2×1/2=1/8 → <strong>不相互独立！</strong></p>
 </div>
 <div class="def-card" style="border-left:4px solid #e6c970">
 <p><strong>例题：</strong>A,B,C相互独立，判断A−B与C̄是否独立。</p>
 <p>A−B = AB̄，P(AB̄·C̄) = P(A)P(B̄)P(C̄) = P(AB̄)·P(C̄) → <strong>独立 ✓</strong></p>
 </div>
 <div class="def-card" style="border-left:4px solid #e6c970">
-<p><strong>伯努利例1：</strong>射手连射5次，每次命中率p，恰中3次概率=C₅³p³(1−p)²</p>
-<p><strong>伯努利例2：</strong>6白4红有放回取5球，恰3白概率=C₅³(0.6)³(0.4)²=10×0.216×0.16=<strong>0.3456</strong></p>
+<p><strong>伯努利例1：</strong>射手连射5次，每次命中率p，恰中3次概率=C<sub>5</sub><sup>3</sup>p<sup>3</sup>(1−p)<sup>2</sup></p>
+<p><strong>伯努利例2：</strong>6白4红有放回取5球，恰3白概率=C<sub>5</sub><sup>3</sup>(0.6)<sup>3</sup>(0.4)<sup>2</sup>=10×0.216×0.16=<strong>0.3456</strong></p>
 </div>
 
 <h2>📐 第1章 公式汇总</h2>
@@ -596,13 +596,13 @@ P(击中) = 1 − 0.08 = <strong>0.92</strong></p>
 <tr><td>加法</td><td>P(A∪B)=P(A)+P(B)−P(AB)</td><td>三事件推广含+ABC项</td></tr>
 <tr><td>条件概率</td><td>P(B|A)=P(AB)/P(A)</td><td>P(A)>0</td></tr>
 <tr><td>乘法</td><td>P(AB)=P(A)·P(B|A)</td><td>推广到n个事件连乘</td></tr>
-<tr><td>全概率</td><td>P(B)=ΣP(Aᵢ)P(B|Aᵢ)</td><td>完备事件组加权</td></tr>
-<tr><td>贝叶斯</td><td>P(Aᵢ|B)=P(Aᵢ)P(B|Aᵢ)/ΣP(Aⱼ)P(B|Aⱼ)</td><td>已知结果反推原因</td></tr>
+<tr><td>全概率</td><td>P(B)=ΣP(A<sub>i</sub>)P(B|A<sub>i</sub>)</td><td>完备事件组加权</td></tr>
+<tr><td>贝叶斯</td><td>P(A<sub>i</sub>|B)=P(A<sub>i</sub>)P(B|A<sub>i</sub>)/ΣP(A<sub>j</sub>)P(B|A<sub>j</sub>)</td><td>已知结果反推原因</td></tr>
 <tr><td>古典概型</td><td>P(A)=A中样本点数/总样本点数</td><td>等可能+有限</td></tr>
-<tr><td>排列</td><td>Aₙᵐ=n!/(n−m)!</td><td>有次序</td></tr>
-<tr><td>组合</td><td>Cₙᵐ=n!/[m!(n−m)!]</td><td>无次序</td></tr>
+<tr><td>排列</td><td>A<sub>n</sub><sup>m</sup>=n!/(n−m)!</td><td>有次序</td></tr>
+<tr><td>组合</td><td>C<sub>n</sub><sup>m</sup>=n!/[m!(n−m)!]</td><td>无次序</td></tr>
 <tr><td>独立性</td><td>P(AB)=P(A)P(B)</td><td>独立⇒Ā,B等也独立</td></tr>
-<tr><td>伯努利</td><td>P(X=k)=Cₙᵏpᵏ(1−p)ⁿ⁻ᵏ</td><td>n重独立重复</td></tr>
+<tr><td>伯努利</td><td>P(X=k)=C<sub>n</sub><sup>k</sup>p<sup>k</sup>(1−p)<sup>n</sup><sup>−</sup><sup>k</sup></td><td>n重独立重复</td></tr>
 <tr><td>德摩根</td><td>Ā∪B̄=Ā∩B̄; Ā∩B̄=Ā∪B̄</td><td>对偶律</td></tr>
 </table>
 
@@ -626,10 +626,10 @@ function checkQuiz(qid, el, isCorrect) {
   const answers = {
     'quiz1': 'B. 从A（{1,3,5}）中去除B（{1,2,3}）的元素，剩下{5}',
     'quiz2': 'P(A∪B)=P(A)+P(B)−P(AB)=0.5+0.4−0.2=0.7',
-    'quiz3': '(C₈²/C₁₀²)=28/45，或(8/10)×(7/9)=28/45',
+    'quiz3': '(C<sub>8</sub><sup>2</sup>/C<sub>1</sub><sub>0</sub><sup>2</sup>)=28/45，或(8/10)×(7/9)=28/45',
     'quiz4': '由P(B|A)=P(AB)/P(A)得P(AB)=1/12，由P(A|B)=P(AB)/P(B)得P(B)=1/6，P(A∪B)=1/4+1/6−1/12=1/3',
     'quiz5': '用贝叶斯：甲=0.15×0.02/全概率=0.003/0.0125=0.24，乙=0.8×0.01/0.0125=0.64，丙=0.05×0.03/0.0125=0.12。乙最大(0.64)',
-    'quiz6': 'C₃¹(1/2)¹(1/2)²=3/8'
+    'quiz6': 'C<sub>3</sub>¹(1/2)¹(1/2)<sup>2</sup>=3/8'
   };
   fb.textContent = isCorrect ? '✅ 正确！' : '❌ 不对。' + (answers[qid] || '');
 }

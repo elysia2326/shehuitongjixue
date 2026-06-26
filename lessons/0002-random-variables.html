@@ -41,13 +41,13 @@
 
 <div class="formula">
   <span class="label">区间概率公式</span>
-  P(x₁ < X ≤ x₂) = F(x₂) − F(x₁)
+  P(x<sub>1</sub> < X ≤ x<sub>2</sub>) = F(x<sub>2</sub>) − F(x<sub>1</sub>)
 </div>
 
 <details class="proof-block">
 <summary><strong>📐 证明：分布函数四条性质</strong>（点击展开）</summary>
 <div style="padding:0.75rem 0">
-<p><strong>单调不减（x₁<x₂ ⇒ F(x₁)≤F(x₂)）：</strong>F(x₂)−F(x₁)=P(x₁<X≤x₂)≥0</p>
+<p><strong>单调不减（x<sub>1</sub><x<sub>2</sub> ⇒ F(x<sub>1</sub>)≤F(x<sub>2</sub>)）：</strong>F(x<sub>2</sub>)−F(x<sub>1</sub>)=P(x<sub>1</sub><X≤x<sub>2</sub>)≥0</p>
 <p><strong>F(−∞)=0：</strong>lim<sub>x→−∞</sub>P(X≤x)=P(∅)=0</p>
 <p><strong>F(+∞)=1：</strong>lim<sub>x→+∞</sub>P(X≤x)=P(Ω)=1 ∎</p>
 </div>
@@ -89,7 +89,7 @@
 <details class="proof-block">
 <summary><strong>📐 验证：二项分布归一性 + 密度函数性质</strong>（点击展开）</summary>
 <div style="padding:0.75rem 0">
-<p><strong>二项分布归一性 ΣCₙᵏpᵏ(1−p)ⁿ⁻ᵏ=1：</strong>由二项式定理 (a+b)ⁿ=ΣCₙᵏaᵏbⁿ⁻ᵏ，取a=p, b=1−p，得(p+(1−p))ⁿ=1ⁿ=1 ∎</p>
+<p><strong>二项分布归一性 ΣC<sub>n</sub><sup>k</sup>p<sup>k</sup>(1−p)<sup>n</sup><sup>−</sup><sup>k</sup>=1：</strong>由二项式定理 (a+b)<sup>n</sup>=ΣC<sub>n</sub><sup>k</sup>a<sup>k</sup>b<sup>n</sup><sup>−</sup><sup>k</sup>，取a=p, b=1−p，得(p+(1−p))<sup>n</sup>=1<sup>n</sup>=1 ∎</p>
 <p><strong>P(X=c)=0（连续型）：</strong>P(X=c)=lim<sub>ε→0</sub>∫<sub>c−ε</sub><sup>c+ε</sup>f(x)dx，积分区间长度→0，被积函数有界，故积分→0 ∎</p>
 </div>
 </details>
@@ -97,10 +97,10 @@
 <div class="quiz" id="quiz-poi">
   <p class="question"><strong>✏️ 自测：</strong>设X~P(λ)，P(X=1)=P(X=2)，则P(X=4)=？</p>
   <div class="options">
-    <div class="option" onclick="checkQuiz('quiz-poi', this, false)">A. e⁻²/3</div>
-    <div class="option" onclick="checkQuiz('quiz-poi', this, true)">B. 2e⁻²/3</div>
-    <div class="option" onclick="checkQuiz('quiz-poi', this, false)">C. 4e⁻²/3</div>
-    <div class="option" onclick="checkQuiz('quiz-poi', this, false)">D. e⁻²</div>
+    <div class="option" onclick="checkQuiz('quiz-poi', this, false)">A. e<sup>−</sup><sup>2</sup>/3</div>
+    <div class="option" onclick="checkQuiz('quiz-poi', this, true)">B. 2e<sup>−</sup><sup>2</sup>/3</div>
+    <div class="option" onclick="checkQuiz('quiz-poi', this, false)">C. 4e<sup>−</sup><sup>2</sup>/3</div>
+    <div class="option" onclick="checkQuiz('quiz-poi', this, false)">D. e<sup>−</sup><sup>2</sup></div>
   </div>
   <div class="feedback" id="quiz-poi-fb"></div>
 </div>
@@ -127,12 +127,12 @@
   无记忆性：P(X>s+t|X>s) = P(X>t)
 </div>
 
-<h3>（三）正态分布 X~N(μ,σ²) ⭐⭐⭐最高频！</h3>
+<h3>（三）正态分布 X~N(μ,σ<sup>2</sup>) ⭐⭐⭐最高频！</h3>
 <p>正态分布是考试绝对核心。密度函数关于x=μ对称，呈钟形曲线。</p>
 
 <div class="formula">
   <span class="label">标准化变换（核心技能！）</span>
-  若 X~N(μ,σ²)，则 Z = (X−μ)/σ ~ N(0,1)<br>
+  若 X~N(μ,σ<sup>2</sup>)，则 Z = (X−μ)/σ ~ N(0,1)<br>
   P(a < X ≤ b) = Φ((b−μ)/σ) − Φ((a−μ)/σ)
 </div>
 
@@ -155,11 +155,11 @@
 <details class="proof-block">
 <summary><strong>📐 证明：正态标准化定理 + 连续型函数分布求法</strong>（点击展开）</summary>
 <div style="padding:0.75rem 0">
-<p><strong>标准化定理 X~N(μ,σ²) ⇒ Z=(X−μ)/σ~N(0,1)：</strong></p>
+<p><strong>标准化定理 X~N(μ,σ<sup>2</sup>) ⇒ Z=(X−μ)/σ~N(0,1)：</strong></p>
 <ol class="steps">
-  <li>f<sub>X</sub>(x)=1/(√(2π)σ)·exp(−(x−μ)²/(2σ²))</li>
+  <li>f<sub>X</sub>(x)=1/(√(2π)σ)·exp(−(x−μ)<sup>2</sup>/(2σ<sup>2</sup>))</li>
   <li>Z=(X−μ)/σ，则X=σZ+μ，dx/dz=σ</li>
-  <li>f<sub>Z</sub>(z)=f<sub>X</sub>(σz+μ)·|σ|=1/(√(2π)σ)·exp(−(σz)²/(2σ²))·σ=1/√(2π)·exp(−z²/2) ∎</li>
+  <li>f<sub>Z</sub>(z)=f<sub>X</sub>(σz+μ)·|σ|=1/(√(2π)σ)·exp(−(σz)<sup>2</sup>/(2σ<sup>2</sup>))·σ=1/√(2π)·exp(−z<sup>2</sup>/2) ∎</li>
 </ol>
 <p><strong>连续型函数Y=g(X)的分布求法（通用三步）：</strong></p>
 <ol class="steps">
@@ -179,20 +179,20 @@
 <details><summary><strong>点击查看逐步解析</strong></summary>
 <div style="padding:0.5rem 0">
 <p><strong>（1）确定k——利用归一性∫f(x)dx=1：</strong><br>
-∫₀³(2−kx)dx + ∫₃⁴(x/2)dx = 1<br>
-第一段：[2x − kx²/2]₀³ = 6 − 9k/2<br>
-第二段：[x²/4]₃⁴ = 16/4 − 9/4 = 7/4<br>
+∫<sub>0</sub><sup>3</sup>(2−kx)dx + ∫<sub>3</sub><sup>4</sup>(x/2)dx = 1<br>
+第一段：[2x − kx<sup>2</sup>/2]<sub>0</sub><sup>3</sup> = 6 − 9k/2<br>
+第二段：[x<sup>2</sup>/4]<sub>3</sub><sup>4</sup> = 16/4 − 9/4 = 7/4<br>
 (6−9k/2) + 7/4 = 1 → 6 + 1.75 − 4.5k = 1 → 7.75 − 4.5k = 1 → 4.5k = 6.75 → <strong>k=1.5=3/2</strong><br>
 考试常见值：k=<strong>1/6</strong>（取决于具体题目数字，方法一样）</p>
 <p><strong>（2）求F(x)——分段积分：</strong><br>
 x<0：F(x)=0<br>
-0≤x<3：F(x)=∫₀ˣ(2−kt)dt = 2x−kx²/2<br>
-3≤x<4：F(x)=∫₀³(2−kt)dt+∫₃ˣ(t/2)dt = (6−9k/2)+(x²/4−9/4)<br>
+0≤x<3：F(x)=∫<sub>0</sub>ˣ(2−kt)dt = 2x−kx<sup>2</sup>/2<br>
+3≤x<4：F(x)=∫<sub>0</sub><sup>3</sup>(2−kt)dt+∫<sub>3</sub>ˣ(t/2)dt = (6−9k/2)+(x<sup>2</sup>/4−9/4)<br>
 x≥4：F(x)=1<br>
 （代入k值即得具体表达式）</p>
 <p><strong>（3）P(1<X≤3.5)=F(3.5)−F(1)：</strong><br>
-F(3.5)=(6−9k/2)+(3.5²/4−9/4)=(6−9k/2)+(12.25/4−2.25)=(6−9k/2)+0.8125<br>
-F(1)=2×1−k×1²/2=2−k/2<br>
+F(3.5)=(6−9k/2)+(3.5<sup>2</sup>/4−9/4)=(6−9k/2)+(12.25/4−2.25)=(6−9k/2)+0.8125<br>
+F(1)=2×1−k×1<sup>2</sup>/2=2−k/2<br>
 代入k=1/6得P(1<X≤3.5)=<strong>41/48</strong></p>
 </div>
 </details>
@@ -200,7 +200,7 @@ F(1)=2×1−k×1²/2=2−k/2<br>
 
 <div class="def-card" style="border-left:4px solid var(--accent)">
 <p><span class="term">📋 作业一 第4题：正态分布应用题（身高/车门设计）⭐</span></p>
-<p>成年男子身高 X~N(170,10²)。求：</p>
+<p>成年男子身高 X~N(170,10<sup>2</sup>)。求：</p>
 <p>（1）身高大于160cm的概率；</p>
 <p>（2）车门设计多高，碰头概率≤5%？（z<sub>0.05</sub>=1.645）</p>
 <p>（3）100人上车，至少2人碰头的概率。</p>
@@ -208,7 +208,7 @@ F(1)=2×1−k×1²/2=2−k/2<br>
 <div style="padding:0.5rem 0">
 <p><strong>（1）身高大于160cm的概率</strong><br><br>
 <strong>第1步——标准化（把一般正态变成标准正态）：</strong><br>
-已知 X~N(170, 10²)，即 μ=170，σ=10<br>
+已知 X~N(170, 10<sup>2</sup>)，即 μ=170，σ=10<br>
 标准化公式：Z = (X − μ)/σ = (X − 170)/10<br>
 则 Z ~ N(0,1)（标准正态分布）<br><br>
 <strong>第2步——把要求的事件转化为关于Z的：</strong><br>
@@ -243,8 +243,8 @@ h ≥ <strong>186.45 cm</strong>（取187cm）<br><br>
 要求：P(Y ≥ 2)<br><br>
 <strong>第3步——用对立事件：</strong><br>
 P(Y ≥ 2) = 1 − P(Y=0) − P(Y=1)<br>
-P(Y=0) = C₁₀₀⁰ × (0.05)⁰ × (0.95)¹⁰⁰ = 1 × 1 × 0.95¹⁰⁰ ≈ 0.00592<br>
-P(Y=1) = C₁₀₀¹ × (0.05)¹ × (0.95)⁹⁹ = 100 × 0.05 × 0.95⁹⁹ ≈ 0.03116<br>
+P(Y=0) = C<sub>1</sub><sub>0</sub><sub>0</sub><sup>0</sup> × (0.05)<sup>0</sup> × (0.95)¹<sup>0</sup><sup>0</sup> = 1 × 1 × 0.95¹<sup>0</sup><sup>0</sup> ≈ 0.00592<br>
+P(Y=1) = C<sub>1</sub><sub>0</sub><sub>0</sub>¹ × (0.05)¹ × (0.95)<sup>9</sup><sup>9</sup> = 100 × 0.05 × 0.95<sup>9</sup><sup>9</sup> ≈ 0.03116<br>
 P(Y ≥ 2) = 1 − 0.00592 − 0.03116 ≈ <strong>0.9629</strong></p>
 </div>
 </details>
@@ -259,9 +259,9 @@ P(Y ≥ 2) = 1 − 0.00592 − 0.03116 ≈ <strong>0.9629</strong></p>
 <div style="padding:0.5rem 0">
 <p>X~B(400, 0.02)，n=400很大、p=0.02很小，λ=np=8，用泊松近似。<br>
 P(X≥2) = 1 − P(X=0) − P(X=1)<br>
-P(X=0) ≈ 8⁰e⁻⁸/0! = e⁻⁸<br>
-P(X=1) ≈ 8¹e⁻⁸/1! = 8e⁻⁸<br>
-P(X≥2) ≈ 1 − 9e⁻⁸ ≈ <strong>0.9972</strong><br>
+P(X=0) ≈ 8<sup>0</sup>e<sup>−</sup><sup>8</sup>/0! = e<sup>−</sup><sup>8</sup><br>
+P(X=1) ≈ 8¹e<sup>−</sup><sup>8</sup>/1! = 8e<sup>−</sup><sup>8</sup><br>
+P(X≥2) ≈ 1 − 9e<sup>−</sup><sup>8</sup> ≈ <strong>0.9972</strong><br>
 （几乎必然命中——400次射击只命中0或1次的概率只有约0.3%）</p>
 </div>
 </details>
@@ -272,10 +272,10 @@ P(X≥2) ≈ 1 − 9e⁻⁸ ≈ <strong>0.9972</strong><br>
 设X~P(λ)，P(X=1)=P(X=2)，求P(X=4)。</p>
 <details><summary><strong>详细解析</strong></summary>
 <div style="padding:0.5rem 0">
-<p>P(X=1)=λe⁻<sup>λ</sup>/1!=λe⁻<sup>λ</sup><br>
-P(X=2)=λ²e⁻<sup>λ</sup>/2!=λ²e⁻<sup>λ</sup>/2<br>
-令相等：λe⁻<sup>λ</sup>=λ²e⁻<sup>λ</sup>/2 ⇒ λ=λ²/2 ⇒ λ=2（λ≠0）<br>
-P(X=4)=2⁴e⁻²/4!=16e⁻²/24=<strong>2e⁻²/3</strong></p>
+<p>P(X=1)=λe<sup>−</sup><sup>λ</sup>/1!=λe<sup>−</sup><sup>λ</sup><br>
+P(X=2)=λ<sup>2</sup>e<sup>−</sup><sup>λ</sup>/2!=λ<sup>2</sup>e<sup>−</sup><sup>λ</sup>/2<br>
+令相等：λe<sup>−</sup><sup>λ</sup>=λ<sup>2</sup>e<sup>−</sup><sup>λ</sup>/2 ⇒ λ=λ<sup>2</sup>/2 ⇒ λ=2（λ≠0）<br>
+P(X=4)=2<sup>4</sup>e<sup>−</sup><sup>2</sup>/4!=16e<sup>−</sup><sup>2</sup>/24=<strong>2e<sup>−</sup><sup>2</sup>/3</strong></p>
 </div>
 </details>
 </div>
@@ -298,15 +298,15 @@ P(X=4)=2⁴e⁻²/4!=16e⁻²/24=<strong>2e⁻²/3</strong></p>
 <div style="padding:0.5rem 0">
 <p>无记忆性：P(X>s+t|X>s) = P(X>t)<br>
 s=80, t=100：P(X>180|X>80) = P(X>100)<br>
-= e⁻¹⁰⁰/²⁰⁰ = e⁻⁰·⁵ ≈ <strong>0.6065</strong><br>
+= e<sup>−</sup>¹<sup>0</sup><sup>0</sup>/<sup>2</sup><sup>0</sup><sup>0</sup> = e<sup>−</sup><sup>0</sup>·<sup>5</sup> ≈ <strong>0.6065</strong><br>
 （有趣：不管已经用了多久，还能用的时间分布不变）</p>
 </div>
 </details>
 </div>
 
 <div class="def-card" style="border-left:4px solid #e6c970">
-<p><span class="term">📋 课件2.4 例：离散型Y=X²</span><br>
-X分布列：P(X=−2)=0.1, P(X=−1)=0.2, P(X=0)=0.4, P(X=1)=0.2, P(X=2)=0.1。求Y=X²的分布列。</p>
+<p><span class="term">📋 课件2.4 例：离散型Y=X<sup>2</sup></span><br>
+X分布列：P(X=−2)=0.1, P(X=−1)=0.2, P(X=0)=0.4, P(X=1)=0.2, P(X=2)=0.1。求Y=X<sup>2</sup>的分布列。</p>
 <details><summary><strong>详细解析</strong></summary>
 <div style="padding:0.5rem 0">
 <p>X→Y映射：(−2)→4, (−1)→1, 0→0, 1→1, 2→4<br>
@@ -320,13 +320,13 @@ Y=4：X=−2或X=2 ⇒ P(Y=4)=0.1+0.1=0.2<br>
 </div>
 
 <div class="def-card" style="border-left:4px solid #e6c970">
-<p><span class="term">📋 课件2.4 例：连续型Y=X²+1</span><br>
-X密度f(x)=2x(0<x<1)，求Y=X²+1的密度函数。</p>
+<p><span class="term">📋 课件2.4 例：连续型Y=X<sup>2</sup>+1</span><br>
+X密度f(x)=2x(0<x<1)，求Y=X<sup>2</sup>+1的密度函数。</p>
 <details><summary><strong>详细解析</strong></summary>
 <div style="padding:0.5rem 0">
 <p><strong>三步法：</strong><br>
-①先求分布函数：F<sub>Y</sub>(y)=P(Y≤y)=P(X²+1≤y)=P(X≤√(y−1))<br>
-= ∫₀<sup>√(y−1)</sup> 2x dx = [x²]₀<sup>√(y−1)</sup> = y−1（其中1<y<2）<br>
+①先求分布函数：F<sub>Y</sub>(y)=P(Y≤y)=P(X<sup>2</sup>+1≤y)=P(X≤√(y−1))<br>
+= ∫<sub>0</sub><sup>√(y−1)</sup> 2x dx = [x<sup>2</sup>]<sub>0</sub><sup>√(y−1)</sup> = y−1（其中1<y<2）<br>
 ②对y求导得密度：f<sub>Y</sub>(y)=d(y−1)/dy=<strong>1</strong>（1<y<2）<br>
 ③所以Y在(1,2)上服从均匀分布！</p>
 </div>
@@ -373,9 +373,9 @@ X密度f(x)=2x(0<x<1)，求Y=X²+1的密度函数。</p>
 <details class="proof-block">
 <summary><strong>📐 证明：矩形法则 + 边缘分布 + 独立性</strong>（点击展开）</summary>
 <div style="padding:0.75rem 0">
-<p><strong>矩形法则：</strong>P(x₁<X≤x₂,y₁<Y≤y₂)=F(x₂,y₂)−F(x₂,y₁)−F(x₁,y₂)+F(x₁,y₁)。从大矩形减去两条再补回重叠角。</p>
-<p><strong>边缘分布列 pᵢ·=Σⱼpᵢⱼ：</strong>{X=xᵢ}=∪ⱼ{X=xᵢ,Y=yⱼ}，各项互不相容，由可加性得。</p>
-<p><strong>离散型独立 pᵢⱼ=pᵢ··p·ⱼ：</strong>由P(X=xᵢ,Y=yⱼ)=P(X=xᵢ)P(Y=yⱼ)直接写出。</p>
+<p><strong>矩形法则：</strong>P(x<sub>1</sub><X≤x<sub>2</sub>,y<sub>1</sub><Y≤y<sub>2</sub>)=F(x<sub>2</sub>,y<sub>2</sub>)−F(x<sub>2</sub>,y<sub>1</sub>)−F(x<sub>1</sub>,y<sub>2</sub>)+F(x<sub>1</sub>,y<sub>1</sub>)。从大矩形减去两条再补回重叠角。</p>
+<p><strong>边缘分布列 p<sub>i</sub>·=Σ<sub>j</sub>p<sub>i</sub><sub>j</sub>：</strong>{X=x<sub>i</sub>}=∪<sub>j</sub>{X=x<sub>i</sub>,Y=y<sub>j</sub>}，各项互不相容，由可加性得。</p>
+<p><strong>离散型独立 p<sub>i</sub><sub>j</sub>=p<sub>i</sub>··p·<sub>j</sub>：</strong>由P(X=x<sub>i</sub>,Y=y<sub>j</sub>)=P(X=x<sub>i</sub>)P(Y=y<sub>j</sub>)直接写出。</p>
 <p><strong>连续型独立 f(x,y)=f<sub>X</sub>(x)f<sub>Y</sub>(y)：</strong>由F(x,y)=F<sub>X</sub>(x)F<sub>Y</sub>(y)两边求二阶混合偏导即得 ∎</p>
 </div>
 </details>
@@ -421,8 +421,8 @@ X密度f(x)=2x(0<x<1)，求Y=X²+1的密度函数。</p>
 <div class="quiz" id="quiz-2d">
   <p class="question"><strong>✏️ 自测：</strong>二维正态分布中，X与Y相互独立的充要条件是？</p>
   <div class="options">
-    <div class="option" onclick="checkQuiz('quiz-2d', this, false)">A. μ₁=μ₂</div>
-    <div class="option" onclick="checkQuiz('quiz-2d', this, false)">B. σ₁²=σ₂²</div>
+    <div class="option" onclick="checkQuiz('quiz-2d', this, false)">A. μ<sub>1</sub>=μ<sub>2</sub></div>
+    <div class="option" onclick="checkQuiz('quiz-2d', this, false)">B. σ<sub>1</sub><sup>2</sup>=σ<sub>2</sub><sup>2</sup></div>
     <div class="option" onclick="checkQuiz('quiz-2d', this, true)">C. ρ=0</div>
     <div class="option" onclick="checkQuiz('quiz-2d', this, false)">D. X和Y同分布</div>
   </div>
@@ -433,12 +433,12 @@ X密度f(x)=2x(0<x<1)，求Y=X²+1的密度函数。</p>
 
 <h3>📖 课本补充内容</h3>
 <div class="def-card" style="border-left:4px solid #2d6a4f">
-<p><span class="term">Γ分布（课本§2.3补充）：</span>Γ(α,β)的密度f(x)=x^(α−1)e^(−x/β)/(β^α Γ(α))。指数分布是α=1的特例。χ²(n)=Γ(n/2, 2)。</p>
-<p><span class="term">随机变量函数的分布——公式法：</span>若y=g(x)严格单调且可导，则f_Y(y)=f_X(h(y))·|h'(y)|，其中h=g⁻¹。</p>
+<p><span class="term">Γ分布（课本§2.3补充）：</span>Γ(α,β)的密度f(x)=x^(α−1)e^(−x/β)/(β^α Γ(α))。指数分布是α=1的特例。χ<sup>2</sup>(n)=Γ(n/2, 2)。</p>
+<p><span class="term">随机变量函数的分布——公式法：</span>若y=g(x)严格单调且可导，则f_Y(y)=f_X(h(y))·|h'(y)|，其中h=g<sup>−</sup>¹。</p>
 </div>
 <div class="def-card" style="border-left:4px solid #2d6a4f">
 <p><span class="term">📝 课本典型习题：</span>设X~N(0,1)，求Y=|X|的概率密度。</p>
-<details><summary><strong>答案</strong></summary>f_Y(y)=2φ(y)=√(2/π)·e^(−y²/2)，y>0。（这是因为|X|取值正半轴，密度是标准正态的两倍）</details>
+<details><summary><strong>答案</strong></summary>f_Y(y)=2φ(y)=√(2/π)·e^(−y<sup>2</sup>/2)，y>0。（这是因为|X|取值正半轴，密度是标准正态的两倍）</details>
 </div>
 <div class="def-card" style="border-left:4px solid #2d6a4f">
 <p><span class="term">📝 课本典型习题：</span>设二维随机变量(X,Y)的联合密度f(x,y)=1(0<x<1,|y|<x)，求边缘密度f_X(x)和f_Y(y)。</p>
@@ -447,8 +447,8 @@ X密度f(x)=2x(0<x<1)，求Y=X²+1的密度函数。</p>
 
 <h3>2.1 补充例题</h3>
 <div class="def-card" style="border-left:4px solid #e6c970">
-<p><strong>分布函数求常数：</strong>F(x)=c−e^(−x²/2) (x≥0)，F(−∞)=0。求c和P(|X|>2)。</p>
-<details><summary><strong>答案</strong></summary>F(+∞)=c−0=1→c=1。P(|X|>2)=1−P(−2≤X≤2)=1−(F(2)−F(−2))。F(−2)=0，F(2)=1−e⁻²。P(|X|>2)=e⁻²</details>
+<p><strong>分布函数求常数：</strong>F(x)=c−e^(−x<sup>2</sup>/2) (x≥0)，F(−∞)=0。求c和P(|X|>2)。</p>
+<details><summary><strong>答案</strong></summary>F(+∞)=c−0=1→c=1。P(|X|>2)=1−P(−2≤X≤2)=1−(F(2)−F(−2))。F(−2)=0，F(2)=1−e<sup>−</sup><sup>2</sup>。P(|X|>2)=e<sup>−</sup><sup>2</sup></details>
 </div>
 <div class="def-card" style="border-left:4px solid #e6c970">
 <p><strong>离散型分布列求法：</strong>掷硬币3次，X=正面数。分布列：P(X=0)=1/8, P(X=1)=3/8, P(X=2)=3/8, P(X=3)=1/8。分布函数为阶梯函数。</p>
@@ -459,19 +459,19 @@ X密度f(x)=2x(0<x<1)，求Y=X²+1的密度函数。</p>
 
 <h3>2.2 补充例题</h3>
 <div class="def-card" style="border-left:4px solid #e6c970">
-<p><strong>交通岗红灯：</strong>6个岗，每个红灯p=1/3，独立。X=红灯数~B(6,1/3)。P(X≥5)=C₆⁵(1/3)⁵(2/3)+C₆⁶(1/3)⁶=<strong>0.0179</strong></p>
+<p><strong>交通岗红灯：</strong>6个岗，每个红灯p=1/3，独立。X=红灯数~B(6,1/3)。P(X≥5)=C<sub>6</sub><sup>5</sup>(1/3)<sup>5</sup>(2/3)+C<sub>6</sub><sup>6</sup>(1/3)<sup>6</sup>=<strong>0.0179</strong></p>
 </div>
 <div class="def-card" style="border-left:4px solid #e6c970">
-<p><strong>二项分布判断选择题：</strong>下列哪个是二项分布？D：P(X=k)=C₂₀ᵏ·0.98ᵏ·0.02²⁰⁻ᵏ（A的k从1开始缺0，B是泊松，C的0.6+0.5≠1）</p>
+<p><strong>二项分布判断选择题：</strong>下列哪个是二项分布？D：P(X=k)=C<sub>2</sub><sub>0</sub><sup>k</sup>·0.98<sup>k</sup>·0.02<sup>2</sup><sup>0</sup><sup>−</sup><sup>k</sup>（A的k从1开始缺0，B是泊松，C的0.6+0.5≠1）</p>
 </div>
 <div class="def-card" style="border-left:4px solid #e6c970">
-<p><strong>泊松逼近芯片题：</strong>次品率0.1%，1000只中至少2只次品。λ=np=1。P(X≥2)=1−P(0)−P(1)=1−e⁻¹−e⁻¹≈<strong>0.264</strong></p>
+<p><strong>泊松逼近芯片题：</strong>次品率0.1%，1000只中至少2只次品。λ=np=1。P(X≥2)=1−P(0)−P(1)=1−e<sup>−</sup>¹−e<sup>−</sup>¹≈<strong>0.264</strong></p>
 </div>
 
 <h3>2.3 连续型补充</h3>
 <div class="def-card" style="border-left:4px solid #e6c970">
 <p><strong>分段密度函数综合题：</strong>f(x)=2−kx(0≤x<3), x/2(3≤x≤4), 0(其他)。求k, F(x), P(1<X≤3.5)。</p>
-<details><summary><strong>答案</strong></summary>由归一性：∫₀³(2−kx)dx+∫₃⁴(x/2)dx=1→k=<strong>1/6</strong>。F(x)分段积分。P(1<X≤3.5)=<strong>41/48</strong></details>
+<details><summary><strong>答案</strong></summary>由归一性：∫<sub>0</sub><sup>3</sup>(2−kx)dx+∫<sub>3</sub><sup>4</sup>(x/2)dx=1→k=<strong>1/6</strong>。F(x)分段积分。P(1<X≤3.5)=<strong>41/48</strong></details>
 </div>
 <div class="def-card" style="border-left:4px solid #e6c970">
 <p><strong>查表方法：</strong>Φ(1.72)在标准正态表中查行1.7列0.02=0.9573。Φ(1.735)介于1.73(0.9582)和1.74(0.9591)之间，近似取平均或插值。</p>
@@ -481,30 +481,30 @@ X密度f(x)=2x(0<x<1)，求Y=X²+1的密度函数。</p>
 <div class="def-card" style="border-left:4px solid #c1292e">
 <p><span class="term">联合分布函数：</span>F(x,y)=P(X≤x,Y≤y)。几何意义：随机点落在以(x,y)为顶点的左下无穷矩形内的概率。</p>
 <p><strong>F(x,y)五条性质：</strong>①0≤F≤1 ②对x和y均不减 ③对x,y均右连续 ④F(−∞,y)=F(x,−∞)=F(−∞,−∞)=0, F(+∞,+∞)=1</p>
-<p><strong>⑤矩形法则：</strong>P(x₁<X≤x₂, y₁<Y≤y₂)=F(x₂,y₂)−F(x₂,y₁)−F(x₁,y₂)+F(x₁,y₁)</p>
+<p><strong>⑤矩形法则：</strong>P(x<sub>1</sub><X≤x<sub>2</sub>, y<sub>1</sub><Y≤y<sub>2</sub>)=F(x<sub>2</sub>,y<sub>2</sub>)−F(x<sub>2</sub>,y<sub>1</sub>)−F(x<sub>1</sub>,y<sub>2</sub>)+F(x<sub>1</sub>,y<sub>1</sub>)</p>
 <p><strong>边缘分布函数：</strong>F_X(x)=F(x,+∞), F_Y(y)=F(+∞,y)</p>
 </div>
 
 <h3>3.2 离散型补充例题</h3>
 <div class="def-card" style="border-left:4px solid #e6c970">
-<p><strong>5件产品(3正2次)取2次联合分布列：</strong>有放回：P(0,0)=(3/5)²=9/25, P(0,1)=(3/5)(2/5)=6/25, P(1,0)=6/25, P(1,1)=4/25。不放回：P(0,0)=3/10, P(0,1)=3/10, P(1,0)=3/10, P(1,1)=1/10</p>
+<p><strong>5件产品(3正2次)取2次联合分布列：</strong>有放回：P(0,0)=(3/5)<sup>2</sup>=9/25, P(0,1)=(3/5)(2/5)=6/25, P(1,0)=6/25, P(1,1)=4/25。不放回：P(0,0)=3/10, P(0,1)=3/10, P(1,0)=3/10, P(1,1)=1/10</p>
 </div>
 <div class="def-card" style="border-left:4px solid #e6c970">
-<p><strong>独立性填表题：</strong>已知X,Y独立且联合分布列部分已知，利用pᵢⱼ=pᵢ··p·ⱼ和总和=1求未知值。</p>
+<p><strong>独立性填表题：</strong>已知X,Y独立且联合分布列部分已知，利用p<sub>i</sub><sub>j</sub>=p<sub>i</sub>··p·<sub>j</sub>和总和=1求未知值。</p>
 </div>
 
 <h3>3.3 二维连续型（课件缺失重点！）⭐</h3>
 <div class="def-card" style="border-left:4px solid #c1292e">
-<p><span class="term">联合密度f(x,y)：</span>f≥0，∬f dxdy=1。F(x,y)=∫₋∞ˣ∫₋∞ʸ f(u,v)dudv。在连续点处：∂²F/∂x∂y=f(x,y)。</p>
+<p><span class="term">联合密度f(x,y)：</span>f≥0，∬f dxdy=1。F(x,y)=∫<sub>−</sub>∞ˣ∫<sub>−</sub>∞ʸ f(u,v)dudv。在连续点处：∂<sup>2</sup>F/∂x∂y=f(x,y)。</p>
 <p>区域G内的概率：P((X,Y)∈G)=∬_G f(x,y)dxdy</p>
-<p><strong>边缘密度：</strong>f_X(x)=∫₋∞⁺∞ f(x,y)dy，f_Y(y)=∫₋∞⁺∞ f(x,y)dx</p>
+<p><strong>边缘密度：</strong>f_X(x)=∫<sub>−</sub>∞<sup>+</sup>∞ f(x,y)dy，f_Y(y)=∫<sub>−</sub>∞<sup>+</sup>∞ f(x,y)dx</p>
 </div>
 <div class="def-card" style="border-left:4px solid #e6c970">
-<p><strong>典型例题：</strong>f(x,y)=Axy(0<x<1,x²<y<1)。求A、P(Y>1/2|X>Y)、边缘密度。</p>
+<p><strong>典型例题：</strong>f(x,y)=Axy(0<x<1,x<sup>2</sup><y<1)。求A、P(Y>1/2|X>Y)、边缘密度。</p>
 <details><summary><strong>详细解析</strong></summary>
 <div style="padding:0.5rem 0">
-<p>归一化：∬_D Axy dxdy = 1，其中D: 0<x<1, x²<y<1<br>
-∫₀¹∫_x²¹ Axy dy dx = A∫₀¹x[y²/2]_x²¹dx = (A/2)∫₀¹x(1−x⁴)dx = (A/2)[x²/2−x⁶/6]₀¹ = (A/2)(1/2−1/6)=A/6 = 1 → <strong>A=6</strong><br>
+<p>归一化：∬_D Axy dxdy = 1，其中D: 0<x<1, x<sup>2</sup><y<1<br>
+∫<sub>0</sub>¹∫_x<sup>2</sup>¹ Axy dy dx = A∫<sub>0</sub>¹x[y<sup>2</sup>/2]_x<sup>2</sup>¹dx = (A/2)∫<sub>0</sub>¹x(1−x<sup>4</sup>)dx = (A/2)[x<sup>2</sup>/2−x<sup>6</sup>/6]<sub>0</sub>¹ = (A/2)(1/2−1/6)=A/6 = 1 → <strong>A=6</strong><br>
 条件概率P(Y>1/2|X>Y)需要画积分区域，用二重积分比值计算。</p>
 </div>
 </details>
@@ -513,7 +513,7 @@ X密度f(x)=2x(0<x<1)，求Y=X²+1的密度函数。</p>
 <h3>3.3 二维均匀分布与二维正态分布</h3>
 <div class="def-card" style="border-left:4px solid #c1292e">
 <p><span class="term">二维均匀分布：</span>D为平面有界区域，面积S_D。f(x,y)=1/S_D ((x,y)∈D)。子区域G的概率=S_G/S_D。</p>
-<p><span class="term">二维正态分布N(μ₁,μ₂,σ₁²,σ₂²,ρ)：</span>边缘分布：X~N(μ₁,σ₁²), Y~N(μ₂,σ₂²)。<strong>X与Y独立 ⟺ ρ=0。</strong>（注意：边缘正态⇏联合正态）</p>
+<p><span class="term">二维正态分布N(μ<sub>1</sub>,μ<sub>2</sub>,σ<sub>1</sub><sup>2</sup>,σ<sub>2</sub><sup>2</sup>,ρ)：</span>边缘分布：X~N(μ<sub>1</sub>,σ<sub>1</sub><sup>2</sup>), Y~N(μ<sub>2</sub>,σ<sub>2</sub><sup>2</sup>)。<strong>X与Y独立 ⟺ ρ=0。</strong>（注意：边缘正态⇏联合正态）</p>
 </div>
 
 <h2>📐 第2-3章 公式汇总</h2>
@@ -522,15 +522,15 @@ X密度f(x)=2x(0<x<1)，求Y=X²+1的密度函数。</p>
 <table>
 <tr><th>类别</th><th>公式</th><th>说明</th></tr>
 <tr><td>分布函数</td><td>F(x)=P(X≤x)</td><td>单调不减、右连续、F(−∞)=0,F(+∞)=1</td></tr>
-<tr><td>区间概率</td><td>P(x₁<X≤x₂)=F(x₂)−F(x₁)</td><td>—</td></tr>
-<tr><td>二项分布 B(n,p)</td><td>P(X=k)=Cₙᵏpᵏ(1−p)ⁿ⁻ᵏ</td><td>E=np, D=np(1−p)</td></tr>
-<tr><td>0-1分布 B(1,p)</td><td>P(X=k)=pᵏ(1−p)¹⁻ᵏ, k=0,1</td><td>E=p, D=p(1−p)</td></tr>
-<tr><td>泊松分布 P(λ)</td><td>P(X=k)=λᵏe⁻<sup>λ</sup>/k!</td><td>E=λ, D=λ</td></tr>
+<tr><td>区间概率</td><td>P(x<sub>1</sub><X≤x<sub>2</sub>)=F(x<sub>2</sub>)−F(x<sub>1</sub>)</td><td>—</td></tr>
+<tr><td>二项分布 B(n,p)</td><td>P(X=k)=C<sub>n</sub><sup>k</sup>p<sup>k</sup>(1−p)<sup>n</sup><sup>−</sup><sup>k</sup></td><td>E=np, D=np(1−p)</td></tr>
+<tr><td>0-1分布 B(1,p)</td><td>P(X=k)=p<sup>k</sup>(1−p)¹<sup>−</sup><sup>k</sup>, k=0,1</td><td>E=p, D=p(1−p)</td></tr>
+<tr><td>泊松分布 P(λ)</td><td>P(X=k)=λ<sup>k</sup>e<sup>−</sup><sup>λ</sup>/k!</td><td>E=λ, D=λ</td></tr>
 <tr><td>泊松逼近</td><td>np=λ时二项≈泊松</td><td>n大p小用</td></tr>
 <tr><td>密度函数性质</td><td>f≥0, ∫f=1, F'(x)=f(x)</td><td>P(X=c)=0</td></tr>
 <tr><td>均匀分布 U(a,b)</td><td>f(x)=1/(b−a)</td><td>E=(a+b)/2</td></tr>
-<tr><td>指数分布 e(θ)</td><td>f(x)=(1/θ)e⁻<sup>x/θ</sup>(x>0)</td><td>无记忆性</td></tr>
-<tr><td>正态分布 N(μ,σ²)</td><td>f(x)=exp(−(x−μ)²/2σ²)/(√(2π)σ)</td><td>E=μ, D=σ²</td></tr>
+<tr><td>指数分布 e(θ)</td><td>f(x)=(1/θ)e<sup>−</sup><sup>x/θ</sup>(x>0)</td><td>无记忆性</td></tr>
+<tr><td>正态分布 N(μ,σ<sup>2</sup>)</td><td>f(x)=exp(−(x−μ)<sup>2</sup>/2σ<sup>2</sup>)/(√(2π)σ)</td><td>E=μ, D=σ<sup>2</sup></td></tr>
 <tr><td>标准化</td><td>Z=(X−μ)/σ ~ N(0,1)</td><td>Φ(−z)=1−Φ(z)</td></tr>
 <tr><td>3σ原则</td><td>P(|X−μ|<σ)≈68.3%; <2σ≈95.5%; <3σ≈99.7%</td><td>—</td></tr>
 </table>
@@ -538,11 +538,11 @@ X密度f(x)=2x(0<x<1)，求Y=X²+1的密度函数。</p>
 <h3>第3章：二维随机变量</h3>
 <table>
 <tr><th>类别</th><th>公式</th><th>说明</th></tr>
-<tr><td>联合分布列</td><td>P(X=xᵢ,Y=yⱼ)=pᵢⱼ</td><td>pᵢⱼ≥0, ΣΣpᵢⱼ=1</td></tr>
-<tr><td>边缘分布（离散）</td><td>pᵢ·=Σⱼpᵢⱼ; p·ⱼ=Σᵢpᵢⱼ</td><td>行和/列和</td></tr>
+<tr><td>联合分布列</td><td>P(X=x<sub>i</sub>,Y=y<sub>j</sub>)=p<sub>i</sub><sub>j</sub></td><td>p<sub>i</sub><sub>j</sub>≥0, ΣΣp<sub>i</sub><sub>j</sub>=1</td></tr>
+<tr><td>边缘分布（离散）</td><td>p<sub>i</sub>·=Σ<sub>j</sub>p<sub>i</sub><sub>j</sub>; p·<sub>j</sub>=Σ<sub>i</sub>p<sub>i</sub><sub>j</sub></td><td>行和/列和</td></tr>
 <tr><td>边缘密度（连续）</td><td>f<sub>X</sub>(x)=∫f(x,y)dy</td><td>对另一个变量积分</td></tr>
-<tr><td>矩形法则</td><td>P=F(x₂,y₂)−F(x₂,y₁)−F(x₁,y₂)+F(x₁,y₁)</td><td>—</td></tr>
-<tr><td>离散型独立</td><td>pᵢⱼ=pᵢ··p·ⱼ（∀i,j）</td><td>联合=边缘乘积</td></tr>
+<tr><td>矩形法则</td><td>P=F(x<sub>2</sub>,y<sub>2</sub>)−F(x<sub>2</sub>,y<sub>1</sub>)−F(x<sub>1</sub>,y<sub>2</sub>)+F(x<sub>1</sub>,y<sub>1</sub>)</td><td>—</td></tr>
+<tr><td>离散型独立</td><td>p<sub>i</sub><sub>j</sub>=p<sub>i</sub>··p·<sub>j</sub>（∀i,j）</td><td>联合=边缘乘积</td></tr>
 <tr><td>连续型独立</td><td>f(x,y)=f<sub>X</sub>(x)·f<sub>Y</sub>(y)</td><td>二重积分可分离</td></tr>
 <tr><td>二维正态</td><td>ρ=0 ⟺ X与Y独立</td><td>特有性质</td></tr>
 </table>
@@ -565,7 +565,7 @@ function checkQuiz(qid, el, isCorrect) {
   fb.className = 'feedback show ' + (isCorrect ? 'correct' : 'wrong');
   const answers = {
     'quiz-df': 'F(1.5)−F(0.5)=1.5/2−0.5/2=0.75−0.25=0.5',
-    'quiz-poi': 'λe^(−λ)=λ²e^(−λ)/2 ⇒ λ=2，P(X=4)=2⁴e^(−2)/4!=16e^(−2)/24=2e^(−2)/3',
+    'quiz-poi': 'λe^(−λ)=λ<sup>2</sup>e^(−λ)/2 ⇒ λ=2，P(X=4)=2<sup>4</sup>e^(−2)/4!=16e^(−2)/24=2e^(−2)/3',
     'quiz-norm': 'Z=(6−3)/3=1，Φ(1)=0.8413',
     'quiz-2d': '二维正态分布中，ρ=0等价于X和Y相互独立'
   };
