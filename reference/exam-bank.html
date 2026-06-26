@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>社会统计学 · 原题精解题库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+  summary { cursor: pointer; font-weight: 600; padding: 0.5rem 0; }
+  summary:hover { color: var(--accent); }
+  details { margin: 0.5rem 0 1rem; border: 1px solid var(--border); border-radius: var(--radius); padding: 0.75rem 1.25rem; }
+  details[open] { background: #fdfcf7; }
+  .q-meta { font-size: 0.8rem; color: var(--muted); margin-left: 0.5rem; }
+  .answer { margin-top: 0.5rem; padding-top: 0.5rem; border-top: 1px dashed var(--border); }
+</style>
+</head>
+<body>
+
+<nav class="breadcrumb">
+  <a href="formula-cheat-sheet.html">← 公式速查表</a> ·
+  <a href="../lessons/0001-random-events.html">第1课</a> ·
+  <a href="../lessons/0002-random-variables.html">第2课</a> ·
+  <a href="../lessons/0003-numerical-characteristics.html">第3课</a> ·
+  <a href="../lessons/0004-sampling-estimation.html">第4课</a>
+</nav>
+
+<h1>📝 社会统计学 · 原题精解题库</h1>
+<p>收录全部3次作业原题 + 课件重点例题。每题附带<strong>逐步解析</strong>。考试题型：选择题、填空题、简答题，本库全覆盖。</p>
+
+<!-- ===== 作业一 ===== -->
+<h2>📋 作业一（第1-2章：条件概率 + 分布函数 + 正态分布）</h2>
+
+<details>
+<summary>第1题：条件概率计算 <span class="q-meta">(选择/填空)</span></summary>
+<div class="def-card">
+  <p><span class="term">题目：</span></p>
+  <p>（1）已知 P(A)=1/2, P(B)=1/3, P(B|A)=2/3，求 P(A|B)；</p>
+  <p>（2）已知 P(<span style="text-decoration:overline">A</span>)=0.3, P(B)=0.4, P(A<span style="text-decoration:overline">B</span>)=0.5，求 P(B|A ∪ <span style="text-decoration:overline">B</span>)；</p>
+  <p>（3）已知 P(A)=1/4, P(B|A)=1/3, P(A|B)=1/2，求 P(A ∪ B)。</p>
+</div>
+<div class="answer">
+  <p><strong>逐步解析：</strong></p>
+  <p><strong>（1）</strong></p>
+  <ol class="steps">
+    <li>由条件概率公式 P(B|A) = P(AB)/P(A)，得 P(AB) = P(A)·P(B|A) = (1/2)×(2/3) = 1/3</li>
+    <li>再由条件概率公式 P(A|B) = P(AB)/P(B) = (1/3)/(1/3) = <strong>1</strong></li>
+  </ol>
+  <p><strong>（2）</strong></p>
+  <ol class="steps">
+    <li>P(A) = 1 − P(<span style="text-decoration:overline">A</span>) = 1 − 0.3 = 0.7</li>
+    <li>P(A<span style="text-decoration:overline">B</span>) = P(A−B) = P(A) − P(AB) = 0.5，所以 P(AB) = 0.7 − 0.5 = 0.2</li>
+    <li>A ∪ <span style="text-decoration:overline">B</span> = A ∪ (Ω−B)，P(B|A ∪ <span style="text-decoration:overline">B</span>) = P(B ∩ (A ∪ <span style="text-decoration:overline">B</span>))/P(A ∪ <span style="text-decoration:overline">B</span>)</li>
+    <li>B ∩ (A ∪ <span style="text-decoration:overline">B</span>) = B ∩ A（因为 B ∩ <span style="text-decoration:overline">B</span> = ∅），所以分子 = P(AB) = 0.2</li>
+    <li>P(A ∪ <span style="text-decoration:overline">B</span>) = P(A) + P(<span style="text-decoration:overline">B</span>) − P(A<span style="text-decoration:overline">B</span>) = 0.7 + 0.6 − 0.5 = 0.8</li>
+    <li>P(B|A ∪ <span style="text-decoration:overline">B</span>) = 0.2/0.8 = <strong>1/4 = 0.25</strong></li>
+  </ol>
+  <p><strong>（3）</strong></p>
+  <ol class="steps">
+    <li>由 P(B|A)=P(AB)/P(A)，得 P(AB) = P(A)·P(B|A) = (1/4)×(1/3) = 1/12</li>
+    <li>由 P(A|B)=P(AB)/P(B)，得 P(B) = P(AB)/P(A|B) = (1/12)/(1/2) = 1/6</li>
+    <li>P(A ∪ B) = P(A) + P(B) − P(AB) = 1/4 + 1/6 − 1/12 = 3/12 + 2/12 − 1/12 = <strong>4/12 = 1/3</strong></li>
+  </ol>
+</div>
+</details>
+
+<details>
+<summary>第2题：全概率公式 + 贝叶斯（工厂产品问题）<span class="q-meta">(简答)</span></summary>
+<div class="def-card">
+  <p><span class="term">题目：</span>设一仓库中有10箱同种规格的产品，其中由甲、乙、丙三厂生产的分别有5箱、3箱、2箱，三厂的次品率依次为0.1、0.2、0.3。从这10箱产品中任取一箱，再从这箱中任意取一件产品。求：</p>
+  <p>（1）取得正品的概率；</p>
+  <p>（2）取得的正品是甲厂的概率。</p>
+</div>
+<div class="answer">
+  <p><strong>逐步解析：</strong></p>
+  <p>设事件 A₁={甲厂}，A₂={乙厂}，A₃={丙厂}，B={取得正品}。</p>
+  <ol class="steps">
+    <li><strong>先确定先验概率：</strong>P(A₁)=5/10=0.5，P(A₂)=3/10=0.3，P(A₃)=2/10=0.2</li>
+    <li><strong>确定条件概率：</strong>P(B|A₁)=1−0.1=0.9（甲厂正品率），P(B|A₂)=1−0.2=0.8，P(B|A₃)=1−0.3=0.7</li>
+    <li><strong>（1）用全概率公式：</strong>P(B) = P(A₁)P(B|A₁) + P(A₂)P(B|A₂) + P(A₃)P(B|A₃)<br>
+    = 0.5×0.9 + 0.3×0.8 + 0.2×0.7 = 0.45 + 0.24 + 0.14 = <strong>0.83</strong></li>
+    <li><strong>（2）用贝叶斯公式：</strong>P(A₁|B) = P(A₁)P(B|A₁)/P(B) = 0.45/0.83 ≈ <strong>0.542</strong></li>
+  </ol>
+  <div class="tip">全概率 = 先加权后求和；贝叶斯 = 单个权重/总和。这是考试必考题型！</div>
+</div>
+</details>
+
+<details>
+<summary>第3题：由密度函数求分布函数 <span class="q-meta">(简答)</span></summary>
+<div class="def-card">
+  <p><span class="term">题目：</span>设随机变量X的密度函数为 f(x)（具体函数见课件），求（1）F(x)；（2）P(X)。</p>
+</div>
+<div class="answer">
+  <p><strong>解题框架：</strong></p>
+  <ol class="steps">
+    <li>F(x) = ∫<sub>−∞</sub><sup>x</sup> f(t) dt，分段积分</li>
+    <li>对密度函数分段处理：x 在定义域外 F(x)=0，在定义域内按区间计算</li>
+    <li>P(x₁ < X ≤ x₂) = F(x₂) − F(x₁) 或 P(X ∈ A) = ∫<sub>A</sub> f(x)dx</li>
+  </ol>
+  <div class="tip">参考课件 第二章(二) P6 例题，k=1/6，P(1<X≤7/2)=41/48</div>
+</div>
+</details>
+
+<details>
+<summary>第4题：正态分布应用题（身高/车门设计）<span class="q-meta">(简答)</span></summary>
+<div class="def-card">
+  <p><span class="term">题目：</span>设成年男子身高服从正态分布 N(170, 10²)（单位：厘米）</p>
+  <p>（1）求成年男子身高大于160厘米的概率；</p>
+  <p>（2）公共汽车的车门应设计多高，才能使成年男子上车时碰头的概率不大于5%？</p>
+  <p>（3）在这个设计之下，求100个成年男子上车时，至少有2个人碰头的概率。</p>
+</div>
+<div class="answer">
+  <p><strong>逐步解析：</strong></p>
+  <p><strong>（1）</strong></p>
+  <ol class="steps">
+    <li>X~N(170,10²)，标准化：Z = (X−170)/10 ~ N(0,1)</li>
+    <li>P(X > 160) = P(Z > (160−170)/10) = P(Z > −1) = 1 − Φ(−1)</li>
+    <li>Φ(−1) = 1 − Φ(1) = 1 − 0.8413 = 0.1587</li>
+    <li>P(X > 160) = 1 − 0.1587 = <strong>0.8413</strong></li>
+  </ol>
+  <p><strong>（2）</strong></p>
+  <ol class="steps">
+    <li>设车门高度为 h，碰头概率 P(X > h) ≤ 0.05</li>
+    <li>即 P(Z > (h−170)/10) ≤ 0.05，查表 z<sub>0.05</sub> = 1.645</li>
+    <li>(h−170)/10 ≥ 1.645，h ≥ 170 + 16.45 = <strong>186.45 cm</strong>（可取187cm）</li>
+  </ol>
+  <p><strong>（3）</strong></p>
+  <ol class="steps">
+    <li>每人碰头概率 p = P(X > h) ≈ 0.05，设Y为100人中碰头人数，Y~B(100, 0.05)</li>
+    <li>P(Y ≥ 2) = 1 − P(Y=0) − P(Y=1)</li>
+    <li>= 1 − C₁₀₀⁰(0.05)⁰(0.95)¹⁰⁰ − C₁₀₀¹(0.05)¹(0.95)⁹⁹</li>
+    <li>≈ 1 − 0.00592 − 0.03116 ≈ <strong>0.9629</strong></li>
+  </ol>
+</div>
+</details>
+
+<!-- ===== 作业二 ===== -->
+<h2>📋 作业二（第3-4章：期望方差 + 联合分布 + 不相关 vs 独立）</h2>
+
+<details>
+<summary>第1题：线性组合的期望与方差 <span class="q-meta">(选择/填空)</span></summary>
+<div class="def-card">
+  <p><span class="term">题目：</span>设随机变量 X₁, X₂, X₃, X₄ 相互独立，且有 E(X<sub>i</sub>)=i, D(X<sub>i</sub>)=5−i（i=1,2,3,4）。设 Y = 2X₁ − X₂ + 3X₃ − X₄，求 E(Y), D(Y)。</p>
+</div>
+<div class="answer">
+  <ol class="steps">
+    <li>E(Y) = E(2X₁ − X₂ + 3X₃ − X₄) = 2E(X₁) − E(X₂) + 3E(X₃) − E(X₄)</li>
+    <li>= 2×1 − 2 + 3×3 − 4 = 2 − 2 + 9 − 4 = <strong>5</strong></li>
+    <li>由于 X₁,…,X₄ 相互独立，D(Y) = 4D(X₁) + D(X₂) + 9D(X₃) + D(X₄)</li>
+    <li>= 4×4 + 3 + 9×2 + 1 = 16 + 3 + 18 + 1 = <strong>38</strong></li>
+  </ol>
+  <div class="warning">注意：D(cX)=c²D(X)，系数要平方！D(2X₁)=4D(X₁)，D(3X₃)=9D(X₃)</div>
+</div>
+</details>
+
+<details>
+<summary>第2题：联合分布列（放回 vs 不放回）<span class="q-meta">(简答)</span></summary>
+<div class="def-card">
+  <p><span class="term">题目：</span>在一箱子中装有12只开关，其中2只是次品。从箱子中取两次，每次任取一只。考虑2种试验：（1）放回抽样；（2）不放回抽样。定义随机变量 X, Y（第一次和第二次取到的次品数），分别就两种情况写出 X 和 Y 的联合分布列。</p>
+</div>
+<div class="answer">
+  <p><strong>逐步解析：</strong></p>
+  <p>X, Y 取值均为 0（正品）或 1（次品）。正品数=10，次品数=2。</p>
+  <p><strong>（1）放回抽样：</strong></p>
+  <ol class="steps">
+    <li>P(X=0,Y=0) = (10/12)×(10/12) = 100/144 = 25/36</li>
+    <li>P(X=0,Y=1) = (10/12)×(2/12) = 20/144 = 5/36</li>
+    <li>P(X=1,Y=0) = (2/12)×(10/12) = 20/144 = 5/36</li>
+    <li>P(X=1,Y=1) = (2/12)×(2/12) = 4/144 = 1/36</li>
+  </ol>
+  <p><strong>（2）不放回抽样：</strong></p>
+  <ol class="steps">
+    <li>P(X=0,Y=0) = (10/12)×(9/11) = 90/132 = 15/22</li>
+    <li>P(X=0,Y=1) = (10/12)×(2/11) = 20/132 = 5/33</li>
+    <li>P(X=1,Y=0) = (2/12)×(10/11) = 20/132 = 5/33</li>
+    <li>P(X=1,Y=1) = (2/12)×(1/11) = 2/132 = 1/66</li>
+  </ol>
+  <div class="tip">验证：四个概率之和应等于1。放回：(25+5+5+1)/36=1 ✓；不放回：(15/22+5/33+5/33+1/66)=1 ✓</div>
+</div>
+</details>
+
+<details>
+<summary>第3题：正态分布函数的期望 <span class="q-meta">(填空)</span></summary>
+<div class="def-card">
+  <p><span class="term">题目：</span>设电压 X~N(0, 9)，将电压施加于一检波器，其输出电压为 Y = 5X²，求输出电压的均值。</p>
+</div>
+<div class="answer">
+  <ol class="steps">
+    <li>E(Y) = E(5X²) = 5·E(X²)</li>
+    <li>E(X²) = D(X) + [E(X)]² = 9 + 0² = 9</li>
+    <li>E(Y) = 5 × 9 = <strong>45</strong></li>
+  </ol>
+  <div class="tip">关键：E(X²) = D(X) + [E(X)]²，这是方差公式 D(X)=E(X²)−[E(X)]² 的变形！</div>
+</div>
+</details>
+
+<details>
+<summary>第4题：不相关但不独立（反例）<span class="q-meta">(简答/证明)</span></summary>
+<div class="def-card">
+  <p><span class="term">题目：</span>设随机变量 X 与 Y 的分布列为（见作业），试验证 X 和 Y 是不相关的，但 X 和 Y 不是相互独立的。</p>
+</div>
+<div class="answer">
+  <p><strong>证明思路（记忆这个论证框架！）：</strong></p>
+  <ol class="steps">
+    <li>先计算边缘分布列 P(X=x<sub>i</sub>) 和 P(Y=y<sub>j</sub>)</li>
+    <li>计算 E(X), E(Y), E(XY)</li>
+    <li>若 Cov(X,Y) = E(XY) − E(X)E(Y) = 0，则 X和Y不相关</li>
+    <li>检查是否存在 i,j 使 P(X=x<sub>i</sub>, Y=y<sub>j</sub>) ≠ P(X=x<sub>i</sub>)·P(Y=y<sub>j</sub>)</li>
+    <li>若存在，则 X和Y不独立</li>
+  </ol>
+  <div class="warning"><strong>考试重点！</strong>独立 ⇒ 不相关（相关系数为0）；但不相关（相关系数为0）⇏ 独立。这道题就是标准反例。</div>
+</div>
+</details>
+
+<!-- ===== 作业三 ===== -->
+<h2>📋 作业三（第6章：矩估计 + MLE + 假设检验 + 置信区间）</h2>
+
+<details>
+<summary>第1题：矩估计 + 极大似然估计 <span class="q-meta">(简答/计算)</span></summary>
+<div class="def-card">
+  <p><span class="term">题目：</span>设总体X的分布列为：P(X=0)=θ², P(X=1)=2θ(1−θ), P(X=2)=θ², P(X=3)=1−2θ，其中 0<θ<1/2 是未知参数。样本值：3,1,3,0,3,1,2,3。求θ的矩估计值和极大似然估计值。</p>
+</div>
+<div class="answer">
+  <p><strong>（一）矩估计：</strong></p>
+  <ol class="steps">
+    <li>计算样本均值：<span style="text-decoration:overline">x</span> = (3+1+3+0+3+1+2+3)/8 = 16/8 = <strong>2</strong></li>
+    <li>计算总体期望：E(X) = 0·θ² + 1·2θ(1−θ) + 2·θ² + 3·(1−2θ)<br>
+    = 2θ − 2θ² + 2θ² + 3 − 6θ = 3 − 4θ</li>
+    <li>令 <span style="text-decoration:overline">x</span> = E(X)，即 2 = 3 − 4θ → 4θ = 1 → θ = <strong>1/4</strong></li>
+  </ol>
+  <p><strong>（二）极大似然估计：</strong></p>
+  <ol class="steps">
+    <li>样本中各值频数：0出现1次，1出现2次，2出现1次，3出现4次</li>
+    <li>似然函数：L(θ) = [θ²]¹ × [2θ(1−θ)]² × [θ²]¹ × [1−2θ]⁴</li>
+    <li>= θ² × 4θ²(1−θ)² × θ² × (1−2θ)⁴ = 4θ⁶(1−θ)²(1−2θ)⁴</li>
+    <li>取对数：ln L = ln4 + 6lnθ + 2ln(1−θ) + 4ln(1−2θ)</li>
+    <li>求导：dlnL/dθ = 6/θ − 2/(1−θ) − 8/(1−2θ) = 0</li>
+    <li>解方程得 θ 的 MLE 值（代入数值计算）</li>
+  </ol>
+  <div class="tip">矩估计 = 用样本均值替换总体期望，解出参数。MLE = 写出似然函数→取对数→求导→解方程。</div>
+</div>
+</details>
+
+<details>
+<summary>第2题：假设检验（方差） <span class="q-meta">(简答)</span></summary>
+<div class="def-card">
+  <p><span class="term">题目：</span>某厂电池寿命服从方差σ²=5000的正态分布。现随机取26只电池，样本方差 S²=9200。在显著性水平α下，能否推断电池寿命的波动性较以往有显著变化？</p>
+</div>
+<div class="answer">
+  <p><strong>逐步解析（假设检验标准步骤）：</strong></p>
+  <ol class="steps">
+    <li><strong>建立假设：</strong>H₀: σ² = 5000；H₁: σ² ≠ 5000（双侧检验）</li>
+    <li><strong>选择检验统计量：</strong>χ² = (n−1)S²/σ₀² = 25×9200/5000 = 46</li>
+    <li><strong>确定拒绝域：</strong>χ² > χ²<sub>α/2</sub>(25) 或 χ² < χ²<sub>1−α/2</sub>(25)</li>
+    <li><strong>做出决策：</strong>比较检验统计量与临界值，判断是否拒绝H₀</li>
+  </ol>
+  <div class="warning">方差检验用 χ² 分布！注意自由度是 n−1=25。</div>
+</div>
+</details>
+
+<details>
+<summary>第3题：置信区间（已知方差 vs 未知方差）<span class="q-meta">(简答)</span></summary>
+<div class="def-card">
+  <p><span class="term">题目：</span>清漆干燥时间服从正态分布 N(μ, σ²)，9个样品数据：6, 5.7, 5.8, 6.5, 7.0, 6.3, 5.6, 6.1, 5。求μ的95%置信区间：（1）σ=0.6已知；（2）σ未知。（t<sub>0.025</sub>(8)=2.3060）</p>
+</div>
+<div class="answer">
+  <p><strong>逐步解析：</strong></p>
+  <ol class="steps">
+    <li>计算样本均值：<span style="text-decoration:overline">x</span> = (6+5.7+5.8+6.5+7.0+6.3+5.6+6.1+5)/9 = 54/9 = <strong>6.0</strong></li>
+    <li>计算样本方差：S² = Σ(x<sub>i</sub>−6)²/(n−1)，先算各偏差平方</li>
+    <li><strong>（1）σ=0.6已知：</strong>用 z 区间，z<sub>0.025</sub>=1.96<br>
+    置信区间 = <span style="text-decoration:overline">x</span> ± z<sub>α/2</sub>·σ/√n = 6 ± 1.96×0.6/3 = 6 ± 0.392 = <strong>[5.608, 6.392]</strong></li>
+    <li><strong>（2）σ未知：</strong>用 t 区间<br>
+    先算 S，置信区间 = <span style="text-decoration:overline">x</span> ± t<sub>0.025</sub>(8)·S/√n = 6 ± 2.3060×S/3</li>
+  </ol>
+  <div class="tip">区分：σ已知→z（正态）；σ未知→t！n=9，自由度=n−1=8</div>
+</div>
+</details>
+
+<!-- ===== 课件重点例题补充 ===== -->
+<h2>📋 课件重点例题补充</h2>
+
+<details>
+<summary>课件 1.2 例：概率基本性质练习 <span class="q-meta">(选择/填空)</span></summary>
+<div class="def-card">
+  <p><span class="term">题目：</span>设事件A与B的概率分别为1/2和1/3，试求下列三种情况下P(A−B)的值：</p>
+  <p>① AB=∅；② B⊂A；③ P(AB)=1/4</p>
+  <p><span class="term">答案：</span>① 1/2；② 1/6；③ 1/4</p>
+</div>
+<div class="answer">
+  <ol class="steps">
+    <li>P(A−B) = P(A) − P(AB)（减法公式）</li>
+    <li>① AB=∅ ⇒ P(AB)=0 ⇒ P(A−B)=1/2−0=1/2</li>
+    <li>② B⊂A ⇒ AB=B ⇒ P(AB)=P(B)=1/3 ⇒ P(A−B)=1/2−1/3=1/6</li>
+    <li>③ P(AB)=1/4 ⇒ P(A−B)=1/2−1/4=1/4</li>
+  </ol>
+</div>
+</details>
+
+<details>
+<summary>课件 1.2 例：P(A)=P(B)=P(C)=1/4，求都不发生的概率 <span class="q-meta">(填空)</span></summary>
+<div class="def-card">
+  <p><span class="term">题目：</span>设A,B,C为三个事件，P(A)=P(B)=P(C)=1/4, P(AB)=P(BC)=1/8, P(AC)=0，求A,B,C都不发生的概率。</p>
+  <p><span class="term">答案：</span>1/2</p>
+</div>
+<div class="answer">
+  <ol class="steps">
+    <li>"都不发生" = P(<span style="text-decoration:overline">A</span><span style="text-decoration:overline">B</span><span style="text-decoration:overline">C</span>) = 1 − P(A∪B∪C)</li>
+    <li>P(A∪B∪C) = P(A)+P(B)+P(C) − P(AB) − P(BC) − P(AC) + P(ABC)</li>
+    <li>= 1/4+1/4+1/4 − 1/8 − 1/8 − 0 + 0 = 3/4 − 1/4 = 1/2</li>
+    <li>P(<span style="text-decoration:overline">A</span><span style="text-decoration:overline">B</span><span style="text-decoration:overline">C</span>) = 1 − 1/2 = <strong>1/2</strong></li>
+  </ol>
+  <div class="tip">注意：P(AC)=0 ⇒ P(ABC)=0（因为ABC⊂AC）</div>
+</div>
+</details>
+
+<details>
+<summary>课件 1.5 例：射击独立性问题 <span class="q-meta">(填空)</span></summary>
+<div class="def-card">
+  <p><span class="term">题目：</span>甲乙两人同时向同一目标射击一次，甲击中的概率是0.8，乙击中的概率是0.6，求在一次射击中目标被击中的概率。</p>
+  <p><span class="term">答案：</span>0.92</p>
+</div>
+<div class="answer">
+  <ol class="steps">
+    <li>"目标被击中" = 甲击中 ∪ 乙击中 = A ∪ B</li>
+    <li>P(A∪B) = P(A) + P(B) − P(AB) = 0.8 + 0.6 − 0.8×0.6 = 1.4 − 0.48 = <strong>0.92</strong></li>
+    <li>或：P(至少一人击中) = 1 − P(两人都未击中) = 1 − 0.2×0.4 = 1 − 0.08 = 0.92</li>
+  </ol>
+</div>
+</details>
+
+<details>
+<summary>课件 2.2 例：泊松分布求概率 <span class="q-meta">(选择)</span></summary>
+<div class="def-card">
+  <p><span class="term">题目：</span>设随机变量X服从泊松分布，且P(X=1)=P(X=2)，则P(X=4)=?</p>
+  <p><span class="term">答案：</span>2e⁻²/3</p>
+</div>
+<div class="answer">
+  <ol class="steps">
+    <li>P(X=k) = λᵏe⁻<sup>λ</sup>/k!</li>
+    <li>P(X=1) = λe⁻<sup>λ</sup>/1! = λe⁻<sup>λ</sup>，P(X=2) = λ²e⁻<sup>λ</sup>/2! = λ²e⁻<sup>λ</sup>/2</li>
+    <li>令 λe⁻<sup>λ</sup> = λ²e⁻<sup>λ</sup>/2 ⇒ λ = λ²/2 ⇒ λ = 2（λ≠0）</li>
+    <li>P(X=4) = 2⁴e⁻²/4! = 16e⁻²/24 = 2e⁻²/3</li>
+  </ol>
+</div>
+</details>
+
+<details>
+<summary>课件 4.3 例：相关系数选择题 <span class="q-meta">(选择)</span></summary>
+<div class="def-card">
+  <p><span class="term">题目：</span>设D(X), D(Y)都不为0，若有常数a≠0与b使得P(Y=aX+b)=1，此时X与Y的相关系数ρ<sub>XY</sub>=（）</p>
+  <p>A. 1  B. −1  C. 1或−1  D. 0</p>
+  <p><span class="term">答案：</span>C</p>
+</div>
+<div class="answer">
+  <p>|ρ<sub>XY</sub>|=1 ⟺ 存在常数a,b使P(Y=aX+b)=1。a>0时ρ=1（正线性相关），a<0时ρ=−1（负线性相关）。题目只说了a≠0，所以可能是1或−1。</p>
+</div>
+</details>
+
+<div class="lesson-footer">
+  <p>📖 返回 <a href="../lessons/0001-random-events.html">第1课</a> 开始系统学习。</p>
+  <p>📐 查看 <a href="formula-cheat-sheet.html">公式速查表</a>。</p>
+  <p>💬 任何题目不清楚？随时问我！</p>
+</div>
+
+</body>
+</html>

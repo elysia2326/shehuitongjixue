@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第1课：随机事件与概率</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<nav class="breadcrumb">
+  <a href="../reference/formula-cheat-sheet.html">公式速查表</a> ·
+  <a href="../reference/exam-bank.html">原题题库</a> ·
+  <a href="0002-random-variables.html">第2课 →</a>
+</nav>
+
+<h1>📖 第1课：随机事件与概率</h1>
+<p><strong>覆盖：</strong>第1章（1.1～1.5）| <strong>对应作业：</strong>作业一第1-2题 | <strong>预计时间：</strong>45分钟</p>
+<p><strong>考试占比：</strong>约25-30%（选择+填空+简答，条件概率和全概率是高频考点）</p>
+
+<div class="tip">
+  <strong>本课目标：</strong>学完你能独立完成作业一的第1题和第2题——条件概率计算和全概率/贝叶斯问题。
+</div>
+
+<!-- ====== SECTION 1 ====== -->
+<h2>第一步：理解随机事件（10分钟）</h2>
+
+<div class="def-card">
+  <p><span class="term">随机试验E：</span>具有三个特征——①可重复 ②结果可预知但不唯一 ③事前不确定哪个结果出现。</p>
+  <p><span class="term">样本空间Ω：</span>随机试验所有可能结果的集合。</p>
+  <p><span class="term">随机事件A：</span>样本空间Ω的子集，用大写字母A,B,C…表示。</p>
+</div>
+
+<p><strong>事件之间的关系（类比集合）：</strong></p>
+<ul>
+  <li><strong>包含 A⊂B：</strong>A发生必然导致B发生（如"出现4点"⊂"出现偶数点"）</li>
+  <li><strong>相等 A=B：</strong>A⊂B且B⊂A</li>
+  <li><strong>互斥 AB=∅：</strong>A和B不可能同时发生</li>
+  <li><strong>对立 <span style="text-decoration:overline">A</span>：</strong>A与<span style="text-decoration:overline">A</span>必有一个且仅有一个发生</li>
+</ul>
+
+<p><strong>事件运算：</strong></p>
+<ul>
+  <li><strong>和 A∪B：</strong>至少有一个发生</li>
+  <li><strong>积 A∩B (AB)：</strong>两个同时发生</li>
+  <li><strong>差 A−B：</strong>A发生而B不发生</li>
+</ul>
+
+<div class="formula">
+  <span class="label">德摩根法则（必背！）</span>
+  <span style="text-decoration:overline">A ∪ B</span> = <span style="text-decoration:overline">A</span> ∩ <span style="text-decoration:overline">B</span><br>
+  <span style="text-decoration:overline">A ∩ B</span> = <span style="text-decoration:overline">A</span> ∪ <span style="text-decoration:overline">B</span>
+</div>
+
+<div class="quiz" id="quiz1">
+  <p class="question"><strong>✏️ 快速自测1：</strong>掷一颗骰子，A={出现奇数点}={1,3,5}，B={点数不超过3}={1,2,3}。则 A−B = ？</p>
+  <div class="options">
+    <div class="option" onclick="checkQuiz('quiz1', this, false)">A. {1,3}</div>
+    <div class="option" onclick="checkQuiz('quiz1', this, true)">B. {5}</div>
+    <div class="option" onclick="checkQuiz('quiz1', this, false)">C. {2}</div>
+    <div class="option" onclick="checkQuiz('quiz1', this, false)">D. {1,2,3,5}</div>
+  </div>
+  <div class="feedback" id="quiz1-fb"></div>
+</div>
+
+<!-- ====== SECTION 2 ====== -->
+<h2>第二步：概率的三个基本性质（5分钟）</h2>
+
+<div class="formula">
+  <span class="label">概率的三大公理</span>
+  ① 非负性：P(A) ≥ 0<br>
+  ② 归一性：P(Ω) = 1<br>
+  ③ 可列可加性：互不相容事件的和的概率 = 概率的和
+</div>
+
+<div class="formula">
+  <span class="label">概率四大公式（必背！）</span>
+  <strong>① 对立事件：</strong>P(<span style="text-decoration:overline">A</span>) = 1 − P(A)<br>
+  <strong>② 减法公式：</strong>P(A−B) = P(A) − P(AB)；若B⊂A则P(A−B)=P(A)−P(B)<br>
+  <strong>③ 加法公式：</strong>P(A∪B) = P(A) + P(B) − P(AB)<br>
+  <strong>④ 条件概率：</strong>P(B|A) = P(AB)/P(A)（其中P(A)>0）
+</div>
+
+<details class="proof-block">
+<summary><strong>📐 证明推导：加法公式 + 减法公式</strong>（点击展开）</summary>
+<div style="padding:0.75rem 0">
+<p><strong>加法公式 P(A∪B)=P(A)+P(B)−P(AB)：</strong></p>
+<ol class="steps">
+  <li>分解：A∪B = A ∪ (B−A) = A ∪ (B<span style="text-decoration:overline">A</span>)，且 A 与 B<span style="text-decoration:overline">A</span> 互不相容</li>
+  <li>由可列可加性：P(A∪B) = P(A) + P(B<span style="text-decoration:overline">A</span>)</li>
+  <li>又 B = AB ∪ B<span style="text-decoration:overline">A</span>（互不相容），P(B)=P(AB)+P(B<span style="text-decoration:overline">A</span>)，故 P(B<span style="text-decoration:overline">A</span>)=P(B)−P(AB)</li>
+  <li>代入：P(A∪B)=P(A)+P(B)−P(AB) ∎</li>
+</ol>
+<p><strong>减法公式 P(A−B)=P(A)−P(AB)：</strong></p>
+<ol class="steps">
+  <li>A = AB ∪ A<span style="text-decoration:overline">B</span>（互不相容）</li>
+  <li>P(A)=P(AB)+P(A<span style="text-decoration:overline">B</span>)，而 A−B=A<span style="text-decoration:overline">B</span></li>
+  <li>移项：P(A−B)=P(A)−P(AB) ∎</li>
+  <li>若 B⊂A，则 AB=B，P(A−B)=P(A)−P(B)，且 P(A)≥P(B)</li>
+</ol>
+</div>
+</details>
+
+<div class="quiz" id="quiz2">
+  <p class="question"><strong>✏️ 快速自测2：</strong>已知P(A)=0.5，P(B)=0.4，P(AB)=0.2，则P(A∪B)=？</p>
+  <div class="options">
+    <div class="option" onclick="checkQuiz('quiz2', this, false)">A. 0.9</div>
+    <div class="option" onclick="checkQuiz('quiz2', this, true)">B. 0.7</div>
+    <div class="option" onclick="checkQuiz('quiz2', this, false)">C. 0.2</div>
+    <div class="option" onclick="checkQuiz('quiz2', this, false)">D. 0.1</div>
+  </div>
+  <div class="feedback" id="quiz2-fb"></div>
+</div>
+
+<!-- ====== SECTION 3 ====== -->
+<h2>第三步：古典概型——数数法（10分钟）</h2>
+
+<div class="formula">
+  <span class="label">古典概型核心公式</span>
+  P(A) = A中包含的样本点数 / 样本点总数
+</div>
+
+<p><strong>关键技能：排列组合快速回顾</strong></p>
+<ul>
+  <li><strong>排列 A<sub>n</sub><sup>m</sup>：</strong>从n个中选m个，有顺序</li>
+  <li><strong>组合 C<sub>n</sub><sup>m</sup>：</strong>从n个中选m个，无顺序</li>
+  <li><strong>加法原理：</strong>分类相加（不同类方法之间用"或"）</li>
+  <li><strong>乘法原理：</strong>分步相乘（不同步骤之间用"且"）</li>
+</ul>
+
+<div class="formula">
+  <span class="label">三种抽样方式的总数</span>
+  有放回（可重复）：n<sup>m</sup><br>
+  不放回+无次序（一把抓）：C<sub>n</sub><sup>m</sup><br>
+  不放回+有次序（依次取）：A<sub>n</sub><sup>m</sup>
+</div>
+
+<div class="quiz" id="quiz3">
+  <p class="question"><strong>✏️ 快速自测3：</strong>10件产品中有2件次品，不放回取2次每次1件。两只都是正品的概率？</p>
+  <div class="options">
+    <div class="option" onclick="checkQuiz('quiz3', this, false)">A. 1/5</div>
+    <div class="option" onclick="checkQuiz('quiz3', this, false)">B. 1/3</div>
+    <div class="option" onclick="checkQuiz('quiz3', this, true)">C. 28/45</div>
+    <div class="option" onclick="checkQuiz('quiz3', this, false)">D. 8/45</div>
+  </div>
+  <div class="feedback" id="quiz3-fb"></div>
+</div>
+
+<!-- ====== SECTION 4 ====== -->
+<h2>第四步：条件概率 + 全概率 + 贝叶斯（15分钟）⭐考试重点！</h2>
+
+<div class="def-card">
+  <p><span class="term">条件概率 P(B|A)：</span>已知A发生的条件下，B发生的概率 = P(AB)/P(A)</p>
+  <p><span class="term">乘法公式：</span>P(AB) = P(A)·P(B|A) = P(B)·P(A|B)</p>
+</div>
+
+<p><strong>全概率公式——"分情况讨论再求和"：</strong></p>
+<div class="formula">
+  <span class="label">全概率公式</span>
+  若 A₁, A₂, …, Aₙ 构成完备事件组（互不相容且和为Ω）：<br>
+  P(B) = P(A₁)P(B|A₁) + P(A₂)P(B|A₂) + … + P(Aₙ)P(B|Aₙ)
+</div>
+
+<p><strong>贝叶斯公式——"已知结果，反推原因"：</strong></p>
+<div class="formula">
+  <span class="label">贝叶斯公式</span>
+  P(A<sub>i</sub>|B) = <u>P(A<sub>i</sub>)·P(B|A<sub>i</sub>)</u><br>
+  <span style="margin-left:3.5em">Σ<sub>j</sub> P(A<sub>j</sub>)·P(B|A<sub>j</sub>)</span><br>
+  分子 = 第i条路径的概率<br>
+  分母 = 全概率（所有路径概率之和）
+</div>
+
+<div class="tip">
+  <strong>记忆诀窍：</strong>全概率 = "加权平均"；贝叶斯 = "我的权重除以总权重"。这就像：全班考试平均分 = 各组平均分×各组人数占比 → 这是全概率。已知某人的分数，反推他在哪一组 → 这是贝叶斯。
+</div>
+
+<p><strong>📝 现在来做作业原题！</strong></p>
+
+<div class="def-card" style="border-left:4px solid var(--accent)">
+<p><span class="term">📋 作业一 第1题：条件概率计算</span></p>
+<p>（1）已知 P(A)=1/2, P(B)=1/3, P(B|A)=2/3，求 P(A|B)；</p>
+<p>（2）已知 P(Ā)=0.3, P(B)=0.4, P(A<span style="text-decoration:overline">B</span>)=0.5，求 P(B|A∪<span style="text-decoration:overline">B</span>)；</p>
+<p>（3）已知 P(A)=1/4, P(B|A)=1/3, P(A|B)=1/2，求 P(A∪B)。</p>
+<details><summary><strong>点击查看逐步解析</strong></summary>
+<div style="padding:0.5rem 0">
+<p><strong>（1）</strong><br>
+<strong>已知：</strong>P(A)=1/2, P(B)=1/3, P(B|A)=2/3，<strong>求：</strong>P(A|B)<br><br>
+<strong>第1步——用条件概率公式求P(AB)：</strong><br>
+P(B|A) = P(AB)/P(A) → P(AB) = P(A) × P(B|A)<br>
+代入：P(AB) = (1/2) × (2/3) = 2/6 = <strong>1/3</strong><br><br>
+<strong>第2步——再用条件概率公式求P(A|B)：</strong><br>
+P(A|B) = P(AB)/P(B) = (1/3)/(1/3) = <strong>1</strong><br>
+（一个数除以自己=1，意味着已知B发生则A必定发生）</p>
+<p><strong>（2）</strong><br>
+<strong>已知：</strong>P(Ā)=0.3, P(B)=0.4, P(A<span style="text-decoration:overline">B</span>)=0.5，<strong>求：</strong>P(B|A∪<span style="text-decoration:overline">B</span>)<br><br>
+<strong>第1步——求P(A)：</strong><br>
+对立事件：P(A) = 1 − P(Ā) = 1 − 0.3 = <strong>0.7</strong><br><br>
+<strong>第2步——求P(AB)：</strong><br>
+减法公式：P(A−B) = P(A) − P(AB)，而A−B = A<span style="text-decoration:overline">B</span><br>
+所以 P(AB) = P(A) − P(A<span style="text-decoration:overline">B</span>) = 0.7 − 0.5 = <strong>0.2</strong><br><br>
+<strong>第3步——求P(A∪<span style="text-decoration:overline">B</span>)：</strong><br>
+P(<span style="text-decoration:overline">B</span>) = 1 − 0.4 = 0.6<br>
+加法公式：P(A∪<span style="text-decoration:overline">B</span>) = P(A) + P(<span style="text-decoration:overline">B</span>) − P(A<span style="text-decoration:overline">B</span>)<br>
+= 0.7 + 0.6 − 0.5 = <strong>0.8</strong><br><br>
+<strong>第4步——求P(B|A∪<span style="text-decoration:overline">B</span>)：</strong><br>
+条件概率：该值 = P(B∩(A∪<span style="text-decoration:overline">B</span>))/P(A∪<span style="text-decoration:overline">B</span>)<br>
+B∩(A∪<span style="text-decoration:overline">B</span>) = B∩A = AB（B和<span style="text-decoration:overline">B</span>交集为空，只剩AB）<br>
+= 0.2/0.8 = <strong>0.25</strong></p>
+<p><strong>（3）</strong><br>
+<strong>已知：</strong>P(A)=1/4, P(B|A)=1/3, P(A|B)=1/2，<strong>求：</strong>P(A∪B)<br><br>
+<strong>第1步——求P(AB)：</strong><br>
+P(B|A) = P(AB)/P(A) → P(AB) = (1/4) × (1/3) = <strong>1/12</strong><br><br>
+<strong>第2步——求P(B)：</strong><br>
+P(A|B) = P(AB)/P(B) → P(B) = P(AB)/P(A|B)<br>
+= (1/12)/(1/2) = (1/12) × (2/1) = <strong>1/6</strong><br><br>
+<strong>第3步——求P(A∪B)：</strong><br>
+加法公式：P(A∪B) = P(A) + P(B) − P(AB)<br>
+= 1/4 + 1/6 − 1/12 = 3/12 + 2/12 − 1/12 = <strong>4/12 = 1/3</strong></p>
+</div>
+</details>
+</div>
+
+<div class="def-card" style="border-left:4px solid var(--accent)">
+<p><span class="term">📋 作业一 第2题：全概率 + 贝叶斯（工厂产品问题）</span></p>
+<p>仓库10箱产品：甲5箱（次品率0.1）、乙3箱（次品率0.2）、丙2箱（次品率0.3）。任取一箱再任取一件。求：（1）取得正品的概率；（2）取得的正品是甲厂的概率。</p>
+<details><summary><strong>点击查看逐步解析</strong></summary>
+<div style="padding:0.5rem 0">
+<p><strong>（1）求取得正品的概率——用全概率公式</strong><br><br>
+<strong>第1步：确定完备事件组（划分）</strong><br>
+取到哪家工厂的箱子就是划分：<br>
+A₁ = {甲厂}，A₂ = {乙厂}，A₃ = {丙厂}<br>
+这三个事件互斥（取一箱只能来自一家），且合起来就是全部可能（Ω）<br><br>
+<strong>第2步：求先验概率 P(Aᵢ)</strong><br>
+从10箱中任取一箱，每箱被取到概率相同：<br>
+P(A₁) = 5/10 = <strong>0.5</strong>（甲厂5箱）<br>
+P(A₂) = 3/10 = <strong>0.3</strong>（乙厂3箱）<br>
+P(A₃) = 2/10 = <strong>0.2</strong>（丙厂2箱）<br>
+检验：0.5+0.3+0.2=1 ✓<br><br>
+<strong>第3步：求条件概率 P(B|Aᵢ)</strong><br>
+设B = {取得正品}<br>
+已知各厂次品率，正品率 = 1 − 次品率：<br>
+P(B|A₁) = 1 − 0.1 = <strong>0.9</strong>（甲厂正品率）<br>
+P(B|A₂) = 1 − 0.2 = <strong>0.8</strong>（乙厂正品率）<br>
+P(B|A₃) = 1 − 0.3 = <strong>0.7</strong>（丙厂正品率）<br><br>
+<strong>第4步：套全概率公式</strong><br>
+P(B) = P(A₁)P(B|A₁) + P(A₂)P(B|A₂) + P(A₃)P(B|A₃)<br>
+= 0.5 × 0.9 + 0.3 × 0.8 + 0.2 × 0.7<br>
+= 0.45 + 0.24 + 0.14<br>
+= <strong>0.83</strong><br><br>
+<strong>（2）求取得的正品来自甲厂的概率——用贝叶斯公式</strong><br><br>
+<strong>第1步：明确要算什么</strong><br>
+已知结果是B（正品），问原因A₁（甲厂）的概率：P(A₁|B)<br><br>
+<strong>第2步：套贝叶斯公式</strong><br>
+P(A₁|B) = P(A₁)P(B|A₁) / P(B)<br>
+分子：甲厂的权重 = 0.5 × 0.9 = 0.45<br>
+分母：全概率 = 0.83（第(1)问算出来的）<br>
+= 0.45 / 0.83 ≈ <strong>0.542</strong><br><br>
+<strong>理解：</strong>取到正品时，有54.2%的概率来自甲厂。为什么甲厂最高？因为甲厂份额最大（50%），虽然它的正品率不是最高。</p>
+</div>
+</details>
+</div>
+
+<details class="proof-block">
+<summary><strong>📐 证明推导：条件概率→乘法→全概率→贝叶斯 完整链</strong>（点击展开）</summary>
+<div style="padding:0.75rem 0">
+<p><strong>起点：</strong>条件概率定义 P(B|A)=P(AB)/P(A)（P(A)>0）</p>
+<p><strong>① 乘法公式：</strong>变形得 P(AB)=P(A)·P(B|A)=P(B)·P(A|B)；推广到n个：P(A₁…Aₙ)=P(A₁)P(A₂|A₁)…P(Aₙ|A₁…Aₙ₋₁)</p>
+<p><strong>② 全概率公式：</strong></p>
+<ol class="steps">
+  <li>完备事件组 A₁…Aₙ：互不相容，∪Aᵢ=Ω，P(Aᵢ)>0</li>
+  <li>B = BΩ = B(∪Aᵢ) = ∪(BAᵢ)，各项互不相容</li>
+  <li>P(B) = ΣP(BAᵢ) = ΣP(Aᵢ)·P(B|Aᵢ)（每项用乘法公式）∎</li>
+</ol>
+<p><strong>③ 贝叶斯公式：</strong></p>
+<ol class="steps">
+  <li>P(Aᵢ|B) = P(AᵢB)/P(B)（条件概率定义）</li>
+  <li>分子 = P(Aᵢ)·P(B|Aᵢ)（乘法公式）</li>
+  <li>分母 = ΣP(Aⱼ)·P(B|Aⱼ)（全概率公式）</li>
+  <li>代入即得贝叶斯公式 ∎</li>
+</ol>
+</div>
+</details>
+
+<!-- ====== SECTION 5 ====== -->
+<h2>第五步：独立性 + 伯努利试验（5分钟）</h2>
+
+<div class="formula">
+  <span class="label">独立性定义</span>
+  A与B相互独立 ⟺ P(AB) = P(A)·P(B)
+</div>
+
+<div class="warning">
+  <strong>易错：</strong>互斥 ≠ 独立！互斥是AB=∅，独立是P(AB)=P(A)P(B)。如果P(A)>0且P(B)>0，则互斥一定不独立！
+</div>
+
+<details class="proof-block">
+<summary><strong>📐 证明：独立性的四条推论</strong>（点击展开）</summary>
+<div style="padding:0.75rem 0">
+<p><strong>结论：</strong>若A与B独立，则Ā与B、A与B̄、Ā与B̄也都独立。</p>
+<p><strong>以Ā与B为例：</strong></p>
+<ol class="steps">
+  <li>P(ĀB) = P(B−AB) = P(B) − P(AB)</li>
+  <li>独立 ⇒ P(AB)=P(A)P(B)</li>
+  <li>P(ĀB) = P(B) − P(A)P(B) = P(B)[1−P(A)] = P(B)P(Ā)</li>
+  <li>即 P(ĀB)=P(Ā)P(B)，故Ā与B独立 ∎</li>
+</ol>
+<p>其余两种情况同理可证。</p>
+</div>
+</details>
+
+<div class="formula">
+  <span class="label">伯努利试验（n重独立重复）</span>
+  P(恰好发生k次) = C<sub>n</sub><sup>k</sup> p<sup>k</sup> (1−p)<sup>n−k</sup>，k=0,1,…,n
+</div>
+
+<details class="proof-block">
+<summary><strong>📐 推导：伯努利公式为什么是 Cₙᵏpᵏ(1−p)ⁿ⁻ᵏ？</strong>（点击展开）</summary>
+<div style="padding:0.75rem 0">
+<ol class="steps">
+  <li>先考虑一种特定序列：前k次A发生，后n−k次A不发生。概率 = pᵏ(1−p)ⁿ⁻ᵏ（独立性）</li>
+  <li>"恰好k次" = 在n个位置中选k个给A发生，有 Cₙᵏ 种选法</li>
+  <li>每种选法对应概率相同（pᵏ(1−p)ⁿ⁻ᵏ），且不同选法对应事件互不相容</li>
+  <li>总概率 = Cₙᵏ · pᵏ · (1−p)ⁿ⁻ᵏ ∎</li>
+</ol>
+</div>
+</details>
+
+<!-- ====== COMPREHENSIVE QUIZ ====== -->
+<h2>📝 课件重点例题</h2>
+
+<div class="def-card" style="border-left:4px solid #e6c970">
+<p><span class="term">📋 课件1.2 例：减法公式练习</span><br>
+已知 P(A)=1/2, P(B)=1/3，求三种情况下P(A−B)：①AB=∅ ②B⊂A ③P(AB)=1/4</p>
+<details><summary><strong>点击查看详细解析</strong></summary>
+<div style="padding:0.5rem 0">
+<p><strong>核心公式：</strong>P(A−B) = P(A) − P(AB)</p>
+<p><strong>① AB=∅（A和B互斥）：</strong><br>
+互斥意味着AB=∅，所以P(AB)=0<br>
+P(A−B) = P(A) − 0 = 1/2 − 0 = <strong>1/2</strong></p>
+<p><strong>② B⊂A（B包含于A）：</strong><br>
+B⊂A意味着AB = B（B中的元素都在A中）<br>
+所以P(AB) = P(B) = 1/3<br>
+P(A−B) = P(A) − P(AB) = 1/2 − 1/3 = 3/6 − 2/6 = <strong>1/6</strong></p>
+<p><strong>③ P(AB)=1/4：</strong><br>
+直接代入：P(A−B) = 1/2 − 1/4 = <strong>1/4</strong></p>
+</div>
+</details>
+</div>
+
+<div class="def-card" style="border-left:4px solid #e6c970">
+<p><span class="term">📋 课件1.2 例：三事件都不发生的概率</span><br>
+P(A)=P(B)=P(C)=1/4, P(AB)=P(BC)=1/8, P(AC)=0，求A,B,C都不发生的概率。</p>
+<details><summary><strong>点击查看详细解析</strong></summary>
+<div style="padding:0.5rem 0">
+<p><strong>第1步：理解"都不发生"</strong><br>
+"都不发生" = A不发生且B不发生且C不发生 = <span style="text-decoration:overline">A</span><span style="text-decoration:overline">B</span><span style="text-decoration:overline">C</span><br>
+由德摩根法则：<span style="text-decoration:overline">A</span><span style="text-decoration:overline">B</span><span style="text-decoration:overline">C</span> = <span style="text-decoration:overline">A∪B∪C</span><br>
+所以 P(都不发生) = 1 − P(A∪B∪C)</p>
+<p><strong>第2步：求P(A∪B∪C)</strong><br>
+三事件加法公式：<br>
+P(A∪B∪C) = P(A)+P(B)+P(C) − P(AB) − P(BC) − P(AC) + P(ABC)<br>
+= 1/4+1/4+1/4 − 1/8 − 1/8 − 0 + P(ABC)<br>
+= 3/4 − 1/4 + P(ABC) = 1/2 + P(ABC)</p>
+<p><strong>第3步：确定P(ABC)</strong><br>
+因为ABC⊂AC，而P(AC)=0<br>
+概率为0的事件的子事件概率也为0，所以P(ABC)=0<br>
+因此P(A∪B∪C) = 1/2 + 0 = <strong>1/2</strong></p>
+<p><strong>第4步：求答案</strong><br>
+P(都不发生) = 1 − 1/2 = <strong>1/2</strong></p>
+</div>
+</details>
+</div>
+
+<div class="def-card" style="border-left:4px solid #e6c970">
+<p><span class="term">📋 课件1.4 例：电子元件三家工厂（全概率+贝叶斯）</span><br>
+甲（15%, 次品率2%）、乙（80%, 1%）、丙（5%, 3%）。求（1）随机取一只为次品的概率；（2）已知是次品，来自哪家概率最大？</p>
+<details><summary><strong>点击查看详细解析</strong></summary>
+<div style="padding:0.5rem 0">
+<p><strong>（1）全概率公式：</strong><br>
+设B={次品}，A₁={甲},A₂={乙},A₃={丙}<br>
+P(B) = P(A₁)P(B|A₁) + P(A₂)P(B|A₂) + P(A₃)P(B|A₃)<br>
+= 0.15×0.02 + 0.80×0.01 + 0.05×0.03<br>
+= 0.003 + 0.008 + 0.0015<br>
+= <strong>0.0125</strong></p>
+<p><strong>（2）贝叶斯公式——分别算三家：</strong><br>
+P(A₁|B) = 0.15×0.02 / 0.0125 = 0.003 / 0.0125 = <strong>0.24</strong><br>
+P(A₂|B) = 0.80×0.01 / 0.0125 = 0.008 / 0.0125 = <strong>0.64</strong><br>
+P(A₃|B) = 0.05×0.03 / 0.0125 = 0.0015 / 0.0125 = <strong>0.12</strong><br>
+验证：0.24+0.64+0.12=1 ✓<br>
+结论：<strong>乙厂最大（64%）</strong>——虽然乙的次品率最低，但份额最大，所以已知次品时最可能来自乙。</p>
+</div>
+</details>
+</div>
+
+<div class="def-card" style="border-left:4px solid #e6c970">
+<p><span class="term">📋 课件1.5 例：甲乙独立射击</span><br>
+甲命中率0.8，乙命中率0.6，两人独立射击同一目标一次。求目标被击中的概率。</p>
+<details><summary><strong>点击查看详细解析</strong></summary>
+<div style="padding:0.5rem 0">
+<p><strong>解法一——加法公式：</strong><br>
+设A={甲击中}, B={乙击中}，P(A)=0.8, P(B)=0.6<br>
+"目标被击中" = A∪B<br>
+独立 ⇒ P(AB)=P(A)P(B)=0.8×0.6=0.48<br>
+P(A∪B) = P(A)+P(B)−P(AB) = 0.8+0.6−0.48 = <strong>0.92</strong></p>
+<p><strong>解法二——对立事件：</strong><br>
+"目标被击中"的对立是"两人都没击中"<br>
+P(都没击中) = P(Ā)P(B̄) = (1−0.8)×(1−0.6) = 0.2×0.4 = 0.08<br>
+P(击中) = 1 − 0.08 = <strong>0.92</strong></p>
+</div>
+</details>
+</div>
+
+<h2>📝 综合练习</h2>
+
+<div class="quiz" id="quiz4">
+  <p class="question"><strong>1.</strong> 已知P(A)=1/4, P(B|A)=1/3, P(A|B)=1/2，求P(A∪B)。</p>
+  <div class="options">
+    <div class="option" onclick="checkQuiz('quiz4', this, false)">A. 1/2</div>
+    <div class="option" onclick="checkQuiz('quiz4', this, false)">B. 1/4</div>
+    <div class="option" onclick="checkQuiz('quiz4', this, true)">C. 1/3</div>
+    <div class="option" onclick="checkQuiz('quiz4', this, false)">D. 1/6</div>
+  </div>
+  <div class="feedback" id="quiz4-fb"></div>
+</div>
+
+<div class="quiz" id="quiz5">
+  <p class="question"><strong>2.</strong> 某电子厂元件由三家提供：甲（份额15%，次品率2%）、乙（份额80%，次品率1%）、丙（份额5%，次品率3%）。随机取一只元件是次品，它最可能来自哪家？</p>
+  <div class="options">
+    <div class="option" onclick="checkQuiz('quiz5', this, true)">A. 乙</div>
+    <div class="option" onclick="checkQuiz('quiz5', this, false)">B. 甲</div>
+    <div class="option" onclick="checkQuiz('quiz5', this, false)">C. 丙</div>
+    <div class="option" onclick="checkQuiz('quiz5', this, false)">D. 无法判断</div>
+  </div>
+  <div class="feedback" id="quiz5-fb"></div>
+</div>
+
+<div class="quiz" id="quiz6">
+  <p class="question"><strong>3.</strong> 一枚硬币掷3次，恰有1次正面的概率是？</p>
+  <div class="options">
+    <div class="option" onclick="checkQuiz('quiz6', this, false)">A. 1/8</div>
+    <div class="option" onclick="checkQuiz('quiz6', this, true)">B. 3/8</div>
+    <div class="option" onclick="checkQuiz('quiz6', this, false)">C. 1/2</div>
+    <div class="option" onclick="checkQuiz('quiz6', this, false)">D. 7/8</div>
+  </div>
+  <div class="feedback" id="quiz6-fb"></div>
+</div>
+
+<h2>📐 第1章 公式汇总</h2>
+
+<table>
+<tr><th>类别</th><th>公式</th><th>说明</th></tr>
+<tr><td>对立事件</td><td>P(Ā)=1−P(A)</td><td>必有一个发生</td></tr>
+<tr><td>减法</td><td>P(A−B)=P(A)−P(AB)</td><td>B⊂A时=P(A)−P(B)</td></tr>
+<tr><td>加法</td><td>P(A∪B)=P(A)+P(B)−P(AB)</td><td>三事件推广含+ABC项</td></tr>
+<tr><td>条件概率</td><td>P(B|A)=P(AB)/P(A)</td><td>P(A)>0</td></tr>
+<tr><td>乘法</td><td>P(AB)=P(A)·P(B|A)</td><td>推广到n个事件连乘</td></tr>
+<tr><td>全概率</td><td>P(B)=ΣP(Aᵢ)P(B|Aᵢ)</td><td>完备事件组加权</td></tr>
+<tr><td>贝叶斯</td><td>P(Aᵢ|B)=P(Aᵢ)P(B|Aᵢ)/ΣP(Aⱼ)P(B|Aⱼ)</td><td>已知结果反推原因</td></tr>
+<tr><td>古典概型</td><td>P(A)=A中样本点数/总样本点数</td><td>等可能+有限</td></tr>
+<tr><td>排列</td><td>Aₙᵐ=n!/(n−m)!</td><td>有次序</td></tr>
+<tr><td>组合</td><td>Cₙᵐ=n!/[m!(n−m)!]</td><td>无次序</td></tr>
+<tr><td>独立性</td><td>P(AB)=P(A)P(B)</td><td>独立⇒Ā,B等也独立</td></tr>
+<tr><td>伯努利</td><td>P(X=k)=Cₙᵏpᵏ(1−p)ⁿ⁻ᵏ</td><td>n重独立重复</td></tr>
+<tr><td>德摩根</td><td>Ā∪B̄=Ā∩B̄; Ā∩B̄=Ā∪B̄</td><td>对偶律</td></tr>
+</table>
+
+<div class="lesson-footer">
+  <p><strong>📚 推荐阅读：</strong>教材第1章 §1.1～§1.5（盛骤《概率论与数理统计教程》第四版）</p>
+  <p><strong>📐 速查：</strong><a href="../reference/formula-cheat-sheet.html#ch1">第1章公式速查</a> | <strong>📝 做题：</strong><a href="../reference/exam-bank.html">原题题库 → 作业一</a></p>
+  <p><strong>下一课：</strong><a href="0002-random-variables.html">第2课：随机变量及其分布 →</a></p>
+  <p>💬 <strong>有任何不清楚的地方，随时问我！</strong>我是你的老师。</p>
+</div>
+
+<script>
+function checkQuiz(qid, el, isCorrect) {
+  // Reset all options in this quiz
+  const quiz = document.getElementById(qid);
+  const opts = quiz.querySelectorAll('.option');
+  opts.forEach(o => { o.className = 'option'; });
+  el.classList.add('selected');
+  el.classList.add(isCorrect ? 'correct' : 'wrong');
+  const fb = document.getElementById(qid+'-fb');
+  fb.className = 'feedback show ' + (isCorrect ? 'correct' : 'wrong');
+  const answers = {
+    'quiz1': 'B. 从A（{1,3,5}）中去除B（{1,2,3}）的元素，剩下{5}',
+    'quiz2': 'P(A∪B)=P(A)+P(B)−P(AB)=0.5+0.4−0.2=0.7',
+    'quiz3': '(C₈²/C₁₀²)=28/45，或(8/10)×(7/9)=28/45',
+    'quiz4': '由P(B|A)=P(AB)/P(A)得P(AB)=1/12，由P(A|B)=P(AB)/P(B)得P(B)=1/6，P(A∪B)=1/4+1/6−1/12=1/3',
+    'quiz5': '用贝叶斯：甲=0.15×0.02/全概率=0.003/0.0125=0.24，乙=0.8×0.01/0.0125=0.64，丙=0.05×0.03/0.0125=0.12。乙最大(0.64)',
+    'quiz6': 'C₃¹(1/2)¹(1/2)²=3/8'
+  };
+  fb.textContent = isCorrect ? '✅ 正确！' : '❌ 不对。' + (answers[qid] || '');
+}
+</script>
+
+</body>
+</html>

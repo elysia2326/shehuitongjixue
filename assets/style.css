@@ -1,0 +1,185 @@
+/* 社会统计学 - 课程统一样式（离线优化版） */
+/* 使用系统自带中文字体，无需联网加载 */
+
+:root {
+  --bg: #fdfcf9;
+  --text: #2c2416;
+  --muted: #6b5e4a;
+  --accent: #8b4513;
+  --accent-light: #f0e6d9;
+  --border: #d9cdb6;
+  --code-bg: #f5f0e8;
+  --correct: #2d6a4f;
+  --wrong: #c1292e;
+  --radius: 6px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: "PingFang SC", "Noto Sans SC", "Microsoft YaHei", "Source Han Sans", "Helvetica Neue", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.75;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+  font-size: 17px;
+}
+
+h1 { font-size: 2rem; font-weight: 700; margin: 2.5rem 0 1rem; color: var(--accent); letter-spacing: -0.02em; }
+h2 { font-size: 1.4rem; font-weight: 600; margin: 2rem 0 0.75rem; border-bottom: 2px solid var(--border); padding-bottom: 0.35rem; }
+h3 { font-size: 1.15rem; font-weight: 600; margin: 1.5rem 0 0.5rem; }
+
+p { margin: 0.75rem 0; }
+
+a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--border); }
+a:hover { border-bottom-color: var(--accent); }
+
+/* Formula blocks */
+.formula {
+  background: var(--code-bg);
+  border-left: 4px solid var(--accent);
+  padding: 1rem 1.25rem;
+  margin: 1rem 0;
+  border-radius: 0 var(--radius) var(--radius) 0;
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 1.05rem;
+  overflow-x: auto;
+}
+
+.formula .label {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.3rem;
+}
+
+/* Definition cards */
+.def-card {
+  background: var(--accent-light);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+  margin: 1rem 0;
+}
+
+.def-card .term {
+  font-weight: 700;
+  color: var(--accent);
+}
+
+/* Step-by-step solution */
+.steps { counter-reset: step; list-style: none; padding: 0; }
+.steps li {
+  counter-increment: step;
+  padding: 0.5rem 0 0.5rem 2.5rem;
+  position: relative;
+  margin: 0.3rem 0;
+}
+.steps li::before {
+  content: counter(step);
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+  width: 1.6rem;
+  height: 1.6rem;
+  background: var(--accent);
+  color: white;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+  line-height: 1.6rem;
+}
+
+/* Quiz widget */
+.quiz { margin: 1.5rem 0; }
+.quiz .question {
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+}
+.quiz .options { display: flex; flex-direction: column; gap: 0.4rem; }
+.quiz .option {
+  padding: 0.6rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.quiz .option:hover { background: var(--accent-light); }
+.quiz .option.selected { border-color: var(--accent); background: var(--accent-light); }
+.quiz .option.correct { border-color: var(--correct); background: #d8f3dc; }
+.quiz .option.wrong { border-color: var(--wrong); background: #ffd6d6; }
+.quiz .feedback {
+  margin-top: 0.5rem;
+  padding: 0.6rem 1rem;
+  border-radius: var(--radius);
+  display: none;
+}
+.quiz .feedback.show { display: block; }
+.quiz .feedback.correct { background: #d8f3dc; color: var(--correct); }
+.quiz .feedback.wrong { background: #ffd6d6; color: var(--wrong); }
+
+/* Warning / tip boxes */
+.tip {
+  background: #fff8e8;
+  border: 1px solid #e6c970;
+  border-radius: var(--radius);
+  padding: 0.75rem 1.25rem;
+  margin: 1rem 0;
+  font-size: 0.95rem;
+}
+.tip::before { content: "💡 "; }
+
+.warning {
+  background: #ffeaea;
+  border: 1px solid #e6a0a0;
+  border-radius: var(--radius);
+  padding: 0.75rem 1.25rem;
+  margin: 1rem 0;
+  font-size: 0.95rem;
+}
+.warning::before { content: "⚠️ "; }
+
+/* Table styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-size: 0.95rem;
+}
+th, td {
+  border: 1px solid var(--border);
+  padding: 0.5rem 0.75rem;
+  text-align: center;
+}
+th {
+  background: var(--accent-light);
+  font-weight: 600;
+}
+
+/* Print styles */
+@media print {
+  body { font-size: 12pt; max-width: 100%; padding: 0; }
+  .quiz, .tip, .warning { break-inside: avoid; }
+}
+
+/* Navigation */
+nav.breadcrumb {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-bottom: 1.5rem;
+}
+nav.breadcrumb a { color: var(--muted); border: none; }
+nav.breadcrumb a:hover { color: var(--accent); }
+
+.lesson-footer {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.9rem;
+  color: var(--muted);
+}

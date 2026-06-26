@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>社会统计学 · 公式速查表</title>
+<link rel="stylesheet" href="assets/style.css">
+<style>
+  .chapter-nav { display: flex; flex-wrap: wrap; gap: 0.3rem; margin: 1rem 0; }
+  .chapter-nav a { padding: 0.3rem 0.7rem; border: 1px solid var(--border); border-radius: var(--radius); font-size: 0.85rem; }
+  .chapter-nav a:hover { background: var(--accent-light); }
+  .formula-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+  @media (max-width: 600px) { .formula-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<nav class="breadcrumb">
+  <a href="../lessons/0001-random-events.html">← 第1课</a> ·
+  <a href="../lessons/0002-random-variables.html">第2课</a> ·
+  <a href="../lessons/0003-numerical-characteristics.html">第3课</a> ·
+  <a href="../lessons/0004-sampling-estimation.html">第4课</a> ·
+  <a href="exam-bank.html">原题题库 →</a>
+</nav>
+
+<h1>📐 社会统计学 · 公式速查表</h1>
+<p>按章节排列，考试直接套用。随身携带，反复查阅。</p>
+
+<nav class="chapter-nav">
+  <a href="#ch1">第1章 随机事件与概率</a>
+  <a href="#ch2">第2章 随机变量及其分布</a>
+  <a href="#ch3">第3章 二维随机变量</a>
+  <a href="#ch4">第4章 数字特征</a>
+  <a href="#ch5">第5章 样本及抽样分布</a>
+  <a href="#ch6">第6章 参数估计</a>
+</nav>
+
+<!-- ===== 第1章 ===== -->
+<h2 id="ch1">第1章 随机事件与概率</h2>
+
+<h3>1.1 事件关系与运算</h3>
+<div class="formula">
+  <span class="label">和事件（并）</span>
+  A ∪ B（或 A+B）：A与B至少有一个发生
+</div>
+<div class="formula">
+  <span class="label">积事件（交）</span>
+  A ∩ B（或 AB）：A与B同时发生
+</div>
+<div class="formula">
+  <span class="label">差事件</span>
+  A − B = A<span style="text-decoration:overline">B</span>：A发生而B不发生
+</div>
+<div class="formula">
+  <span class="label">对立事件</span>
+  <span style="text-decoration:overline">A</span> = Ω − A：A与<span style="text-decoration:overline">A</span>必有一个且仅有一个发生<br>
+  A<span style="text-decoration:overline">A</span> = ∅，A ∪ <span style="text-decoration:overline">A</span> = Ω
+</div>
+<div class="formula">
+  <span class="label">德摩根法则（对偶律）</span>
+  <span style="text-decoration:overline">A ∪ B</span> = <span style="text-decoration:overline">A</span> ∩ <span style="text-decoration:overline">B</span><br>
+  <span style="text-decoration:overline">A ∩ B</span> = <span style="text-decoration:overline">A</span> ∪ <span style="text-decoration:overline">B</span>
+</div>
+
+<h3>1.2 概率的性质</h3>
+<div class="formula">
+  <span class="label">非负性</span> P(A) ≥ 0
+</div>
+<div class="formula">
+  <span class="label">归一性</span> P(Ω) = 1，P(∅) = 0
+</div>
+<div class="formula">
+  <span class="label">对立事件</span> P(<span style="text-decoration:overline">A</span>) = 1 − P(A)
+</div>
+<div class="formula">
+  <span class="label">减法公式</span>
+  P(A − B) = P(A<span style="text-decoration:overline">B</span>) = P(A) − P(AB)<br>
+  若 B ⊂ A，则 P(A − B) = P(A) − P(B)，且 P(A) ≥ P(B)
+</div>
+<div class="formula">
+  <span class="label">加法公式</span>
+  P(A ∪ B) = P(A) + P(B) − P(AB)<br>
+  P(A ∪ B ∪ C) = P(A) + P(B) + P(C) − P(AB) − P(BC) − P(AC) + P(ABC)
+</div>
+
+<h3>1.3 古典概型</h3>
+<div class="formula">
+  <span class="label">古典概型公式</span>
+  P(A) = <u>A中样本点数</u><br>
+  <span style="margin-left:3.5em">样本点总数</span>
+</div>
+<div class="formula">
+  <span class="label">排列数</span>
+  A<sub>n</sub><sup>m</sup> = n(n−1)…(n−m+1) = <u>n!</u><br>
+  <span style="margin-left:8em">(n−m)!</span>
+</div>
+<div class="formula">
+  <span class="label">组合数</span>
+  C<sub>n</sub><sup>m</sup> = <u>A<sub>n</sub><sup>m</sup></u> = <u>n!</u><br>
+  <span style="margin-left:2.5em">m!</span><span style="margin-left:3.5em">m!(n−m)!</span>
+</div>
+<div class="formula">
+  <span class="label">有放回抽样</span> 样本点总数 = n<sup>m</sup>
+</div>
+<div class="formula">
+  <span class="label">不放回（与次序无关）</span> 样本点总数 = C<sub>n</sub><sup>m</sup>
+</div>
+<div class="formula">
+  <span class="label">不放回（与次序有关）</span> 样本点总数 = A<sub>n</sub><sup>m</sup>
+</div>
+
+<h3>1.4 条件概率 & 全概率 & 贝叶斯</h3>
+<div class="formula">
+  <span class="label">条件概率</span>
+  P(B|A) = <u>P(AB)</u>，其中 P(A) > 0<br>
+  <span style="margin-left:4em">P(A)</span>
+</div>
+<div class="formula">
+  <span class="label">乘法公式</span>
+  P(AB) = P(A)·P(B|A) = P(B)·P(A|B)<br>
+  P(A₁A₂…Aₙ) = P(A₁)P(A₂|A₁)P(A₃|A₁A₂)…P(Aₙ|A₁A₂…Aₙ₋₁)
+</div>
+<div class="formula">
+  <span class="label">全概率公式（完备事件组 A₁…Aₙ）</span>
+  P(B) = Σ<sub>i=1</sub><sup>n</sup> P(A<sub>i</sub>)·P(B|A<sub>i</sub>)
+</div>
+<div class="formula">
+  <span class="label">贝叶斯公式</span>
+  P(A<sub>i</sub>|B) = <u>P(A<sub>i</sub>)·P(B|A<sub>i</sub>)</u><br>
+  <span style="margin-left:4.5em">Σ<sub>j=1</sub><sup>n</sup> P(A<sub>j</sub>)·P(B|A<sub>j</sub>)</span>
+</div>
+
+<h3>1.5 独立性 & 伯努利试验</h3>
+<div class="formula">
+  <span class="label">两事件独立</span>
+  A与B相互独立 ⟺ P(AB) = P(A)·P(B)
+</div>
+<div class="formula">
+  <span class="label">独立性的推论</span>
+  若A与B独立，则<span style="text-decoration:overline">A</span>与B、A与<span style="text-decoration:overline">B</span>、<span style="text-decoration:overline">A</span>与<span style="text-decoration:overline">B</span>也都独立
+</div>
+<div class="formula">
+  <span class="label">伯努利试验（n重独立重复）</span>
+  P(X = k) = C<sub>n</sub><sup>k</sup> p<sup>k</sup> (1−p)<sup>n−k</sup>，k = 0, 1, …, n
+</div>
+
+<!-- ===== 第2章 ===== -->
+<h2 id="ch2">第2章 随机变量及其分布</h2>
+
+<h3>2.1 分布函数</h3>
+<div class="formula">
+  <span class="label">分布函数定义</span>
+  F(x) = P(X ≤ x)，−∞ < x < +∞<br>
+  P(x₁ < X ≤ x₂) = F(x₂) − F(x₁)
+</div>
+<div class="formula">
+  <span class="label">分布函数性质</span>
+  ① 0 ≤ F(x) ≤ 1<br>
+  ② F(x) 单调不减（x₁ < x₂ ⇒ F(x₁) ≤ F(x₂)）<br>
+  ③ F(x) 右连续<br>
+  ④ F(−∞) = 0，F(+∞) = 1
+</div>
+
+<h3>2.2 离散型随机变量</h3>
+<div class="formula">
+  <span class="label">分布列（分布律）</span>
+  P(X = x<sub>i</sub>) = p<sub>i</sub>，i = 1, 2, …<br>
+  性质：p<sub>i</sub> ≥ 0，Σp<sub>i</sub> = 1
+</div>
+<div class="formula">
+  <span class="label">二项分布 X~B(n,p)</span>
+  P(X = k) = C<sub>n</sub><sup>k</sup> p<sup>k</sup> (1−p)<sup>n−k</sup>，k = 0,1,…,n
+</div>
+<div class="formula">
+  <span class="label">0-1分布 X~B(1,p)</span>
+  P(X = k) = p<sup>k</sup> (1−p)<sup>1−k</sup>，k = 0,1
+</div>
+<div class="formula">
+  <span class="label">泊松分布 X~P(λ)</span>
+  P(X = k) = <u>λ<sup>k</sup> e<sup>−λ</sup></u>，k = 0,1,2,…<br>
+  <span style="margin-left:4em">k!</span>
+</div>
+<div class="formula">
+  <span class="label">泊松逼近定理</span>
+  当 n → ∞，np<sub>n</sub> = λ 时：<br>
+  C<sub>n</sub><sup>k</sup> p<sup>k</sup>(1−p)<sup>n−k</sup> ≈ <u>λ<sup>k</sup> e<sup>−λ</sup></u><br>
+  <span style="margin-left:10em">k!</span>
+</div>
+
+<h3>2.3 连续型随机变量</h3>
+<div class="formula">
+  <span class="label">密度函数与分布函数关系</span>
+  F(x) = ∫<sub>−∞</sub><sup>x</sup> f(t) dt<br>
+  f(x) = F'(x)（在连续点处）
+</div>
+<div class="formula">
+  <span class="label">密度函数性质</span>
+  ① f(x) ≥ 0<br>
+  ② ∫<sub>−∞</sub><sup>+∞</sup> f(x)dx = 1<br>
+  ③ P(x₁ < X ≤ x₂) = ∫<sub>x₁</sub><sup>x₂</sup> f(x)dx<br>
+  ④ P(X = c) = 0（连续型）
+</div>
+<div class="formula">
+  <span class="label">均匀分布 X~U(a,b)</span>
+  f(x) = 1/(b−a)，a < x < b<br>
+  P(c < X < d) = (d−c)/(b−a)
+</div>
+<div class="formula">
+  <span class="label">指数分布 X~e(θ)</span>
+  f(x) = (1/θ)e<sup>−x/θ</sup>，x > 0（θ > 0）<br>
+  F(x) = 1 − e<sup>−x/θ</sup>，x > 0<br>
+  无记忆性：P(X > s+t | X > s) = P(X > t)
+</div>
+<div class="formula">
+  <span class="label">正态分布 X~N(μ, σ²)</span>
+  f(x) = <u>1</u> e<sup>−(x−μ)²/(2σ²)</sup>，−∞ < x < +∞<br>
+  <span style="margin-left:2em">√(2π)σ</span>
+</div>
+<div class="formula">
+  <span class="label">标准正态分布 X~N(0,1)</span>
+  φ(x) = <u>1</u> e<sup>−x²/2</sup>，Φ(x) = ∫<sub>−∞</sub><sup>x</sup> φ(t)dt<br>
+  <span style="margin-left:2em">√(2π)</span><br>
+  Φ(−x) = 1 − Φ(x)，Φ(0) = 0.5
+</div>
+<div class="formula">
+  <span class="label">标准化变换（重要！）</span>
+  若 X~N(μ,σ²)，则 Y = <u>X − μ</u> ~ N(0,1)<br>
+  <span style="margin-left:9em">σ</span><br>
+  P(a < X ≤ b) = Φ(<u>b−μ</u>) − Φ(<u>a−μ</u>)<br>
+  <span style="margin-left:6.5em">σ</span><span style="margin-left:3em">σ</span>
+</div>
+<div class="formula">
+  <span class="label">3σ原则</span>
+  P(|X−μ| < σ) ≈ 0.6826<br>
+  P(|X−μ| < 2σ) ≈ 0.9554<br>
+  P(|X−μ| < 3σ) ≈ 0.9974
+</div>
+
+<h3>2.4 随机变量函数的分布</h3>
+<div class="formula">
+  <span class="label">离散型</span>
+  Y = g(X) 的分布列：将 X 的每个取值 x<sub>i</sub> 映射为 y<sub>i</sub> = g(x<sub>i</sub>)，相同 y<sub>i</sub> 的概率合并
+</div>
+<div class="formula">
+  <span class="label">连续型</span>
+  先求 F<sub>Y</sub>(y) = P(Y ≤ y) = P(g(X) ≤ y)，再对 y 求导得 f<sub>Y</sub>(y)
+</div>
+
+<!-- ===== 第3章 ===== -->
+<h2 id="ch3">第3章 二维随机变量及其分布</h2>
+
+<h3>3.1 联合分布函数</h3>
+<div class="formula">
+  <span class="label">联合分布函数</span>
+  F(x,y) = P(X ≤ x, Y ≤ y)<br>
+  矩形法则：P(x₁<X≤x₂, y₁<Y≤y₂) = F(x₂,y₂) − F(x₂,y₁) − F(x₁,y₂) + F(x₁,y₁)
+</div>
+<div class="formula">
+  <span class="label">边缘分布函数</span>
+  F<sub>X</sub>(x) = F(x, +∞)，F<sub>Y</sub>(y) = F(+∞, y)
+</div>
+
+<h3>3.2 二维离散型</h3>
+<div class="formula">
+  <span class="label">联合分布列</span>
+  P(X=x<sub>i</sub>, Y=y<sub>j</sub>) = p<sub>ij</sub>，p<sub>ij</sub> ≥ 0，Σ<sub>i</sub>Σ<sub>j</sub> p<sub>ij</sub> = 1
+</div>
+<div class="formula">
+  <span class="label">边缘分布列</span>
+  p<sub>i·</sub> = Σ<sub>j</sub> p<sub>ij</sub>（行求和），p<sub>·j</sub> = Σ<sub>i</sub> p<sub>ij</sub>（列求和）
+</div>
+<div class="formula">
+  <span class="label">离散型独立性</span>
+  X与Y相互独立 ⟺ p<sub>ij</sub> = p<sub>i·</sub> × p<sub>·j</sub>（对所有i,j）
+</div>
+
+<h3>3.3 二维连续型</h3>
+<div class="formula">
+  <span class="label">联合密度与分布函数</span>
+  F(x,y) = ∫<sub>−∞</sub><sup>x</sup>∫<sub>−∞</sub><sup>y</sup> f(u,v) du dv
+</div>
+<div class="formula">
+  <span class="label">边缘密度</span>
+  f<sub>X</sub>(x) = ∫<sub>−∞</sub><sup>+∞</sup> f(x,y) dy<br>
+  f<sub>Y</sub>(y) = ∫<sub>−∞</sub><sup>+∞</sup> f(x,y) dx
+</div>
+<div class="formula">
+  <span class="label">连续型独立性</span>
+  X与Y相互独立 ⟺ f(x,y) = f<sub>X</sub>(x)·f<sub>Y</sub>(y)
+</div>
+
+<!-- ===== 第4章 ===== -->
+<h2 id="ch4">第4章 随机变量的数字特征</h2>
+
+<h3>4.1 数学期望</h3>
+<div class="formula">
+  <span class="label">离散型期望</span>
+  E(X) = Σ x<sub>i</sub>·p<sub>i</sub>
+</div>
+<div class="formula">
+  <span class="label">连续型期望</span>
+  E(X) = ∫<sub>−∞</sub><sup>+∞</sup> x·f(x) dx
+</div>
+<div class="formula">
+  <span class="label">函数期望（离散）</span>
+  E[g(X)] = Σ g(x<sub>i</sub>)·p<sub>i</sub>
+</div>
+<div class="formula">
+  <span class="label">函数期望（连续）</span>
+  E[g(X)] = ∫<sub>−∞</sub><sup>+∞</sup> g(x)·f(x) dx
+</div>
+<div class="formula">
+  <span class="label">期望性质</span>
+  ① E(C) = C<br>
+  ② E(CX) = C·E(X)<br>
+  ③ E(X ± Y) = E(X) ± E(Y)<br>
+  ④ 若X与Y独立，则 E(XY) = E(X)·E(Y)
+</div>
+
+<h3>4.2 方差</h3>
+<div class="formula">
+  <span class="label">方差定义</span>
+  D(X) = E[X − E(X)]² = E(X²) − [E(X)]²
+</div>
+<div class="formula">
+  <span class="label">标准差</span>
+  σ<sub>X</sub> = √D(X)
+</div>
+<div class="formula">
+  <span class="label">方差性质</span>
+  ① D(C) = 0<br>
+  ② D(X + C) = D(X)<br>
+  ③ D(CX) = C²·D(X)<br>
+  ④ D(aX + b) = a²·D(X)<br>
+  ⑤ D(X ± Y) = D(X) + D(Y) ± 2Cov(X,Y)<br>
+  ⑥ 若X与Y独立，则 D(X ± Y) = D(X) + D(Y)
+</div>
+
+<h3>4.3 协方差与相关系数</h3>
+<div class="formula">
+  <span class="label">协方差</span>
+  Cov(X,Y) = E[(X − EX)(Y − EY)] = E(XY) − E(X)E(Y)
+</div>
+<div class="formula">
+  <span class="label">协方差性质</span>
+  ① Cov(X,X) = D(X)<br>
+  ② Cov(aX, bY) = ab·Cov(X,Y)<br>
+  ③ Cov(X₁+X₂, Y) = Cov(X₁,Y) + Cov(X₂,Y)<br>
+  ④ Cov(X, C) = 0
+</div>
+<div class="formula">
+  <span class="label">相关系数</span>
+  ρ<sub>XY</sub> = <u>Cov(X,Y)</u><br>
+  <span style="margin-left:3.5em">√D(X)·√D(Y)</span><br>
+  |ρ<sub>XY</sub>| ≤ 1
+</div>
+<div class="formula">
+  <span class="label">不相关的等价条件</span>
+  ρ<sub>XY</sub> = 0 ⟺ Cov(X,Y) = 0 ⟺ E(XY) = E(X)E(Y) ⟺ D(X+Y) = D(X) + D(Y)
+</div>
+<div class="warning">
+  <strong>重要区别：</strong>独立 ⇒ 不相关，但 不相关 ⇏ 独立！<br>
+  （作业二第4题就是考察这个区别）
+</div>
+
+<h3>常用分布的期望和方差</h3>
+<table>
+  <tr><th>分布</th><th>参数</th><th>E(X)</th><th>D(X)</th></tr>
+  <tr><td>二项分布 B(n,p)</td><td>n, p</td><td>np</td><td>np(1−p)</td></tr>
+  <tr><td>0-1分布 B(1,p)</td><td>p</td><td>p</td><td>p(1−p)</td></tr>
+  <tr><td>泊松分布 P(λ)</td><td>λ</td><td>λ</td><td>λ</td></tr>
+  <tr><td>均匀分布 U(a,b)</td><td>a, b</td><td>(a+b)/2</td><td>(b−a)²/12</td></tr>
+  <tr><td>指数分布 e(θ)</td><td>θ</td><td>θ</td><td>θ²</td></tr>
+  <tr><td>正态分布 N(μ,σ²)</td><td>μ, σ²</td><td>μ</td><td>σ²</td></tr>
+</table>
+
+<!-- ===== 第5章 ===== -->
+<h2 id="ch5">第5章 样本及抽样分布</h2>
+
+<h3>5.1 统计量</h3>
+<div class="formula">
+  <span class="label">样本均值</span>
+  <span style="text-decoration:overline">X</span> = <u>1</u> Σ<sub>i=1</sub><sup>n</sup> X<sub>i</sub><br>
+  <span style="margin-left:2em">n</span>
+</div>
+<div class="formula">
+  <span class="label">样本方差</span>
+  S² = <u>1</u> Σ<sub>i=1</sub><sup>n</sup> (X<sub>i</sub> − <span style="text-decoration:overline">X</span>)²<br>
+  <span style="margin-left:2em">n−1</span>
+</div>
+<div class="formula">
+  <span class="label">重要结论</span>
+  E(<span style="text-decoration:overline">X</span>) = μ，D(<span style="text-decoration:overline">X</span>) = σ²/n，E(S²) = σ²
+</div>
+
+<h3>5.2 三大抽样分布</h3>
+<div class="formula">
+  <span class="label">χ²分布</span>
+  X₁,…,Xₙ iid~N(0,1) ⇒ ΣX<sub>i</sub>² ~ χ²(n)<br>
+  E[χ²(n)] = n，D[χ²(n)] = 2n<br>
+  可加性：χ²(n) + χ²(m) = χ²(n+m)（独立时）
+</div>
+<div class="formula">
+  <span class="label">t分布</span>
+  X~N(0,1)，Y~χ²(n) 独立 ⇒ <u>X</u> ~ t(n)<br>
+  <span style="margin-left:15em">√(Y/n)</span><br>
+  当 n → ∞ 时，t(n) → N(0,1)
+</div>
+<div class="formula">
+  <span class="label">F分布</span>
+  X~χ²(n)，Y~χ²(m) 独立 ⇒ <u>X/n</u> ~ F(n,m)<br>
+  <span style="margin-left:17em">Y/m</span><br>
+  若 F~F(n,m)，则 1/F ~ F(m,n)<br>
+  若 t~t(n)，则 t² ~ F(1,n)
+</div>
+
+<h3>5.3 抽样分布定理（单正态总体）</h3>
+<div class="formula">
+  <span class="label">定理（背下来！）</span>
+  设总体 X~N(μ,σ²)，样本 X₁,…,Xₙ：<br>
+  ① <u><span style="text-decoration:overline">X</span> − μ</u> ~ N(0,1)<br>
+  <span style="margin-left:1.5em">σ/√n</span><br>
+  ② <u>(n−1)S²</u> ~ χ²(n−1)，且 <span style="text-decoration:overline">X</span> 与 S² 独立<br>
+  <span style="margin-left:1em">σ²</span><br>
+  ③ <u><span style="text-decoration:overline">X</span> − μ</u> ~ t(n−1)<br>
+  <span style="margin-left:1.5em">S/√n</span>
+</div>
+
+<h3>5.3 分位点</h3>
+<div class="formula">
+  <span class="label">上α分位点</span>
+  P(Y > y<sub>α</sub>) = α ⇒ F(y<sub>α</sub>) = 1−α
+</div>
+<div class="formula">
+  <span class="label">对称性</span>
+  z<sub>1−α</sub> = −z<sub>α</sub>（标准正态）<br>
+  t<sub>1−α</sub>(n) = −t<sub>α</sub>(n)<br>
+  F<sub>1−α</sub>(n,m) = 1/F<sub>α</sub>(m,n)
+</div>
+
+<!-- ===== 第6章 ===== -->
+<h2 id="ch6">第6章 参数估计</h2>
+
+<h3>6.1 点估计</h3>
+<div class="formula">
+  <span class="label">矩估计法步骤</span>
+  ① 确定待估参数个数 k<br>
+  ② 计算总体k阶原点矩 E(Xᵏ)<br>
+  ③ 用样本矩代替总体矩：<span style="text-decoration:overline">X</span> = E(X)<br>
+  ④ 解出参数
+</div>
+<div class="formula">
+  <span class="label">极大似然估计步骤</span>
+  ① 写出似然函数 L(θ) = Π f(x<sub>i</sub>;θ)（离散型用 P(X=x<sub>i</sub>)）<br>
+  ② 取对数 ln L(θ)<br>
+  ③ 对θ求导，令导数为0：d ln L(θ)/dθ = 0<br>
+  ④ 解出 <span style="text-decoration:overline">θ</span>
+</div>
+
+<h3>6.2 区间估计（单正态总体）</h3>
+<table>
+  <tr><th>条件</th><th>估计目标</th><th>枢轴量</th><th>置信区间</th></tr>
+  <tr>
+    <td>σ²已知</td>
+    <td>μ</td>
+    <td><u><span style="text-decoration:overline">X</span>−μ</u> ~ N(0,1)<br>σ/√n</td>
+    <td><span style="text-decoration:overline">X</span> ± z<sub>α/2</sub>·<u>σ</u><br><span style="margin-left:2em">√n</span></td>
+  </tr>
+  <tr>
+    <td>σ²未知</td>
+    <td>μ</td>
+    <td><u><span style="text-decoration:overline">X</span>−μ</u> ~ t(n−1)<br>S/√n</td>
+    <td><span style="text-decoration:overline">X</span> ± t<sub>α/2</sub>(n−1)·<u>S</u><br><span style="margin-left:2em">√n</span></td>
+  </tr>
+  <tr>
+    <td>μ未知</td>
+    <td>σ²</td>
+    <td><u>(n−1)S²</u> ~ χ²(n−1)<br>σ²</td>
+    <td>[<u>(n−1)S²</u>, <u>(n−1)S²</u>]<br>χ²<sub>α/2</sub><span style="margin-left:1em">χ²<sub>1−α/2</sub></span></td>
+  </tr>
+</table>
+
+<div class="tip">
+  <strong>记忆口诀：</strong><br>
+  σ²已知用z（正态），σ²未知用t，估计σ²用χ²<br>
+  置信区间 = 点估计 ± 分位点 × 标准误
+</div>
+
+<div class="lesson-footer">
+  <p>📖 返回 <a href="../lessons/0001-random-events.html">第1课</a> 开始学习。</p>
+  <p>📐 每条公式的完整<strong>推导证明</strong>已嵌入各课——点击每课中"📐 证明推导"展开查看。</p>
+  <p>💬 有不清楚的公式？随时问我——我是你的老师。</p>
+</div>
+
+</body>
+</html>

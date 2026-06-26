@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>社会统计学 · 复习资料</title>
+<link rel="stylesheet" href="assets/style.css">
+<style>
+  .card-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.5rem 0; }
+  @media (max-width: 500px) { .card-grid { grid-template-columns: 1fr; } }
+  .card { border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem; text-decoration: none; color: var(--text); display: block; }
+  .card:hover { border-color: var(--accent); background: var(--accent-light); }
+  .card h3 { margin: 0 0 0.5rem; color: var(--accent); }
+  .card p { margin: 0; font-size: 0.9rem; color: var(--muted); }
+</style>
+</head>
+<body>
+
+<h1>📐 社会统计学 · 复习资料</h1>
+<p>点击进入对应内容。所有页面可离线使用。</p>
+
+<h2>📖 课程（按顺序学）</h2>
+<div class="card-grid">
+  <a class="card" href="lessons/0001-random-events.html">
+    <h3>第1课</h3>
+    <p>随机事件与概率 · 条件概率/全概率/贝叶斯</p>
+  </a>
+  <a class="card" href="lessons/0002-random-variables.html">
+    <h3>第2课</h3>
+    <p>随机变量及其分布 · 正态分布/二维分布</p>
+  </a>
+  <a class="card" href="lessons/0003-numerical-characteristics.html">
+    <h3>第3课</h3>
+    <p>数字特征 · 期望/方差/协方差/独立≠不相关</p>
+  </a>
+  <a class="card" href="lessons/0004-sampling-estimation.html">
+    <h3>第4课</h3>
+    <p>抽样分布与参数估计 · 矩估计/MLE/置信区间</p>
+  </a>
+</div>
+
+<h2>📐 参考资料</h2>
+<div class="card-grid">
+  <a class="card" href="reference/formula-cheat-sheet.html">
+    <h3>公式速查表</h3>
+    <p>6章全部公式，按章节排列</p>
+  </a>
+  <a class="card" href="reference/exam-bank.html">
+    <h3>原题精解题库</h3>
+    <p>全部作业+课件例题，附解析</p>
+  </a>
+  <a class="card" href="reference/mock-exam.html">
+    <h3>考前模拟卷</h3>
+    <p>16题（选择+填空+简答），全来自原题变体</p>
+  </a>
+</div>
+
+<div class="tip">
+  <strong>💡 建议顺序：</strong>第1课 → 第2课 → 第3课 → 第4课 → 刷模拟卷 → 对照题库查漏补缺。<br>
+  每课末尾有<strong>公式汇总表</strong>和<strong>课件例题</strong>，作业题已嵌入对应章节。
+</div>
+
+</body>
+</html>
