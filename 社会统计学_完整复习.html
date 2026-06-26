@@ -644,6 +644,134 @@ P(击中) = 1 − 0.08 = <strong>0.92</strong></p>
   <div class="feedback" id="quiz6-fb"></div>
 </div>
 
+<h2>📝 课件知识点补全（不漏一个）</h2>
+
+<h3>1.1 样本空间练习（课件原题）</h3>
+<div class="def-card" style="border-left:4px solid #e6c970">
+<p>写出下列随机试验的样本空间：</p>
+<p>（1）袋中有5只球（3白2黑），任意取一球观察颜色 → Ω={白,黑}</p>
+<p>（2）从袋中不放回任意取两次球，观察颜色 → Ω={白白,白黑,黑白,黑黑}</p>
+<p>（3）不放回取3只球，记录黑球个数 → Ω={0,1,2}</p>
+<p>（4）生产产品直到有10只正品为止，记录总件数 → Ω={10,11,12,…}</p>
+<p>（5）10件产品2件次品，每次取一件不放回，直到2件次品都取出，记录抽取次数 → Ω={2,3,4,…,10}</p>
+<p>（6）掷两颗骰子，观察出现的点数 → Ω={(1,1),(1,2),…,(6,6)} 共36个</p>
+<p>（7）掷两颗骰子，观察点数之和 → Ω={2,3,4,…,12}</p>
+<p><strong>关键结论：</strong>同一试验，目的不同→样本空间不同。（如掷硬币3次：观察正反面 vs 观察正面次数）</p>
+</div>
+
+<h3>1.1 事件表达式练习（课件原题）</h3>
+<div class="def-card" style="border-left:4px solid #e6c970">
+<p><strong>练习1：</strong>甲、乙、丙各射击一次，A,B,C分别代表命中。用A,B,C表示：</p>
+<p>①至少一人命中 = A∪B∪C；②目标被击中一次 = AB̄C̄ ∪ ĀBC̄ ∪ ĀB̄C</p>
+<p>用文字叙述：①AB+AC+BC = 至少两人命中；②A+B = 甲或乙命中（至少一人）；③AB = 甲乙都命中</p>
+</div>
+<div class="def-card" style="border-left:4px solid #e6c970">
+<p><strong>练习2：</strong>用A,B,C写出下列事件：</p>
+<p>①只有A发生 = AB̄C̄；②B和C都发生但A不发生 = ĀBC；③至少一个发生 = A∪B∪C</p>
+<p>④至少两个发生 = AB∪AC∪BC；⑤三个都发生 = ABC；⑥没有事件发生 = ĀB̄C̄</p>
+<p>⑦最多一个发生 = ĀB̄C̄ ∪ AB̄C̄ ∪ ĀBC̄ ∪ ĀB̄C；⑧最多两个发生 = Ω−ABC = ABC的补</p>
+<p>⑨恰好两个发生 = ABC̄ ∪ AB̄C ∪ ĀBC；⑩最多三个发生 = Ω（必然事件）</p>
+</div>
+
+<h3>1.1 事件运算律</h3>
+<div class="def-card" style="border-left:4px solid #e6c970">
+<p>交换律：A∪B=B∪A；A∩B=B∩A</p>
+<p>结合律：(A∪B)∪C=A∪(B∪C)；(A∩B)∩C=A∩(B∩C)</p>
+<p>分配律：(A∪B)∩C=(A∩C)∪(B∩C)；(A∩B)∪C=(A∪C)∩(B∪C)</p>
+<p>德摩根：Ā∪B̄ = Ā∩B̄；Ā∩B̄ = Ā∪B̄</p>
+</div>
+
+<h3>1.2 频率与概率的统计定义</h3>
+<div class="def-card">
+<p><span class="term">频率：</span>n次试验中A发生n_A次，频率 fₙ(A)=n_A/n ∈[0,1]</p>
+<p><span class="term">统计定义：</span>n充分大时，频率稳定在常数p附近→p就是概率P(A)</p>
+<p><span class="term">公理化定义：</span>①P(A)≥0 ②P(Ω)=1 ③互不相容事件和的概率=概率的和</p>
+<p><span class="term">P(∅)=0，但概率为0的事件可能发生！（如连续型取单点）</span></p>
+</div>
+
+<h3>1.2 课件补充例题</h3>
+<div class="def-card" style="border-left:4px solid #e6c970">
+<p><strong>例2：</strong>P(A)=0.5, P(B)=0.4, P(A−B)=0.3，求 P(Ā∪B̄) 和 P(A∪B̄)。</p>
+<details><summary><strong>解析</strong></summary>P(AB)=0.5−0.3=0.2。Ā∪B̄ = (AB)̄（德摩根）→ P=1−0.2=0.8。P(A∪B̄)=P(A)+P(B̄)−P(AB̄)=0.5+0.6−0.3=0.8</details>
+</div>
+<div class="def-card" style="border-left:4px solid #e6c970">
+<p><strong>例4：</strong>P(AB)=P(Ā∩B̄)，P(A)=0.4，求P(B)。</p>
+<details><summary><strong>解析</strong></summary>Ā∩B̄ = (A∪B)̄，所以P(AB)=1−P(A∪B)=1−P(A)−P(B)+P(AB) → 0=1−0.4−P(B) → P(B)=<strong>0.6</strong></details>
+</div>
+<div class="def-card" style="border-left:4px solid #e6c970">
+<p><strong>练习1：</strong>P(A)=P(B)=P(C)=1/4, P(AC)=1/8, P(AB)=P(BC)=0。求至少一个发生的概率；都发生的概率；都不发生的概率。</p>
+<details><summary><strong>答案</strong></summary>至少一个=5/8；都发生=0（因为P(AB)=0, ABC⊂AB）；都不发生=3/8</details>
+</div>
+<div class="def-card" style="border-left:4px solid #e6c970">
+<p><strong>练习2：</strong>A⊃B, A⊃C, P(A)=0.9, P(B̄∪C̄)=0.8，求P(A−BC)。</p>
+<details><summary><strong>答案</strong></summary>P(BC)=1−0.8=0.2。A−BC中BC⊂A（因为B⊂A,C⊂A→BC⊂A），P(A−BC)=0.9−0.2=<strong>0.7</strong></details>
+</div>
+<div class="def-card" style="border-left:4px solid #e6c970">
+<p><strong>练习3：</strong>P(A)=1/3, P(B)=1/2，三种情况下求P(ĀB)：①AB=∅ ②A⊂B ③P(AB)=1/8。</p>
+<details><summary><strong>答案</strong></summary>P(ĀB)=P(B)−P(AB)。①1/2−0=<strong>1/2</strong>；②A⊂B→AB=A→1/2−1/3=<strong>1/6</strong>；③1/2−1/8=<strong>3/8</strong></details>
+</div>
+
+<h3>1.3 古典概型补充例题</h3>
+<div class="def-card" style="border-left:4px solid #e6c970">
+<p><strong>6白4红取5球：</strong>（1）有放回恰3白：C₅³(6/10)³(4/10)²=10×0.216×0.16=<strong>0.3456</strong>；（2）不放回恰3白：C₆³C₄²/C₁₀⁵=20×6/252=<strong>10/21</strong>；（3）不放回第3球为白：<strong>6/10=0.6</strong>（抽签原理）</p>
+</div>
+<div class="def-card" style="border-left:4px solid #e6c970">
+<p><strong>15人抽7张票，第5人抽到概率 = 7/15。</strong>抽签原则：概率=好签数/总数，与次序无关！</p>
+</div>
+<div class="def-card" style="border-left:4px solid #e6c970">
+<p><strong>n人随机分到N个房间（n≤N）：</strong>①指定房间恰m人：Cₙᵐ(N−1)ⁿ⁻ᵐ/Nⁿ；②每两人不同房间：A_Nⁿ/Nⁿ</p>
+</div>
+<div class="def-card" style="border-left:4px solid #e6c970">
+<p><strong>生日问题（m≤365）：</strong>至少两人生日相同概率 = 1−A₃₆₅ᵐ/365ᵐ。m=23时≈0.507；m=50时≈0.97。</p>
+</div>
+<div class="def-card" style="border-left:4px solid #e6c970">
+<p><strong>练习1：</strong>5正5次，不放回取3件，恰1次品概率 = C₅¹C₅²/C₁₀³=<strong>5/12</strong></p>
+<p><strong>练习2：</strong>100件8次品，取10件恰3次品：（1）不放回=C₈³C₉₂⁷/C₁₀₀¹⁰；（2）有放回=C₁₀³·0.08³·0.92⁷</p>
+<p><strong>练习3：</strong>10件2次品，不放回取2次：两只正品=C₈²/C₁₀²=28/45；一正一次=C₈¹C₂¹/C₁₀²=16/45；两只次品=C₂²/C₁₀²=1/45；第二次次品=<strong>1/5</strong></p>
+</div>
+
+<h3>1.3 几何概型 ⭐（课件整节，之前遗漏！）</h3>
+<div class="def-card" style="border-left:4px solid #c1292e">
+<p><span class="term">定义：</span>样本点总数无限、等可能的概型。P(A) = m(A)/m(Ω)，其中m为几何度量（长度/面积/体积）。与A的位置和形状无关。</p>
+<p><strong>例1：</strong>校车每30分钟一趟，等车不超过20分钟概率 = 20/30 = <strong>2/3</strong></p>
+<p><strong>例2：</strong>单位圆内随机投点M，到原点距离<1/3概率 = π(1/3)²/π·1² = <strong>1/9</strong></p>
+</div>
+
+<h3>1.4 条件概率补充例题</h3>
+<div class="def-card" style="border-left:4px solid #e6c970">
+<p><strong>引例：</strong>10件产品5件不合格（3次品2废品），任取1件。P(废品)=2/10=0.2；已知不合格，P(废品|不合格)=2/5=<strong>0.4</strong></p>
+<p><strong>乘法公式例：</strong>P(A)=0.5, P(B)=0.4, P(A|B̄)=0.6。P(AB̄)=P(B̄)·P(A|B̄)=0.6×0.6=0.36。P(AB)=P(A)−P(AB̄)=0.5−0.36=<strong>0.14</strong></p>
+</div>
+<div class="def-card" style="border-left:4px solid #e6c970">
+<p><strong>全概率练习1（机器调整）：</strong>机器调整良好概率0.95，良好时合格率0.98，故障时合格率0.55。第一件合格，机器调整良好的概率？</p>
+<details><summary><strong>答案</strong></summary>P(良|合)=0.95×0.98/(0.95×0.98+0.05×0.55)=0.931/0.9585≈<strong>0.97</strong></details>
+</div>
+<div class="def-card" style="border-left:4px solid #e6c970">
+<p><strong>全概率练习2（零件供应商）：</strong>甲1/2(次品2%),乙1/4(2%),丙1/4(4%)。P(次品)=0.5×0.02+0.25×0.02+0.25×0.04=<strong>0.025</strong>；P(甲|次)=0.01/0.025=<strong>0.4</strong></p>
+</div>
+
+<h3>1.5 独立性——关键辨析 ⭐</h3>
+<div class="def-card" style="border-left:4px solid #c1292e">
+<p><span class="term">引例：</span>掷2骰子，A={第一颗1点}，B={第二颗偶数点}。P(A|B)=(3/36)/(1/2)=1/6=P(A)→独立。</p>
+<p><span class="term">性质：</span>①P(A)>0,P(B)>0且独立→AB≠∅ ②P(A)>0,P(B)>0且AB=∅→一定不独立</p>
+<p>③A与A独立→P(A)=0或1 ④必然事件和不可能事件与任何事件独立</p>
+</div>
+<div class="def-card" style="border-left:4px solid #c1292e">
+<p><span class="term">⚠️ n个事件相互独立 ≠ 两两独立！</span></p>
+<p>相互独立：任意k个(2≤k≤n)事件都满足P(Aᵢ₁…Aᵢₖ)=P(Aᵢ₁)…P(Aᵢₖ)</p>
+<p>两两独立：只要求任何两个事件独立（k=2特例）</p>
+<p><strong>相互独立 ⇒ 两两独立，反之不成立！</strong></p>
+<p><strong>例题：</strong>掷硬币两次，A₁={第一次正}, A₂={第二次反}, A₃={正反各一次}。P(A₁)=1/2, P(A₂)=1/2, P(A₃)=1/2。两两独立：P(A₁A₂)=1/4=1/2×1/2 ✓; P(A₁A₃)=1/4 ✓; P(A₂A₃)=1/4 ✓。但P(A₁A₂A₃)=0≠1/2×1/2×1/2=1/8 → <strong>不相互独立！</strong></p>
+</div>
+<div class="def-card" style="border-left:4px solid #e6c970">
+<p><strong>例题：</strong>A,B,C相互独立，判断A−B与C̄是否独立。</p>
+<p>A−B = AB̄，P(AB̄·C̄) = P(A)P(B̄)P(C̄) = P(AB̄)·P(C̄) → <strong>独立 ✓</strong></p>
+</div>
+<div class="def-card" style="border-left:4px solid #e6c970">
+<p><strong>伯努利例1：</strong>射手连射5次，每次命中率p，恰中3次概率=C₅³p³(1−p)²</p>
+<p><strong>伯努利例2：</strong>6白4红有放回取5球，恰3白概率=C₅³(0.6)³(0.4)²=10×0.216×0.16=<strong>0.3456</strong></p>
+</div>
+
 <h2>📐 第1章 公式汇总</h2>
 
 <table>
@@ -1069,6 +1197,73 @@ X密度f(x)=2x(0<x<1)，求Y=X²+1的密度函数。</p>
   <div class="feedback" id="quiz-2d-fb"></div>
 </div>
 
+<h2>📝 课件知识点补全（不漏一个）</h2>
+
+<h3>2.1 补充例题</h3>
+<div class="def-card" style="border-left:4px solid #e6c970">
+<p><strong>分布函数求常数：</strong>F(x)=c−e^(−x²/2) (x≥0)，F(−∞)=0。求c和P(|X|>2)。</p>
+<details><summary><strong>答案</strong></summary>F(+∞)=c−0=1→c=1。P(|X|>2)=1−P(−2≤X≤2)=1−(F(2)−F(−2))。F(−2)=0，F(2)=1−e⁻²。P(|X|>2)=e⁻²</details>
+</div>
+<div class="def-card" style="border-left:4px solid #e6c970">
+<p><strong>离散型分布列求法：</strong>掷硬币3次，X=正面数。分布列：P(X=0)=1/8, P(X=1)=3/8, P(X=2)=3/8, P(X=3)=1/8。分布函数为阶梯函数。</p>
+</div>
+<div class="def-card" style="border-left:4px solid #e6c970">
+<p><strong>由分布函数反求分布列：</strong>F(x)=0(x<−1),0.1(−1≤x<0),0.4(0≤x<1),0.8(1≤x<2),1(x≥2)。P(X=−1)=0.1, P(X=0)=0.3, P(X=1)=0.4, P(X=2)=0.2</p>
+</div>
+
+<h3>2.2 补充例题</h3>
+<div class="def-card" style="border-left:4px solid #e6c970">
+<p><strong>交通岗红灯：</strong>6个岗，每个红灯p=1/3，独立。X=红灯数~B(6,1/3)。P(X≥5)=C₆⁵(1/3)⁵(2/3)+C₆⁶(1/3)⁶=<strong>0.0179</strong></p>
+</div>
+<div class="def-card" style="border-left:4px solid #e6c970">
+<p><strong>二项分布判断选择题：</strong>下列哪个是二项分布？D：P(X=k)=C₂₀ᵏ·0.98ᵏ·0.02²⁰⁻ᵏ（A的k从1开始缺0，B是泊松，C的0.6+0.5≠1）</p>
+</div>
+<div class="def-card" style="border-left:4px solid #e6c970">
+<p><strong>泊松逼近芯片题：</strong>次品率0.1%，1000只中至少2只次品。λ=np=1。P(X≥2)=1−P(0)−P(1)=1−e⁻¹−e⁻¹≈<strong>0.264</strong></p>
+</div>
+
+<h3>2.3 连续型补充</h3>
+<div class="def-card" style="border-left:4px solid #e6c970">
+<p><strong>分段密度函数综合题：</strong>f(x)=2−kx(0≤x<3), x/2(3≤x≤4), 0(其他)。求k, F(x), P(1<X≤3.5)。</p>
+<details><summary><strong>答案</strong></summary>由归一性：∫₀³(2−kx)dx+∫₃⁴(x/2)dx=1→k=<strong>1/6</strong>。F(x)分段积分。P(1<X≤3.5)=<strong>41/48</strong></details>
+</div>
+<div class="def-card" style="border-left:4px solid #e6c970">
+<p><strong>查表方法：</strong>Φ(1.72)在标准正态表中查行1.7列0.02=0.9573。Φ(1.735)介于1.73(0.9582)和1.74(0.9591)之间，近似取平均或插值。</p>
+</div>
+
+<h3>3.1 二维联合分布函数（课件缺失重点！）</h3>
+<div class="def-card" style="border-left:4px solid #c1292e">
+<p><span class="term">联合分布函数：</span>F(x,y)=P(X≤x,Y≤y)。几何意义：随机点落在以(x,y)为顶点的左下无穷矩形内的概率。</p>
+<p><strong>F(x,y)五条性质：</strong>①0≤F≤1 ②对x和y均不减 ③对x,y均右连续 ④F(−∞,y)=F(x,−∞)=F(−∞,−∞)=0, F(+∞,+∞)=1</p>
+<p><strong>⑤矩形法则：</strong>P(x₁<X≤x₂, y₁<Y≤y₂)=F(x₂,y₂)−F(x₂,y₁)−F(x₁,y₂)+F(x₁,y₁)</p>
+<p><strong>边缘分布函数：</strong>F_X(x)=F(x,+∞), F_Y(y)=F(+∞,y)</p>
+</div>
+
+<h3>3.2 离散型补充例题</h3>
+<div class="def-card" style="border-left:4px solid #e6c970">
+<p><strong>5件产品(3正2次)取2次联合分布列：</strong>有放回：P(0,0)=(3/5)²=9/25, P(0,1)=(3/5)(2/5)=6/25, P(1,0)=6/25, P(1,1)=4/25。不放回：P(0,0)=3/10, P(0,1)=3/10, P(1,0)=3/10, P(1,1)=1/10</p>
+</div>
+<div class="def-card" style="border-left:4px solid #e6c970">
+<p><strong>独立性填表题：</strong>已知X,Y独立且联合分布列部分已知，利用pᵢⱼ=pᵢ··p·ⱼ和总和=1求未知值。</p>
+</div>
+
+<h3>3.3 二维连续型（课件缺失重点！）⭐</h3>
+<div class="def-card" style="border-left:4px solid #c1292e">
+<p><span class="term">联合密度f(x,y)：</span>f≥0，∬f dxdy=1。F(x,y)=∫₋∞ˣ∫₋∞ʸ f(u,v)dudv。在连续点处：∂²F/∂x∂y=f(x,y)。</p>
+<p>区域G内的概率：P((X,Y)∈G)=∬_G f(x,y)dxdy</p>
+<p><strong>边缘密度：</strong>f_X(x)=∫₋∞⁺∞ f(x,y)dy，f_Y(y)=∫₋∞⁺∞ f(x,y)dx</p>
+</div>
+<div class="def-card" style="border-left:4px solid #e6c970">
+<p><strong>典型例题：</strong>f(x,y)=Axy(0<x<1,x²<y<1)。求A、P(Y>1/2|X>Y)、边缘密度。</p>
+<details><summary><strong>解析</strong></summary>A由∬f=1求出。边缘密度分段积分。条件概率=P(Y>1/2,X>Y)/P(X>Y)，用二重积分计算。</details>
+</div>
+
+<h3>3.3 二维均匀分布与二维正态分布</h3>
+<div class="def-card" style="border-left:4px solid #c1292e">
+<p><span class="term">二维均匀分布：</span>D为平面有界区域，面积S_D。f(x,y)=1/S_D ((x,y)∈D)。子区域G的概率=S_G/S_D。</p>
+<p><span class="term">二维正态分布N(μ₁,μ₂,σ₁²,σ₂²,ρ)：</span>边缘分布：X~N(μ₁,σ₁²), Y~N(μ₂,σ₂²)。<strong>X与Y独立 ⟺ ρ=0。</strong>（注意：边缘正态⇏联合正态）</p>
+</div>
+
 <h2>📐 第2-3章 公式汇总</h2>
 
 <h3>第2章：随机变量及其分布</h3>
@@ -1365,6 +1560,42 @@ E(Y) = 5 × 9 = <strong>45</strong><br><br>
     <div class="option" onclick="checkQuiz('quiz-indep', this, false)">D. Cov(X,Y)=0 ⇒ X和Y独立</div>
   </div>
   <div class="feedback" id="quiz-indep-fb"></div>
+</div>
+
+<h2>📝 课件知识点补全（不漏一个）</h2>
+
+<h3>4.1 补充例题</h3>
+<div class="def-card" style="border-left:4px solid #e6c970">
+<p><strong>新生儿评分期望：</strong>X分布列如课件，E(X)=Σxᵢpᵢ=<strong>3.75</strong></p>
+<p><strong>E(3X²)计算：</strong>用A的射击数据：E(3X²)=3×(64×0.2+81×0.1+100×0.7)=3×(12.8+8.1+70)=<strong>272.7</strong></p>
+</div>
+
+<h3>4.1 二维期望</h3>
+<div class="def-card" style="border-left:4px solid #c1292e">
+<p><strong>二维离散型：</strong>E[g(X,Y)]=ΣᵢΣⱼ g(xᵢ,yⱼ)pᵢⱼ</p>
+<p><strong>二维连续型：</strong>E[g(X,Y)]=∬ g(x,y)f(x,y)dxdy</p>
+</div>
+
+<h3>4.2 方差辨析（课件重点！）</h3>
+<div class="def-card" style="border-left:4px solid #c1292e">
+<p><strong>关键辨析：</strong>E(XY)=E(X)E(Y)时，D(X+Y)=D(X)+D(Y)。</p>
+<p>E(XY)=E(X)E(Y) ⇍ X与Y独立（反过来对）。</p>
+<p>X与Y独立 ⇒ E(XY)=E(X)E(Y) ⇒ D(X+Y)=D(X)+D(Y)。</p>
+<p><strong>串联关系：</strong>独立 → E(XY)=E(X)E(Y) → D(X+Y)=D(X)+D(Y)，但每一步反过来都不成立。</p>
+</div>
+<div class="def-card" style="border-left:4px solid #e6c970">
+<p><strong>正态组合例：</strong>X~N(1,2), Y~N(0,1)独立。E(2X−Y+3)=2×1−0+3=<strong>5</strong>；D(2X−Y+3)=4×2+1=<strong>9</strong>；2X−Y+3~<strong>N(5,9)</strong></p>
+</div>
+
+<h3>4.3 课件习题全解</h3>
+<div class="def-card" style="border-left:4px solid #e6c970">
+<p><strong>习题1：</strong>D(X)=4, D(Y)=2独立，D(2X−3Y)=4×4+9×2=<strong>34</strong></p>
+<p><strong>习题2：</strong>f(x)=1+x(−1≤x<0), 1−x(0≤x<1)。E(X)=∫₋₁⁰x(1+x)dx+∫₀¹x(1−x)dx=<strong>0</strong>（奇函数）。E(X²)=∫₋₁⁰x²(1+x)dx+∫₀¹x²(1−x)dx=<strong>1/6</strong>，D(X)=1/6</p>
+<p><strong>习题3：</strong>f(x,y)=(x+y)/8(0≤x≤2,0≤y≤2)。E(X)=E(Y)=∬x(x+y)/8 dxdy=<strong>7/6</strong>。E(XY)=∬xy(x+y)/8dxdy=4/3。Cov=4/3−(7/6)²=−1/36。ρ=−1/36/√(11/36·11/36)=<strong>−1/11</strong>。D(X+Y)=D(X)+D(Y)+2Cov=<strong>5/9</strong></p>
+<p><strong>习题4：</strong>圆盘直径D~U(a,b)，面积Y=πD²/4。E(Y)=∫_a^b (πx²/4)·(1/(b−a))dx=π(b³−a³)/(12(b−a))=<strong>π(a²+ab+b²)/12</strong></p>
+<p><strong>习题5：</strong>D(X)=25,D(Y)=36,ρ=0.4。D(X+Y)=25+36+2×0.4×5×6=<strong>85</strong></p>
+<p><strong>习题6：</strong>Cov(X,Z)=2, Cov(Y,Z)=1。Cov(X+Y,3Z)=3Cov(X,Z)+3Cov(Y,Z)=6+3=<strong>9</strong></p>
+<p><strong>习题7：</strong>已知联合分布列，求Cov(X,Y)。算E(X),E(Y),E(XY)后Cov=E(XY)−E(X)E(Y)=<strong>1/3</strong></p>
 </div>
 
 <h2>📐 第4章 公式汇总</h2>
@@ -1750,6 +1981,51 @@ H₁: σ² ≠ 5000（备择假设：方差有显著变化）<br>
   <tr><td>第5章</td><td>三大抽样分布 / 抽样定理</td><td>—</td></tr>
   <tr><td>第6章</td><td>矩估计 / MLE / 置信区间 / 假设检验</td><td>作业三：1, 2, 3</td></tr>
 </table>
+
+<h2>📝 课件知识点补全（不漏一个）</h2>
+
+<h3>5.1 补充概念</h3>
+<div class="def-card" style="border-left:4px solid #c1292e">
+<p><span class="term">简单随机样本两条件：</span>①代表性（每个Xᵢ与总体X同分布）；②独立性（X₁,…,Xₙ相互独立）。合称<strong>独立同分布(iid)</strong>。</p>
+<p><span class="term">统计量：</span>样本的连续函数T(X₁,…,Xₙ)，不含任何未知参数。如X̄, S²是统计量；(X̄−μ)/σ不是（含未知μ,σ）。</p>
+</div>
+
+<h3>5.2-5.3 补充例题</h3>
+<div class="def-card" style="border-left:4px solid #e6c970">
+<p><strong>例2：</strong>X₁,X₂,X₃,X₄~N(0,2²)，X=a(X₁−2X₂)²+b(3X₃−4X₄)²。求a,b使X~χ²(2)。</p>
+<details><summary><strong>答案</strong></summary>X₁−2X₂~N(0,4+16)=N(0,20)；(X₁−2X₂)/√20~N(0,1)。(X₁−2X₂)²/20~χ²(1)→a=1/20。同理3X₃−4X₄~N(0,36+64)=N(0,100)，(3X₃−4X₄)²/100~χ²(1)→b=<strong>1/100</strong></details>
+</div>
+<div class="def-card" style="border-left:4px solid #e6c970">
+<p><strong>例4：</strong>E(X)=−1, E(X²)=4，X̄的分布。D(X)=4−1=3。X̄~N(−1, 3/n)。选<strong>A: N(−1, 3/n)</strong></p>
+<p><strong>例5：</strong>N(20,3)两独立样本(n₁=10,n₂=15)，求|X̄₁−X̄₂|>0.3的概率。X̄₁−X̄₂~N(0, 3/10+3/15)=N(0,0.5)。P(|Z|>0.3/√0.5)=2(1−Φ(0.424))≈<strong>0.6744</strong></p>
+</div>
+
+<h3>5.3 分位点完整讲解 ⭐（课件缺失重点！）</h3>
+<div class="def-card" style="border-left:4px solid #c1292e">
+<p><span class="term">定义：</span>连续型Y，α∈(0,1)。若P(Y>b)=α，则b=Y_α称为<strong>上α分位点</strong>。F(Y_α)=1−α。</p>
+<p><strong>三条性质：</strong>①P(Y>Y_α)=α, P(Y≤Y_α)=1−α</p>
+<p>②P(Y>Y_{1−α})=1−α, P(Y≤Y_{1−α})=α</p>
+<p>③P(Y≤Y_{1−α/2} 或 Y>Y_{α/2})=α, P(Y_{1−α/2}≤Y<Y_{α/2})=1−α</p>
+</div>
+<div class="def-card" style="border-left:4px solid #c1292e">
+<p><strong>四种分布的分位点表示：</strong></p>
+<p>N(0,1)：记z_α，满足z_{1−α}=−z_α。常用值：z₀.₀₅=1.645, z₀.₀₂₅=1.96</p>
+<p>χ²(n)：记χ²_α(n)，P(χ²>χ²_α(n))=α。如χ²₀.₀₂₅(10)=20.483, χ²₀.₉₇₅(10)=3.247</p>
+<p>t(n)：记t_α(n)，满足t_{1−α}=−t_α。如t₀.₀₂₅(20)=2.086, t₀.₀₂₅(8)=2.3060</p>
+<p>F(n₁,n₂)：记F_α(n₁,n₂)，满足F_{1−α}(n₁,n₂)=1/F_α(n₂,n₁)</p>
+</div>
+
+<h3>6.1 补充例题</h3>
+<div class="def-card" style="border-left:4px solid #e6c970">
+<p><strong>MLE例2（扩展分布列）：</strong>P(X=0)=θ², P(X=1)=2θ(1−θ), P(X=2)=θ², P(X=3)=1−2θ。样本3,1,3,0,3,1,2,3。矩估计=1/4，MLE由lnL求导解方程得出。（完整解答见作业三第1题）</p>
+</div>
+
+<h3>6.2 区间估计完整定义</h3>
+<div class="def-card" style="border-left:4px solid #c1292e">
+<p><span class="term">置信区间定义：</span>P(T₁≤θ≤T₂)=1−α，[T₁,T₂]是θ的置信度1−α的双侧置信区间。T₁,T₂分别是置信下限和上限。</p>
+<p><span class="term">精度：</span>区间长度的一半（越小越好）。<span class="term">置信度：</span>1−α（越大越好）。两者矛盾——保证置信度前提下提高精度。</p>
+<p><strong>引例：</strong>3000人高数成绩~N(μ,σ²)，抽100人X̄=70,S=8。用这些信息估计μ的分布→引出区间估计需求。</p>
+</div>
 
 <h2>📐 第5-6章 公式汇总</h2>
 
