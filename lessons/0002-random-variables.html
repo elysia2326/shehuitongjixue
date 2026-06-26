@@ -501,7 +501,13 @@ X密度f(x)=2x(0<x<1)，求Y=X²+1的密度函数。</p>
 </div>
 <div class="def-card" style="border-left:4px solid #e6c970">
 <p><strong>典型例题：</strong>f(x,y)=Axy(0<x<1,x²<y<1)。求A、P(Y>1/2|X>Y)、边缘密度。</p>
-<details><summary><strong>解析</strong></summary>A由∬f=1求出。边缘密度分段积分。条件概率=P(Y>1/2,X>Y)/P(X>Y)，用二重积分计算。</details>
+<details><summary><strong>详细解析</strong></summary>
+<div style="padding:0.5rem 0">
+<p>归一化：∬_D Axy dxdy = 1，其中D: 0<x<1, x²<y<1<br>
+∫₀¹∫_x²¹ Axy dy dx = A∫₀¹x[y²/2]_x²¹dx = (A/2)∫₀¹x(1−x⁴)dx = (A/2)[x²/2−x⁶/6]₀¹ = (A/2)(1/2−1/6)=A/6 = 1 → <strong>A=6</strong><br>
+条件概率P(Y>1/2|X>Y)需要画积分区域，用二重积分比值计算。</p>
+</div>
+</details>
 </div>
 
 <h3>3.3 二维均匀分布与二维正态分布</h3>

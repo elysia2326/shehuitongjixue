@@ -1299,7 +1299,13 @@ X密度f(x)=2x(0<x<1)，求Y=X²+1的密度函数。</p>
 </div>
 <div class="def-card" style="border-left:4px solid #e6c970">
 <p><strong>典型例题：</strong>f(x,y)=Axy(0<x<1,x²<y<1)。求A、P(Y>1/2|X>Y)、边缘密度。</p>
-<details><summary><strong>解析</strong></summary>A由∬f=1求出。边缘密度分段积分。条件概率=P(Y>1/2,X>Y)/P(X>Y)，用二重积分计算。</details>
+<details><summary><strong>详细解析</strong></summary>
+<div style="padding:0.5rem 0">
+<p>归一化：∬_D Axy dxdy = 1，其中D: 0<x<1, x²<y<1<br>
+∫₀¹∫_x²¹ Axy dy dx = A∫₀¹x[y²/2]_x²¹dx = (A/2)∫₀¹x(1−x⁴)dx = (A/2)[x²/2−x⁶/6]₀¹ = (A/2)(1/2−1/6)=A/6 = 1 → <strong>A=6</strong><br>
+条件概率P(Y>1/2|X>Y)需要画积分区域，用二重积分比值计算。</p>
+</div>
+</details>
 </div>
 
 <h3>3.3 二维均匀分布与二维正态分布</h3>
@@ -2013,7 +2019,7 @@ H₁: σ² ≠ 5000（备择假设：方差有显著变化）<br>
 拒绝域：χ² > χ²<sub>α/2</sub>(25) 或 χ² < χ²<sub>1−α/2</sub>(25)<br><br>
 <strong>第4步——做出决策：</strong><br>
 比较χ²=46与临界值。若落入拒绝域，拒绝H₀，认为方差有显著变化。<br>
-（具体结论取决于α的取值和查表结果）</p>
+（以α=0.05为例：χ²₀.₀₂₅(25)=40.646, χ²₀.₉₇₅(25)=13.120。χ²=46>40.646，落入拒绝域，拒绝H₀，认为方差有显著变化。）</p>
 </div>
 </details>
 </div>
@@ -2057,7 +2063,7 @@ H₁: σ² ≠ 5000（备择假设：方差有显著变化）<br>
 </div>
 <div class="def-card" style="border-left:4px solid #e6c970">
 <p><strong>课本例题：</strong>某保险公司有10000人参保，每人索赔概率0.0005，求索赔人数超过8人的概率。</p>
-<details><summary><strong>解析</strong></summary>X~B(10000,0.0005)，np=5。用泊松近似：P(X>8)=1−P(X≤8)≈1−Σ(k=0~8)5ᵏe⁻⁵/k!</details>
+<details><summary><strong>解析</strong></summary>X~B(10000,0.0005)，np=5。用泊松近似λ=5：P(X>8)=1−Σ(k=0 to 8)5ᵏe⁻⁵/k!。查泊松分布表或计算：Σ≈0.9319，P(X>8)≈<strong>0.0681</strong></details>
 </div>
 
 <h3>5.1 补充概念</h3>
