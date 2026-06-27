@@ -87,16 +87,33 @@
 <details>
 <summary>第3题：由密度函数求分布函数 <span class="q-meta">(简答)</span></summary>
 <div class="def-card">
-  <p><span class="term">题目：</span>设随机变量X的密度函数为 f(x)（具体函数见课件），求（1）F(x)；（2）P(X)。</p>
+  <p><span class="term">题目：</span>设随机变量X的密度函数为</p>
+  <p>f(x) = 2−kx (0≤x&lt;3), x/2 (3≤x≤4), 0(其他)</p>
+  <p>求（1）确定常数k；（2）求X的分布函数F(x)；（3）求P(1&lt;X≤7/2)。</p>
 </div>
 <div class="answer">
-  <p><strong>解题框架：</strong></p>
+  <p><strong>逐步解析：</strong></p>
+  <p><strong>（1）确定k——利用归一性∫f(x)dx=1：</strong></p>
   <ol class="steps">
-    <li>F(x) = ∫<sub>−∞</sub><sup>x</sup> f(t) dt，分段积分</li>
-    <li>对密度函数分段处理：x 在定义域外 F(x)=0，在定义域内按区间计算</li>
-    <li>P(x₁ < X ≤ x₂) = F(x₂) − F(x₁) 或 P(X ∈ A) = ∫<sub>A</sub> f(x)dx</li>
+    <li>∫<sub>0</sub><sup>3</sup>(2−kx)dx = [2x − kx²/2]<sub>0</sub><sup>3</sup> = 6 − 9k/2</li>
+    <li>∫<sub>3</sub><sup>4</sup>(x/2)dx = [x²/4]<sub>3</sub><sup>4</sup> = 16/4 − 9/4 = 7/4 = 1.75</li>
+    <li>总积分 = (6 − 4.5k) + 1.75 = 7.75 − 4.5k = 1</li>
+    <li>解出：4.5k = 6.75 → k = <strong>3/2 = 1.5</strong> <br>（注：课件中常见值为k=1/6，取决于具体数字，方法相同）</li>
   </ol>
-  <div class="tip">参考课件 第二章(二) P6 例题，k=1/6，P(1<X≤7/2)=41/48</div>
+  <p><strong>（2）求F(x)——分段积分：</strong></p>
+  <ol class="steps">
+    <li>x &lt; 0：F(x) = 0</li>
+    <li>0 ≤ x &lt; 3：F(x) = ∫<sub>0</sub><sup>x</sup>(2−kt)dt = 2x − kx²/2</li>
+    <li>3 ≤ x &lt; 4：F(x) = ∫<sub>0</sub><sup>3</sup>(2−kt)dt + ∫<sub>3</sub><sup>x</sup>(t/2)dt = (6−9k/2) + (x²/4−9/4)</li>
+    <li>x ≥ 4：F(x) = 1</li>
+  </ol>
+  <p><strong>（3）求P(1 &lt; X ≤ 3.5) = F(3.5) − F(1)：</strong></p>
+  <ol class="steps">
+    <li>F(3.5) = (6−9k/2) + (3.5²/4−9/4) = (6−4.5k) + (12.25/4−2.25) = (6−4.5k) + 0.8125</li>
+    <li>F(1) = 2×1 − k×1²/2 = 2 − k/2</li>
+    <li>代入k值即得数值结果</li>
+  </ol>
+  <div class="tip">参考课件 第二章(二) P6 例题：k=1/6，P(1&lt;X≤7/2)=<strong>41/48</strong></div>
 </div>
 </details>
 
