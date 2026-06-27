@@ -855,7 +855,7 @@ P(击中) = 1 − 0.08 = <strong>0.92</strong></p>
 </details>
 
 <div class="quiz" id="quiz-df">
-  <p class="question"><strong>✏️ 自测：</strong>已知 F(x)=0(x&lt;0), x/2(0≤x&lt;2), 1(x≥2)。则 P(0.5 < X ≤ 1.5)=？</p>
+  <p class="question"><strong>✏️ 自测：</strong>已知 F(x)=0(x&lt;0), x/2(0≤x&lt;2), 1(x≥2)。则 P(0.5 &lt; X ≤ 1.5)=？</p>
   <div class="options">
     <div class="option" onclick="checkQuiz('quiz-df', this, false)">A. 0.25</div>
     <div class="option" onclick="checkQuiz('quiz-df', this, true)">B. 0.5</div>
@@ -917,8 +917,8 @@ P(击中) = 1 − 0.08 = <strong>0.92</strong></p>
 <h3>（一）均匀分布 X~U(a,b)</h3>
 <div class="formula">
   <span class="label">均匀分布</span>
-  f(x) = 1/(b−a)，a < x < b<br>
-  P(c < X < d) = (d−c)/(b−a)
+  f(x) = 1/(b−a)，a &lt; x < b<br>
+  P(c &lt; X < d) = (d−c)/(b−a)
 </div>
 
 <h3>（二）指数分布 X~e(θ)</h3>
@@ -934,7 +934,7 @@ P(击中) = 1 − 0.08 = <strong>0.92</strong></p>
 <div class="formula">
   <span class="label">标准化变换（核心技能！）</span>
   若 X~N(μ,σ<sup>2</sup>)，则 Z = (X−μ)/σ ~ N(0,1)<br>
-  P(a < X ≤ b) = Φ((b−μ)/σ) − Φ((a−μ)/σ)
+  P(a &lt; X ≤ b) = Φ((b−μ)/σ) − Φ((a−μ)/σ)
 </div>
 
 <div class="formula">
@@ -948,9 +948,9 @@ P(击中) = 1 − 0.08 = <strong>0.92</strong></p>
 
 <div class="formula">
   <span class="label">3σ原则</span>
-  P(|X−μ| < σ) ≈ 68.26%<br>
-  P(|X−μ| < 2σ) ≈ 95.54%<br>
-  P(|X−μ| < 3σ) ≈ 99.74%
+  P(|X−μ| &lt; σ) ≈ 68.3%<br>
+  P(|X−μ| &lt; 2σ) ≈ 95.5%<br>
+  P(|X−μ| &lt; 3σ) ≈ 99.7%
 </div>
 
 <details class="proof-block">
@@ -1026,11 +1026,11 @@ P(Z > −1) = 1 − P(Z ≤ −1) = 1 − Φ(−1)<br>
 P(X > 160) = 1 − 0.1587 = <strong>0.8413</strong><br><br>
 <strong>（2）车门高度h，使碰头概率≤5%</strong><br><br>
 <strong>第1步——设未知数，列不等式：</strong><br>
-碰头 = 身高超过车门 = X > h<br>
-要求：P(X > h) ≤ 0.05<br><br>
+碰头 = 身高超过车门 = X &gt; h<br>
+要求：P(X &gt; h) ≤ 0.05<br><br>
 <strong>第2步——标准化：</strong><br>
-P(X > h) = P(Z > (h−170)/10) ≤ 0.05<br>
-由标准正态上α分位点定义：P(Z > z<sub>0.05</sub>) = 0.05<br>
+P(X &gt; h) = P(Z > (h−170)/10) ≤ 0.05<br>
+由标准正态上α分位点定义：P(Z &gt; z<sub>0.05</sub>) = 0.05<br>
 已知 z<sub>0.05</sub> = 1.645<br>
 所以需要：(h−170)/10 ≥ 1.645<br><br>
 <strong>第3步——解出h：</strong><br>
@@ -1038,7 +1038,7 @@ h − 170 ≥ 16.45<br>
 h ≥ <strong>186.45 cm</strong>（取187cm）<br><br>
 <strong>（3）100人中至少2人碰头的概率</strong><br><br>
 <strong>第1步——每人碰头的概率：</strong><br>
-由(2)，p = P(X > h) ≈ 0.05<br><br>
+由(2)，p = P(X &gt; h) ≈ 0.05<br><br>
 <strong>第2步——100人碰头人数服从二项分布：</strong><br>
 设Y = 100人中碰头的人数，Y ~ B(100, 0.05)<br>
 要求：P(Y ≥ 2)<br><br>
@@ -1792,12 +1792,12 @@ D(X+Y) = D(X)+D(Y)+2Cov = 25+36+2×12 = <strong>85</strong></p>
 <h3>⭐ 单正态总体抽样分布定理（必背！）</h3>
 <div class="formula">
   <span class="label">设总体 X~N(μ,σ<sup>2</sup>)，样本容量为n</span>
-  ① <u><span style="text-decoration:overline">X</span> − μ</u> ~ N(0,1)<br>
-  <span style="margin-left:1.5em">σ/√n</span><br>
-  ② <u>(n−1)S<sup>2</sup></u> ~ χ<sup>2</sup>(n−1)，且 <span style="text-decoration:overline">X</span>与S<sup>2</sup> 独立<br>
-  <span style="margin-left:1em">σ<sup>2</sup></span><br>
-  ③ <u><span style="text-decoration:overline">X</span> − μ</u> ~ t(n−1)<br>
-  <span style="margin-left:1.5em">S/√n</span>
+  ① <span style="border-bottom:1px solid #2c2416"><span style="text-decoration:overline">X</span> − μ</span><br>
+  <span style="margin-left:1.5em">σ/√n</span> ~ N(0,1)<br>
+  ② <span style="border-bottom:1px solid #2c2416">(n−1)S<sup>2</sup></span><br>
+  <span style="margin-left:1em">σ<sup>2</sup></span> ~ χ<sup>2</sup>(n−1)，且 <span style="text-decoration:overline">X</span>与S<sup>2</sup> 独立<br>
+  ③ <span style="border-bottom:1px solid #2c2416"><span style="text-decoration:overline">X</span> − μ</span><br>
+  <span style="margin-left:1.5em">S/√n</span> ~ t(n−1)
 </div>
 
 <details class="proof-block">
@@ -1926,7 +1926,7 @@ d(ln L)/dθ = 6/θ − 2/(1−θ) − 8/(1−2θ) = 0<br>
     <td>μ未知</td>
     <td>σ<sup>2</sup></td>
     <td>(n−1)S<sup>2</sup>/σ<sup>2</sup> ~ χ<sup>2</sup>(n−1)</td>
-    <td>[<u>(n−1)S<sup>2</sup></u>, <u>(n−1)S<sup>2</sup></u>]<br><span style="margin-left:0.5em">χ<sup>2</sup><sub>α/2</sub></span><span style="margin-left:1.5em">χ<sup>2</sup><sub>1−α/2</sub></span></td>
+    <td>[<span style="border-bottom:1px solid #2c2416">(n−1)S<sup>2</sup></span>, <span style="border-bottom:1px solid #2c2416">(n−1)S<sup>2</sup></span>]<br><span style="margin-left:0.5em">χ<sup>2</sup><sub>α/2</sub></span><span style="margin-left:1.5em">χ<sup>2</sup><sub>1−α/2</sub></span></td>
   </tr>
 </table>
 
@@ -2174,13 +2174,7 @@ H<sub>1</sub>: σ<sup>2</sup> ≠ 5000（备择假设：方差有显著变化）
 <details><summary><strong>解析</strong></summary>(n−1)S<sup>2</sup>=777600。下限=777600/39.364≈19756，上限=777600/12.401≈62705。区间<strong>[19756,62705]</strong>（不对称）</details>
 </div>
 
-<div class=\"lesson-footer\">
-  <p><strong>📚 推荐阅读：</strong>教材第5章 §5.1～§5.3 + 第6章 §6.1～§6.2</p>
-  <p><strong>📐 速查：</strong><a href="../reference/formula-cheat-sheet.html#ch5">第5章公式</a> · <a href="../reference/formula-cheat-sheet.html#ch6">第6章公式</a></p>
-  <p><strong>📝 做题：</strong><a href="../reference/exam-bank.html">原题题库 → 作业三全部</a></p>
-  <p><strong>🔙 回顾：</strong><a href="0001-random-events.html">第1课</a> · <a href="0002-random-variables.html">第2课</a> · <a href="0003-numerical-characteristics.html">第3课</a></p>
-  <p>💬 <strong>有任何不清楚的地方，随时问我！</strong>考试加油！🎯</p>
-</div>
+
 
 
 

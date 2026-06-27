@@ -420,7 +420,7 @@ function checkQuiz(qid, el, isCorrect) {
     'quiz-cov': 'Cov(X,Y)=ρ√D(X)√D(Y)=0.4×5×6=12，D(X+Y)=25+36+2×12=85',
     'quiz-indep': '独立一定不相关（C）。A、B、D都是不相关不能推出独立'
   };
-  fb.textContent = isCorrect ? '✅ 正确！' : '❌ 不对。' + (answers[qid] || '');
+  fb.innerHTML = isCorrect ? '✅ 正确！' : '❌ 不对。' + (answers[qid] || '');
 }
 </script>
 

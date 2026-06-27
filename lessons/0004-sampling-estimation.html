@@ -59,12 +59,12 @@
 <h3>⭐ 单正态总体抽样分布定理（必背！）</h3>
 <div class="formula">
   <span class="label">设总体 X~N(μ,σ<sup>2</sup>)，样本容量为n</span>
-  ① <u><span style="text-decoration:overline">X</span> − μ</u> ~ N(0,1)<br>
-  <span style="margin-left:1.5em">σ/√n</span><br>
-  ② <u>(n−1)S<sup>2</sup></u> ~ χ<sup>2</sup>(n−1)，且 <span style="text-decoration:overline">X</span>与S<sup>2</sup> 独立<br>
-  <span style="margin-left:1em">σ<sup>2</sup></span><br>
-  ③ <u><span style="text-decoration:overline">X</span> − μ</u> ~ t(n−1)<br>
-  <span style="margin-left:1.5em">S/√n</span>
+  ① <span style="border-bottom:1px solid #2c2416"><span style="text-decoration:overline">X</span> − μ</span><br>
+  <span style="margin-left:1.5em">σ/√n</span> ~ N(0,1)<br>
+  ② <span style="border-bottom:1px solid #2c2416">(n−1)S<sup>2</sup></span><br>
+  <span style="margin-left:1em">σ<sup>2</sup></span> ~ χ<sup>2</sup>(n−1)，且 <span style="text-decoration:overline">X</span>与S<sup>2</sup> 独立<br>
+  ③ <span style="border-bottom:1px solid #2c2416"><span style="text-decoration:overline">X</span> − μ</span><br>
+  <span style="margin-left:1.5em">S/√n</span> ~ t(n−1)
 </div>
 
 <details class="proof-block">
@@ -193,7 +193,7 @@ d(ln L)/dθ = 6/θ − 2/(1−θ) − 8/(1−2θ) = 0<br>
     <td>μ未知</td>
     <td>σ<sup>2</sup></td>
     <td>(n−1)S<sup>2</sup>/σ<sup>2</sup> ~ χ<sup>2</sup>(n−1)</td>
-    <td>[<u>(n−1)S<sup>2</sup></u>, <u>(n−1)S<sup>2</sup></u>]<br><span style="margin-left:0.5em">χ<sup>2</sup><sub>α/2</sub></span><span style="margin-left:1.5em">χ<sup>2</sup><sub>1−α/2</sub></span></td>
+    <td>[<span style="border-bottom:1px solid #2c2416">(n−1)S<sup>2</sup></span>, <span style="border-bottom:1px solid #2c2416">(n−1)S<sup>2</sup></span>]<br><span style="margin-left:0.5em">χ<sup>2</sup><sub>α/2</sub></span><span style="margin-left:1.5em">χ<sup>2</sup><sub>1−α/2</sub></span></td>
   </tr>
 </table>
 
@@ -441,7 +441,7 @@ H<sub>1</sub>: σ<sup>2</sup> ≠ 5000（备择假设：方差有显著变化）
 <details><summary><strong>解析</strong></summary>(n−1)S<sup>2</sup>=777600。下限=777600/39.364≈19756，上限=777600/12.401≈62705。区间<strong>[19756,62705]</strong>（不对称）</details>
 </div>
 
-<div class=\"lesson-footer\">
+<div class="lesson-footer">
   <p><strong>📚 推荐阅读：</strong>教材第5章 §5.1～§5.3 + 第6章 §6.1～§6.2</p>
   <p><strong>📐 速查：</strong><a href="../reference/formula-cheat-sheet.html#ch5">第5章公式</a> · <a href="../reference/formula-cheat-sheet.html#ch6">第6章公式</a></p>
   <p><strong>📝 做题：</strong><a href="../reference/exam-bank.html">原题题库 → 作业三全部</a></p>
@@ -463,7 +463,7 @@ function checkQuiz(qid, el, isCorrect) {
     'quiz-ci': 'σ已知用z：σ/√n=200/5=40，z<sub>0</sub>.<sub>0</sub><sub>2</sub><sub>5</sub>=1.96，区间=16800±1.96×40',
     'quiz-test': '检验方差σ<sup>2</sup>用χ<sup>2</sup>分布'
   };
-  fb.textContent = isCorrect ? '✅ 正确！' : '❌ 不对。' + (answers[qid] || '');
+  fb.innerHTML = isCorrect ? '✅ 正确！' : '❌ 不对。' + (answers[qid] || '');
 }
 </script>
 

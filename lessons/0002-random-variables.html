@@ -54,7 +54,7 @@
 </details>
 
 <div class="quiz" id="quiz-df">
-  <p class="question"><strong>✏️ 自测：</strong>已知 F(x)=0(x&lt;0), x/2(0≤x&lt;2), 1(x≥2)。则 P(0.5 < X ≤ 1.5)=？</p>
+  <p class="question"><strong>✏️ 自测：</strong>已知 F(x)=0(x&lt;0), x/2(0≤x&lt;2), 1(x≥2)。则 P(0.5 &lt; X ≤ 1.5)=？</p>
   <div class="options">
     <div class="option" onclick="checkQuiz('quiz-df', this, false)">A. 0.25</div>
     <div class="option" onclick="checkQuiz('quiz-df', this, true)">B. 0.5</div>
@@ -116,8 +116,8 @@
 <h3>（一）均匀分布 X~U(a,b)</h3>
 <div class="formula">
   <span class="label">均匀分布</span>
-  f(x) = 1/(b−a)，a < x < b<br>
-  P(c < X < d) = (d−c)/(b−a)
+  f(x) = 1/(b−a)，a &lt; x < b<br>
+  P(c &lt; X < d) = (d−c)/(b−a)
 </div>
 
 <h3>（二）指数分布 X~e(θ)</h3>
@@ -133,7 +133,7 @@
 <div class="formula">
   <span class="label">标准化变换（核心技能！）</span>
   若 X~N(μ,σ<sup>2</sup>)，则 Z = (X−μ)/σ ~ N(0,1)<br>
-  P(a < X ≤ b) = Φ((b−μ)/σ) − Φ((a−μ)/σ)
+  P(a &lt; X ≤ b) = Φ((b−μ)/σ) − Φ((a−μ)/σ)
 </div>
 
 <div class="formula">
@@ -147,9 +147,9 @@
 
 <div class="formula">
   <span class="label">3σ原则</span>
-  P(|X−μ| < σ) ≈ 68.26%<br>
-  P(|X−μ| < 2σ) ≈ 95.54%<br>
-  P(|X−μ| < 3σ) ≈ 99.74%
+  P(|X−μ| &lt; σ) ≈ 68.3%<br>
+  P(|X−μ| &lt; 2σ) ≈ 95.5%<br>
+  P(|X−μ| &lt; 3σ) ≈ 99.7%
 </div>
 
 <details class="proof-block">
@@ -225,11 +225,11 @@ P(Z > −1) = 1 − P(Z ≤ −1) = 1 − Φ(−1)<br>
 P(X > 160) = 1 − 0.1587 = <strong>0.8413</strong><br><br>
 <strong>（2）车门高度h，使碰头概率≤5%</strong><br><br>
 <strong>第1步——设未知数，列不等式：</strong><br>
-碰头 = 身高超过车门 = X > h<br>
-要求：P(X > h) ≤ 0.05<br><br>
+碰头 = 身高超过车门 = X &gt; h<br>
+要求：P(X &gt; h) ≤ 0.05<br><br>
 <strong>第2步——标准化：</strong><br>
-P(X > h) = P(Z > (h−170)/10) ≤ 0.05<br>
-由标准正态上α分位点定义：P(Z > z<sub>0.05</sub>) = 0.05<br>
+P(X &gt; h) = P(Z > (h−170)/10) ≤ 0.05<br>
+由标准正态上α分位点定义：P(Z &gt; z<sub>0.05</sub>) = 0.05<br>
 已知 z<sub>0.05</sub> = 1.645<br>
 所以需要：(h−170)/10 ≥ 1.645<br><br>
 <strong>第3步——解出h：</strong><br>
@@ -237,7 +237,7 @@ h − 170 ≥ 16.45<br>
 h ≥ <strong>186.45 cm</strong>（取187cm）<br><br>
 <strong>（3）100人中至少2人碰头的概率</strong><br><br>
 <strong>第1步——每人碰头的概率：</strong><br>
-由(2)，p = P(X > h) ≈ 0.05<br><br>
+由(2)，p = P(X &gt; h) ≈ 0.05<br><br>
 <strong>第2步——100人碰头人数服从二项分布：</strong><br>
 设Y = 100人中碰头的人数，Y ~ B(100, 0.05)<br>
 要求：P(Y ≥ 2)<br><br>
@@ -569,7 +569,7 @@ function checkQuiz(qid, el, isCorrect) {
     'quiz-norm': 'Z=(6−3)/3=1，Φ(1)=0.8413',
     'quiz-2d': '二维正态分布中，ρ=0等价于X和Y相互独立'
   };
-  fb.textContent = isCorrect ? '✅ 正确！' : '❌ 不对。' + (answers[qid] || '');
+  fb.innerHTML = isCorrect ? '✅ 正确！' : '❌ 不对。' + (answers[qid] || '');
 }
 </script>
 
