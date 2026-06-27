@@ -179,7 +179,7 @@
 <div class="def-card" style="border-left:4px solid var(--accent)">
 <p><span class="term">📋 作业一 第1题：条件概率计算</span></p>
 <p>（1）已知 P(A)=1/2, P(B)=1/3, P(B|A)=2/3，求 P(A|B)；</p>
-<p>（2）已知 P(Ā)=0.3, P(B)=0.4, P(A<span style="text-decoration:overline">B</span>)=0.5，求 P(B|A∪<span style="text-decoration:overline">B</span>)；</p>
+<p>（2）已知 P(<span style="text-decoration:overline">A</span>)=0.3, P(B)=0.4, P(A<span style="text-decoration:overline">B</span>)=0.5，求 P(B|A∪<span style="text-decoration:overline">B</span>)；</p>
 <p>（3）已知 P(A)=1/4, P(B|A)=1/3, P(A|B)=1/2，求 P(A∪B)。</p>
 <details><summary><strong>点击查看逐步解析</strong></summary>
 <div style="padding:0.5rem 0">
@@ -192,9 +192,9 @@ P(B|A) = P(AB)/P(A) → P(AB) = P(A) × P(B|A)<br>
 P(A|B) = P(AB)/P(B) = (1/3)/(1/3) = <strong>1</strong><br>
 （一个数除以自己=1，意味着已知B发生则A必定发生）</p>
 <p><strong>（2）</strong><br>
-<strong>已知：</strong>P(Ā)=0.3, P(B)=0.4, P(A<span style="text-decoration:overline">B</span>)=0.5，<strong>求：</strong>P(B|A∪<span style="text-decoration:overline">B</span>)<br><br>
+<strong>已知：</strong>P(<span style="text-decoration:overline">A</span>)=0.3, P(B)=0.4, P(A<span style="text-decoration:overline">B</span>)=0.5，<strong>求：</strong>P(B|A∪<span style="text-decoration:overline">B</span>)<br><br>
 <strong>第1步——求P(A)：</strong><br>
-对立事件：P(A) = 1 − P(Ā) = 1 − 0.3 = <strong>0.7</strong><br><br>
+对立事件：P(A) = 1 − P(<span style="text-decoration:overline">A</span>) = 1 − 0.3 = <strong>0.7</strong><br><br>
 <strong>第2步——求P(AB)：</strong><br>
 减法公式：P(A−B) = P(A) − P(AB)，而A−B = A<span style="text-decoration:overline">B</span><br>
 所以 P(AB) = P(A) − P(A<span style="text-decoration:overline">B</span>) = 0.7 − 0.5 = <strong>0.2</strong><br><br>
@@ -296,13 +296,13 @@ P(A<sub>1</sub>|B) = P(A<sub>1</sub>)P(B|A<sub>1</sub>) / P(B)<br>
 <details class="proof-block">
 <summary><strong>📐 证明：独立性的四条推论</strong>（点击展开）</summary>
 <div style="padding:0.75rem 0">
-<p><strong>结论：</strong>若A与B独立，则Ā与B、A与B̄、Ā与B̄也都独立。</p>
-<p><strong>以Ā与B为例：</strong></p>
+<p><strong>结论：</strong>若A与B独立，则<span style="text-decoration:overline">A</span>与B、A与<span style="text-decoration:overline">B</span>、<span style="text-decoration:overline">A</span>与<span style="text-decoration:overline">B</span>也都独立。</p>
+<p><strong>以<span style="text-decoration:overline">A</span>与B为例：</strong></p>
 <ol class="steps">
-  <li>P(ĀB) = P(B−AB) = P(B) − P(AB)</li>
+  <li>P(<span style="text-decoration:overline">A</span>B) = P(B−AB) = P(B) − P(AB)</li>
   <li>独立 ⇒ P(AB)=P(A)P(B)</li>
-  <li>P(ĀB) = P(B) − P(A)P(B) = P(B)[1−P(A)] = P(B)P(Ā)</li>
-  <li>即 P(ĀB)=P(Ā)P(B)，故Ā与B独立</li>
+  <li>P(<span style="text-decoration:overline">A</span>B) = P(B) − P(A)P(B) = P(B)[1−P(A)] = P(B)P(<span style="text-decoration:overline">A</span>)</li>
+  <li>即 P(<span style="text-decoration:overline">A</span>B)=P(<span style="text-decoration:overline">A</span>)P(B)，故<span style="text-decoration:overline">A</span>与B独立</li>
 </ol>
 <p>其余两种情况同理可证。</p>
 </div>
@@ -404,7 +404,7 @@ P(A<sub>3</sub>|B) = 0.05×0.03 / 0.0125 = 0.0015 / 0.0125 = <strong>0.12</stron
 P(A∪B) = P(A)+P(B)−P(AB) = 0.8+0.6−0.48 = <strong>0.92</strong></p>
 <p><strong>解法二——对立事件：</strong><br>
 "目标被击中"的对立是"两人都没击中"<br>
-P(都没击中) = P(Ā)P(B̄) = (1−0.8)×(1−0.6) = 0.2×0.4 = 0.08<br>
+P(都没击中) = P(<span style="text-decoration:overline">A</span>)P(<span style="text-decoration:overline">B</span>) = (1−0.8)×(1−0.6) = 0.2×0.4 = 0.08<br>
 P(击中) = 1 − 0.08 = <strong>0.92</strong></p>
 </div>
 </details>
@@ -477,15 +477,15 @@ P(击中) = 1 − 0.08 = <strong>0.92</strong></p>
 <h3>1.1 事件表达式练习（课件原题）</h3>
 <div class="def-card" style="border-left:4px solid #e6c970">
 <p><strong>练习1：</strong>甲、乙、丙各射击一次，A,B,C分别代表命中。用A,B,C表示：</p>
-<p>①至少一人命中 = A∪B∪C；②目标被击中一次 = AB̄C̄ ∪ ĀBC̄ ∪ ĀB̄C</p>
+<p>①至少一人命中 = A∪B∪C；②目标被击中一次 = A<span style="text-decoration:overline">B</span><span style="text-decoration:overline">C</span> ∪ <span style="text-decoration:overline">A</span>B<span style="text-decoration:overline">C</span> ∪ <span style="text-decoration:overline">A</span><span style="text-decoration:overline">B</span>C</p>
 <p>用文字叙述：①AB+AC+BC = 至少两人命中；②A+B = 甲或乙命中（至少一人）；③AB = 甲乙都命中</p>
 </div>
 <div class="def-card" style="border-left:4px solid #e6c970">
 <p><strong>练习2：</strong>用A,B,C写出下列事件：</p>
-<p>①只有A发生 = AB̄C̄；②B和C都发生但A不发生 = ĀBC；③至少一个发生 = A∪B∪C</p>
-<p>④至少两个发生 = AB∪AC∪BC；⑤三个都发生 = ABC；⑥没有事件发生 = ĀB̄C̄</p>
-<p>⑦最多一个发生 = ĀB̄C̄ ∪ AB̄C̄ ∪ ĀBC̄ ∪ ĀB̄C；⑧最多两个发生 = Ω−ABC = ABC的补</p>
-<p>⑨恰好两个发生 = ABC̄ ∪ AB̄C ∪ ĀBC；⑩最多三个发生 = Ω（必然事件）</p>
+<p>①只有A发生 = A<span style="text-decoration:overline">B</span><span style="text-decoration:overline">C</span>；②B和C都发生但A不发生 = <span style="text-decoration:overline">A</span>BC；③至少一个发生 = A∪B∪C</p>
+<p>④至少两个发生 = AB∪AC∪BC；⑤三个都发生 = ABC；⑥没有事件发生 = <span style="text-decoration:overline">A</span><span style="text-decoration:overline">B</span><span style="text-decoration:overline">C</span></p>
+<p>⑦最多一个发生 = <span style="text-decoration:overline">A</span><span style="text-decoration:overline">B</span><span style="text-decoration:overline">C</span> ∪ A<span style="text-decoration:overline">B</span><span style="text-decoration:overline">C</span> ∪ <span style="text-decoration:overline">A</span>B<span style="text-decoration:overline">C</span> ∪ <span style="text-decoration:overline">A</span><span style="text-decoration:overline">B</span>C；⑧最多两个发生 = Ω−ABC = ABC的补</p>
+<p>⑨恰好两个发生 = AB<span style="text-decoration:overline">C</span> ∪ A<span style="text-decoration:overline">B</span>C ∪ <span style="text-decoration:overline">A</span>BC；⑩最多三个发生 = Ω（必然事件）</p>
 </div>
 
 <h3>1.1 事件运算律</h3>
@@ -493,7 +493,7 @@ P(击中) = 1 − 0.08 = <strong>0.92</strong></p>
 <p>交换律：A∪B=B∪A；A∩B=B∩A</p>
 <p>结合律：(A∪B)∪C=A∪(B∪C)；(A∩B)∩C=A∩(B∩C)</p>
 <p>分配律：(A∪B)∩C=(A∩C)∪(B∩C)；(A∩B)∪C=(A∪C)∩(B∪C)</p>
-<p>德摩根：Ā∪B̄ = Ā∩B̄；Ā∩B̄ = Ā∪B̄</p>
+<p>德摩根：<span style="text-decoration:overline">A</span>∪<span style="text-decoration:overline">B</span> = <span style="text-decoration:overline">A</span>∩<span style="text-decoration:overline">B</span>；<span style="text-decoration:overline">A</span>∩<span style="text-decoration:overline">B</span> = <span style="text-decoration:overline">A</span>∪<span style="text-decoration:overline">B</span></p>
 </div>
 
 <h3>1.2 频率与概率的统计定义</h3>
@@ -506,24 +506,24 @@ P(击中) = 1 − 0.08 = <strong>0.92</strong></p>
 
 <h3>1.2 课件补充例题</h3>
 <div class="def-card" style="border-left:4px solid #e6c970">
-<p><strong>例2：</strong>P(A)=0.5, P(B)=0.4, P(A−B)=0.3，求 P(Ā∪B̄) 和 P(A∪B̄)。</p>
-<details><summary><strong>解析</strong></summary>P(AB)=0.5−0.3=0.2。Ā∪B̄ = (AB)̄（德摩根）→ P=1−0.2=0.8。P(A∪B̄)=P(A)+P(B̄)−P(AB̄)=0.5+0.6−0.3=0.8</details>
+<p><strong>例2：</strong>P(A)=0.5, P(B)=0.4, P(A−B)=0.3，求 P(<span style="text-decoration:overline">A</span>∪<span style="text-decoration:overline">B</span>) 和 P(A∪<span style="text-decoration:overline">B</span>)。</p>
+<details><summary><strong>解析</strong></summary>P(AB)=0.5−0.3=0.2。<span style="text-decoration:overline">A</span>∪<span style="text-decoration:overline">B</span> = (AB)̄（德摩根）→ P=1−0.2=0.8。P(A∪<span style="text-decoration:overline">B</span>)=P(A)+P(<span style="text-decoration:overline">B</span>)−P(A<span style="text-decoration:overline">B</span>)=0.5+0.6−0.3=0.8</details>
 </div>
 <div class="def-card" style="border-left:4px solid #e6c970">
-<p><strong>例4：</strong>P(AB)=P(Ā∩B̄)，P(A)=0.4，求P(B)。</p>
-<details><summary><strong>解析</strong></summary>Ā∩B̄ = (A∪B)̄，所以P(AB)=1−P(A∪B)=1−P(A)−P(B)+P(AB) → 0=1−0.4−P(B) → P(B)=<strong>0.6</strong></details>
+<p><strong>例4：</strong>P(AB)=P(<span style="text-decoration:overline">A</span>∩<span style="text-decoration:overline">B</span>)，P(A)=0.4，求P(B)。</p>
+<details><summary><strong>解析</strong></summary><span style="text-decoration:overline">A</span>∩<span style="text-decoration:overline">B</span> = (A∪B)̄，所以P(AB)=1−P(A∪B)=1−P(A)−P(B)+P(AB) → 0=1−0.4−P(B) → P(B)=<strong>0.6</strong></details>
 </div>
 <div class="def-card" style="border-left:4px solid #e6c970">
 <p><strong>练习1：</strong>P(A)=P(B)=P(C)=1/4, P(AC)=1/8, P(AB)=P(BC)=0。求至少一个发生的概率；都发生的概率；都不发生的概率。</p>
 <details><summary><strong>答案</strong></summary>至少一个=5/8；都发生=0（因为P(AB)=0, ABC⊂AB）；都不发生=3/8</details>
 </div>
 <div class="def-card" style="border-left:4px solid #e6c970">
-<p><strong>练习2：</strong>A⊃B, A⊃C, P(A)=0.9, P(B̄∪C̄)=0.8，求P(A−BC)。</p>
+<p><strong>练习2：</strong>A⊃B, A⊃C, P(A)=0.9, P(<span style="text-decoration:overline">B</span>∪<span style="text-decoration:overline">C</span>)=0.8，求P(A−BC)。</p>
 <details><summary><strong>答案</strong></summary>P(BC)=1−0.8=0.2。A−BC中BC⊂A（因为B⊂A,C⊂A→BC⊂A），P(A−BC)=0.9−0.2=<strong>0.7</strong></details>
 </div>
 <div class="def-card" style="border-left:4px solid #e6c970">
-<p><strong>练习3：</strong>P(A)=1/3, P(B)=1/2，三种情况下求P(ĀB)：①AB=∅ ②A⊂B ③P(AB)=1/8。</p>
-<details><summary><strong>答案</strong></summary>P(ĀB)=P(B)−P(AB)。①1/2−0=<strong>1/2</strong>；②A⊂B→AB=A→1/2−1/3=<strong>1/6</strong>；③1/2−1/8=<strong>3/8</strong></details>
+<p><strong>练习3：</strong>P(A)=1/3, P(B)=1/2，三种情况下求P(<span style="text-decoration:overline">A</span>B)：①AB=∅ ②A⊂B ③P(AB)=1/8。</p>
+<details><summary><strong>答案</strong></summary>P(<span style="text-decoration:overline">A</span>B)=P(B)−P(AB)。①1/2−0=<strong>1/2</strong>；②A⊂B→AB=A→1/2−1/3=<strong>1/6</strong>；③1/2−1/8=<strong>3/8</strong></details>
 </div>
 
 <h3>1.3 古典概型补充例题</h3>
@@ -555,7 +555,7 @@ P(击中) = 1 − 0.08 = <strong>0.92</strong></p>
 <h3>1.4 条件概率补充例题</h3>
 <div class="def-card" style="border-left:4px solid #e6c970">
 <p><strong>引例：</strong>10件产品5件不合格（3次品2废品），任取1件。P(废品)=2/10=0.2；已知不合格，P(废品|不合格)=2/5=<strong>0.4</strong></p>
-<p><strong>乘法公式例：</strong>P(A)=0.5, P(B)=0.4, P(A|B̄)=0.6。P(AB̄)=P(B̄)·P(A|B̄)=0.6×0.6=0.36。P(AB)=P(A)−P(AB̄)=0.5−0.36=<strong>0.14</strong></p>
+<p><strong>乘法公式例：</strong>P(A)=0.5, P(B)=0.4, P(A|<span style="text-decoration:overline">B</span>)=0.6。P(A<span style="text-decoration:overline">B</span>)=P(<span style="text-decoration:overline">B</span>)·P(A|<span style="text-decoration:overline">B</span>)=0.6×0.6=0.36。P(AB)=P(A)−P(A<span style="text-decoration:overline">B</span>)=0.5−0.36=<strong>0.14</strong></p>
 </div>
 <div class="def-card" style="border-left:4px solid #e6c970">
 <p><strong>全概率练习1（机器调整）：</strong>机器调整良好概率0.95，良好时合格率0.98，故障时合格率0.55。第一件合格，机器调整良好的概率？</p>
@@ -579,8 +579,8 @@ P(击中) = 1 − 0.08 = <strong>0.92</strong></p>
 <p><strong>例题：</strong>掷硬币两次，A<sub>1</sub>={第一次正}, A<sub>2</sub>={第二次反}, A<sub>3</sub>={正反各一次}。P(A<sub>1</sub>)=1/2, P(A<sub>2</sub>)=1/2, P(A<sub>3</sub>)=1/2。两两独立：P(A<sub>1</sub>A<sub>2</sub>)=1/4=1/2×1/2 ✓; P(A<sub>1</sub>A<sub>3</sub>)=1/4 ✓; P(A<sub>2</sub>A<sub>3</sub>)=1/4 ✓。但P(A<sub>1</sub>A<sub>2</sub>A<sub>3</sub>)=0≠1/2×1/2×1/2=1/8 → <strong>不相互独立！</strong></p>
 </div>
 <div class="def-card" style="border-left:4px solid #e6c970">
-<p><strong>例题：</strong>A,B,C相互独立，判断A−B与C̄是否独立。</p>
-<p>A−B = AB̄，P(AB̄·C̄) = P(A)P(B̄)P(C̄) = P(AB̄)·P(C̄) → <strong>独立 ✓</strong></p>
+<p><strong>例题：</strong>A,B,C相互独立，判断A−B与<span style="text-decoration:overline">C</span>是否独立。</p>
+<p>A−B = A<span style="text-decoration:overline">B</span>，P(A<span style="text-decoration:overline">B</span>·<span style="text-decoration:overline">C</span>) = P(A)P(<span style="text-decoration:overline">B</span>)P(<span style="text-decoration:overline">C</span>) = P(A<span style="text-decoration:overline">B</span>)·P(<span style="text-decoration:overline">C</span>) → <strong>独立 ✓</strong></p>
 </div>
 <div class="def-card" style="border-left:4px solid #e6c970">
 <p><strong>伯努利例1：</strong>射手连射5次，每次命中率p，恰中3次概率=C<sub>5</sub><sup>3</sup>p<sup>3</sup>(1−p)<sup>2</sup></p>
@@ -591,7 +591,7 @@ P(击中) = 1 − 0.08 = <strong>0.92</strong></p>
 
 <table>
 <tr><th>类别</th><th>公式</th><th>说明</th></tr>
-<tr><td>对立事件</td><td>P(Ā)=1−P(A)</td><td>必有一个发生</td></tr>
+<tr><td>对立事件</td><td>P(<span style="text-decoration:overline">A</span>)=1−P(A)</td><td>必有一个发生</td></tr>
 <tr><td>减法</td><td>P(A−B)=P(A)−P(AB)</td><td>B⊂A时=P(A)−P(B)</td></tr>
 <tr><td>加法</td><td>P(A∪B)=P(A)+P(B)−P(AB)</td><td>三事件推广含+ABC项</td></tr>
 <tr><td>条件概率</td><td>P(B|A)=P(AB)/P(A)</td><td>P(A)>0</td></tr>
@@ -601,9 +601,9 @@ P(击中) = 1 − 0.08 = <strong>0.92</strong></p>
 <tr><td>古典概型</td><td>P(A)=A中样本点数/总样本点数</td><td>等可能+有限</td></tr>
 <tr><td>排列</td><td>A<sub>n</sub><sup>m</sup>=n!/(n−m)!</td><td>有次序</td></tr>
 <tr><td>组合</td><td>C<sub>n</sub><sup>m</sup>=n!/[m!(n−m)!]</td><td>无次序</td></tr>
-<tr><td>独立性</td><td>P(AB)=P(A)P(B)</td><td>独立⇒Ā,B等也独立</td></tr>
+<tr><td>独立性</td><td>P(AB)=P(A)P(B)</td><td>独立⇒<span style="text-decoration:overline">A</span>,B等也独立</td></tr>
 <tr><td>伯努利</td><td>P(X=k)=C<sub>n</sub><sup>k</sup>p<sup>k</sup>(1−p)<sup>n</sup><sup>−</sup><sup>k</sup></td><td>n重独立重复</td></tr>
-<tr><td>德摩根</td><td>Ā∪B̄=Ā∩B̄; Ā∩B̄=Ā∪B̄</td><td>对偶律</td></tr>
+<tr><td>德摩根</td><td><span style="text-decoration:overline">A</span>∪<span style="text-decoration:overline">B</span>=<span style="text-decoration:overline">A</span>∩<span style="text-decoration:overline">B</span>; <span style="text-decoration:overline">A</span>∩<span style="text-decoration:overline">B</span>=<span style="text-decoration:overline">A</span>∪<span style="text-decoration:overline">B</span></td><td>对偶律</td></tr>
 </table>
 
 <div class="lesson-footer">
