@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>社会统计学 · 知识点练习题库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+  .qz { border:1px solid var(--border); border-radius:var(--radius); padding:1rem 1.25rem; margin:0.75rem 0; }
+  .qz .qtitle { font-weight:600; margin-bottom:0.5rem; }
+  .qz .options { display:flex; flex-direction:column; gap:0.3rem; }
+  .qz .opt { padding:0.4rem 0.8rem; border:1px solid var(--border); border-radius:4px; cursor:pointer; }
+  .qz .opt:hover { background:var(--accent-light); }
+  .qz .opt.correct { border-color:var(--correct); background:#d8f3dc; }
+  .qz .opt.wrong { border-color:var(--wrong); background:#ffd6d6; }
+  .qz .fb { display:none; margin-top:0.4rem; padding:0.4rem 0.8rem; border-radius:4px; }
+  .qz .fb.show { display:block; }
+  .qz .fb.correct { background:#d8f3dc; color:var(--correct); }
+  .qz .fb.wrong { background:#ffd6d6; color:var(--wrong); }
+  h2 { cursor:pointer; }
+</style>
+</head>
+<body>
+
+<nav class="breadcrumb">
+  <a href="../lessons/0001-random-events.html">第1课</a> ·
+  <a href="../reference/formula-cheat-sheet.html">公式速查</a> ·
+  <a href="exam-bank.html">原题题库</a>
+</nav>
+
+<h1>✏️ 知识点练习题库</h1>
+<p>每道题点击选项即出反馈和解析。覆盖全部6章核心知识点，每知识点2题。</p>
+
+<!-- ===== CH1 ===== -->
+<h2>第1章：随机事件与概率</h2>
+
+<h3>1.1 事件关系与运算</h3>
+<div class="qz" id="q1a"><div class="qtitle">Q1. 掷一颗骰子，A={1,3,5}，B={1,2,3}，则A∩B=？</div>
+<div class="options">
+<div class="opt" onclick="check('q1a',this,true)">A. {1,3}</div>
+<div class="opt" onclick="check('q1a',this,false)">B. {1,2,3,5}</div>
+<div class="opt" onclick="check('q1a',this,false)">C. {5}</div>
+<div class="opt" onclick="check('q1a',this,false)">D. {2}</div>
+</div><div class="fb" id="q1a-fb"></div></div>
+
+<div class="qz" id="q1b"><div class="qtitle">Q2. 以下哪个表示"A和B不可能同时发生"？</div>
+<div class="options">
+<div class="opt" onclick="check('q1b',this,false)">A. A⊂B</div>
+<div class="opt" onclick="check('q1b',this,true)">B. AB=∅</div>
+<div class="opt" onclick="check('q1b',this,false)">C. A∪B=Ω</div>
+<div class="opt" onclick="check('q1b',this,false)">D. A=B</div>
+</div><div class="fb" id="q1b-fb"></div></div>
+
+<h3>1.2 概率的基本性质</h3>
+<div class="qz" id="q1c"><div class="qtitle">Q3. P(A)=0.4, P(B)=0.3, P(AB)=0.1，则P(A∪B)=？</div>
+<div class="options">
+<div class="opt" onclick="check('q1c',this,false)">A. 0.7</div>
+<div class="opt" onclick="check('q1c',this,true)">B. 0.6</div>
+<div class="opt" onclick="check('q1c',this,false)">C. 0.1</div>
+<div class="opt" onclick="check('q1c',this,false)">D. 0.4</div>
+</div><div class="fb" id="q1c-fb"></div></div>
+
+<div class="qz" id="q1d"><div class="qtitle">Q4. P(Ā)=？</div>
+<div class="options">
+<div class="opt" onclick="check('q1d',this,false)">A. P(A)</div>
+<div class="opt" onclick="check('q1d',this,true)">B. 1−P(A)</div>
+<div class="opt" onclick="check('q1d',this,false)">C. 1+P(A)</div>
+<div class="opt" onclick="check('q1d',this,false)">D. P(A)−1</div>
+</div><div class="fb" id="q1d-fb"></div></div>
+
+<h3>1.3 古典概型</h3>
+<div class="qz" id="q1e"><div class="qtitle">Q5. 5个白球3个黑球，不放回取2球，两只都是白球的概率？</div>
+<div class="options">
+<div class="opt" onclick="check('q1e',this,false)">A. 25/64</div>
+<div class="opt" onclick="check('q1e',this,true)">B. 5/14</div>
+<div class="opt" onclick="check('q1e',this,false)">C. 10/28</div>
+<div class="opt" onclick="check('q1e',this,false)">D. 3/8</div>
+</div><div class="fb" id="q1e-fb"></div></div>
+
+<div class="qz" id="q1f"><div class="qtitle">Q6. 10件中有3件次品，有放回取4次恰2次次品的概率？</div>
+<div class="options">
+<div class="opt" onclick="check('q1f',this,true)">A. C₄²×0.3²×0.7²</div>
+<div class="opt" onclick="check('q1f',this,false)">B. C₄²×0.3²</div>
+<div class="opt" onclick="check('q1f',this,false)">C. 0.3²×0.7²</div>
+<div class="opt" onclick="check('q1f',this,false)">D. C₁₀²/C₇²</div>
+</div><div class="fb" id="q1f-fb"></div></div>
+
+<h3>1.4 条件概率·全概率·贝叶斯</h3>
+<div class="qz" id="q1g"><div class="qtitle">Q7. P(A)=0.5, P(B)=0.4, P(B|A)=0.6，则P(AB)=？</div>
+<div class="options">
+<div class="opt" onclick="check('q1g',this,false)">A. 0.2</div>
+<div class="opt" onclick="check('q1g',this,false)">B. 0.24</div>
+<div class="opt" onclick="check('q1g',this,true)">C. 0.3</div>
+<div class="opt" onclick="check('q1g',this,false)">D. 0.9</div>
+</div><div class="fb" id="q1g-fb"></div></div>
+
+<div class="qz" id="q1h"><div class="qtitle">Q8. 全概率公式P(B)=ΣP(Aᵢ)P(B|Aᵢ)中，Aᵢ必须满足什么条件？</div>
+<div class="options">
+<div class="opt" onclick="check('q1h',this,false)">A. Aᵢ相互独立</div>
+<div class="opt" onclick="check('q1h',this,true)">B. Aᵢ构成完备事件组</div>
+<div class="opt" onclick="check('q1h',this,false)">C. Aᵢ两两独立</div>
+<div class="opt" onclick="check('q1h',this,false)">D. P(Aᵢ)都相等</div>
+</div><div class="fb" id="q1h-fb"></div></div>
+
+<h3>1.5 独立性·伯努利试验</h3>
+<div class="qz" id="q1i"><div class="qtitle">Q9. 若A与B独立，以下哪个一定成立？</div>
+<div class="options">
+<div class="opt" onclick="check('q1i',this,false)">A. AB=∅</div>
+<div class="opt" onclick="check('q1i',this,true)">B. P(AB)=P(A)P(B)</div>
+<div class="opt" onclick="check('q1i',this,false)">C. A⊂B</div>
+<div class="opt" onclick="check('q1i',this,false)">D. P(A∪B)=P(A)+P(B)</div>
+</div><div class="fb" id="q1i-fb"></div></div>
+
+<div class="qz" id="q1j"><div class="qtitle">Q10. 一枚硬币掷4次，恰2次正面的概率？</div>
+<div class="options">
+<div class="opt" onclick="check('q1j',this,false)">A. 1/4</div>
+<div class="opt" onclick="check('q1j',this,false)">B. 1/2</div>
+<div class="opt" onclick="check('q1j',this,true)">C. 3/8</div>
+<div class="opt" onclick="check('q1j',this,false)">D. 1/16</div>
+</div><div class="fb" id="q1j-fb"></div></div>
+
+<!-- ===== CH2 ===== -->
+<h2>第2章：随机变量及其分布</h2>
+
+<h3>2.1 分布函数</h3>
+<div class="qz" id="q2a"><div class="qtitle">Q11. 若F(x)是分布函数，以下哪个性质错误？</div>
+<div class="options">
+<div class="opt" onclick="check('q2a',this,false)">A. 0≤F(x)≤1</div>
+<div class="opt" onclick="check('2a',this,false)">B. F(x)单调不减</div>
+<div class="opt" onclick="check('q2a',this,true)">C. F(x)左连续</div>
+<div class="opt" onclick="check('q2a',this,false)">D. F(+∞)=1</div>
+</div><div class="fb" id="q2a-fb"></div></div>
+
+<div class="qz" id="q2b"><div class="qtitle">Q12. P(x₁<X≤x₂)=？</div>
+<div class="options">
+<div class="opt" onclick="check('q2b',this,false)">A. F(x₁)+F(x₂)</div>
+<div class="opt" onclick="check('q2b',this,true)">B. F(x₂)−F(x₁)</div>
+<div class="opt" onclick="check('q2b',this,false)">C. F(x₁)−F(x₂)</div>
+<div class="opt" onclick="check('q2b',this,false)">D. F(x₁)F(x₂)</div>
+</div><div class="fb" id="q2b-fb"></div></div>
+
+<h3>2.2 离散型分布</h3>
+<div class="qz" id="q2c"><div class="qtitle">Q13. X~B(10,0.3)，E(X)=？</div>
+<div class="options">
+<div class="opt" onclick="check('q2c',this,false)">A. 3</div>
+<div class="opt" onclick="check('q2c',this,false)">B. 2.1</div>
+<div class="opt" onclick="check('q2c',this,true)">C. 3</div>
+<div class="opt" onclick="check('q2c',this,false)">D. 7</div>
+</div><div class="fb" id="q2c-fb"></div></div>
+
+<div class="qz" id="q2d"><div class="qtitle">Q14. 泊松分布P(λ)的方差是？</div>
+<div class="options">
+<div class="opt" onclick="check('q2d',this,false)">A. λ²</div>
+<div class="opt" onclick="check('q2d',this,true)">B. λ</div>
+<div class="opt" onclick="check('q2d',this,false)">C. 2λ</div>
+<div class="opt" onclick="check('q2d',this,false)">D. 1/λ</div>
+</div><div class="fb" id="q2d-fb"></div></div>
+
+<h3>2.3 连续型分布·正态分布</h3>
+<div class="qz" id="q2e"><div class="qtitle">Q15. X~N(0,1)，P(|X|<1)≈？</div>
+<div class="options">
+<div class="opt" onclick="check('q2e',this,false)">A. 0.5</div>
+<div class="opt" onclick="check('q2e',this,true)">B. 0.6826</div>
+<div class="opt" onclick="check('q2e',this,false)">C. 0.9544</div>
+<div class="opt" onclick="check('q2e',this,false)">D. 0.9974</div>
+</div><div class="fb" id="q2e-fb"></div></div>
+
+<div class="qz" id="q2f"><div class="qtitle">Q16. 若X~N(μ,σ²)，则(X−μ)/σ~？</div>
+<div class="options">
+<div class="opt" onclick="check('q2f',this,true)">A. N(0,1)</div>
+<div class="opt" onclick="check('q2f',this,false)">B. N(μ,1)</div>
+<div class="opt" onclick="check('q2f',this,false)">C. t(1)</div>
+<div class="opt" onclick="check('q2f',this,false)">D. χ²(1)</div>
+</div><div class="fb" id="q2f-fb"></div></div>
+
+<!-- ===== CH3 ===== -->
+<h2>第3章：二维随机变量</h2>
+
+<h3>3.1 联合分布与边缘分布</h3>
+<div class="qz" id="q3a"><div class="qtitle">Q17. 联合分布列pᵢⱼ的行求和得到什么？</div>
+<div class="options">
+<div class="opt" onclick="check('q3a',this,true)">A. X的边缘分布</div>
+<div class="opt" onclick="check('q3a',this,false)">B. Y的边缘分布</div>
+<div class="opt" onclick="check('q3a',this,false)">C. 联合分布</div>
+<div class="opt" onclick="check('q3a',this,false)">D. 条件分布</div>
+</div><div class="fb" id="q3a-fb"></div></div>
+
+<div class="qz" id="q3b"><div class="qtitle">Q18. 离散型X与Y独立的条件是？</div>
+<div class="options">
+<div class="opt" onclick="check('q3b',this,false)">A. E(XY)=E(X)E(Y)</div>
+<div class="opt" onclick="check('q3b',this,false)">B. Cov(X,Y)=0</div>
+<div class="opt" onclick="check('q3b',this,true)">C. pᵢⱼ=pᵢ··p·ⱼ对所有i,j</div>
+<div class="opt" onclick="check('q3b',this,false)">D. ρ=0</div>
+</div><div class="fb" id="q3b-fb"></div></div>
+
+<!-- ===== CH4 ===== -->
+<h2>第4章：数字特征</h2>
+
+<h3>4.1 数学期望</h3>
+<div class="qz" id="q4a"><div class="qtitle">Q19. 设E(X)=2, E(Y)=3，则E(2X−Y)=？</div>
+<div class="options">
+<div class="opt" onclick="check('q4a',this,false)">A. −1</div>
+<div class="opt" onclick="check('q4a',this,true)">B. 1</div>
+<div class="opt" onclick="check('q4a',this,false)">C. 7</div>
+<div class="opt" onclick="check('q4a',this,false)">D. 5</div>
+</div><div class="fb" id="q4a-fb"></div></div>
+
+<div class="qz" id="q4b"><div class="qtitle">Q20. 若X与Y独立，E(XY)=？</div>
+<div class="options">
+<div class="opt" onclick="check('q4b',this,false)">A. E(X)+E(Y)</div>
+<div class="opt" onclick="check('q4b',this,true)">B. E(X)E(Y)</div>
+<div class="opt" onclick="check('q4b',this,false)">C. E(X)−E(Y)</div>
+<div class="opt" onclick="check('q4b',this,false)">D. E(X)/E(Y)</div>
+</div><div class="fb" id="q4b-fb"></div></div>
+
+<h3>4.2 方差</h3>
+<div class="qz" id="q4c"><div class="qtitle">Q21. D(3X)=？</div>
+<div class="options">
+<div class="opt" onclick="check('q4c',this,false)">A. 3D(X)</div>
+<div class="opt" onclick="check('q4c',this,true)">B. 9D(X)</div>
+<div class="opt" onclick="check('q4c',this,false)">C. D(X)</div>
+<div class="opt" onclick="check('q4c',this,false)">D. D(X)/3</div>
+</div><div class="fb" id="q4c-fb"></div></div>
+
+<div class="qz" id="q4d"><div class="qtitle">Q22. D(X)=E(X²)−[E(X)]²，这是方差的什么公式？</div>
+<div class="options">
+<div class="opt" onclick="check('q4d',this,false)">A. 定义式</div>
+<div class="opt" onclick="check('q4d',this,true)">B. 计算式</div>
+<div class="opt" onclick="check('q4d',this,false)">C. 协方差</div>
+<div class="opt" onclick="check('q4d',this,false)">D. 标准差</div>
+</div><div class="fb" id="q4d-fb"></div></div>
+
+<h3>4.3 协方差与相关系数</h3>
+<div class="qz" id="q4e"><div class="qtitle">Q23. 若X与Y独立，Cov(X,Y)=？</div>
+<div class="options">
+<div class="opt" onclick="check('q4e',this,true)">A. 0</div>
+<div class="opt" onclick="check('q4e',this,false)">B. 1</div>
+<div class="opt" onclick="check('q4e',this,false)">C. E(X)E(Y)</div>
+<div class="opt" onclick="check('q4e',this,false)">D. D(X)D(Y)</div>
+</div><div class="fb" id="q4e-fb"></div></div>
+
+<div class="qz" id="q4f"><div class="qtitle">Q24. ρ_XY=0说明什么？</div>
+<div class="options">
+<div class="opt" onclick="check('q4f',this,false)">A. X与Y独立</div>
+<div class="opt" onclick="check('q4f',this,true)">B. X与Y不相关</div>
+<div class="opt" onclick="check('q4f',this,false)">C. X=Y</div>
+<div class="opt" onclick="check('q4f',this,false)">D. X与Y完全线性相关</div>
+</div><div class="fb" id="q4f-fb"></div></div>
+
+<!-- ===== CH5 ===== -->
+<h2>第5章：样本及抽样分布</h2>
+
+<h3>5.1 统计量</h3>
+<div class="qz" id="q5a"><div class="qtitle">Q25. D(X̄)=？</div>
+<div class="options">
+<div class="opt" onclick="check('q5a',this,false)">A. σ²</div>
+<div class="opt" onclick="check('q5a',this,true)">B. σ²/n</div>
+<div class="opt" onclick="check('q5a',this,false)">C. nσ²</div>
+<div class="opt" onclick="check('q5a',this,false)">D. σ/√n</div>
+</div><div class="fb" id="q5a-fb"></div></div>
+
+<div class="qz" id="q5b"><div class="qtitle">Q26. E(S²)=？</div>
+<div class="options">
+<div class="opt" onclick="check('q5b',this,false)">A. σ²/n</div>
+<div class="opt" onclick="check('q5b',this,true)">B. σ²</div>
+<div class="opt" onclick="check('q5b',this,false)">C. S²</div>
+<div class="opt" onclick="check('q5b',this,false)">D. μ</div>
+</div><div class="fb" id="q5b-fb"></div></div>
+
+<h3>5.2 三大抽样分布</h3>
+<div class="qz" id="q5c"><div class="qtitle">Q27. Z₁,...,Zₙ iid~N(0,1)，ΣZᵢ²服从什么分布？</div>
+<div class="options">
+<div class="opt" onclick="check('q5c',this,false)">A. t(n)</div>
+<div class="opt" onclick="check('q5c',this,true)">B. χ²(n)</div>
+<div class="opt" onclick="check('q5c',this,false)">C. F(n,n)</div>
+<div class="opt" onclick="check('q5c',this,false)">D. N(0,n)</div>
+</div><div class="fb" id="q5c-fb"></div></div>
+
+<div class="qz" id="q5d"><div class="qtitle">Q28. (X̄−μ)/(σ/√n)~？</div>
+<div class="options">
+<div class="opt" onclick="check('q5d',this,true)">A. N(0,1)</div>
+<div class="opt" onclick="check('q5d',this,false)">B. t(n−1)</div>
+<div class="opt" onclick="check('q5d',this,false)">C. χ²(n−1)</div>
+<div class="opt" onclick="check('q5d',this,false)">D. F(1,n−1)</div>
+</div><div class="fb" id="q5d-fb"></div></div>
+
+<!-- ===== CH6 ===== -->
+<h2>第6章：参数估计</h2>
+
+<h3>6.1 点估计</h3>
+<div class="qz" id="q6a"><div class="qtitle">Q29. 矩估计的核心思想是？</div>
+<div class="options">
+<div class="opt" onclick="check('q6a',this,false)">A. 使似然函数最大化</div>
+<div class="opt" onclick="check('q6a',this,true)">B. 样本矩替换总体矩</div>
+<div class="opt" onclick="check('q6a',this,false)">C. 使置信区间最短</div>
+<div class="opt" onclick="check('q6a',this,false)">D. 使检验功效最大</div>
+</div><div class="fb" id="q6a-fb"></div></div>
+
+<div class="qz" id="q6b"><div class="qtitle">Q30. MLE中为什么要取ln L？</div>
+<div class="options">
+<div class="opt" onclick="check('q6b',this,false)">A. 让L变大</div>
+<div class="opt" onclick="check('q6b',this,true)">B. 将乘积转化为求和，方便求导</div>
+<div class="opt" onclick="check('q6b',this,false)">C. lnL就是L的估计值</div>
+<div class="opt" onclick="check('q6b',this,false)">D. 为了消去指数</div>
+</div><div class="fb" id="q6b-fb"></div></div>
+
+<h3>6.2 区间估计</h3>
+<div class="qz" id="q6c"><div class="qtitle">Q31. σ²已知时，μ的置信区间用什么分布？</div>
+<div class="options">
+<div class="opt" onclick="check('q6c',this,true)">A. N(0,1)</div>
+<div class="opt" onclick="check('q6c',this,false)">B. t(n−1)</div>
+<div class="opt" onclick="check('q6c',this,false)">C. χ²(n−1)</div>
+<div class="opt" onclick="check('q6c',this,false)">D. F(n,n−1)</div>
+</div><div class="fb" id="q6c-fb"></div></div>
+
+<div class="qz" id="q6d"><div class="qtitle">Q32. σ²未知时，μ的置信区间用什么分布？</div>
+<div class="options">
+<div class="opt" onclick="check('q6d',this,false)">A. N(0,1)</div>
+<div class="opt" onclick="check('q6d',this,true)">B. t(n−1)</div>
+<div class="opt" onclick="check('q6d',this,false)">C. χ²(n−1)</div>
+<div class="opt" onclick="check('q6d',this,false)">D. F(n−1,n−1)</div>
+</div><div class="fb" id="q6d-fb"></div></div>
+
+<h3>6.3 假设检验</h3>
+<div class="qz" id="q6e"><div class="qtitle">Q33. 检验正态总体方差σ²，用什么检验？</div>
+<div class="options">
+<div class="opt" onclick="check('q6e',this,false)">A. Z检验</div>
+<div class="opt" onclick="check('q6e',this,false)">B. t检验</div>
+<div class="opt" onclick="check('q6e',this,true)">C. χ²检验</div>
+<div class="opt" onclick="check('q6e',this,false)">D. F检验</div>
+</div><div class="fb" id="q6e-fb"></div></div>
+
+<div class="qz" id="q6f"><div class="qtitle">Q34. 假设检验中α=0.05表示什么？</div>
+<div class="options">
+<div class="opt" onclick="check('q6f',this,false)">A. 置信水平</div>
+<div class="opt" onclick="check('q6f',this,true)">B. 显著性水平（犯第一类错误的概率）</div>
+<div class="opt" onclick="check('q6f',this,false)">C. 检验功效</div>
+<div class="opt" onclick="check('q6f',this,false)">D. 样本容量</div>
+</div><div class="fb" id="q6f-fb"></div></div>
+
+<div class="lesson-footer">
+  <p>📖 返回 <a href="../lessons/0001-random-events.html">第1课</a> 系统学习。</p>
+  <p>📝 更多题目 <a href="exam-bank.html">原题题库</a> · <a href="mock-exam.html">模拟卷</a></p>
+</div>
+
+<script>
+function check(qid, el, isCorrect) {
+  const qz = document.getElementById(qid);
+  qz.querySelectorAll('.opt').forEach(o => o.className = 'opt');
+  el.classList.add('correct');
+  if(!isCorrect) el.classList.add('wrong');
+  const fb = document.getElementById(qid+'-fb');
+  fb.className = 'fb show ' + (isCorrect ? 'correct' : 'wrong');
+  const ans = {
+    'q1a':'A。交集=两个集合共有的元素。A={1,3,5}∩B={1,2,3}={1,3}',
+    'q1b':'B。互斥（互不相容）定义为AB=∅，即两个事件不可能同时发生。',
+    'q1c':'B。P(A∪B)=P(A)+P(B)−P(AB)=0.4+0.3−0.1=0.6',
+    'q1d':'B。对立事件概率：P(Ā)=1−P(A)',
+    'q1e':'B。C₅²/C₈²=10/28=5/14',
+    'q1f':'A。有放回=伯努利试验。n=4,p=0.3,k=2:C₄²·0.3²·(1−0.3)²',
+    'q1g':'C。P(AB)=P(A)·P(B|A)=0.5×0.6=0.3',
+    'q1h':'B。完备事件组：互不相容且和为Ω。',
+    'q1i':'B。独立性的定义就是P(AB)=P(A)P(B)。',
+    'q1j':'C。C₄²(1/2)²(1/2)²=6/16=3/8',
+    'q2a':'C。分布函数是右连续，不是左连续。',
+    'q2b':'B。P(x₁<X≤x₂)=P(X≤x₂)−P(X≤x₁)=F(x₂)−F(x₁)',
+    'q2c':'C。E(X)=np=10×0.3=3',
+    'q2d':'B。泊松分布P(λ)的期望和方差都是λ。',
+    'q2e':'B。标准正态下P(|Z|<1)≈0.6826（1σ原则）',
+    'q2f':'A。标准化定理：X~N(μ,σ²)⇒(X−μ)/σ~N(0,1)',
+    'q3a':'A。行求和=Σⱼpᵢⱼ=P(X=xᵢ)=X的边缘分布',
+    'q3b':'C。离散型独立⟺联合=边缘乘积(对所有i,j)',
+    'q4a':'B。E(2X−Y)=2E(X)−E(Y)=4−3=1',
+    'q4b':'B。独立时E(XY)=E(X)E(Y)',
+    'q4c':'B。D(CX)=C²D(X)，D(3X)=9D(X)',
+    'q4d':'B。D(X)=E(X²)−[E(X)]²是方差的计算公式',
+    'q4e':'A。独立⇒不相关⇒Cov=0',
+    'q4f':'B。ρ_XY=0表示不相关（无线性关系）',
+    'q5a':'B。D(X̄)=σ²/n',
+    'q5b':'B。E(S²)=σ²（这就是分母用n−1的原因）',
+    'q5c':'B。ΣZᵢ²~χ²(n)，这是卡方分布的定义',
+    'q5d':'A。抽样定理第一条结论',
+    'q6a':'B。矩估计=用样本矩代替总体矩',
+    'q6b':'B。ln将Π变为Σ，大大简化求导运算',
+    'q6c':'A。σ已知→z(正态)',
+    'q6d':'B。σ未知→t',
+    'q6e':'C。检验方差用χ²检验',
+    'q6f':'B。α是显著性水平=犯第一类错误（弃真）的概率',
+  };
+  fb.innerHTML = isCorrect ? '✅ 正确！' : '❌ ' + (ans[qid] || '再想想');
+}
+</script>
+</body>
+</html>
