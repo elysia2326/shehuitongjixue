@@ -369,7 +369,12 @@ H<sub>1</sub>: σ<sup>2</sup> ≠ 5000（备择假设：方差有显著变化）
 
 <h3>6.1 补充例题</h3>
 <div class="def-card" style="border-left:4px solid #e6c970">
-<p><strong>MLE例2（扩展分布列）：</strong>P(X=0)=θ<sup>2</sup>, P(X=1)=2θ(1−θ), P(X=2)=θ<sup>2</sup>, P(X=3)=1−2θ。样本3,1,3,0,3,1,2,3。矩估计=1/4，MLE由lnL求导解方程得出。（完整解答见作业三第1题）</p>
+<p><strong>MLE例2（扩展分布列）：</strong>P(X=0)=θ², P(X=1)=2θ(1−θ), P(X=2)=θ², P(X=3)=1−2θ。样本3,1,3,0,3,1,2,3。</p>
+<p><strong>频数：</strong>0出现1次，1出现2次，2出现1次，3出现4次。</p>
+<p><strong>似然函数：</strong>L(θ)=[θ²]¹×[2θ(1−θ)]²×[θ²]¹×[1−2θ]⁴=4θ⁶(1−θ)²(1−2θ)⁴</p>
+<p><strong>取对数：</strong>lnL=ln4+6lnθ+2ln(1−θ)+4ln(1−2θ)</p>
+<p><strong>求导：</strong>dlnL/dθ=6/θ−2/(1−θ)−8/(1−2θ)=0，解方程得θ的MLE值。</p>
+<p><strong>矩估计：</strong>x̄=16/8=2，E(X)=3−4θ，令2=3−4θ⇒θ=<strong>1/4</strong></p>
 </div>
 
 <h3>6.2 区间估计完整定义</h3>
