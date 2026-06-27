@@ -751,7 +751,7 @@ P(击中) = 1 − 0.08 = <strong>0.92</strong></p>
 <div class="def-card" style="border-left:4px solid #c1292e">
 <p><span class="term">定义：</span>样本点总数无限、等可能的概型。P(A) = m(A)/m(Ω)，其中m为几何度量（长度/面积/体积）。与A的位置和形状无关。</p>
 <p><strong>例1：</strong>校车每30分钟一趟，等车不超过20分钟概率 = 20/30 = <strong>2/3</strong></p>
-<p><strong>例2：</strong>单位圆内随机投点M，到原点距离<1/3概率 = π(1/3)<sup>2</sup>/π·1<sup>2</sup> = <strong>1/9</strong></p>
+<p><strong>例2：</strong>单位圆内随机投点M，到原点距离&lt;1/3概率 = π(1/3)<sup>2</sup>/π·1<sup>2</sup> = <strong>1/9</strong></p>
 </div>
 
 <h3>1.4 条件概率补充例题</h3>
@@ -842,13 +842,13 @@ P(击中) = 1 − 0.08 = <strong>0.92</strong></p>
 
 <div class="formula">
   <span class="label">区间概率公式</span>
-  P(x<sub>1</sub> < X ≤ x<sub>2</sub>) = F(x<sub>2</sub>) − F(x<sub>1</sub>)
+  P(x<sub>1</sub> &lt; X ≤ x<sub>2</sub>) = F(x<sub>2</sub>) − F(x<sub>1</sub>)
 </div>
 
 <details class="proof-block">
 <summary><strong>📐 证明：分布函数四条性质</strong>（点击展开）</summary>
 <div style="padding:0.75rem 0">
-<p><strong>单调不减（x<sub>1</sub><x<sub>2</sub> ⇒ F(x<sub>1</sub>)≤F(x<sub>2</sub>)）：</strong>F(x<sub>2</sub>)−F(x<sub>1</sub>)=P(x<sub>1</sub><X≤x<sub>2</sub>)≥0</p>
+<p><strong>单调不减（x<sub>1</sub>&lt;x<sub>2</sub> ⇒ F(x<sub>1</sub>)≤F(x<sub>2</sub>)）：</strong>F(x<sub>2</sub>)−F(x<sub>1</sub>)=P(x<sub>1</sub>&lt;X≤x<sub>2</sub>)≥0</p>
 <p><strong>F(−∞)=0：</strong>lim<sub>x→−∞</sub>P(X≤x)=P(∅)=0</p>
 <p><strong>F(+∞)=1：</strong>lim<sub>x→+∞</sub>P(X≤x)=P(Ω)=1</p>
 </div>
@@ -917,8 +917,8 @@ P(击中) = 1 − 0.08 = <strong>0.92</strong></p>
 <h3>（一）均匀分布 X~U(a,b)</h3>
 <div class="formula">
   <span class="label">均匀分布</span>
-  f(x) = 1/(b−a)，a &lt; x < b<br>
-  P(c &lt; X < d) = (d−c)/(b−a)
+  f(x) = 1/(b−a)，a &lt; x &lt; b<br>
+  P(c &lt; X &lt; d) = (d−c)/(b−a)
 </div>
 
 <h3>（二）指数分布 X~e(θ)</h3>
@@ -1174,7 +1174,7 @@ X密度f(x)=2x(0&lt;x&lt;1)，求Y=X<sup>2</sup>+1的密度函数。</p>
 <details class="proof-block">
 <summary><strong>📐 证明：矩形法则 + 边缘分布 + 独立性</strong>（点击展开）</summary>
 <div style="padding:0.75rem 0">
-<p><strong>矩形法则：</strong>P(x<sub>1</sub><X≤x<sub>2</sub>,y<sub>1</sub><Y≤y<sub>2</sub>)=F(x<sub>2</sub>,y<sub>2</sub>)−F(x<sub>2</sub>,y<sub>1</sub>)−F(x<sub>1</sub>,y<sub>2</sub>)+F(x<sub>1</sub>,y<sub>1</sub>)。从大矩形减去两条再补回重叠角。</p>
+<p><strong>矩形法则：</strong>P(x<sub>1</sub>&lt;X≤x<sub>2</sub>,y<sub>1</sub><Y≤y<sub>2</sub>)=F(x<sub>2</sub>,y<sub>2</sub>)−F(x<sub>2</sub>,y<sub>1</sub>)−F(x<sub>1</sub>,y<sub>2</sub>)+F(x<sub>1</sub>,y<sub>1</sub>)。从大矩形减去两条再补回重叠角。</p>
 <p><strong>边缘分布列 p<sub>i</sub>·=Σ<sub>j</sub>p<sub>i</sub><sub>j</sub>：</strong>{X=x<sub>i</sub>}=∪<sub>j</sub>{X=x<sub>i</sub>,Y=y<sub>j</sub>}，各项互不相容，由可加性得。</p>
 <p><strong>离散型独立 p<sub>i</sub><sub>j</sub>=p<sub>i</sub>··p·<sub>j</sub>：</strong>由P(X=x<sub>i</sub>,Y=y<sub>j</sub>)=P(X=x<sub>i</sub>)P(Y=y<sub>j</sub>)直接写出。</p>
 <p><strong>连续型独立 f(x,y)=f<sub>X</sub>(x)f<sub>Y</sub>(y)：</strong>由F(x,y)=F<sub>X</sub>(x)F<sub>Y</sub>(y)两边求二阶混合偏导即得</p>
@@ -1282,7 +1282,7 @@ X密度f(x)=2x(0&lt;x&lt;1)，求Y=X<sup>2</sup>+1的密度函数。</p>
 <div class="def-card" style="border-left:4px solid #c1292e">
 <p><span class="term">联合分布函数：</span>F(x,y)=P(X≤x,Y≤y)。几何意义：随机点落在以(x,y)为顶点的左下无穷矩形内的概率。</p>
 <p><strong>F(x,y)五条性质：</strong>①0≤F≤1 ②对x和y均不减 ③对x,y均右连续 ④F(−∞,y)=F(x,−∞)=F(−∞,−∞)=0, F(+∞,+∞)=1</p>
-<p><strong>⑤矩形法则：</strong>P(x<sub>1</sub><X≤x<sub>2</sub>, y<sub>1</sub><Y≤y<sub>2</sub>)=F(x<sub>2</sub>,y<sub>2</sub>)−F(x<sub>2</sub>,y<sub>1</sub>)−F(x<sub>1</sub>,y<sub>2</sub>)+F(x<sub>1</sub>,y<sub>1</sub>)</p>
+<p><strong>⑤矩形法则：</strong>P(x<sub>1</sub>&lt;X≤x<sub>2</sub>, y<sub>1</sub><Y≤y<sub>2</sub>)=F(x<sub>2</sub>,y<sub>2</sub>)−F(x<sub>2</sub>,y<sub>1</sub>)−F(x<sub>1</sub>,y<sub>2</sub>)+F(x<sub>1</sub>,y<sub>1</sub>)</p>
 <p><strong>边缘分布函数：</strong>F_X(x)=F(x,+∞), F_Y(y)=F(+∞,y)</p>
 </div>
 
@@ -1323,7 +1323,7 @@ X密度f(x)=2x(0&lt;x&lt;1)，求Y=X<sup>2</sup>+1的密度函数。</p>
 <table>
 <tr><th>类别</th><th>公式</th><th>说明</th></tr>
 <tr><td>分布函数</td><td>F(x)=P(X≤x)</td><td>单调不减、右连续、F(−∞)=0,F(+∞)=1</td></tr>
-<tr><td>区间概率</td><td>P(x<sub>1</sub><X≤x<sub>2</sub>)=F(x<sub>2</sub>)−F(x<sub>1</sub>)</td><td>—</td></tr>
+<tr><td>区间概率</td><td>P(x<sub>1</sub>&lt;X≤x<sub>2</sub>)=F(x<sub>2</sub>)−F(x<sub>1</sub>)</td><td>—</td></tr>
 <tr><td>二项分布 B(n,p)</td><td>P(X=k)=C<sub>n</sub><sup>k</sup>p<sup>k</sup>(1−p)<sup>n</sup><sup>−</sup><sup>k</sup></td><td>E=np, D=np(1−p)</td></tr>
 <tr><td>0-1分布 B(1,p)</td><td>P(X=k)=p<sup>k</sup>(1−p)¹<sup>−</sup><sup>k</sup>, k=0,1</td><td>E=p, D=p(1−p)</td></tr>
 <tr><td>泊松分布 P(λ)</td><td>P(X=k)=λ<sup>k</sup>e<sup>−</sup><sup>λ</sup>/k!</td><td>E=λ, D=λ</td></tr>
@@ -1333,7 +1333,7 @@ X密度f(x)=2x(0&lt;x&lt;1)，求Y=X<sup>2</sup>+1的密度函数。</p>
 <tr><td>指数分布 e(θ)</td><td>f(x)=(1/θ)e<sup>−</sup><sup>x/θ</sup>(x>0)</td><td>无记忆性</td></tr>
 <tr><td>正态分布 N(μ,σ<sup>2</sup>)</td><td>f(x)=exp(−(x−μ)<sup>2</sup>/2σ<sup>2</sup>)/(√(2π)σ)</td><td>E=μ, D=σ<sup>2</sup></td></tr>
 <tr><td>标准化</td><td>Z=(X−μ)/σ ~ N(0,1)</td><td>Φ(−z)=1−Φ(z)</td></tr>
-<tr><td>3σ原则</td><td>P(|X−μ|<σ)≈68.3%; <2σ≈95.5%; <3σ≈99.7%</td><td>—</td></tr>
+<tr><td>3σ原则</td><td>P(|X−μ|<σ)≈68.3%; &lt;2σ≈95.5%; &lt;3σ≈99.7%</td><td>—</td></tr>
 </table>
 
 <h3>第3章：二维随机变量</h3>
@@ -1937,9 +1937,9 @@ d(ln L)/dθ = 6/θ − 2/(1−θ) − 8/(1−2θ) = 0<br>
 <details class="proof-block">
 <summary><strong>📐 推导：三种置信区间公式（枢轴变量法）</strong>（点击展开）</summary>
 <div style="padding:0.75rem 0">
-<p><strong>① σ<sup>2</sup>已知→μ：</strong>枢轴量 Z=(<span style="text-decoration:overline">X</span>−μ)/(σ/√n)~N(0,1)，P(−z<sub>α/2</sub><Z&lt;z<sub>α/2</sub>)=1−α，代入解出μ：<span style="text-decoration:overline">X</span>±z<sub>α/2</sub>·σ/√n</p>
+<p><strong>① σ<sup>2</sup>已知→μ：</strong>枢轴量 Z=(<span style="text-decoration:overline">X</span>−μ)/(σ/√n)~N(0,1)，P(−z<sub>α/2</sub>&lt;Z&lt;z<sub>α/2</sub>)=1−α，代入解出μ：<span style="text-decoration:overline">X</span>±z<sub>α/2</sub>·σ/√n</p>
 <p><strong>② σ<sup>2</sup>未知→μ：</strong>同理用 t=(<span style="text-decoration:overline">X</span>−μ)/(S/√n)~t(n−1)：<span style="text-decoration:overline">X</span>±t<sub>α/2</sub>(n−1)·S/√n</p>
-<p><strong>③ μ未知→σ<sup>2</sup>：</strong>枢轴量 (n−1)S<sup>2</sup>/σ<sup>2</sup>~χ<sup>2</sup>(n−1)，P(χ<sup>2</sup><sub>1−α/2</sub><(n−1)S<sup>2</sup>/σ<sup>2</sup><χ<sup>2</sup><sub>α/2</sub>)=1−α，解出σ<sup>2</sup>：[(n−1)S<sup>2</sup>/χ<sup>2</sup><sub>α/2</sub>, (n−1)S<sup>2</sup>/χ<sup>2</sup><sub>1−α/2</sub>]</p>
+<p><strong>③ μ未知→σ<sup>2</sup>：</strong>枢轴量 (n−1)S<sup>2</sup>/σ<sup>2</sup>~χ<sup>2</sup>(n−1)，P(χ<sup>2</sup><sub>1−α/2</sub>&lt;(n−1)S<sup>2</sup>/σ<sup>2</sup><χ<sup>2</sup><sub>α/2</sub>)=1−α，解出σ<sup>2</sup>：[(n−1)S<sup>2</sup>/χ<sup>2</sup><sub>α/2</sub>, (n−1)S<sup>2</sup>/χ<sup>2</sup><sub>1−α/2</sub>]</p>
 </div>
 </details>
 
