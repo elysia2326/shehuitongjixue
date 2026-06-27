@@ -852,7 +852,7 @@ P(击中) = 1 − 0.08 = <strong>0.92</strong></p>
 </details>
 
 <div class="quiz" id="quiz-df">
-  <p class="question"><strong>✏️ 自测：</strong>已知 F(x)=0(x<0), x/2(0≤x<2), 1(x≥2)。则 P(0.5 < X ≤ 1.5)=？</p>
+  <p class="question"><strong>✏️ 自测：</strong>已知 F(x)=0(x&lt;0), x/2(0≤x&lt;2), 1(x≥2)。则 P(0.5 < X ≤ 1.5)=？</p>
   <div class="options">
     <div class="option" onclick="checkQuiz('quiz-df', this, false)">A. 0.25</div>
     <div class="option" onclick="checkQuiz('quiz-df', this, true)">B. 0.5</div>
@@ -972,8 +972,8 @@ P(击中) = 1 − 0.08 = <strong>0.92</strong></p>
 
 <div class="def-card" style="border-left:4px solid var(--accent)">
 <p><span class="term">📋 作业一 第3题：由密度函数求分布函数</span></p>
-<p>设随机变量X的密度函数为 f(x)=2−kx(0≤x<3), x/2(3≤x≤4), 0(其他)。</p>
-<p>求（1）确定常数k；（2）求X的分布函数F(x)；（3）求P(1<X≤3.5)。</p>
+<p>设随机变量X的密度函数为 f(x)=2−kx(0≤x&lt;3), x/2(3≤x≤4), 0(其他)。</p>
+<p>求（1）确定常数k；（2）求X的分布函数F(x)；（3）求P(1&lt;X≤3.5)。</p>
 <details><summary><strong>点击查看逐步解析</strong></summary>
 <div style="padding:0.5rem 0">
 <p><strong>（1）确定k——利用归一性∫f(x)dx=1：</strong><br>
@@ -983,15 +983,15 @@ P(击中) = 1 − 0.08 = <strong>0.92</strong></p>
 (6−9k/2) + 7/4 = 1 → 6 + 1.75 − 4.5k = 1 → 7.75 − 4.5k = 1 → 4.5k = 6.75 → <strong>k=1.5=3/2</strong><br>
 考试常见值：k=<strong>1/6</strong>（取决于具体题目数字，方法一样）</p>
 <p><strong>（2）求F(x)——分段积分：</strong><br>
-x<0：F(x)=0<br>
-0≤x<3：F(x)=∫<sub>0</sub>ˣ(2−kt)dt = 2x−kx<sup>2</sup>/2<br>
-3≤x<4：F(x)=∫<sub>0</sub><sup>3</sup>(2−kt)dt+∫<sub>3</sub>ˣ(t/2)dt = (6−9k/2)+(x<sup>2</sup>/4−9/4)<br>
+x&lt;0：F(x)=0<br>
+0≤x&lt;3：F(x)=∫<sub>0</sub>ˣ(2−kt)dt = 2x−kx<sup>2</sup>/2<br>
+3≤x&lt;4：F(x)=∫<sub>0</sub><sup>3</sup>(2−kt)dt+∫<sub>3</sub>ˣ(t/2)dt = (6−9k/2)+(x<sup>2</sup>/4−9/4)<br>
 x≥4：F(x)=1<br>
 （代入k值即得具体表达式）</p>
-<p><strong>（3）P(1<X≤3.5)=F(3.5)−F(1)：</strong><br>
+<p><strong>（3）P(1&lt;X≤3.5)=F(3.5)−F(1)：</strong><br>
 F(3.5)=(6−9k/2)+(3.5<sup>2</sup>/4−9/4)=(6−9k/2)+(12.25/4−2.25)=(6−9k/2)+0.8125<br>
 F(1)=2×1−k×1<sup>2</sup>/2=2−k/2<br>
-代入k=1/6得P(1<X≤3.5)=<strong>41/48</strong></p>
+代入k=1/6得P(1&lt;X≤3.5)=<strong>41/48</strong></p>
 </div>
 </details>
 </div>
@@ -1083,8 +1083,8 @@ P(X=4)=2<sup>4</sup>e<sup>−</sup><sup>2</sup>/4!=16e<sup>−</sup><sup>2</sup>
 电阻R~U(900,1100)Ω。求（1）概率密度；（2）R落在950~1050的概率。</p>
 <details><summary><strong>详细解析</strong></summary>
 <div style="padding:0.5rem 0">
-<p>（1）f(r)=1/(1100−900)=<strong>1/200</strong>，900<r<1100<br>
-（2）P(950<R<1050)=(1050−950)/(1100−900)=100/200=<strong>0.5</strong></p>
+<p>（1）f(r)=1/(1100−900)=<strong>1/200</strong>，900&lt;r&lt;1100<br>
+（2）P(950&lt;R&lt;1050)=(1050−950)/(1100−900)=100/200=<strong>0.5</strong></p>
 </div>
 </details>
 </div>
@@ -1119,13 +1119,13 @@ Y=4：X=−2或X=2 ⇒ P(Y=4)=0.1+0.1=0.2<br>
 
 <div class="def-card" style="border-left:4px solid #e6c970">
 <p><span class="term">📋 课件2.4 例：连续型Y=X<sup>2</sup>+1</span><br>
-X密度f(x)=2x(0<x<1)，求Y=X<sup>2</sup>+1的密度函数。</p>
+X密度f(x)=2x(0&lt;x&lt;1)，求Y=X<sup>2</sup>+1的密度函数。</p>
 <details><summary><strong>详细解析</strong></summary>
 <div style="padding:0.5rem 0">
 <p><strong>三步法：</strong><br>
 ①先求分布函数：F<sub>Y</sub>(y)=P(Y≤y)=P(X<sup>2</sup>+1≤y)=P(X≤√(y−1))<br>
-= ∫<sub>0</sub><sup>√(y−1)</sup> 2x dx = [x<sup>2</sup>]<sub>0</sub><sup>√(y−1)</sup> = y−1（其中1<y<2）<br>
-②对y求导得密度：f<sub>Y</sub>(y)=d(y−1)/dy=<strong>1</strong>（1<y<2）<br>
+= ∫<sub>0</sub><sup>√(y−1)</sup> 2x dx = [x<sup>2</sup>]<sub>0</sub><sup>√(y−1)</sup> = y−1（其中1&lt;y&lt;2）<br>
+②对y求导得密度：f<sub>Y</sub>(y)=d(y−1)/dy=<strong>1</strong>（1&lt;y&lt;2）<br>
 ③所以Y在(1,2)上服从均匀分布！</p>
 </div>
 </details>
@@ -1239,8 +1239,8 @@ X密度f(x)=2x(0<x<1)，求Y=X<sup>2</sup>+1的密度函数。</p>
 <details><summary><strong>答案</strong></summary>f_Y(y)=2φ(y)=√(2/π)·e^(−y<sup>2</sup>/2)，y>0。（这是因为|X|取值正半轴，密度是标准正态的两倍）</details>
 </div>
 <div class="def-card" style="border-left:4px solid #2d6a4f">
-<p><span class="term">📝 课本典型习题：</span>设二维随机变量(X,Y)的联合密度f(x,y)=1(0<x<1,|y|<x)，求边缘密度f_X(x)和f_Y(y)。</p>
-<details><summary><strong>答案</strong></summary>f_X(x)=∫_(−x)^x 1·dy=2x(0<x<1)；f_Y(y)=∫_|y|^1 1·dx=1−|y|(|y|<1)</details>
+<p><span class="term">📝 课本典型习题：</span>设二维随机变量(X,Y)的联合密度f(x,y)=1(0&lt;x&lt;1,|y|<x)，求边缘密度f_X(x)和f_Y(y)。</p>
+<details><summary><strong>答案</strong></summary>f_X(x)=∫_(−x)^x 1·dy=2x(0&lt;x&lt;1)；f_Y(y)=∫_|y|^1 1·dx=1−|y|(|y|<1)</details>
 </div>
 
 <h3>2.1 补充例题</h3>
@@ -1252,7 +1252,7 @@ X密度f(x)=2x(0<x<1)，求Y=X<sup>2</sup>+1的密度函数。</p>
 <p><strong>离散型分布列求法：</strong>掷硬币3次，X=正面数。分布列：P(X=0)=1/8, P(X=1)=3/8, P(X=2)=3/8, P(X=3)=1/8。分布函数为阶梯函数。</p>
 </div>
 <div class="def-card" style="border-left:4px solid #e6c970">
-<p><strong>由分布函数反求分布列：</strong>F(x)=0(x<−1),0.1(−1≤x<0),0.4(0≤x<1),0.8(1≤x<2),1(x≥2)。P(X=−1)=0.1, P(X=0)=0.3, P(X=1)=0.4, P(X=2)=0.2</p>
+<p><strong>由分布函数反求分布列：</strong>F(x)=0(x<−1),0.1(−1≤x&lt;0),0.4(0≤x&lt;1),0.8(1≤x&lt;2),1(x≥2)。P(X=−1)=0.1, P(X=0)=0.3, P(X=1)=0.4, P(X=2)=0.2</p>
 </div>
 
 <h3>2.2 补充例题</h3>
@@ -1268,8 +1268,8 @@ X密度f(x)=2x(0<x<1)，求Y=X<sup>2</sup>+1的密度函数。</p>
 
 <h3>2.3 连续型补充</h3>
 <div class="def-card" style="border-left:4px solid #e6c970">
-<p><strong>分段密度函数综合题：</strong>f(x)=2−kx(0≤x<3), x/2(3≤x≤4), 0(其他)。求k, F(x), P(1<X≤3.5)。</p>
-<details><summary><strong>答案</strong></summary>由归一性：∫<sub>0</sub><sup>3</sup>(2−kx)dx+∫<sub>3</sub><sup>4</sup>(x/2)dx=1→k=<strong>1/6</strong>。F(x)分段积分。P(1<X≤3.5)=<strong>41/48</strong></details>
+<p><strong>分段密度函数综合题：</strong>f(x)=2−kx(0≤x&lt;3), x/2(3≤x≤4), 0(其他)。求k, F(x), P(1&lt;X≤3.5)。</p>
+<details><summary><strong>答案</strong></summary>由归一性：∫<sub>0</sub><sup>3</sup>(2−kx)dx+∫<sub>3</sub><sup>4</sup>(x/2)dx=1→k=<strong>1/6</strong>。F(x)分段积分。P(1&lt;X≤3.5)=<strong>41/48</strong></details>
 </div>
 <div class="def-card" style="border-left:4px solid #e6c970">
 <p><strong>查表方法：</strong>Φ(1.72)在标准正态表中查行1.7列0.02=0.9573。Φ(1.735)介于1.73(0.9582)和1.74(0.9591)之间，近似取平均或插值。</p>
@@ -1298,10 +1298,10 @@ X密度f(x)=2x(0<x<1)，求Y=X<sup>2</sup>+1的密度函数。</p>
 <p><strong>边缘密度：</strong>f_X(x)=∫<sub>−</sub>∞<sup>+</sup>∞ f(x,y)dy，f_Y(y)=∫<sub>−</sub>∞<sup>+</sup>∞ f(x,y)dx</p>
 </div>
 <div class="def-card" style="border-left:4px solid #e6c970">
-<p><strong>典型例题：</strong>f(x,y)=Axy(0<x<1,x<sup>2</sup><y<1)。求A、P(Y>1/2|X>Y)、边缘密度。</p>
+<p><strong>典型例题：</strong>f(x,y)=Axy(0&lt;x&lt;1,x<sup>2</sup><y&lt;1)。求A、P(Y>1/2|X>Y)、边缘密度。</p>
 <details><summary><strong>详细解析</strong></summary>
 <div style="padding:0.5rem 0">
-<p>归一化：∬_D Axy dxdy = 1，其中D: 0<x<1, x<sup>2</sup><y<1<br>
+<p>归一化：∬_D Axy dxdy = 1，其中D: 0&lt;x&lt;1, x<sup>2</sup><y&lt;1<br>
 ∫<sub>0</sub>¹∫_x<sup>2</sup>¹ Axy dy dx = A∫<sub>0</sub>¹x[y<sup>2</sup>/2]_x<sup>2</sup>¹dx = (A/2)∫<sub>0</sub>¹x(1−x<sup>4</sup>)dx = (A/2)[x<sup>2</sup>/2−x<sup>6</sup>/6]<sub>0</sub>¹ = (A/2)(1/2−1/6)=A/6 = 1 → <strong>A=6</strong><br>
 条件概率P(Y>1/2|X>Y)需要画积分区域，用二重积分比值计算。</p>
 </div>
@@ -1655,7 +1655,7 @@ E(Y) = 5 × 9 = <strong>45</strong><br><br>
 <h3>4.3 课件习题全解</h3>
 <div class="def-card" style="border-left:4px solid #e6c970">
 <p><strong>习题1：</strong>D(X)=4, D(Y)=2独立，D(2X−3Y)=4×4+9×2=<strong>34</strong></p>
-<p><strong>习题2：</strong>f(x)=1+x(−1≤x<0), 1−x(0≤x<1)。E(X)=∫<sub>−</sub><sub>1</sub><sup>0</sup>x(1+x)dx+∫<sub>0</sub>¹x(1−x)dx=<strong>0</strong>（奇函数）。E(X<sup>2</sup>)=∫<sub>−</sub><sub>1</sub><sup>0</sup>x<sup>2</sup>(1+x)dx+∫<sub>0</sub>¹x<sup>2</sup>(1−x)dx=<strong>1/6</strong>，D(X)=1/6</p>
+<p><strong>习题2：</strong>f(x)=1+x(−1≤x&lt;0), 1−x(0≤x&lt;1)。E(X)=∫<sub>−</sub><sub>1</sub><sup>0</sup>x(1+x)dx+∫<sub>0</sub>¹x(1−x)dx=<strong>0</strong>（奇函数）。E(X<sup>2</sup>)=∫<sub>−</sub><sub>1</sub><sup>0</sup>x<sup>2</sup>(1+x)dx+∫<sub>0</sub>¹x<sup>2</sup>(1−x)dx=<strong>1/6</strong>，D(X)=1/6</p>
 <p><strong>习题3：</strong>f(x,y)=(x+y)/8(0≤x≤2,0≤y≤2)。E(X)=E(Y)=∬x(x+y)/8 dxdy=<strong>7/6</strong>。E(XY)=∬xy(x+y)/8dxdy=4/3。Cov=4/3−(7/6)<sup>2</sup>=−1/36。ρ=−1/36/√(11/36·11/36)=<strong>−1/11</strong>。D(X+Y)=D(X)+D(Y)+2Cov=<strong>5/9</strong></p>
 <p><strong>习题4：</strong>圆盘直径D~U(a,b)，面积Y=πD<sup>2</sup>/4。E(Y)=∫_a^b (πx<sup>2</sup>/4)·(1/(b−a))dx=π(b<sup>3</sup>−a<sup>3</sup>)/(12(b−a))=<strong>π(a<sup>2</sup>+ab+b<sup>2</sup>)/12</strong></p>
 <p><strong>习题5：</strong>D(X)=25,D(Y)=36,ρ=0.4。D(X+Y)=25+36+2×0.4×5×6=<strong>85</strong></p>
@@ -1710,7 +1710,7 @@ A的期望更高，平均成绩更好。</p>
 <p><span class="term">📋 课件4.1 例：X~U(1,3)，求E(X)和E(1/X)</span></p>
 <details><summary><strong>详细解析</strong></summary>
 <div style="padding:0.5rem 0">
-<p>f(x)=1/2 (1<x<3)<br>
+<p>f(x)=1/2 (1&lt;x&lt;3)<br>
 E(X) = ∫<sub>1</sub><sup>3</sup> x·(1/2)dx = (1/2)[x<sup>2</sup>/2]<sub>1</sub><sup>3</sup> = (1/2)(9/2−1/2) = (1/2)×4 = <strong>2</strong><br>
 E(1/X) = ∫<sub>1</sub><sup>3</sup> (1/x)·(1/2)dx = (1/2)[ln|x|]<sub>1</sub><sup>3</sup> = (1/2)(ln3−ln1) = <strong>(ln3)/2</strong></p>
 </div>
@@ -1722,7 +1722,7 @@ E(1/X) = ∫<sub>1</sub><sup>3</sup> (1/x)·(1/2)dx = (1/2)[ln|x|]<sub>1</sub><s
 D(X),D(Y)≠0，若有常数a≠0与b使P(Y=aX+b)=1，则ρ=( )<br>
 A.1 B.−1 C.1或−1 D.0</p>
 <details><summary><strong>答案：C</strong></summary>
-|ρ|=1⇔存在线性关系。a>0时ρ=1，a<0时ρ=−1。题目没指定a的正负，所以是1或−1。</details>
+|ρ|=1⇔存在线性关系。a>0时ρ=1，a&lt;0时ρ=−1。题目没指定a的正负，所以是1或−1。</details>
 </div>
 
 <div class="def-card" style="border-left:4px solid #e6c970">
@@ -1934,7 +1934,7 @@ d(ln L)/dθ = 6/θ − 2/(1−θ) − 8/(1−2θ) = 0<br>
 <details class="proof-block">
 <summary><strong>📐 推导：三种置信区间公式（枢轴变量法）</strong>（点击展开）</summary>
 <div style="padding:0.75rem 0">
-<p><strong>① σ<sup>2</sup>已知→μ：</strong>枢轴量 Z=(X̄−μ)/(σ/√n)~N(0,1)，P(−z<sub>α/2</sub><Z<z<sub>α/2</sub>)=1−α，代入解出μ：X̄±z<sub>α/2</sub>·σ/√n</p>
+<p><strong>① σ<sup>2</sup>已知→μ：</strong>枢轴量 Z=(X̄−μ)/(σ/√n)~N(0,1)，P(−z<sub>α/2</sub><Z&lt;z<sub>α/2</sub>)=1−α，代入解出μ：X̄±z<sub>α/2</sub>·σ/√n</p>
 <p><strong>② σ<sup>2</sup>未知→μ：</strong>同理用 t=(X̄−μ)/(S/√n)~t(n−1)：X̄±t<sub>α/2</sub>(n−1)·S/√n</p>
 <p><strong>③ μ未知→σ<sup>2</sup>：</strong>枢轴量 (n−1)S<sup>2</sup>/σ<sup>2</sup>~χ<sup>2</sup>(n−1)，P(χ<sup>2</sup><sub>1−α/2</sub><(n−1)S<sup>2</sup>/σ<sup>2</sup><χ<sup>2</sup><sub>α/2</sub>)=1−α，解出σ<sup>2</sup>：[(n−1)S<sup>2</sup>/χ<sup>2</sup><sub>α/2</sub>, (n−1)S<sup>2</sup>/χ<sup>2</sup><sub>1−α/2</sub>] ∎</p>
 </div>
@@ -2087,7 +2087,7 @@ H<sub>1</sub>: σ<sup>2</sup> ≠ 5000（备择假设：方差有显著变化）
 <p><span class="term">定义：</span>连续型Y，α∈(0,1)。若P(Y>b)=α，则b=Y_α称为<strong>上α分位点</strong>。F(Y_α)=1−α。</p>
 <p><strong>三条性质：</strong>①P(Y>Y_α)=α, P(Y≤Y_α)=1−α</p>
 <p>②P(Y>Y_{1−α})=1−α, P(Y≤Y_{1−α})=α</p>
-<p>③P(Y≤Y_{1−α/2} 或 Y>Y_{α/2})=α, P(Y_{1−α/2}≤Y<Y_{α/2})=1−α</p>
+<p>③P(Y≤Y_{1−α/2} 或 Y>Y_{α/2})=α, P(Y_{1−α/2}≤Y&lt;Y_{α/2})=1−α</p>
 </div>
 <div class="def-card" style="border-left:4px solid #c1292e">
 <p><strong>四种分布的分位点表示：</strong></p>
@@ -2147,7 +2147,7 @@ H<sub>1</sub>: σ<sup>2</sup> ≠ 5000（备择假设：方差有显著变化）
 </div>
 
 <div class="def-card" style="border-left:4px solid #e6c970">
-<p><span class="term">📋 课件5.3 例：X̄落在区间概率</span> 总体N(52,6.3<sup>2</sup>)，n=36，P(50.8<X̄<53.8)=？</p>
+<p><span class="term">📋 课件5.3 例：X̄落在区间概率</span> 总体N(52,6.3<sup>2</sup>)，n=36，P(50.8&lt;X̄<53.8)=？</p>
 <details><summary><strong>解析</strong></summary>X̄~N(52, 6.3<sup>2</sup>/36)，σ<sub>X̄</sub>=1.05。Z<sub>1</sub>=(50.8−52)/1.05≈−1.14，Z<sub>2</sub>=1.71。P≈Φ(1.71)−Φ(−1.14)≈<strong>0.8293</strong></details>
 </div>
 

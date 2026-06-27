@@ -204,7 +204,7 @@ d(ln L)/dθ = 6/θ − 2/(1−θ) − 8/(1−2θ) = 0<br>
 <details class="proof-block">
 <summary><strong>📐 推导：三种置信区间公式（枢轴变量法）</strong>（点击展开）</summary>
 <div style="padding:0.75rem 0">
-<p><strong>① σ<sup>2</sup>已知→μ：</strong>枢轴量 Z=(X̄−μ)/(σ/√n)~N(0,1)，P(−z<sub>α/2</sub><Z<z<sub>α/2</sub>)=1−α，代入解出μ：X̄±z<sub>α/2</sub>·σ/√n</p>
+<p><strong>① σ<sup>2</sup>已知→μ：</strong>枢轴量 Z=(X̄−μ)/(σ/√n)~N(0,1)，P(−z<sub>α/2</sub><Z&lt;z<sub>α/2</sub>)=1−α，代入解出μ：X̄±z<sub>α/2</sub>·σ/√n</p>
 <p><strong>② σ<sup>2</sup>未知→μ：</strong>同理用 t=(X̄−μ)/(S/√n)~t(n−1)：X̄±t<sub>α/2</sub>(n−1)·S/√n</p>
 <p><strong>③ μ未知→σ<sup>2</sup>：</strong>枢轴量 (n−1)S<sup>2</sup>/σ<sup>2</sup>~χ<sup>2</sup>(n−1)，P(χ<sup>2</sup><sub>1−α/2</sub><(n−1)S<sup>2</sup>/σ<sup>2</sup><χ<sup>2</sup><sub>α/2</sub>)=1−α，解出σ<sup>2</sup>：[(n−1)S<sup>2</sup>/χ<sup>2</sup><sub>α/2</sub>, (n−1)S<sup>2</sup>/χ<sup>2</sup><sub>1−α/2</sub>] ∎</p>
 </div>
@@ -357,7 +357,7 @@ H<sub>1</sub>: σ<sup>2</sup> ≠ 5000（备择假设：方差有显著变化）
 <p><span class="term">定义：</span>连续型Y，α∈(0,1)。若P(Y>b)=α，则b=Y_α称为<strong>上α分位点</strong>。F(Y_α)=1−α。</p>
 <p><strong>三条性质：</strong>①P(Y>Y_α)=α, P(Y≤Y_α)=1−α</p>
 <p>②P(Y>Y_{1−α})=1−α, P(Y≤Y_{1−α})=α</p>
-<p>③P(Y≤Y_{1−α/2} 或 Y>Y_{α/2})=α, P(Y_{1−α/2}≤Y<Y_{α/2})=1−α</p>
+<p>③P(Y≤Y_{1−α/2} 或 Y>Y_{α/2})=α, P(Y_{1−α/2}≤Y&lt;Y_{α/2})=1−α</p>
 </div>
 <div class="def-card" style="border-left:4px solid #c1292e">
 <p><strong>四种分布的分位点表示：</strong></p>
@@ -417,7 +417,7 @@ H<sub>1</sub>: σ<sup>2</sup> ≠ 5000（备择假设：方差有显著变化）
 </div>
 
 <div class="def-card" style="border-left:4px solid #e6c970">
-<p><span class="term">📋 课件5.3 例：X̄落在区间概率</span> 总体N(52,6.3<sup>2</sup>)，n=36，P(50.8<X̄<53.8)=？</p>
+<p><span class="term">📋 课件5.3 例：X̄落在区间概率</span> 总体N(52,6.3<sup>2</sup>)，n=36，P(50.8&lt;X̄<53.8)=？</p>
 <details><summary><strong>解析</strong></summary>X̄~N(52, 6.3<sup>2</sup>/36)，σ<sub>X̄</sub>=1.05。Z<sub>1</sub>=(50.8−52)/1.05≈−1.14，Z<sub>2</sub>=1.71。P≈Φ(1.71)−Φ(−1.14)≈<strong>0.8293</strong></details>
 </div>
 
