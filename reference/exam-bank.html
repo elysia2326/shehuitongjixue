@@ -213,17 +213,23 @@
 <details>
 <summary>第4题：不相关但不独立（反例）<span class="q-meta">(简答/证明)</span></summary>
 <div class="def-card">
-  <p><span class="term">题目：</span>设随机变量 X 与 Y 的分布列为（见作业），试验证 X 和 Y 是不相关的，但 X 和 Y 不是相互独立的。</p>
+  <p><span class="term">题目：</span>设随机变量X与Y的联合分布列如下表。试验证X和Y是不相关的，但X和Y不是相互独立的。</p>
+<table>
+<tr><th>X\Y</th><th>Y=−1</th><th>Y=0</th><th>Y=1</th></tr>
+<tr><td>X=−1</td><td>1/8</td><td>0</td><td>1/8</td></tr>
+<tr><td>X=0</td><td>0</td><td>1/4</td><td>0</td></tr>
+<tr><td>X=1</td><td>1/8</td><td>0</td><td>1/8</td></tr>
+</table>
 </div>
 <div class="answer">
-  <p><strong>证明思路（记忆这个论证框架！）：</strong></p>
-  <ol class="steps">
-    <li>先计算边缘分布列 P(X=x<sub>i</sub>) 和 P(Y=y<sub>j</sub>)</li>
-    <li>计算 E(X), E(Y), E(XY)</li>
-    <li>若 Cov(X,Y) = E(XY) − E(X)E(Y) = 0，则 X和Y不相关</li>
-    <li>检查是否存在 i,j 使 P(X=x<sub>i</sub>, Y=y<sub>j</sub>) ≠ P(X=x<sub>i</sub>)·P(Y=y<sub>j</sub>)</li>
-    <li>若存在，则 X和Y不独立</li>
-  </ol>
+  <p><strong>完整证明（含具体计算）：</strong></p>
+<ol class="steps">
+  <li><strong>求边缘分布：</strong>P(X=-1)=1/8+0+1/8=1/4, P(X=0)=0+1/4+0=1/4, P(X=1)=1/8+0+1/8=1/4; P(Y=-1)=1/4, P(Y=0)=1/4, P(Y=1)=1/4</li>
+  <li><strong>求期望：</strong>E(X)=-1*1/4+0*1/4+1*1/4=<strong>0</strong>, E(Y)=<strong>0</strong></li>
+  <li><strong>求E(XY)：</strong>=(1)*1/8+(-1)*1/8+(-1)*1/8+(1)*1/8+0 = 1/8-1/8-1/8+1/8 = <strong>0</strong></li>
+  <li><strong>求协方差：</strong>Cov(X,Y)=E(XY)-E(X)E(Y)=0-0=<strong>0</strong> &rarr; X和Y<strong>不相关</strong></li>
+  <li><strong>验证不独立：</strong>P(X=0,Y=0)=<strong>1/4</strong>, P(X=0)*P(Y=0)=1/4*1/4=<strong>1/16</strong>. 1/4 &ne; 1/16 &rarr; X和Y<strong>不独立</strong></li>
+</ol>
   <div class="warning"><strong>考试重点！</strong>独立 ⇒ 不相关（相关系数为0）；但不相关（相关系数为0）⇏ 独立。这道题就是标准反例。</div>
 </div>
 </details>
