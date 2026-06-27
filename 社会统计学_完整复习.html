@@ -171,6 +171,30 @@ th {
 }
 
 /* Print styles */
+/* Floating AI assistant button */
+.ai-float {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: white;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.2);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: transform 0.15s;
+}
+.ai-float:hover { transform: scale(1.1); }
+@media print { .ai-float { display: none; } }
+
 @media print {
   body { font-size: 12pt; max-width: 100%; padding: 0; }
   .quiz, .tip, .warning { break-inside: avoid; }
@@ -812,6 +836,7 @@ P(击中) = 1 − 0.08 = <strong>0.92</strong></p>
 
 
 
+<a class="ai-float" href="../reference/ai-assistant.html" title="点我问问题" target="_blank">🤖</a>
 </section><section id="sec2"><h1>第2课：随机变量及其分布</h1>
 
 
@@ -1352,6 +1377,7 @@ X密度f(x)=2x(0&lt;x&lt;1)，求Y=X<sup>2</sup>+1的密度函数。</p>
 
 
 
+<a class="ai-float" href="../reference/ai-assistant.html" title="点我问问题" target="_blank">🤖</a>
 </section><section id="sec3"><h1>第3课：数字特征</h1>
 
 
@@ -1749,6 +1775,7 @@ D(X+Y) = D(X)+D(Y)+2Cov = 25+36+2×12 = <strong>85</strong></p>
 
 
 
+<a class="ai-float" href="../reference/ai-assistant.html" title="点我问问题" target="_blank">🤖</a>
 </section><section id="sec4"><h1>第4课：抽样与参数估计</h1>
 
 
@@ -2189,6 +2216,7 @@ H<sub>1</sub>: σ<sup>2</sup> ≠ 5000（备择假设：方差有显著变化）
 
 
 
+<a class="ai-float" href="../reference/ai-assistant.html" title="点我问问题" target="_blank">🤖</a>
 </section>
 
 <div class="lesson-footer">
