@@ -150,6 +150,9 @@ a:hover { border-bottom-color: var(--accent); }
 }
 .warning::before { content: "⚠️ "; }
 
+/* Complement overline */
+.ov { text-decoration: overline; }
+
 /* Table styles */
 table {
   width: 100%;
@@ -288,13 +291,13 @@ nav.breadcrumb a:hover { color: var(--accent); }
   <li>分解：A∪B = A ∪ (B−A) = A ∪ (B<span style="text-decoration:overline">A</span>)，且 A 与 B<span style="text-decoration:overline">A</span> 互不相容</li>
   <li>由可列可加性：P(A∪B) = P(A) + P(B<span style="text-decoration:overline">A</span>)</li>
   <li>又 B = AB ∪ B<span style="text-decoration:overline">A</span>（互不相容），P(B)=P(AB)+P(B<span style="text-decoration:overline">A</span>)，故 P(B<span style="text-decoration:overline">A</span>)=P(B)−P(AB)</li>
-  <li>代入：P(A∪B)=P(A)+P(B)−P(AB) ∎</li>
+  <li>代入：P(A∪B)=P(A)+P(B)−P(AB)</li>
 </ol>
 <p><strong>减法公式 P(A−B)=P(A)−P(AB)：</strong></p>
 <ol class="steps">
   <li>A = AB ∪ A<span style="text-decoration:overline">B</span>（互不相容）</li>
   <li>P(A)=P(AB)+P(A<span style="text-decoration:overline">B</span>)，而 A−B=A<span style="text-decoration:overline">B</span></li>
-  <li>移项：P(A−B)=P(A)−P(AB) ∎</li>
+  <li>移项：P(A−B)=P(A)−P(AB)</li>
   <li>若 B⊂A，则 AB=B，P(A−B)=P(A)−P(B)，且 P(A)≥P(B)</li>
 </ol>
 </div>
@@ -363,7 +366,7 @@ nav.breadcrumb a:hover { color: var(--accent); }
 <p><strong>贝叶斯公式——"已知结果，反推原因"：</strong></p>
 <div class="formula">
   <span class="label">贝叶斯公式</span>
-  P(A<sub>i</sub>|B) = <u>P(A<sub>i</sub>)·P(B|A<sub>i</sub>)</u><br>
+  P(A<sub>i</sub>|B) = <span style="border-bottom:1px solid #2c2416">P(A<sub>i</sub>)·P(B|A<sub>i</sub>)</span><br>
   <span style="margin-left:3.5em">Σ<sub>j</sub> P(A<sub>j</sub>)·P(B|A<sub>j</sub>)</span><br>
   分子 = 第i条路径的概率<br>
   分母 = 全概率（所有路径概率之和）
@@ -468,14 +471,14 @@ P(A<sub>1</sub>|B) = P(A<sub>1</sub>)P(B|A<sub>1</sub>) / P(B)<br>
 <ol class="steps">
   <li>完备事件组 A<sub>1</sub>…A<sub>n</sub>：互不相容，∪A<sub>i</sub>=Ω，P(A<sub>i</sub>)>0</li>
   <li>B = BΩ = B(∪A<sub>i</sub>) = ∪(BA<sub>i</sub>)，各项互不相容</li>
-  <li>P(B) = ΣP(BA<sub>i</sub>) = ΣP(A<sub>i</sub>)·P(B|A<sub>i</sub>)（每项用乘法公式）∎</li>
+  <li>P(B) = ΣP(BA<sub>i</sub>) = ΣP(A<sub>i</sub>)·P(B|A<sub>i</sub>)（每项用乘法公式）</li>
 </ol>
 <p><strong>③ 贝叶斯公式：</strong></p>
 <ol class="steps">
   <li>P(A<sub>i</sub>|B) = P(A<sub>i</sub>B)/P(B)（条件概率定义）</li>
   <li>分子 = P(A<sub>i</sub>)·P(B|A<sub>i</sub>)（乘法公式）</li>
   <li>分母 = ΣP(A<sub>j</sub>)·P(B|A<sub>j</sub>)（全概率公式）</li>
-  <li>代入即得贝叶斯公式 ∎</li>
+  <li>代入即得贝叶斯公式</li>
 </ol>
 </div>
 </details>
@@ -501,7 +504,7 @@ P(A<sub>1</sub>|B) = P(A<sub>1</sub>)P(B|A<sub>1</sub>) / P(B)<br>
   <li>P(ĀB) = P(B−AB) = P(B) − P(AB)</li>
   <li>独立 ⇒ P(AB)=P(A)P(B)</li>
   <li>P(ĀB) = P(B) − P(A)P(B) = P(B)[1−P(A)] = P(B)P(Ā)</li>
-  <li>即 P(ĀB)=P(Ā)P(B)，故Ā与B独立 ∎</li>
+  <li>即 P(ĀB)=P(Ā)P(B)，故Ā与B独立</li>
 </ol>
 <p>其余两种情况同理可证。</p>
 </div>
@@ -519,7 +522,7 @@ P(A<sub>1</sub>|B) = P(A<sub>1</sub>)P(B|A<sub>1</sub>) / P(B)<br>
   <li>先考虑一种特定序列：前k次A发生，后n−k次A不发生。概率 = p<sup>k</sup>(1−p)<sup>n</sup><sup>−</sup><sup>k</sup>（独立性）</li>
   <li>"恰好k次" = 在n个位置中选k个给A发生，有 C<sub>n</sub><sup>k</sup> 种选法</li>
   <li>每种选法对应概率相同（p<sup>k</sup>(1−p)<sup>n</sup><sup>−</sup><sup>k</sup>），且不同选法对应事件互不相容</li>
-  <li>总概率 = C<sub>n</sub><sup>k</sup> · p<sup>k</sup> · (1−p)<sup>n</sup><sup>−</sup><sup>k</sup> ∎</li>
+  <li>总概率 = C<sub>n</sub><sup>k</sup> · p<sup>k</sup> · (1−p)<sup>n</sup><sup>−</sup><sup>k</sup></li>
 </ol>
 </div>
 </details>
@@ -847,7 +850,7 @@ P(击中) = 1 − 0.08 = <strong>0.92</strong></p>
 <div style="padding:0.75rem 0">
 <p><strong>单调不减（x<sub>1</sub><x<sub>2</sub> ⇒ F(x<sub>1</sub>)≤F(x<sub>2</sub>)）：</strong>F(x<sub>2</sub>)−F(x<sub>1</sub>)=P(x<sub>1</sub><X≤x<sub>2</sub>)≥0</p>
 <p><strong>F(−∞)=0：</strong>lim<sub>x→−∞</sub>P(X≤x)=P(∅)=0</p>
-<p><strong>F(+∞)=1：</strong>lim<sub>x→+∞</sub>P(X≤x)=P(Ω)=1 ∎</p>
+<p><strong>F(+∞)=1：</strong>lim<sub>x→+∞</sub>P(X≤x)=P(Ω)=1</p>
 </div>
 </details>
 
@@ -887,8 +890,8 @@ P(击中) = 1 − 0.08 = <strong>0.92</strong></p>
 <details class="proof-block">
 <summary><strong>📐 验证：二项分布归一性 + 密度函数性质</strong>（点击展开）</summary>
 <div style="padding:0.75rem 0">
-<p><strong>二项分布归一性 ΣC<sub>n</sub><sup>k</sup>p<sup>k</sup>(1−p)<sup>n</sup><sup>−</sup><sup>k</sup>=1：</strong>由二项式定理 (a+b)<sup>n</sup>=ΣC<sub>n</sub><sup>k</sup>a<sup>k</sup>b<sup>n</sup><sup>−</sup><sup>k</sup>，取a=p, b=1−p，得(p+(1−p))<sup>n</sup>=1<sup>n</sup>=1 ∎</p>
-<p><strong>P(X=c)=0（连续型）：</strong>P(X=c)=lim<sub>ε→0</sub>∫<sub>c−ε</sub><sup>c+ε</sup>f(x)dx，积分区间长度→0，被积函数有界，故积分→0 ∎</p>
+<p><strong>二项分布归一性 ΣC<sub>n</sub><sup>k</sup>p<sup>k</sup>(1−p)<sup>n</sup><sup>−</sup><sup>k</sup>=1：</strong>由二项式定理 (a+b)<sup>n</sup>=ΣC<sub>n</sub><sup>k</sup>a<sup>k</sup>b<sup>n</sup><sup>−</sup><sup>k</sup>，取a=p, b=1−p，得(p+(1−p))<sup>n</sup>=1<sup>n</sup>=1</p>
+<p><strong>P(X=c)=0（连续型）：</strong>P(X=c)=lim<sub>ε→0</sub>∫<sub>c−ε</sub><sup>c+ε</sup>f(x)dx，积分区间长度→0，被积函数有界，故积分→0</p>
 </div>
 </details>
 
@@ -957,13 +960,13 @@ P(击中) = 1 − 0.08 = <strong>0.92</strong></p>
 <ol class="steps">
   <li>f<sub>X</sub>(x)=1/(√(2π)σ)·exp(−(x−μ)<sup>2</sup>/(2σ<sup>2</sup>))</li>
   <li>Z=(X−μ)/σ，则X=σZ+μ，dx/dz=σ</li>
-  <li>f<sub>Z</sub>(z)=f<sub>X</sub>(σz+μ)·|σ|=1/(√(2π)σ)·exp(−(σz)<sup>2</sup>/(2σ<sup>2</sup>))·σ=1/√(2π)·exp(−z<sup>2</sup>/2) ∎</li>
+  <li>f<sub>Z</sub>(z)=f<sub>X</sub>(σz+μ)·|σ|=1/(√(2π)σ)·exp(−(σz)<sup>2</sup>/(2σ<sup>2</sup>))·σ=1/√(2π)·exp(−z<sup>2</sup>/2)</li>
 </ol>
 <p><strong>连续型函数Y=g(X)的分布求法（通用三步）：</strong></p>
 <ol class="steps">
   <li>F<sub>Y</sub>(y)=P(Y≤y)=P(g(X)≤y)</li>
   <li>用X的分布表示上式</li>
-  <li>f<sub>Y</sub>(y)=dF<sub>Y</sub>(y)/dy ∎</li>
+  <li>f<sub>Y</sub>(y)=dF<sub>Y</sub>(y)/dy</li>
 </ol>
 </div>
 </details>
@@ -1174,7 +1177,7 @@ X密度f(x)=2x(0&lt;x&lt;1)，求Y=X<sup>2</sup>+1的密度函数。</p>
 <p><strong>矩形法则：</strong>P(x<sub>1</sub><X≤x<sub>2</sub>,y<sub>1</sub><Y≤y<sub>2</sub>)=F(x<sub>2</sub>,y<sub>2</sub>)−F(x<sub>2</sub>,y<sub>1</sub>)−F(x<sub>1</sub>,y<sub>2</sub>)+F(x<sub>1</sub>,y<sub>1</sub>)。从大矩形减去两条再补回重叠角。</p>
 <p><strong>边缘分布列 p<sub>i</sub>·=Σ<sub>j</sub>p<sub>i</sub><sub>j</sub>：</strong>{X=x<sub>i</sub>}=∪<sub>j</sub>{X=x<sub>i</sub>,Y=y<sub>j</sub>}，各项互不相容，由可加性得。</p>
 <p><strong>离散型独立 p<sub>i</sub><sub>j</sub>=p<sub>i</sub>··p·<sub>j</sub>：</strong>由P(X=x<sub>i</sub>,Y=y<sub>j</sub>)=P(X=x<sub>i</sub>)P(Y=y<sub>j</sub>)直接写出。</p>
-<p><strong>连续型独立 f(x,y)=f<sub>X</sub>(x)f<sub>Y</sub>(y)：</strong>由F(x,y)=F<sub>X</sub>(x)F<sub>Y</sub>(y)两边求二阶混合偏导即得 ∎</p>
+<p><strong>连续型独立 f(x,y)=f<sub>X</sub>(x)f<sub>Y</sub>(y)：</strong>由F(x,y)=F<sub>X</sub>(x)F<sub>Y</sub>(y)两边求二阶混合偏导即得</p>
 </div>
 </details>
 
@@ -1389,7 +1392,7 @@ X密度f(x)=2x(0&lt;x&lt;1)，求Y=X<sup>2</sup>+1的密度函数。</p>
   <li>E(aX+bY) = ∬ (ax+by) f(x,y) dx dy</li>
   <li>= a∬ x f(x,y) dx dy + b∬ y f(x,y) dx dy</li>
   <li>= a∫ x[∫ f(x,y)dy]dx + b∫ y[∫ f(x,y)dx]dy</li>
-  <li>= a∫ x f<sub>X</sub>(x)dx + b∫ y f<sub>Y</sub>(y)dy = aE(X)+bE(Y) ∎</li>
+  <li>= a∫ x f<sub>X</sub>(x)dx + b∫ y f<sub>Y</sub>(y)dy = aE(X)+bE(Y)</li>
 </ol>
 <p><strong>独立时 E(XY)=E(X)E(Y)：</strong>f(x,y)=f<sub>X</sub>(x)f<sub>Y</sub>(y)，代入∬ xy f(x,y)dx dy 分离变量即得。</p>
 </div>
@@ -1482,7 +1485,7 @@ E(Y) = 5 × 9 = <strong>45</strong><br><br>
   <li>D(X)=E[(X−μ)<sup>2</sup>]，其中 μ=E(X)</li>
   <li>展开：E[X<sup>2</sup>−2μX+μ<sup>2</sup>]</li>
   <li>=E(X<sup>2</sup>)−2μE(X)+μ<sup>2</sup>（期望的线性性质）</li>
-  <li>=E(X<sup>2</sup>)−2μ<sup>2</sup>+μ<sup>2</sup>=E(X<sup>2</sup>)−μ<sup>2</sup>=E(X<sup>2</sup>)−[E(X)]<sup>2</sup> ∎</li>
+  <li>=E(X<sup>2</sup>)−2μ<sup>2</sup>+μ<sup>2</sup>=E(X<sup>2</sup>)−μ<sup>2</sup>=E(X<sup>2</sup>)−[E(X)]<sup>2</sup></li>
 </ol>
 </div>
 </details>
@@ -1508,7 +1511,7 @@ E(Y) = 5 × 9 = <strong>45</strong><br><br>
   <li>Σ(X<sub>i</sub>−X̄)<sup>2</sup> = Σ[(X<sub>i</sub>−μ)−(X̄−μ)]<sup>2</sup> = Σ(X<sub>i</sub>−μ)<sup>2</sup> − n(X̄−μ)<sup>2</sup></li>
   <li>取期望：E[Σ(X<sub>i</sub>−μ)<sup>2</sup>]=nσ<sup>2</sup>，E[n(X̄−μ)<sup>2</sup>]=n·σ<sup>2</sup>/n=σ<sup>2</sup></li>
   <li>E[Σ(X<sub>i</sub>−X̄)<sup>2</sup>]=nσ<sup>2</sup>−σ<sup>2</sup>=(n−1)σ<sup>2</sup></li>
-  <li>E(S<sup>2</sup>)=E[Σ(X<sub>i</sub>−X̄)<sup>2</sup>/(n−1)]=σ<sup>2</sup> ∎</li>
+  <li>E(S<sup>2</sup>)=E[Σ(X<sub>i</sub>−X̄)<sup>2</sup>/(n−1)]=σ<sup>2</sup></li>
 </ol>
 </div>
 </details>
@@ -1583,10 +1586,10 @@ E(Y) = 5 × 9 = <strong>45</strong><br><br>
   <li>对任意实数 t，考虑 Z=(X−μ<sub>X</sub>)−t(Y−μ<sub>Y</sub>)，D(Z)≥0</li>
   <li>D(Z)=D(X)−2t·Cov(X,Y)+t<sup>2</sup>·D(Y)≥0</li>
   <li>这是关于 t 的二次函数≥0，判别式≤0：4Cov<sup>2</sup>−4D(X)D(Y)≤0</li>
-  <li>即 Cov<sup>2</sup>≤D(X)D(Y)，|ρ|=|Cov|/√(DX·DY)≤1 ∎</li>
+  <li>即 Cov<sup>2</sup>≤D(X)D(Y)，|ρ|=|Cov|/√(DX·DY)≤1</li>
 </ol>
-<p><strong>独立⇒不相关：</strong>独立⇒E(XY)=E(X)E(Y)⇒Cov=0⇒ρ=0 ∎</p>
-<p><strong>反例构造（不相关但不独立）：</strong>计算边缘分布→E(X),E(Y),E(XY)→Cov=0→不相关；但存在p<sub>i</sub><sub>j</sub>≠p<sub>i</sub>··p·<sub>j</sub>→不独立 ∎</p>
+<p><strong>独立⇒不相关：</strong>独立⇒E(XY)=E(X)E(Y)⇒Cov=0⇒ρ=0</p>
+<p><strong>反例构造（不相关但不独立）：</strong>计算边缘分布→E(X),E(Y),E(XY)→Cov=0→不相关；但存在p<sub>i</sub><sub>j</sub>≠p<sub>i</sub>··p·<sub>j</sub>→不独立</p>
 </div>
 </details>
 
@@ -1769,7 +1772,7 @@ D(X+Y) = D(X)+D(Y)+2Cov = 25+36+2×12 = <strong>85</strong></p>
 <p><strong>E(X̄)=μ：</strong>E(X̄)=E(ΣX<sub>i</sub>/n)=(1/n)ΣE(X<sub>i</sub>)=(1/n)·nμ=μ</p>
 <p><strong>D(X̄)=σ<sup>2</sup>/n：</strong>独立⇒D(X̄)=D(ΣX<sub>i</sub>/n)=(1/n<sup>2</sup>)ΣD(X<sub>i</sub>)=(1/n<sup>2</sup>)·nσ<sup>2</sup>=σ<sup>2</sup>/n</p>
 <p><strong>χ<sup>2</sup>可加性：</strong>X=ΣZ<sub>i</sub><sup>2</sup>~χ<sup>2</sup>(n)，Y=ΣW<sub>j</sub><sup>2</sup>~χ<sup>2</sup>(m)，独立⇒X+Y=ΣZ<sub>i</sub><sup>2</sup>+ΣW<sub>j</sub><sup>2</sup>，这是n+m个独立N(0,1)平方和~χ<sup>2</sup>(n+m)</p>
-<p><strong>t<sup>2</sup>~F(1,n)：</strong>T=Z/√(Y/n)，T<sup>2</sup>=Z<sup>2</sup>/(Y/n)=(Z<sup>2</sup>/1)/(Y/n)，Z<sup>2</sup>~χ<sup>2</sup>(1)，由F定义即F(1,n) ∎</p>
+<p><strong>t<sup>2</sup>~F(1,n)：</strong>T=Z/√(Y/n)，T<sup>2</sup>=Z<sup>2</sup>/(Y/n)=(Z<sup>2</sup>/1)/(Y/n)，Z<sup>2</sup>~χ<sup>2</sup>(1)，由F定义即F(1,n)</p>
 </div>
 </details>
 
@@ -1807,7 +1810,7 @@ D(X+Y) = D(X)+D(Y)+2Cov = 25+36+2×12 = <strong>85</strong></p>
   <li>由①：(X̄−μ)/(σ/√n)~N(0,1)</li>
   <li>由②：(n−1)S<sup>2</sup>/σ<sup>2</sup>~χ<sup>2</sup>(n−1)，且与X̄独立</li>
   <li>两式相除：[(X̄−μ)/(σ/√n)]/√[S<sup>2</sup>/σ<sup>2</sup>]=(X̄−μ)/(S/√n)</li>
-  <li>由t分布定义=N(0,1)/√(χ<sup>2</sup>/df)=t(n−1) ∎</li>
+  <li>由t分布定义=N(0,1)/√(χ<sup>2</sup>/df)=t(n−1)</li>
 </ol>
 </div>
 </details>
@@ -1848,7 +1851,7 @@ D(X+Y) = D(X)+D(Y)+2Cov = 25+36+2×12 = <strong>85</strong></p>
 <summary><strong>📐 原理：矩估计原理 + MLE为什么取对数</strong>（点击展开）</summary>
 <div style="padding:0.75rem 0">
 <p><strong>矩估计原理：</strong>大数定律保证样本矩依概率收敛到总体矩。令 A<sub>1</sub>=X̄=E(X)，A<sub>2</sub>=(1/n)ΣX<sub>i</sub><sup>2</sup>=E(X<sup>2</sup>)，…，解方程组得估计量。</p>
-<p><strong>MLE为什么取对数：</strong>L(θ)=Πf(x<sub>i</sub>;θ)是连乘积，直接求导很繁琐。ln是单调函数，L和lnL在同一点取最大值——不影响极值位置。取对数后 lnL=Σlnf(x<sub>i</sub>;θ)，连乘积变求和，求导简单得多。∎</p>
+<p><strong>MLE为什么取对数：</strong>L(θ)=Πf(x<sub>i</sub>;θ)是连乘积，直接求导很繁琐。ln是单调函数，L和lnL在同一点取最大值——不影响极值位置。取对数后 lnL=Σlnf(x<sub>i</sub>;θ)，连乘积变求和，求导简单得多。</p>
 </div>
 </details>
 
@@ -1936,7 +1939,7 @@ d(ln L)/dθ = 6/θ − 2/(1−θ) − 8/(1−2θ) = 0<br>
 <div style="padding:0.75rem 0">
 <p><strong>① σ<sup>2</sup>已知→μ：</strong>枢轴量 Z=(X̄−μ)/(σ/√n)~N(0,1)，P(−z<sub>α/2</sub><Z&lt;z<sub>α/2</sub>)=1−α，代入解出μ：X̄±z<sub>α/2</sub>·σ/√n</p>
 <p><strong>② σ<sup>2</sup>未知→μ：</strong>同理用 t=(X̄−μ)/(S/√n)~t(n−1)：X̄±t<sub>α/2</sub>(n−1)·S/√n</p>
-<p><strong>③ μ未知→σ<sup>2</sup>：</strong>枢轴量 (n−1)S<sup>2</sup>/σ<sup>2</sup>~χ<sup>2</sup>(n−1)，P(χ<sup>2</sup><sub>1−α/2</sub><(n−1)S<sup>2</sup>/σ<sup>2</sup><χ<sup>2</sup><sub>α/2</sub>)=1−α，解出σ<sup>2</sup>：[(n−1)S<sup>2</sup>/χ<sup>2</sup><sub>α/2</sub>, (n−1)S<sup>2</sup>/χ<sup>2</sup><sub>1−α/2</sub>] ∎</p>
+<p><strong>③ μ未知→σ<sup>2</sup>：</strong>枢轴量 (n−1)S<sup>2</sup>/σ<sup>2</sup>~χ<sup>2</sup>(n−1)，P(χ<sup>2</sup><sub>1−α/2</sub><(n−1)S<sup>2</sup>/σ<sup>2</sup><χ<sup>2</sup><sub>α/2</sub>)=1−α，解出σ<sup>2</sup>：[(n−1)S<sup>2</sup>/χ<sup>2</sup><sub>α/2</sub>, (n−1)S<sup>2</sup>/χ<sup>2</sup><sub>1−α/2</sub>]</p>
 </div>
 </details>
 

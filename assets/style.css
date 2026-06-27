@@ -144,6 +144,9 @@ a:hover { border-bottom-color: var(--accent); }
 }
 .warning::before { content: "⚠️ "; }
 
+/* Complement overline */
+.ov { text-decoration: overline; }
+
 /* Table styles */
 table {
   width: 100%;

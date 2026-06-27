@@ -39,7 +39,7 @@
 <p><strong>E(X̄)=μ：</strong>E(X̄)=E(ΣX<sub>i</sub>/n)=(1/n)ΣE(X<sub>i</sub>)=(1/n)·nμ=μ</p>
 <p><strong>D(X̄)=σ<sup>2</sup>/n：</strong>独立⇒D(X̄)=D(ΣX<sub>i</sub>/n)=(1/n<sup>2</sup>)ΣD(X<sub>i</sub>)=(1/n<sup>2</sup>)·nσ<sup>2</sup>=σ<sup>2</sup>/n</p>
 <p><strong>χ<sup>2</sup>可加性：</strong>X=ΣZ<sub>i</sub><sup>2</sup>~χ<sup>2</sup>(n)，Y=ΣW<sub>j</sub><sup>2</sup>~χ<sup>2</sup>(m)，独立⇒X+Y=ΣZ<sub>i</sub><sup>2</sup>+ΣW<sub>j</sub><sup>2</sup>，这是n+m个独立N(0,1)平方和~χ<sup>2</sup>(n+m)</p>
-<p><strong>t<sup>2</sup>~F(1,n)：</strong>T=Z/√(Y/n)，T<sup>2</sup>=Z<sup>2</sup>/(Y/n)=(Z<sup>2</sup>/1)/(Y/n)，Z<sup>2</sup>~χ<sup>2</sup>(1)，由F定义即F(1,n) ∎</p>
+<p><strong>t<sup>2</sup>~F(1,n)：</strong>T=Z/√(Y/n)，T<sup>2</sup>=Z<sup>2</sup>/(Y/n)=(Z<sup>2</sup>/1)/(Y/n)，Z<sup>2</sup>~χ<sup>2</sup>(1)，由F定义即F(1,n)</p>
 </div>
 </details>
 
@@ -77,7 +77,7 @@
   <li>由①：(X̄−μ)/(σ/√n)~N(0,1)</li>
   <li>由②：(n−1)S<sup>2</sup>/σ<sup>2</sup>~χ<sup>2</sup>(n−1)，且与X̄独立</li>
   <li>两式相除：[(X̄−μ)/(σ/√n)]/√[S<sup>2</sup>/σ<sup>2</sup>]=(X̄−μ)/(S/√n)</li>
-  <li>由t分布定义=N(0,1)/√(χ<sup>2</sup>/df)=t(n−1) ∎</li>
+  <li>由t分布定义=N(0,1)/√(χ<sup>2</sup>/df)=t(n−1)</li>
 </ol>
 </div>
 </details>
@@ -118,7 +118,7 @@
 <summary><strong>📐 原理：矩估计原理 + MLE为什么取对数</strong>（点击展开）</summary>
 <div style="padding:0.75rem 0">
 <p><strong>矩估计原理：</strong>大数定律保证样本矩依概率收敛到总体矩。令 A<sub>1</sub>=X̄=E(X)，A<sub>2</sub>=(1/n)ΣX<sub>i</sub><sup>2</sup>=E(X<sup>2</sup>)，…，解方程组得估计量。</p>
-<p><strong>MLE为什么取对数：</strong>L(θ)=Πf(x<sub>i</sub>;θ)是连乘积，直接求导很繁琐。ln是单调函数，L和lnL在同一点取最大值——不影响极值位置。取对数后 lnL=Σlnf(x<sub>i</sub>;θ)，连乘积变求和，求导简单得多。∎</p>
+<p><strong>MLE为什么取对数：</strong>L(θ)=Πf(x<sub>i</sub>;θ)是连乘积，直接求导很繁琐。ln是单调函数，L和lnL在同一点取最大值——不影响极值位置。取对数后 lnL=Σlnf(x<sub>i</sub>;θ)，连乘积变求和，求导简单得多。</p>
 </div>
 </details>
 
@@ -206,7 +206,7 @@ d(ln L)/dθ = 6/θ − 2/(1−θ) − 8/(1−2θ) = 0<br>
 <div style="padding:0.75rem 0">
 <p><strong>① σ<sup>2</sup>已知→μ：</strong>枢轴量 Z=(X̄−μ)/(σ/√n)~N(0,1)，P(−z<sub>α/2</sub><Z&lt;z<sub>α/2</sub>)=1−α，代入解出μ：X̄±z<sub>α/2</sub>·σ/√n</p>
 <p><strong>② σ<sup>2</sup>未知→μ：</strong>同理用 t=(X̄−μ)/(S/√n)~t(n−1)：X̄±t<sub>α/2</sub>(n−1)·S/√n</p>
-<p><strong>③ μ未知→σ<sup>2</sup>：</strong>枢轴量 (n−1)S<sup>2</sup>/σ<sup>2</sup>~χ<sup>2</sup>(n−1)，P(χ<sup>2</sup><sub>1−α/2</sub><(n−1)S<sup>2</sup>/σ<sup>2</sup><χ<sup>2</sup><sub>α/2</sub>)=1−α，解出σ<sup>2</sup>：[(n−1)S<sup>2</sup>/χ<sup>2</sup><sub>α/2</sub>, (n−1)S<sup>2</sup>/χ<sup>2</sup><sub>1−α/2</sub>] ∎</p>
+<p><strong>③ μ未知→σ<sup>2</sup>：</strong>枢轴量 (n−1)S<sup>2</sup>/σ<sup>2</sup>~χ<sup>2</sup>(n−1)，P(χ<sup>2</sup><sub>1−α/2</sub><(n−1)S<sup>2</sup>/σ<sup>2</sup><χ<sup>2</sup><sub>α/2</sub>)=1−α，解出σ<sup>2</sup>：[(n−1)S<sup>2</sup>/χ<sup>2</sup><sub>α/2</sub>, (n−1)S<sup>2</sup>/χ<sup>2</sup><sub>1−α/2</sub>]</p>
 </div>
 </details>
 

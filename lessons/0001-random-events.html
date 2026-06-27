@@ -89,13 +89,13 @@
   <li>分解：A∪B = A ∪ (B−A) = A ∪ (B<span style="text-decoration:overline">A</span>)，且 A 与 B<span style="text-decoration:overline">A</span> 互不相容</li>
   <li>由可列可加性：P(A∪B) = P(A) + P(B<span style="text-decoration:overline">A</span>)</li>
   <li>又 B = AB ∪ B<span style="text-decoration:overline">A</span>（互不相容），P(B)=P(AB)+P(B<span style="text-decoration:overline">A</span>)，故 P(B<span style="text-decoration:overline">A</span>)=P(B)−P(AB)</li>
-  <li>代入：P(A∪B)=P(A)+P(B)−P(AB) ∎</li>
+  <li>代入：P(A∪B)=P(A)+P(B)−P(AB)</li>
 </ol>
 <p><strong>减法公式 P(A−B)=P(A)−P(AB)：</strong></p>
 <ol class="steps">
   <li>A = AB ∪ A<span style="text-decoration:overline">B</span>（互不相容）</li>
   <li>P(A)=P(AB)+P(A<span style="text-decoration:overline">B</span>)，而 A−B=A<span style="text-decoration:overline">B</span></li>
-  <li>移项：P(A−B)=P(A)−P(AB) ∎</li>
+  <li>移项：P(A−B)=P(A)−P(AB)</li>
   <li>若 B⊂A，则 AB=B，P(A−B)=P(A)−P(B)，且 P(A)≥P(B)</li>
 </ol>
 </div>
@@ -164,7 +164,7 @@
 <p><strong>贝叶斯公式——"已知结果，反推原因"：</strong></p>
 <div class="formula">
   <span class="label">贝叶斯公式</span>
-  P(A<sub>i</sub>|B) = <u>P(A<sub>i</sub>)·P(B|A<sub>i</sub>)</u><br>
+  P(A<sub>i</sub>|B) = <span style="border-bottom:1px solid #2c2416">P(A<sub>i</sub>)·P(B|A<sub>i</sub>)</span><br>
   <span style="margin-left:3.5em">Σ<sub>j</sub> P(A<sub>j</sub>)·P(B|A<sub>j</sub>)</span><br>
   分子 = 第i条路径的概率<br>
   分母 = 全概率（所有路径概率之和）
@@ -269,14 +269,14 @@ P(A<sub>1</sub>|B) = P(A<sub>1</sub>)P(B|A<sub>1</sub>) / P(B)<br>
 <ol class="steps">
   <li>完备事件组 A<sub>1</sub>…A<sub>n</sub>：互不相容，∪A<sub>i</sub>=Ω，P(A<sub>i</sub>)>0</li>
   <li>B = BΩ = B(∪A<sub>i</sub>) = ∪(BA<sub>i</sub>)，各项互不相容</li>
-  <li>P(B) = ΣP(BA<sub>i</sub>) = ΣP(A<sub>i</sub>)·P(B|A<sub>i</sub>)（每项用乘法公式）∎</li>
+  <li>P(B) = ΣP(BA<sub>i</sub>) = ΣP(A<sub>i</sub>)·P(B|A<sub>i</sub>)（每项用乘法公式）</li>
 </ol>
 <p><strong>③ 贝叶斯公式：</strong></p>
 <ol class="steps">
   <li>P(A<sub>i</sub>|B) = P(A<sub>i</sub>B)/P(B)（条件概率定义）</li>
   <li>分子 = P(A<sub>i</sub>)·P(B|A<sub>i</sub>)（乘法公式）</li>
   <li>分母 = ΣP(A<sub>j</sub>)·P(B|A<sub>j</sub>)（全概率公式）</li>
-  <li>代入即得贝叶斯公式 ∎</li>
+  <li>代入即得贝叶斯公式</li>
 </ol>
 </div>
 </details>
@@ -302,7 +302,7 @@ P(A<sub>1</sub>|B) = P(A<sub>1</sub>)P(B|A<sub>1</sub>) / P(B)<br>
   <li>P(ĀB) = P(B−AB) = P(B) − P(AB)</li>
   <li>独立 ⇒ P(AB)=P(A)P(B)</li>
   <li>P(ĀB) = P(B) − P(A)P(B) = P(B)[1−P(A)] = P(B)P(Ā)</li>
-  <li>即 P(ĀB)=P(Ā)P(B)，故Ā与B独立 ∎</li>
+  <li>即 P(ĀB)=P(Ā)P(B)，故Ā与B独立</li>
 </ol>
 <p>其余两种情况同理可证。</p>
 </div>
@@ -320,7 +320,7 @@ P(A<sub>1</sub>|B) = P(A<sub>1</sub>)P(B|A<sub>1</sub>) / P(B)<br>
   <li>先考虑一种特定序列：前k次A发生，后n−k次A不发生。概率 = p<sup>k</sup>(1−p)<sup>n</sup><sup>−</sup><sup>k</sup>（独立性）</li>
   <li>"恰好k次" = 在n个位置中选k个给A发生，有 C<sub>n</sub><sup>k</sup> 种选法</li>
   <li>每种选法对应概率相同（p<sup>k</sup>(1−p)<sup>n</sup><sup>−</sup><sup>k</sup>），且不同选法对应事件互不相容</li>
-  <li>总概率 = C<sub>n</sub><sup>k</sup> · p<sup>k</sup> · (1−p)<sup>n</sup><sup>−</sup><sup>k</sup> ∎</li>
+  <li>总概率 = C<sub>n</sub><sup>k</sup> · p<sup>k</sup> · (1−p)<sup>n</sup><sup>−</sup><sup>k</sup></li>
 </ol>
 </div>
 </details>

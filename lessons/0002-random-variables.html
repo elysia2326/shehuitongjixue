@@ -49,7 +49,7 @@
 <div style="padding:0.75rem 0">
 <p><strong>单调不减（x<sub>1</sub><x<sub>2</sub> ⇒ F(x<sub>1</sub>)≤F(x<sub>2</sub>)）：</strong>F(x<sub>2</sub>)−F(x<sub>1</sub>)=P(x<sub>1</sub><X≤x<sub>2</sub>)≥0</p>
 <p><strong>F(−∞)=0：</strong>lim<sub>x→−∞</sub>P(X≤x)=P(∅)=0</p>
-<p><strong>F(+∞)=1：</strong>lim<sub>x→+∞</sub>P(X≤x)=P(Ω)=1 ∎</p>
+<p><strong>F(+∞)=1：</strong>lim<sub>x→+∞</sub>P(X≤x)=P(Ω)=1</p>
 </div>
 </details>
 
@@ -89,8 +89,8 @@
 <details class="proof-block">
 <summary><strong>📐 验证：二项分布归一性 + 密度函数性质</strong>（点击展开）</summary>
 <div style="padding:0.75rem 0">
-<p><strong>二项分布归一性 ΣC<sub>n</sub><sup>k</sup>p<sup>k</sup>(1−p)<sup>n</sup><sup>−</sup><sup>k</sup>=1：</strong>由二项式定理 (a+b)<sup>n</sup>=ΣC<sub>n</sub><sup>k</sup>a<sup>k</sup>b<sup>n</sup><sup>−</sup><sup>k</sup>，取a=p, b=1−p，得(p+(1−p))<sup>n</sup>=1<sup>n</sup>=1 ∎</p>
-<p><strong>P(X=c)=0（连续型）：</strong>P(X=c)=lim<sub>ε→0</sub>∫<sub>c−ε</sub><sup>c+ε</sup>f(x)dx，积分区间长度→0，被积函数有界，故积分→0 ∎</p>
+<p><strong>二项分布归一性 ΣC<sub>n</sub><sup>k</sup>p<sup>k</sup>(1−p)<sup>n</sup><sup>−</sup><sup>k</sup>=1：</strong>由二项式定理 (a+b)<sup>n</sup>=ΣC<sub>n</sub><sup>k</sup>a<sup>k</sup>b<sup>n</sup><sup>−</sup><sup>k</sup>，取a=p, b=1−p，得(p+(1−p))<sup>n</sup>=1<sup>n</sup>=1</p>
+<p><strong>P(X=c)=0（连续型）：</strong>P(X=c)=lim<sub>ε→0</sub>∫<sub>c−ε</sub><sup>c+ε</sup>f(x)dx，积分区间长度→0，被积函数有界，故积分→0</p>
 </div>
 </details>
 
@@ -159,13 +159,13 @@
 <ol class="steps">
   <li>f<sub>X</sub>(x)=1/(√(2π)σ)·exp(−(x−μ)<sup>2</sup>/(2σ<sup>2</sup>))</li>
   <li>Z=(X−μ)/σ，则X=σZ+μ，dx/dz=σ</li>
-  <li>f<sub>Z</sub>(z)=f<sub>X</sub>(σz+μ)·|σ|=1/(√(2π)σ)·exp(−(σz)<sup>2</sup>/(2σ<sup>2</sup>))·σ=1/√(2π)·exp(−z<sup>2</sup>/2) ∎</li>
+  <li>f<sub>Z</sub>(z)=f<sub>X</sub>(σz+μ)·|σ|=1/(√(2π)σ)·exp(−(σz)<sup>2</sup>/(2σ<sup>2</sup>))·σ=1/√(2π)·exp(−z<sup>2</sup>/2)</li>
 </ol>
 <p><strong>连续型函数Y=g(X)的分布求法（通用三步）：</strong></p>
 <ol class="steps">
   <li>F<sub>Y</sub>(y)=P(Y≤y)=P(g(X)≤y)</li>
   <li>用X的分布表示上式</li>
-  <li>f<sub>Y</sub>(y)=dF<sub>Y</sub>(y)/dy ∎</li>
+  <li>f<sub>Y</sub>(y)=dF<sub>Y</sub>(y)/dy</li>
 </ol>
 </div>
 </details>
@@ -376,7 +376,7 @@ X密度f(x)=2x(0&lt;x&lt;1)，求Y=X<sup>2</sup>+1的密度函数。</p>
 <p><strong>矩形法则：</strong>P(x<sub>1</sub><X≤x<sub>2</sub>,y<sub>1</sub><Y≤y<sub>2</sub>)=F(x<sub>2</sub>,y<sub>2</sub>)−F(x<sub>2</sub>,y<sub>1</sub>)−F(x<sub>1</sub>,y<sub>2</sub>)+F(x<sub>1</sub>,y<sub>1</sub>)。从大矩形减去两条再补回重叠角。</p>
 <p><strong>边缘分布列 p<sub>i</sub>·=Σ<sub>j</sub>p<sub>i</sub><sub>j</sub>：</strong>{X=x<sub>i</sub>}=∪<sub>j</sub>{X=x<sub>i</sub>,Y=y<sub>j</sub>}，各项互不相容，由可加性得。</p>
 <p><strong>离散型独立 p<sub>i</sub><sub>j</sub>=p<sub>i</sub>··p·<sub>j</sub>：</strong>由P(X=x<sub>i</sub>,Y=y<sub>j</sub>)=P(X=x<sub>i</sub>)P(Y=y<sub>j</sub>)直接写出。</p>
-<p><strong>连续型独立 f(x,y)=f<sub>X</sub>(x)f<sub>Y</sub>(y)：</strong>由F(x,y)=F<sub>X</sub>(x)F<sub>Y</sub>(y)两边求二阶混合偏导即得 ∎</p>
+<p><strong>连续型独立 f(x,y)=f<sub>X</sub>(x)f<sub>Y</sub>(y)：</strong>由F(x,y)=F<sub>X</sub>(x)F<sub>Y</sub>(y)两边求二阶混合偏导即得</p>
 </div>
 </details>
 

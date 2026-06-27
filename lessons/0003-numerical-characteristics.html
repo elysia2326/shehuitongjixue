@@ -51,7 +51,7 @@
   <li>E(aX+bY) = ∬ (ax+by) f(x,y) dx dy</li>
   <li>= a∬ x f(x,y) dx dy + b∬ y f(x,y) dx dy</li>
   <li>= a∫ x[∫ f(x,y)dy]dx + b∫ y[∫ f(x,y)dx]dy</li>
-  <li>= a∫ x f<sub>X</sub>(x)dx + b∫ y f<sub>Y</sub>(y)dy = aE(X)+bE(Y) ∎</li>
+  <li>= a∫ x f<sub>X</sub>(x)dx + b∫ y f<sub>Y</sub>(y)dy = aE(X)+bE(Y)</li>
 </ol>
 <p><strong>独立时 E(XY)=E(X)E(Y)：</strong>f(x,y)=f<sub>X</sub>(x)f<sub>Y</sub>(y)，代入∬ xy f(x,y)dx dy 分离变量即得。</p>
 </div>
@@ -144,7 +144,7 @@ E(Y) = 5 × 9 = <strong>45</strong><br><br>
   <li>D(X)=E[(X−μ)<sup>2</sup>]，其中 μ=E(X)</li>
   <li>展开：E[X<sup>2</sup>−2μX+μ<sup>2</sup>]</li>
   <li>=E(X<sup>2</sup>)−2μE(X)+μ<sup>2</sup>（期望的线性性质）</li>
-  <li>=E(X<sup>2</sup>)−2μ<sup>2</sup>+μ<sup>2</sup>=E(X<sup>2</sup>)−μ<sup>2</sup>=E(X<sup>2</sup>)−[E(X)]<sup>2</sup> ∎</li>
+  <li>=E(X<sup>2</sup>)−2μ<sup>2</sup>+μ<sup>2</sup>=E(X<sup>2</sup>)−μ<sup>2</sup>=E(X<sup>2</sup>)−[E(X)]<sup>2</sup></li>
 </ol>
 </div>
 </details>
@@ -170,7 +170,7 @@ E(Y) = 5 × 9 = <strong>45</strong><br><br>
   <li>Σ(X<sub>i</sub>−X̄)<sup>2</sup> = Σ[(X<sub>i</sub>−μ)−(X̄−μ)]<sup>2</sup> = Σ(X<sub>i</sub>−μ)<sup>2</sup> − n(X̄−μ)<sup>2</sup></li>
   <li>取期望：E[Σ(X<sub>i</sub>−μ)<sup>2</sup>]=nσ<sup>2</sup>，E[n(X̄−μ)<sup>2</sup>]=n·σ<sup>2</sup>/n=σ<sup>2</sup></li>
   <li>E[Σ(X<sub>i</sub>−X̄)<sup>2</sup>]=nσ<sup>2</sup>−σ<sup>2</sup>=(n−1)σ<sup>2</sup></li>
-  <li>E(S<sup>2</sup>)=E[Σ(X<sub>i</sub>−X̄)<sup>2</sup>/(n−1)]=σ<sup>2</sup> ∎</li>
+  <li>E(S<sup>2</sup>)=E[Σ(X<sub>i</sub>−X̄)<sup>2</sup>/(n−1)]=σ<sup>2</sup></li>
 </ol>
 </div>
 </details>
@@ -245,10 +245,10 @@ E(Y) = 5 × 9 = <strong>45</strong><br><br>
   <li>对任意实数 t，考虑 Z=(X−μ<sub>X</sub>)−t(Y−μ<sub>Y</sub>)，D(Z)≥0</li>
   <li>D(Z)=D(X)−2t·Cov(X,Y)+t<sup>2</sup>·D(Y)≥0</li>
   <li>这是关于 t 的二次函数≥0，判别式≤0：4Cov<sup>2</sup>−4D(X)D(Y)≤0</li>
-  <li>即 Cov<sup>2</sup>≤D(X)D(Y)，|ρ|=|Cov|/√(DX·DY)≤1 ∎</li>
+  <li>即 Cov<sup>2</sup>≤D(X)D(Y)，|ρ|=|Cov|/√(DX·DY)≤1</li>
 </ol>
-<p><strong>独立⇒不相关：</strong>独立⇒E(XY)=E(X)E(Y)⇒Cov=0⇒ρ=0 ∎</p>
-<p><strong>反例构造（不相关但不独立）：</strong>计算边缘分布→E(X),E(Y),E(XY)→Cov=0→不相关；但存在p<sub>i</sub><sub>j</sub>≠p<sub>i</sub>··p·<sub>j</sub>→不独立 ∎</p>
+<p><strong>独立⇒不相关：</strong>独立⇒E(XY)=E(X)E(Y)⇒Cov=0⇒ρ=0</p>
+<p><strong>反例构造（不相关但不独立）：</strong>计算边缘分布→E(X),E(Y),E(XY)→Cov=0→不相关；但存在p<sub>i</sub><sub>j</sub>≠p<sub>i</sub>··p·<sub>j</sub>→不独立</p>
 </div>
 </details>
 
