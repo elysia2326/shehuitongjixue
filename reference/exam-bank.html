@@ -267,8 +267,8 @@
   <ol class="steps">
     <li><strong>建立假设：</strong>H₀: σ² = 5000；H₁: σ² ≠ 5000（双侧检验）</li>
     <li><strong>选择检验统计量：</strong>χ² = (n−1)S²/σ₀² = 25×9200/5000 = 46</li>
-    <li><strong>确定拒绝域：</strong>χ² > χ²<sub>α/2</sub>(25) 或 χ² < χ²<sub>1−α/2</sub>(25)</li>
-    <li><strong>做出决策：</strong>比较检验统计量与临界值，判断是否拒绝H₀</li>
+    <li><strong>确定拒绝域：</strong>χ² > χ²<sub>α/2</sub>(25) 或 χ² < χ²<sub>1−α/2</sub>(25)，以α=0.05为例：χ²₀.₀₂₅(25)=40.646, χ²₀.₉₇₅(25)=13.120</li>
+    <li><strong>做出决策：</strong>比较检验统计量与临界值。χ²=46 > 40.646，落入拒绝域，拒绝H₀，认为方差有显著变化。</li>
   </ol>
   <div class="warning">方差检验用 χ² 分布！注意自由度是 n−1=25。</div>
 </div>
@@ -283,11 +283,15 @@
   <p><strong>逐步解析：</strong></p>
   <ol class="steps">
     <li>计算样本均值：<span style="text-decoration:overline">x</span> = (6+5.7+5.8+6.5+7.0+6.3+5.6+6.1+5)/9 = 54/9 = <strong>6.0</strong></li>
-    <li>计算样本方差：S² = Σ(x<sub>i</sub>−6)²/(n−1)，先算各偏差平方</li>
+    <li>计算样本方差：S² = Σ(x<sub>i</sub>−6)²/(n−1)<br>
+    偏差：0, −0.3, −0.2, 0.5, 1.0, 0.3, −0.4, 0.1, −1<br>
+    平方和：0+0.09+0.04+0.25+1.0+0.09+0.16+0.01+1 = <strong>2.64</strong><br>
+    S² = 2.64/8 = 0.33，S = √0.33 ≈ <strong>0.574</strong></li>
     <li><strong>（1）σ=0.6已知：</strong>用 z 区间，z<sub>0.025</sub>=1.96<br>
     置信区间 = <span style="text-decoration:overline">x</span> ± z<sub>α/2</sub>·σ/√n = 6 ± 1.96×0.6/3 = 6 ± 0.392 = <strong>[5.608, 6.392]</strong></li>
     <li><strong>（2）σ未知：</strong>用 t 区间<br>
-    先算 S，置信区间 = <span style="text-decoration:overline">x</span> ± t<sub>0.025</sub>(8)·S/√n = 6 ± 2.3060×S/3</li>
+    置信区间 = <span style="text-decoration:overline">x</span> ± t<sub>0.025</sub>(8)·S/√n = 6 ± 2.3060×0.574/3 = 6 ± 0.441 = <strong>[5.559, 6.441]</strong><br>
+    （注：σ未知时区间更宽，因为用S估计σ引入了额外不确定性）</li>
   </ol>
   <div class="tip">区分：σ已知→z（正态）；σ未知→t！n=9，自由度=n−1=8</div>
 </div>
