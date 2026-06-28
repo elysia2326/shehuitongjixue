@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>社会统计学 · 课件例题全集</title>
+<style>
+@page { margin: 2cm; }
+body { font-family: "PingFang SC","Microsoft YaHei",sans-serif; font-size: 12pt; line-height: 1.6; color: #333; }
+h1 { font-size: 20pt; text-align: center; margin-bottom: 0.3em; }
+h2 { font-size: 16pt; margin-top: 1.5em; border-bottom: 2px solid #333; padding-bottom: 4px; }
+h3 { font-size: 13pt; margin-top: 1em; color: #555; }
+.example { margin: 0.6em 0; padding: 0.5em 1em; border-left: 3px solid #8b4513; background: #f9f7f3; }
+.example .q { font-weight: bold; }
+.example .a { margin-top: 0.3em; color: #2d6a4f; }
+.exercise { margin: 0.4em 0; padding: 0.4em 1em; border-left: 3px solid #666; background: #f5f5f5; }
+.important { background: #fff3cd; border-left: 3px solid #e6c970; }
+.formula { margin: 0.4em 0; padding: 0.4em 1em; font-family: "Times New Roman",serif; color: #222; }
+.footer { margin-top: 1.5em; font-size: 10pt; text-align: center; color: #999; }
+</style>
+</head>
+<body>
+
+<h1>📐 社会统计学 · 课件例题全集</h1>
+<p style="text-align:center;color:#666;">北京化工大学 · 宫晓辰 | 概率论与数理统计</p>
+
+<h2>第1章 随机事件与概率</h2>
+
+<h3>§1.1 样本空间与事件</h3>
+<div class="example"><span class="q">例1</span> 写出下列随机试验的样本空间：<br>
+(1) 抛掷一枚硬币，观察正反面 → Ω={H,T}<br>
+(2) 抛掷一枚骰子，观察点数 → Ω={1,2,3,4,5,6}<br>
+(3) 从产品中依次任取三件，记录正品/次品 → Ω={NNN,NND,NDN,DNN,NDD,DND,DDN,DDD}<br>
+(4) 测试灯泡寿命(小时) → Ω={t|t≥0}</div>
+
+<div class="exercise"><span class="q">练习</span> (1)袋中有5球(3白2黑)，取1球观察颜色→Ω={白,黑}<br>
+(2)不放回取两次，观察颜色→Ω={白白,白黑,黑白,黑黑}<br>
+(3)不放回取3球，记录黑球个数→Ω={0,1,2}<br>
+(4)生产至10只正品，记录总件数→Ω={10,11,12,…}<br>
+(5)10件产品2次品，取至2次品全出，记录次数→Ω={2,3,…,10}<br>
+(6)掷两颗骰子，观察点数→Ω={(1,1),…,(6,6)}共36种<br>
+(7)掷两颗骰子，观察点数之和→Ω={2,3,4,…,12}</div>
+
+<div class="exercise"><span class="q">练习（事件表达式）</span> 甲、乙、丙各射击一次，A,B,C分别代表命中。用A,B,C表示：<br>
+①至少一人命中 = A∪B∪C<br>
+②恰好命中一次 = AB̄C̄ ∪ ĀBC̄ ∪ ĀB̄C<br>
+③至少两人命中 = AB∪AC∪BC</div>
+
+<h3>§1.2 概率的基本性质</h3>
+<div class="formula">① P(Ā) = 1−P(A)　② P(A−B) = P(A)−P(AB)<br>
+③ P(A∪B) = P(A)+P(B)−P(AB)<br>
+④ P(A∪B∪C) = P(A)+P(B)+P(C)−P(AB)−P(BC)−P(AC)+P(ABC)</div>
+
+<div class="example"><span class="q">例</span> P(A)=1/2, P(B)=1/3，求三种情况下P(A−B)：<br>
+①AB=∅→P(A−B)=1/2　②B⊂A→P(A−B)=1/6　③P(AB)=1/4→P(A−B)=1/4</div>
+
+<div class="example"><span class="q">例</span> P(A)=0.5,P(B)=0.4,P(A−B)=0.3→求P(Ā∪B̄)和P(A∪B̄)<br>
+P(AB)=0.2, P(Ā∪B̄)=P(AB̄)=0.8, P(A∪B̄)=0.8</div>
+
+<div class="example"><span class="q">例</span> P(A)=P(B)=P(C)=1/4, P(AB)=P(BC)=1/8, P(AC)=0<br>
+求P(A∪B∪C)=1/2, P(都不发生)=1/2</div>
+
+<h3>§1.3 古典概型</h3>
+<div class="formula">P(A)=A中样本点数/总样本点数<br>
+排列Aₙᵐ=n!/(n−m)!　组合Cₙᵐ=n!/[m!(n−m)!]</div>
+
+<div class="example"><span class="q">例</span> 掷硬币3次，恰1次正面概率=C₃¹(1/2)(1/2)²=3/8<br>
+至少1次正面概率=1−1/8=7/8</div>
+
+<div class="example"><span class="q">例</span> 6白4红取5球：<br>
+(1)有放回恰3白：C₅³(0.6)³(0.4)²≈0.3456<br>
+(2)不放回恰3白：C₆³C₄²/C₁₀⁵=10/21<br>
+(3)不放回第3球为白：6/10=0.6(抽签原理)</div>
+
+<div class="example"><span class="q">例</span> 15人抽7张票，第5人抽到概率=7/15——抽签原理</div>
+
+<div class="example"><span class="q">例</span> n人随机分到N个房间(n≤N)：<br>
+①指定房间恰m人：Cₙᵐ(N−1)ⁿ⁻ᵐ/Nⁿ<br>
+②每两人不同房间：A_Nⁿ/Nⁿ</div>
+
+<div class="example"><span class="q">例（生日问题）</span> m人中至少两人生日相同概率=1−A₃₆₅ᵐ/365ᵐ<br>
+m=23时≈0.507, m=50时≈0.97</div>
+
+<h3>§1.4 条件概率·全概率·贝叶斯</h3>
+<div class="formula">P(B|A)=P(AB)/P(A)　P(AB)=P(A)P(B|A)<br>
+P(B)=ΣP(Aᵢ)P(B|Aᵢ)　P(Aᵢ|B)=P(Aᵢ)P(B|Aᵢ)/P(B)</div>
+
+<div class="example"><span class="q">例（10件产品）</span> 5不合格(3次品2废品)：<br>
+P(废品)=2/10=0.2, P(废品|不合格)=2/5=0.4</div>
+
+<div class="example"><span class="q">例（三家工厂）</span> 甲(15%,次品2%),乙(80%,1%),丙(5%,3%)：<br>
+P(次品)=0.15×0.02+0.80×0.01+0.05×0.03=0.0125<br>
+P(甲|次)=0.003/0.0125=0.24, P(乙|次)=0.64, P(丙|次)=0.12</div>
+
+<h3>§1.5 独立性与伯努利</h3>
+<div class="formula">P(AB)=P(A)P(B)　⇒ 独立<br>
+P(X=k)=Cₙᵏpᵏ(1−p)ⁿ⁻ᵏ</div>
+
+<div class="example"><span class="q">例（甲0.8,乙0.6独立射击）</span> P(击中)=0.8+0.6−0.8×0.6=0.92</div>
+
+<div class="example"><span class="q">例（n事件独立≠两两独立反例）</span> 掷硬币两次：<br>
+A₁={第一次正}, A₂={第二次反}, A₃={正反各一次}<br>
+两两独立成立，但P(A₁A₂A₃)=0≠1/8⇒不相互独立</div>
+
+<h2>第2章 随机变量及其分布</h2>
+
+<h3>§2.1 分布函数</h3>
+<div class="formula">F(x)=P(X≤x), F(+∞)=1, F(−∞)=0, F单调不减右连续</div>
+
+<div class="example"><span class="q">例</span> F(x)=c−e^(−x²/2)(x≥0), 求c和P(|X|>2)<br>
+F(+∞)=c=1, P(|X|>2)=e⁻²</div>
+
+<h3>§2.2 离散型随机变量</h3>
+<div class="formula">二项B(n,p): P(X=k)=Cₙᵏpᵏ(1−p)ⁿ⁻ᵏ<br>
+泊松P(λ): P(X=k)=λᵏe⁻λ/k!</div>
+
+<div class="example"><span class="q">例（二项分布射击）</span> 命中率0.02,射击400次,至少命中2次概率:<br>
+λ=np=8, P(X≥2)=1−e⁻⁸−8e⁻⁸≈0.997</div>
+
+<div class="example"><span class="q">例（泊松）</span> P(X=1)=P(X=2), 求P(X=4)<br>
+λ=2, P(X=4)=2e⁻²/3</div>
+
+<h3>§2.3 连续型随机变量</h3>
+
+<div class="example"><span class="q">例（均匀分布）</span> 电阻R~U(900,1100):<br>
+f(r)=1/200(900&lt;r&lt;1100), P(950&lt;R&lt;1050)=0.5</div>
+
+<div class="example"><span class="q">例（指数分布）</span> 电池寿命X~e(200),已用80h,还能用100h概率:<br>
+P(X>180|X>80)=P(X>100)=e⁻⁰·⁵≈0.6065</div>
+
+<div class="example"><span class="q">例（正态分布）</span> X~N(3,9):<br>
+P(X≤6)=Φ(1)=0.8413, P(0&lt;X&lt;6)=2Φ(1)−1=0.6826</div>
+
+<h3>§2.4 随机变量函数的分布</h3>
+<div class="example"><span class="q">例</span> f_X(x)=2x(0&lt;x&lt;1), 求Y=X²+1的密度：<br>
+F_Y(y)=y−1(1&lt;y&lt;2), f_Y(y)=1→Y服从(1,2)均匀分布</div>
+
+<h2>第3章 二维随机变量</h2>
+
+<div class="example"><span class="q">例（联合分布列）</span> 5产品(3正2次)有放回/不放回取2次</div>
+
+<div class="example"><span class="q">例</span> f(x,y)=Axy(0&lt;x&lt;1, x²&lt;y&lt;1)<br>
+由归一化∫∫f=1得A=6</div>
+
+<h2>第4章 数字特征</h2>
+
+<div class="formula">E(X)=Σxᵢpᵢ/∫xf(x)dx　D(X)=E(X²)−[E(X)]²<br>
+Cov(X,Y)=E(XY)−E(X)E(Y)　ρ=Cov/√(D(X)D(Y))</div>
+
+<div class="example"><span class="q">例</span> X₁~X₄独立,E(Xᵢ)=i,D(Xᵢ)=5−i,Y=2X₁−X₂+3X₃−X₄<br>
+E(Y)=5, D(Y)=38</div>
+
+<div class="example"><span class="q">例</span> X~N(0,9), Y=5X², E(Y)=5×(9+0)=45</div>
+
+<div class="example"><span class="q">例（独立⇒不相关反例）</span> 3×3分布列表：Cov=0但联合≠边缘乘积</div>
+
+<h2>第5章 样本及抽样分布</h2>
+
+<div class="formula">三抽样分布：χ²,t,F<br>
+抽样定理：(X̄−μ)/(σ/√n)~N(0,1); (n−1)S²/σ²~χ²(n−1); (X̄−μ)/(S/√n)~t(n−1)</div>
+
+<div class="example"><span class="q">例</span> Σ(Xᵢ−2)²/9~χ²(n)</div>
+
+<div class="example"><span class="q">例</span> N(52,6.3²), n=36, P(50.8&lt;X̄&lt;53.8)≈0.8293</div>
+
+<h2>第6章 参数估计</h2>
+
+<div class="example"><span class="q">例（矩估计）</span> P(X=1)=θ², P(X=2)=2θ(1−θ), P(X=3)=(1−θ)²<br>
+样本1,2,1,3,3⇒x̄=2, E(X)=3−2θ⇒θ̂=1/2</div>
+
+<div class="example"><span class="q">例（置信区间）</span> 灯泡寿命X~N(μ,200²), n=25, x̄=16800<br>
+μ的95%CI: 16800±1.96×40=[16721.6,16878.4]</div>
+
+<div class="footer">
+<p>—— 课件例题完整汇总 ——</p>
+<p>北京化工大学 · 社会统计学 · 宫晓辰</p>
+</div>
+
+</body>
+</html>
